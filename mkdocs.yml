@@ -2,6 +2,7 @@ site_name: OpenAD Tutorials
 nav:
     - Home: index.md
     - Getting started: getting-started.md
+    - New page: test.md
     - Theme:
           - Topic A: theme/topic-a.md
           - Topic B: theme/topic-b.md
