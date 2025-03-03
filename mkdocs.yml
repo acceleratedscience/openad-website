@@ -1,0 +1,8 @@
+site_name: OpenAD Tutorials
+nav:
+    - Home: index.md
+    - Getting started: getting-started.md
+
+# theme: readthedocs
+theme: material
+# name: material
