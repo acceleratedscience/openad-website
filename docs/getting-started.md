@@ -1,6 +1,6 @@
 # Getting started
 
-This is just a demo page.
+This is a demo page.
 
 Anonymouse code block:
 

@@ -1,16 +1,13 @@
-<!-- uv venv .venv -->
+Experimental scaffold
 
-source .venv/bin/activate
+<!-- source .venv/bin/activate
 
-<!-- deactivate -->
+deactivate
 
 pip install -r requirements.txt
 
 mkdocs serve
+
 mkdocs build
 
-# Development
-
-##### Update requirements.txt with pip packages
-
-uv pip freeze > requirements.txt
+https://github.com/squidfunk/mkdocs-material -->
