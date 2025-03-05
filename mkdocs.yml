@@ -5,77 +5,64 @@
 
 site_name: OpenAD Tutorials
 nav:
-    - Home: index.md
-<<<<<<< HEAD
-    - Tutorials:
+  - Home: index.md
+  - Tutorials:
       - tutorials/index.md
-    - Reference: reference.md
-    - Test: test.md
-    - Documentation:
+  - Reference: reference.md
+  - Test: test.md
+  - Documentation:
       - Installation: documentation/installation.md
       - Base Concepts: documentation/base-concepts.md
       - Commands: documentation/commands.md
       - Index: documentation/index.md
       - About: documentation/about.md
-    - Category:
+  - Category:
       - Topic A: example/topic-a.md
       - Topic B: example/topic-b.md
       - Sub Theme:
-            - Topic C: example/sub-category/topic-c.md
-
-
-
+          - Topic C: example/sub-category/topic-c.md
 
 # Theme configuration
 # ------------------------------------------------
 # https://squidfunk.github.io/mkdocs-material/setup
-=======
-    - Getting started: getting-started.md
-    - New page: test.md
-    - Theme:
-          - Topic A: theme/topic-a.md
-          - Topic B: theme/topic-b.md
-          - Sub Theme:
-                - Topic C: theme/sub-theme/topic-c.md
->>>>>>> c897b60bb2a4726291f2f6549492224954f9f917
 
 theme:
-    name: material
-    palette:
-      # Palette toggle for automatic mode
-      - media: "(prefers-color-scheme)"
-        toggle:
-          icon: material/brightness-auto
-          name: Switch to light mode
-      
-      # Palette toggle for light mode
-      - media: "(prefers-color-scheme: light)"
-        scheme: carbon
-        toggle:
-          icon: material/lightbulb-outline
-          name: Switch to dark mode
+  name: material
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
 
-      # Palette toggle for dark mode
-      - media: "(prefers-color-scheme: dark)"
-        # scheme: slate
-        scheme: carbon-dark
-        toggle:
-          icon: material/lightbulb
-          name: Switch to light mode
-    
-    logo: _assets/icn-logo.svg
-    features:
-      - navigation.tabs
-      - navigation.instant # Navigate without reloading the page
-      - navigation.instant.progress
-      - content.code.copy
-      - content.code.annotate 
-      # - content.code.select # Auto-select, only available for sponsors
-      # - content.tooltips # HTML tooltips, rather annoying since you can't disable them on headers etc.
-    # Overrides let us specify different HTML files
-    # for certain pages, used to customize the landing
-    # as well as custom icons
-    custom_dir: docs/_overrides
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: carbon
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      # scheme: slate
+      scheme: carbon-dark
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+
+  logo: _assets/icn-logo.svg
+  features:
+    - navigation.tabs
+    - navigation.instant # Navigate without reloading the page
+    - navigation.instant.progress
+    - content.code.copy
+    - content.code.annotate
+    # - content.code.select # Auto-select, only available for sponsors
+    # - content.tooltips # HTML tooltips, rather annoying since you can't disable them on headers etc.
+  # Overrides let us specify different HTML files
+  # for certain pages, used to customize the landing
+  # as well as custom icons
+  custom_dir: docs/_overrides
 extra_css:
   - _css/carbon-vars.css
   - _css/carbon-color-palette.css
@@ -84,9 +71,6 @@ extra_css:
 plugins:
   - blog:
       blog_dir: tutorials
-
-
-
 
 # Extensions
 # ------------------------------------------------
@@ -118,7 +102,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  
+
   # Instant preview of links
   # Nice to have feature, but only available to sponsors
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=data+preview#instant-previews
