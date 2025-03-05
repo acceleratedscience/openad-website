@@ -7,21 +7,21 @@ site_name: OpenAD
 repo_url: https://github.com/acceleratedscience/openad-toolkit
 nav:
   - Home: index.md
-  - Tutorials:
-      - tutorials/index.md
-  - Reference: reference.md
-  - Test: test.md
   - Documentation:
       - Installation: documentation/installation.md
       - Base Concepts: documentation/base-concepts.md
       - Commands: documentation/commands.md
       - Index: documentation/index.md
       - About: documentation/about.md
+  - Tutorials:
+      - tutorials/index.md
+  - About: reference.md
   - Category:
       - Topic A: example/topic-a.md
       - Topic B: example/topic-b.md
       - Sub Theme:
           - Topic C: example/sub-category/topic-c.md
+  # - Test: test.md
 
 # Theme configuration
 # ------------------------------------------------

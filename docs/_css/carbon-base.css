@@ -234,8 +234,7 @@ html .md-typeset summary:last-child,
 /* Icon */
 .md-typeset summary::before {
   background: var(--md-typeset-color);
-  mask-image: none;
-  mask-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L11 8L6 12V4Z"/></svg>');
+  mask-image: var(--carbon-icn-caret-right);
   width: 1rem;
   height: 1rem;
   margin: 0.1625rem;

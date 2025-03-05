@@ -1,5 +1,13 @@
+/* Reset */
 .md-header__inner {
   padding: 0;
+}
+.md-header__button {
+  /* background: brown; */
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  margin: 0;
 }
 
 /* Set all icons to 1rem */
@@ -8,12 +16,21 @@
   height: 1rem;
 }
 
+/* Logo icon */
+.md-header__button.md-logo {
+  margin: 0;
+  padding: 0.75rem;
+}
+.md-header__button.md-logo img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 /* Github icon */
 /* Hide the word GitHub */
 .md-source__repository {
   display: none;
 }
-/* Reset */
 .md-source__icon svg,
 [dir="ltr"] .md-source__icon svg {
   margin: 0;
@@ -32,7 +49,7 @@
   padding: 1rem;
 }
 
-/* Dark/light mode */
+/* Dark-mode icon */
 .md-header__option {
   /* background: brown; */
   width: 3rem;
@@ -41,6 +58,4 @@
 .md-header__option .md-header__button {
   /* background: pink; */
   flex: 0 0 3rem;
-  margin: 0;
-  padding: 1rem;
 }

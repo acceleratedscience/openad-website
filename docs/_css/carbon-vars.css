@@ -37,4 +37,6 @@ body {
    * the rest in CSS.
    */
   --md-toc-icon: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 3H2V4H11V3Z"/><path d="M11 6H2V7H11V6Z"/><path d="M11 9H2V10H11V9Z"/><path d="M11 12H2V13H11V12Z"/><path d="M14 3H13V4H14V3Z"/><path d="M14 6H13V7H14V6Z"/><path d="M14 9H13V10H14V9Z"/><path d="M14 12H13V13H14V12Z"/></svg>');
+  --carbon-icn-close: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.7L11.3 4L8 7.3L4.7 4L4 4.7L7.3 8L4 11.3L4.7 12L8 8.7L11.3 12L12 11.3L8.7 8L12 4.7Z"/></svg>');
+  --carbon-icn-caret-right: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L11 8L6 12V4Z"/></svg>');
 }
