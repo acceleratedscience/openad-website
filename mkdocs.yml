@@ -1,13 +1,119 @@
+# Essentials
+# ------------------------------------------------
+# https://www.mkdocs.org
+# https://squidfunk.github.io/mkdocs-material
+
 site_name: OpenAD Tutorials
 nav:
     - Home: index.md
-    - Getting started: getting-started.md
-    - Theme:
-          - Topic A: theme/topic-a.md
-          - Topic B: theme/topic-b.md
-          - Sub Theme:
-                - Topic C: theme/sub-theme/topic-c.md
+    - Tutorials:
+      - tutorials/index.md
+    - Reference: reference.md
+    - Test: test.md
+    - Documentation:
+      - Installation: documentation/installation.md
+      - Base Concepts: documentation/base-concepts.md
+      - Commands: documentation/commands.md
+      - Index: documentation/index.md
+      - About: documentation/about.md
+    - Category:
+      - Topic A: example/topic-a.md
+      - Topic B: example/topic-b.md
+      - Sub Theme:
+            - Topic C: example/sub-category/topic-c.md
 
-# theme: readthedocs
+
+
+
+# Theme configuration
+# ------------------------------------------------
+# https://squidfunk.github.io/mkdocs-material/setup
+
 theme:
     name: material
+    palette:
+      # Palette toggle for automatic mode
+      - media: "(prefers-color-scheme)"
+        toggle:
+          icon: material/brightness-auto
+          name: Switch to light mode
+      
+      # Palette toggle for light mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: carbon
+        toggle:
+          icon: material/lightbulb-outline
+          name: Switch to dark mode
+
+      # Palette toggle for dark mode
+      - media: "(prefers-color-scheme: dark)"
+        # scheme: slate
+        scheme: carbon-dark
+        toggle:
+          icon: material/lightbulb
+          name: Switch to light mode
+    
+    logo: _assets/icn-logo.svg
+    features:
+      - navigation.tabs
+      - navigation.instant # Navigate without reloading the page
+      - navigation.instant.progress
+      - content.code.copy
+      - content.code.annotate 
+      # - content.code.select # Auto-select, only available for sponsors
+      # - content.tooltips # HTML tooltips, rather annoying since you can't disable them on headers etc.
+    # Overrides let us specify different HTML files
+    # for certain pages, used to customize the landing
+    # as well as custom icons
+    custom_dir: docs/_overrides
+extra_css:
+  - _css/carbon-vars.css
+  - _css/carbon-color-palette.css
+  - _css/carbon-base.css
+
+plugins:
+  - blog:
+      blog_dir: tutorials
+
+
+
+
+# Extensions
+# ------------------------------------------------
+
+markdown_extensions:
+  # Turns every header into a link
+  - toc:
+      permalink: §
+
+  # Allow setting attributes on elements
+  # eg. [link](url){data-preview}
+  - attr_list
+
+  # Icons
+  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#configuration
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - docs/_overrides/.icons
+
+  # Code formatting
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  
+  # Instant preview of links
+  # Nice to have feature, but only available to sponsors
+  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=data+preview#instant-previews
+  # - material.extensions.preview:
+  #     configurations:
+  #       - targets:
+  #           include:
+  #             - changelog/index.md
