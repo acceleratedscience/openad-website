@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: Test
 ---
@@ -15,3 +16,6 @@ Some text
 Some more txt
 
 [Sub title](getting-started.md#sub-title){ data-preview }
+=======
+Adding a page via GitHub
+>>>>>>> c897b60bb2a4726291f2f6549492224954f9f917

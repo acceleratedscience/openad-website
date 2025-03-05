@@ -6,6 +6,7 @@
 site_name: OpenAD Tutorials
 nav:
     - Home: index.md
+<<<<<<< HEAD
     - Tutorials:
       - tutorials/index.md
     - Reference: reference.md
@@ -28,6 +29,15 @@ nav:
 # Theme configuration
 # ------------------------------------------------
 # https://squidfunk.github.io/mkdocs-material/setup
+=======
+    - Getting started: getting-started.md
+    - New page: test.md
+    - Theme:
+          - Topic A: theme/topic-a.md
+          - Topic B: theme/topic-b.md
+          - Sub Theme:
+                - Topic C: theme/sub-theme/topic-c.md
+>>>>>>> c897b60bb2a4726291f2f6549492224954f9f917
 
 theme:
     name: material
