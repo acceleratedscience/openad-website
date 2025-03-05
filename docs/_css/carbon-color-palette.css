@@ -1,175 +1,177 @@
 /**
  * Carbon color palettes
- * Overriding the original color palette::after
+ * Overriding the original color palette
  * https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
  */
 
-/* #393939: Text etc.
-#161616: Header */
-[data-md-color-scheme='carbon'] {
-	/* Primary color shades */
-	--md-primary-fg-color: #161616;
-	--md-primary-fg-color--light: #edf5ff;
-	--md-primary-fg-color--dark: #0f62fe;
-	--md-primary-bg-color: #fff;
-	--md-primary-bg-color--light: #f4f4f4;
+/* Light theme */
+[data-md-color-scheme="carbon"] {
+  /* Primary color shades */
+  --md-primary-fg-color: var(--carbon-darker); /* Page header */
+  --md-primary-fg-color--light: #edf5ff;
+  --md-primary-fg-color--dark: var(--carbon-blue);
+  --md-primary-bg-color: #6f6f6f;
+  --md-primary-bg-color--light: #f4f4f4;
 
-	/* Accent color shades */
-	--md-accent-fg-color: pink;
-	--md-accent-fg-color--transparent: orange;
-	--md-accent-bg-color: purple;
-	--md-accent-bg-color--light: lightgreen;
+  /* Accent color shades */
+  --md-accent-fg-color: #0043ce; /* Link hover */
+  --md-accent-fg-color--transparent: transparent; /* Side nav expand icon */
+  --md-accent-bg-color: var(--carbon-blue); /* Primary button */
+  --md-accent-bg-color--light: #0353e9; /* Primary button :hover */
 
-	/* Default color shades */
-	--md-default-fg-color: hsla(0, 0%, 0%, 0.87);
-	--md-default-fg-color--light: hsla(0, 0%, 0%, 0.54);
-	--md-default-fg-color--lighter: hsla(0, 0%, 0%, 0.32);
-	--md-default-fg-color--lightest: hsla(0, 0%, 0%, 0.07);
-	--md-default-bg-color: #fff;
-	--md-default-bg-color--light: hsla(0, 0%, 100%, 0.7);
-	--md-default-bg-color--lighter: hsla(0, 0%, 100%, 0.3);
-	--md-default-bg-color--lightest: hsla(0, 0%, 100%, 0.12);
+  /* Default color shades */
+  --md-default-fg-color: var(--carbon-dark); /* Text color */
+  --md-default-fg-color--light: var(
+    --carbon-dark
+  ); /* Table of contents header */
+  --md-default-fg-color--lighter: orange;
+  --md-default-fg-color--lightest: yellow; /* Copy icon */
+  --md-default-bg-color: #fff; /* Page background */
+  --md-default-bg-color--light: red;
+  --md-default-bg-color--lighter: #4c4c4c; /* Secondary button :hover */
+  --md-default-bg-color--lightest: var(--carbon-dark); /* Secondary button */
 
-	/* Code color shades */
-	--md-code-fg-color: var(--md-primary-bg-color);
-	--md-code-bg-color: var(--md-primary-fg-color);
+  /* Code color shades */
+  --md-code-fg-color: var(--md-primary-bg-color);
+  --md-code-bg-color: var(--carbon-dark);
 
-	/* Code highlighting color shades */
-	--md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1);
-	--md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1);
+  /* Code highlighting color shades */
+  --md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1);
+  --md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1);
 
-	/* Code highlighting syntax color shades */
-	--md-code-hl-number-color: hsla(0, 67%, 50%, 1);
-	--md-code-hl-special-color: hsla(340, 83%, 47%, 1);
-	--md-code-hl-function-color: hsla(291, 45%, 50%, 1);
-	--md-code-hl-constant-color: hsla(250, 63%, 60%, 1);
-	--md-code-hl-keyword-color: hsla(219, 54%, 51%, 1);
-	--md-code-hl-string-color: hsla(150, 63%, 30%, 1);
-	--md-code-hl-name-color: var(--md-code-fg-color);
-	--md-code-hl-operator-color: var(--md-default-fg-color--light);
-	--md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-	--md-code-hl-comment-color: var(--md-default-fg-color--light);
-	--md-code-hl-generic-color: var(--md-default-fg-color--light);
-	--md-code-hl-variable-color: var(--md-default-fg-color--light);
+  /* Code highlighting syntax color shades */
+  --md-code-hl-number-color: #b5cea8;
+  --md-code-hl-special-color: orange; /* TBD */
+  --md-code-hl-function-color: #dcdcaa;
+  --md-code-hl-constant-color: #d7ba7d;
+  --md-code-hl-keyword-color: #569cd6;
+  --md-code-hl-string-color: #ce9178;
+  --md-code-hl-name-color: #9cdcfe;
+  --md-code-hl-operator-color: var(--md-typeset-color);
+  --md-code-hl-punctuation-color: #cd9731;
+  --md-code-hl-comment-color: var(--md-code-hl-string-color);
+  --md-code-hl-generic-color: red; /* TBD */
+  --md-code-hl-variable-color: yellow; /* TBD */
 
-	/* Typeset color shades */
-	--md-typeset-color: var(--md-default-fg-color);
+  /* Typeset color shades */
+  --md-typeset-color: var(--md-default-fg-color);
 
-	/* Typeset `a` color shades */
-	--md-typeset-a-color: var(--md-primary-fg-color);
+  /* Typeset `a` color shades */
+  --md-typeset-a-color: var(--carbon-blue); /* Link */
 
-	/* Typeset `del` and `ins` color shades */
-	--md-typeset-del-color: hsla(6, 90%, 60%, 0.15);
-	--md-typeset-ins-color: hsla(150, 90%, 44%, 0.15);
+  /* Typeset `del` and `ins` color shades */
+  --md-typeset-del-color: hsla(6, 90%, 60%, 0.15);
+  --md-typeset-ins-color: hsla(150, 90%, 44%, 0.15);
 
-	/* Typeset `kbd` color shades */
-	--md-typeset-kbd-color: hsla(0, 0%, 98%, 1);
-	--md-typeset-kbd-accent-color: hsla(0, 100%, 100%, 1);
-	--md-typeset-kbd-border-color: hsla(0, 0%, 72%, 1);
+  /* Typeset `kbd` color shades */
+  --md-typeset-kbd-color: hsla(0, 0%, 98%, 1);
+  --md-typeset-kbd-accent-color: hsla(0, 100%, 100%, 1);
+  --md-typeset-kbd-border-color: hsla(0, 0%, 72%, 1);
 
-	/* Typeset `mark` color shades */
-	--md-typeset-mark-color: hsla(#{hex2hsl($clr-yellow-a200)}, 0.5);
+  /* Typeset `mark` color shades */
+  --md-typeset-mark-color: hsla(#{hex2hsl($clr-yellow-a200)}, 0.5);
 
-	/* Typeset `table` color shades */
-	--md-typeset-table-color: hsla(0, 0%, 0%, 0.12);
-	--md-typeset-table-color--light: hsla(0, 0%, 0%, 0.035);
+  /* Typeset `table` color shades */
+  --md-typeset-table-color: hsla(0, 0%, 0%, 0.12);
+  --md-typeset-table-color--light: hsla(0, 0%, 0%, 0.035);
 
-	/* Admonition color shades */
-	--md-admonition-fg-color: var(--md-default-fg-color);
-	--md-admonition-bg-color: var(--md-default-bg-color);
+  /* Admonition color shades */
+  --md-admonition-fg-color: var(--md-default-fg-color);
+  --md-admonition-bg-color: var(--md-default-bg-color);
 
-	/* Warning color shades */
-	--md-warning-fg-color: hsla(0, 0%, 0%, 0.87);
-	--md-warning-bg-color: hsla(60, 100%, 80%, 1);
+  /* Warning color shades */
+  --md-warning-fg-color: hsla(0, 0%, 0%, 0.87);
+  --md-warning-bg-color: hsla(60, 100%, 80%, 1);
 
-	/* Footer color shades */
-	--md-footer-fg-color: hsla(0, 0%, 100%, 1);
-	--md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
-	--md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.45);
-	--md-footer-bg-color: hsla(0, 0%, 0%, 0.87);
-	--md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
+  /* Footer color shades */
+  --md-footer-fg-color: hsla(0, 0%, 100%, 1);
+  --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
+  --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.45);
+  --md-footer-bg-color: hsla(0, 0%, 0%, 0.87);
+  --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
 }
 
-[data-md-color-scheme='carbon-dark'] {
-	/* Primary color shades */
-	--md-primary-fg-color: #161616;
-	--md-primary-fg-color--light: #edf5ff;
-	--md-primary-fg-color--dark: #0f62fe;
-	--md-primary-bg-color: #f4f4f4;
-	--md-primary-bg-color--light: #fff;
+/* Dark theme */
+[data-md-color-scheme="carbon-dark"] {
+  /* Primary color shades */
+  --md-primary-fg-color: var(--carbon-darker); /* Page header */
+  --md-primary-fg-color--light: #edf5ff;
+  --md-primary-fg-color--dark: var(--carbon-blue);
+  --md-primary-bg-color: #f4f4f4;
+  --md-primary-bg-color--light: #fff;
 
-	/* Accent color shades */
-	--md-accent-fg-color: #a6c8ff; /* Link hover */
-	--md-accent-fg-color--transparent: orange; /* TBD */
-	--md-accent-bg-color: #0f62fe; /* Primary button */
-	--md-accent-bg-color--light: #0353e9; /* Primary button :hover */
+  /* Accent color shades */
+  --md-accent-fg-color: #a6c8ff; /* Link hover */
+  --md-accent-fg-color--transparent: transparent; /* Side nav expand icon */
+  --md-accent-bg-color: var(--carbon-blue); /* Primary button */
+  --md-accent-bg-color--light: #0353e9; /* Primary button :hover */
 
-	/* Default color shades */
-	--md-default-fg-color: #fff;
-	--md-default-fg-color--light: #c6c6c6;
-	--md-default-fg-color--lighter: #a8a8a8;
-	--md-default-fg-color--lightest: #8d8d8d;
-	--md-default-bg-color: #393939;
-	--md-default-bg-color--light: #525252;
-	--md-default-bg-color--lighter: #5e5e5e;
-	--md-default-bg-color--lightest: #6f6f6f;
+  /* Default color shades */
+  --md-default-fg-color: #fff; /* Text color */
+  --md-default-fg-color--light: #c6c6c6; /* Table of contents header */
+  --md-default-fg-color--lighter: #a8a8a8;
+  --md-default-fg-color--lightest: #8d8d8d;
+  --md-default-bg-color: var(--carbon-dark); /* Page background */
+  --md-default-bg-color--light: #525252;
+  --md-default-bg-color--lighter: #5e5e5e; /* Secondary button :hover */
+  --md-default-bg-color--lightest: #6f6f6f; /* Secondary button */
 
-	/* Code color shades */
-	--md-code-fg-color: var(--md-typeset-color);
-	--md-code-bg-color: var(--md-primary-fg-color);
+  /* Code color shades */
+  --md-code-fg-color: var(--md-typeset-color);
+  --md-code-bg-color: var(--md-primary-fg-color);
 
-	/* Code highlighting color shades */
-	--md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1);
-	--md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1);
+  /* Code highlighting color shades */
+  --md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1);
+  --md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1);
 
-	/* Code highlighting syntax color shades */
-	--md-code-hl-number-color: #b5cea8;
-	--md-code-hl-special-color: red;
-	--md-code-hl-function-color: #dcdcaa;
-	--md-code-hl-constant-color: #d7ba7d;
-	--md-code-hl-keyword-color: #569cd6;
-	--md-code-hl-string-color: #ce9178;
-	--md-code-hl-name-color: #9cdcfe;
-	--md-code-hl-operator-color: var(--md-typeset-color);
-	--md-code-hl-punctuation-color: #cd9731;
-	--md-code-hl-comment-color: var(--md-code-hl-string-color);
-	--md-code-hl-generic-color: red; /* TBD */
-	--md-code-hl-variable-color: yellow; /* TBD */
+  /* Code highlighting syntax color shades */
+  --md-code-hl-number-color: #b5cea8;
+  --md-code-hl-special-color: orange; /* TBD */
+  --md-code-hl-function-color: #dcdcaa;
+  --md-code-hl-constant-color: #d7ba7d;
+  --md-code-hl-keyword-color: #569cd6;
+  --md-code-hl-string-color: #ce9178;
+  --md-code-hl-name-color: #9cdcfe;
+  --md-code-hl-operator-color: var(--md-typeset-color);
+  --md-code-hl-punctuation-color: #cd9731;
+  --md-code-hl-comment-color: var(--md-code-hl-string-color);
+  --md-code-hl-generic-color: red; /* TBD */
+  --md-code-hl-variable-color: yellow; /* TBD */
 
-	/* Typeset color shades */
-	--md-typeset-color: #c6c6c6; /* Body */
+  /* Typeset color shades */
+  --md-typeset-color: #c6c6c6; /* Body */
 
-	/* Typeset `a` color shades */
-	--md-typeset-a-color: #78a9ff; /* Link */
+  /* Typeset `a` color shades */
+  --md-typeset-a-color: #78a9ff; /* Link */
 
-	/* Typeset `del` and `ins` color shades */
-	--md-typeset-del-color: hsla(6, 90%, 60%, 0.15);
-	--md-typeset-ins-color: hsla(150, 90%, 44%, 0.15);
+  /* Typeset `del` and `ins` color shades */
+  --md-typeset-del-color: hsla(6, 90%, 60%, 0.15);
+  --md-typeset-ins-color: hsla(150, 90%, 44%, 0.15);
 
-	/* Typeset `kbd` color shades */
-	--md-typeset-kbd-color: hsla(0, 0%, 98%, 1);
-	--md-typeset-kbd-accent-color: hsla(0, 100%, 100%, 1);
-	--md-typeset-kbd-border-color: hsla(0, 0%, 72%, 1);
+  /* Typeset `kbd` color shades */
+  --md-typeset-kbd-color: hsla(0, 0%, 98%, 1);
+  --md-typeset-kbd-accent-color: hsla(0, 100%, 100%, 1);
+  --md-typeset-kbd-border-color: hsla(0, 0%, 72%, 1);
 
-	/* Typeset `mark` color shades */
-	--md-typeset-mark-color: hsla(#{hex2hsl($clr-yellow-a200)}, 0.5);
+  /* Typeset `mark` color shades */
+  --md-typeset-mark-color: hsla(#{hex2hsl($clr-yellow-a200)}, 0.5);
 
-	/* Typeset `table` color shades */
-	--md-typeset-table-color: hsla(0, 0%, 0%, 0.12);
-	--md-typeset-table-color--light: hsla(0, 0%, 0%, 0.035);
+  /* Typeset `table` color shades */
+  --md-typeset-table-color: hsla(0, 0%, 0%, 0.12);
+  --md-typeset-table-color--light: hsla(0, 0%, 0%, 0.035);
 
-	/* Admonition color shades */
-	--md-admonition-fg-color: var(--md-default-fg-color);
-	--md-admonition-bg-color: var(--md-default-bg-color);
+  /* Admonition color shades */
+  --md-admonition-fg-color: var(--md-default-fg-color);
+  --md-admonition-bg-color: var(--md-default-bg-color);
 
-	/* Warning color shades */
-	--md-warning-fg-color: hsla(0, 0%, 0%, 0.87);
-	--md-warning-bg-color: hsla(60, 100%, 80%, 1);
+  /* Warning color shades */
+  --md-warning-fg-color: hsla(0, 0%, 0%, 0.87);
+  --md-warning-bg-color: hsla(60, 100%, 80%, 1);
 
-	/* Footer color shades */
-	--md-footer-fg-color: var(--md-accent-fg-color);
-	--md-footer-fg-color--light: var(--md-default-fg-color--light);
-	--md-footer-fg-color--lighter: var(--md-typeset-color);
-	--md-footer-bg-color: transparent;
-	--md-footer-bg-color--dark: transparent;
+  /* Footer color shades */
+  --md-footer-fg-color: var(--md-accent-fg-color);
+  --md-footer-fg-color--light: var(--md-default-fg-color--light);
+  --md-footer-fg-color--lighter: var(--md-typeset-color);
+  --md-footer-bg-color: transparent;
+  --md-footer-bg-color--dark: transparent;
 }

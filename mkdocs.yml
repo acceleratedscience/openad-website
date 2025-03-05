@@ -3,7 +3,8 @@
 # https://www.mkdocs.org
 # https://squidfunk.github.io/mkdocs-material
 
-site_name: OpenAD Tutorials
+site_name: OpenAD
+repo_url: https://github.com/acceleratedscience/openad-toolkit
 nav:
   - Home: index.md
   - Tutorials:
@@ -32,29 +33,60 @@ theme:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
+        icon: carbon/icn-dark-mode-auto
+        name: Dark mode auto
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: carbon
       toggle:
-        icon: material/lightbulb-outline
-        name: Switch to dark mode
+        icon: carbon/icn-dark-mode-off
+        name: Dark mode on
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      # scheme: slate
       scheme: carbon-dark
       toggle:
-        icon: material/lightbulb
-        name: Switch to light mode
+        icon: carbon/icn-dark-mode-on
+        name: Dark mode off
 
+  # Replace icons
   logo: _assets/icn-logo.svg
+  favicon: _assets/icn-logo.svg
+  icon:
+    menu: carbon/icn-hamburger
+    alternate: carbon/icn-language
+    search: carbon/icn-search
+    share: carbon/icn-share
+    close: carbon/icn-close
+    top: carbon/icn-arrow-up
+    edit: carbon/icn-edit
+    view: carbon/icn-file-html
+    repo: carbon/icn-github
+    previous: carbon/icn-arrow-left
+    next: carbon/icn-arrow-right
+    # tag: carbon/icn-star - https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#tag-icons-and-identifiers
+    admonition:
+      note: carbon/icn-megaphone
+      abstract: carbon/icn-result
+      info: carbon/icn-info
+      tip: carbon/icn-fire
+      success: carbon/icn-yes
+      question: carbon/icn-question
+      warning: carbon/icn-warning
+      failure: carbon/icn-no
+      danger: carbon/icn-caution
+      bug: carbon/icn-bug
+      example: carbon/icn-person
+      quote: carbon/icn-quote
+
   features:
-    - navigation.tabs
+    - navigation.tabs # Tabs for main sections
     - navigation.instant # Navigate without reloading the page
-    - navigation.instant.progress
+    - navigation.instant.progress # Progress bar
+    - navigation.top # Back to top link
+    - navigation.path # Breadcrumbs
+    - toc.follow # Auto-scroll the TOC sidebar
     - content.code.copy
     - content.code.annotate
     # - content.code.select # Auto-select, only available for sponsors
@@ -67,10 +99,19 @@ extra_css:
   - _css/carbon-vars.css
   - _css/carbon-color-palette.css
   - _css/carbon-base.css
+  - _css/carbon-page-header.css
+  - _css/carbon-nav.css
+  - _css/carbon-side-nav.css
 
+# Enable blog
 plugins:
   - blog:
       blog_dir: tutorials
+
+# Enable page status
+extra:
+  status:
+    new: This is New
 
 # Extensions
 # ------------------------------------------------
@@ -102,6 +143,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+  # Warning / note etc.
+  - admonition
 
   # Instant preview of links
   # Nice to have feature, but only available to sponsors

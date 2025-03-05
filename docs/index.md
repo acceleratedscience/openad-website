@@ -1,6 +1,9 @@
 ---
-title: Title
+title: Welcome
 template: home.html
+hide:
+  - navigation
+  - toc
 ---
 
 # OpenAD Tutorials

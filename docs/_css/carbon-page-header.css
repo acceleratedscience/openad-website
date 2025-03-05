@@ -1,0 +1,40 @@
+/* Page header */
+.md-header {
+  color: white;
+  height: 3rem;
+}
+.md-header .md-grid {
+  height: 100%;
+}
+.md-header--shadow {
+  box-shadow: none;
+}
+.md-header__title,
+[dir="ltr"] .md-header__title {
+  margin-left: 0;
+}
+.md-header .md-ellipsis {
+  font-weight: 600;
+}
+/* .md-header .md-ellipsis::after {
+  content: "Toolkit";
+  font-weight: 600;
+} */
+
+/* Page header links */
+.md-tabs {
+  color: white;
+  height: 3rem;
+  line-height: 3rem;
+}
+.md-tabs .md-grid,
+.md-tabs__list {
+  height: 100%;
+}
+.md-tabs__item {
+  height: 100%;
+}
+.md-tabs__link {
+  font-size: var(--font-size);
+  margin-top: 0;
+}

@@ -2,21 +2,39 @@
  * Single source of truth for all our variables.
  */
 body {
-	--font-size-xxlarge: 1.5rem; /* 24px */
-	--line-height-xxlarge: 2rem; /* 30px */
+  --font-size-xxlarge: 1.5rem; /* 24px */
+  --line-height-xxlarge: 2rem; /* 30px */
 
-	--font-size-xlarge: 1.25rem; /* 20px */
-	--line-height-xlarge: 1.75rem; /* 28px */
+  --font-size-xlarge: 1.25rem; /* 20px */
+  --line-height-xlarge: 1.75rem; /* 28px */
 
-	--font-size-large: 1rem; /* 16px */
-	--line-height-large: 1.375rem; /* 22px */
+  --font-size-large: 1rem; /* 16px */
+  --line-height-large: 1.375rem; /* 22px */
 
-	--font-size: 0.875rem; /* 14px */
-	--line-height: 1.2rem; /* 19px */
+  --font-size: 0.875rem; /* 14px */
+  --line-height: 1.2rem; /* 19px */
 
-	--font-size-small: 0.75rem; /* 12px */
-	--line-height-small: 1.0625rem; /* 17px */
+  --font-size-small: 0.75rem; /* 12px */
+  --line-height-small: 1.0625rem; /* 17px */
 
-	--font-size-xsmall: 0.625rem; /* 10px */
-	--line-height-xsmall: 0.9375rem; /* 15px */
+  --font-size-xsmall: 0.625rem; /* 10px */
+  --line-height-xsmall: 0.9375rem; /* 15px */
+
+  --carbon-light-less: #cacaca;
+  --carbon-light: #e5e5e5;
+  --carbon-lighter: #f4f4f4;
+  --carbon-dark-less: #525252;
+  --carbon-dark: #393939;
+  --carbon-darker: #161616;
+  --carbon-blue: #0f62fe;
+  --carbon-blue-dark: #0353e9;
+
+  /**
+   * Additional icon overrides
+   * - - -
+   * Most icon overrides are covered by mkdocs.yml
+   * but not all icons are exposed, we we override
+   * the rest in CSS.
+   */
+  --md-toc-icon: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 3H2V4H11V3Z"/><path d="M11 6H2V7H11V6Z"/><path d="M11 9H2V10H11V9Z"/><path d="M11 12H2V13H11V12Z"/><path d="M14 3H13V4H14V3Z"/><path d="M14 6H13V7H14V6Z"/><path d="M14 9H13V10H14V9Z"/><path d="M14 12H13V13H14V12Z"/></svg>');
 }
