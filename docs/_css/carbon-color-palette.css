@@ -21,23 +21,21 @@
 
   /* Default color shades */
   --md-default-fg-color: var(--carbon-dark); /* Text color */
-  --md-default-fg-color--light: var(
-    --carbon-dark
-  ); /* Table of contents header */
-  --md-default-fg-color--lighter: orange;
-  --md-default-fg-color--lightest: yellow; /* Copy icon */
+  --md-default-fg-color--light: var(--carbon-dark); /* TOC header */
+  --md-default-fg-color--lighter: var(--carbon-blue); /* Achor icons */
+  --md-default-fg-color--lightest: var(--carbon-gray); /* Copy icon */
   --md-default-bg-color: #fff; /* Page background */
-  --md-default-bg-color--light: red;
+  --md-default-bg-color--light: rgba(0, 0, 0, 0.05);
   --md-default-bg-color--lighter: #4c4c4c; /* Secondary button :hover */
   --md-default-bg-color--lightest: var(--carbon-dark); /* Secondary button */
 
   /* Code color shades */
-  --md-code-fg-color: var(--md-primary-bg-color);
-  --md-code-bg-color: var(--carbon-dark);
+  --md-code-fg-color: var(--carbon-gray-light);
+  --md-code-bg-color: var(--md-primary-fg-color);
 
   /* Code highlighting color shades */
-  --md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1);
-  --md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1);
+  --md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1); /* TBD */
+  --md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1); /* TBD */
 
   /* Code highlighting syntax color shades */
   --md-code-hl-number-color: #b5cea8;
@@ -47,14 +45,14 @@
   --md-code-hl-keyword-color: #569cd6;
   --md-code-hl-string-color: #ce9178;
   --md-code-hl-name-color: #9cdcfe;
-  --md-code-hl-operator-color: var(--md-typeset-color);
+  --md-code-hl-operator-color: var(--carbon-gray-light);
   --md-code-hl-punctuation-color: #cd9731;
   --md-code-hl-comment-color: var(--md-code-hl-string-color);
   --md-code-hl-generic-color: red; /* TBD */
   --md-code-hl-variable-color: yellow; /* TBD */
 
   /* Typeset color shades */
-  --md-typeset-color: var(--md-default-fg-color);
+  --md-typeset-color: var(--md-default-fg-color); /* Body */
 
   /* Typeset `a` color shades */
   --md-typeset-a-color: var(--carbon-blue); /* Link */
@@ -84,11 +82,11 @@
   --md-warning-bg-color: hsla(60, 100%, 80%, 1);
 
   /* Footer color shades */
-  --md-footer-fg-color: hsla(0, 0%, 100%, 1);
-  --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
-  --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.45);
-  --md-footer-bg-color: hsla(0, 0%, 0%, 0.87);
-  --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
+  --md-footer-fg-color: var(--md-accent-fg-color);
+  --md-footer-fg-color--light: var(--md-default-fg-color--light);
+  --md-footer-fg-color--lighter: var(--md-typeset-color);
+  --md-footer-bg-color: transparent;
+  --md-footer-bg-color--dark: transparent;
 }
 
 /* Dark theme */
@@ -108,21 +106,21 @@
 
   /* Default color shades */
   --md-default-fg-color: #fff; /* Text color */
-  --md-default-fg-color--light: #c6c6c6; /* Table of contents header */
-  --md-default-fg-color--lighter: #a8a8a8;
-  --md-default-fg-color--lightest: #8d8d8d;
+  --md-default-fg-color--light: var(--carbon-gray-light); /* TOC header */
+  --md-default-fg-color--lighter: var(--carbon-blue-light); /* Achor icons */
+  --md-default-fg-color--lightest: var(--carbon-gray); /* Copy icon */
   --md-default-bg-color: var(--carbon-dark); /* Page background */
-  --md-default-bg-color--light: #525252;
+  --md-default-bg-color--light: rgba(255, 255, 255, 0.1);
   --md-default-bg-color--lighter: #5e5e5e; /* Secondary button :hover */
   --md-default-bg-color--lightest: #6f6f6f; /* Secondary button */
 
   /* Code color shades */
-  --md-code-fg-color: var(--md-typeset-color);
+  --md-code-fg-color: var(--carbon-gray-light);
   --md-code-bg-color: var(--md-primary-fg-color);
 
   /* Code highlighting color shades */
-  --md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1);
-  --md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1);
+  --md-code-hl-color: hsla(#{hex2hsl($clr-blue-a200)}, 1); /* TBD */
+  --md-code-hl-color--light: hsla(#{hex2hsl($clr-blue-a200)}, 0.1); /* TBD */
 
   /* Code highlighting syntax color shades */
   --md-code-hl-number-color: #b5cea8;
@@ -132,17 +130,17 @@
   --md-code-hl-keyword-color: #569cd6;
   --md-code-hl-string-color: #ce9178;
   --md-code-hl-name-color: #9cdcfe;
-  --md-code-hl-operator-color: var(--md-typeset-color);
+  --md-code-hl-operator-color: var(--carbon-gray-light);
   --md-code-hl-punctuation-color: #cd9731;
   --md-code-hl-comment-color: var(--md-code-hl-string-color);
   --md-code-hl-generic-color: red; /* TBD */
   --md-code-hl-variable-color: yellow; /* TBD */
 
   /* Typeset color shades */
-  --md-typeset-color: #c6c6c6; /* Body */
+  --md-typeset-color: var(--carbon-gray-light); /* Body */
 
   /* Typeset `a` color shades */
-  --md-typeset-a-color: #78a9ff; /* Link */
+  --md-typeset-a-color: var(--carbon-blue-light); /* Link */
 
   /* Typeset `del` and `ins` color shades */
   --md-typeset-del-color: hsla(6, 90%, 60%, 0.15);

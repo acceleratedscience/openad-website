@@ -1,0 +1,77 @@
+/* Uncomment to see skeleton */
+/* .md-sidebar__scrollwrap {
+  border: solid lightgreen;
+}
+.md-content__inner {
+  border: solid 1px pink;
+}
+.md-main__inner {
+  border: solid 1px orange;
+} */
+
+/* Reset */
+.md-content__inner:before {
+  display: none;
+}
+.md-sidebar {
+  padding-top: 3rem;
+}
+.md-sidebar__scrollwrap {
+  margin: 0;
+}
+.md-sidebar--secondary .md-nav__list,
+.md-sidebar__inner > .md-nav--secondary > .md-nav__list {
+  padding-left: 0;
+}
+.md-sidebar--secondary .md-nav__title,
+.md-sidebar--secondary .md-nav__link {
+  padding-left: 0;
+}
+.md-sidebar--secondary .md-nav--secondary .md-nav__item {
+  padding: 0.25rem 0;
+}
+.md-sidebar--secondary .md-nav__link,
+[dir="ltr"]
+  .md-sidebar--secondary
+  .md-nav--secondary
+  .md-nav__item
+  > .md-nav__link {
+  margin: 0;
+}
+
+/* Content including side nav & TOC */
+.md-main__inner {
+  margin-top: 0;
+}
+
+/* Page content only */
+.md-content__inner {
+  padding-top: 0;
+  margin: 3rem;
+  margin-top: 2.5rem;
+}
+
+/* Table of contents */
+.md-nav__link {
+  margin: 0;
+}
+
+/**
+ * Responsive
+ */
+
+/* RESPONSOVE < MEDIUM */
+@media screen and (max-width: 76.2344em) {
+}
+
+/* RESPONSOVE < SMALL */
+@media screen and (max-width: 60em) {
+  .md-content__inner {
+    margin: 2rem;
+  }
+  [dir="ltr"] .md-typeset .headerlink,
+  .md-typeset .headerlink {
+    position: static;
+    margin-left: 0.25rem;
+  }
+}

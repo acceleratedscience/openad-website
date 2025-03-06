@@ -91,7 +91,8 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
   text-align: right;
 }
 .md-typeset :target > .headerlink {
-  color: var(--md-code-hl-constant-color);
+  /* color: var(--md-typeset-color); */
+  color: var(--md-typeset-a-color);
 }
 
 /* Body text */
@@ -115,12 +116,6 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 /* Separator */
 .md-typeset hr {
   margin: 4rem 0;
-}
-
-/* Side navigation */
-.md-nav {
-  font-size: var(--font-size);
-  line-height: var(--line-height);
 }
 
 /* Buttons */
@@ -199,6 +194,9 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 .highlight span.filename + pre > code {
   border-radius: 3px;
   padding: 1rem;
+}
+:hover > .md-clipboard {
+  color: white;
 }
 
 /**

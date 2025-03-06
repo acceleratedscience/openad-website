@@ -10,7 +10,8 @@ nav:
   - Documentation:
       - Installation: documentation/installation.md
       - Base Concepts: documentation/base-concepts.md
-      - Commands: documentation/commands.md
+      - Test:
+          - Commands: documentation/commands.md
       - Index: documentation/index.md
       - About: documentation/about.md
   - Tutorials:
@@ -85,7 +86,7 @@ theme:
     - navigation.instant # Navigate without reloading the page
     - navigation.instant.progress # Progress bar
     - navigation.top # Back to top link
-    - navigation.path # Breadcrumbs
+    # - navigation.path # Breadcrumbs - sponsors only
     - toc.follow # Auto-scroll the TOC sidebar
     - content.code.copy
     - content.code.annotate
@@ -102,6 +103,8 @@ extra_css:
   - _css/carbon-page-header.css
   - _css/carbon-nav.css
   - _css/carbon-side-nav.css
+  - _css/carbon-page-layout.css
+  - _css/carbon-blog-meta.css
 
 # Enable blog
 plugins:

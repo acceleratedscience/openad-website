@@ -2,6 +2,8 @@
 title: Custom Page Title
 status: new
 # subtitle: My Milkshake etc.
+hide:
+  - navigation
 ---
 
 # Header One
