@@ -1,0 +1,44 @@
+html,
+body {
+	height: 100%;
+}
+body {
+	background: var(--carbon-darker);
+}
+.md-header,
+.md-tabs {
+	background: transparent;
+}
+#miew-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	filter: saturate(0);
+	mask: radial-gradient(circle at center, black 35%, transparent 100%);
+	opacity: 0.3;
+	background: var(--carbon-darker);
+	z-index: -1;
+	/* pointer-events: none; */
+}
+
+#welcome-wrap {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: var(--font-size);
+	color: var(--carbon-light-less);
+}
+
+#welcome-wrap .content {
+	width: 35rem;
+	/* border: solid 1px red; */
+}
+#welcome-wrap .content h1,
+#welcome-wrap .content h4 {
+	margin-bottom: 1rem;
+	color: white;
+}

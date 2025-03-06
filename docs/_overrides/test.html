@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/lodash@^4.17.21/lodash.js"></script>
+    <script src="https://unpkg.com/three@0.153.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/miew@0.11.0/dist/Miew.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/miew@0.11.0/dist/Miew.min.css" />
+  </head>
+  <body>
+    <div id="miew-container" style="width:640px; height:480px"></div>
+
+    <script>
+        // (function () {
+        //     var viewer = new Miew({ load: '1CRN' });
+        //     if (viewer.init()) {
+        //     viewer.run();
+        //     }
+        // })();
+        
+            const viewer = new Miew({
+                container: document.getElementById('miew-container'),
+                load: '2g64',
+                // https://github.com/epam/miew/blob/25fea24038de937cd142049ec77b27bc1866001a/packages/lib/src/settings.js`
+                settings: {
+                    axes: false,
+                    fps: false,
+                    camDistance: 1,
+                    resolution: 'high',
+                    zooming: true,
+                    bg: { color: 0xf4f4f4 }, // Equivalent of $soft-bg.
+
+                    // Settings we don't want:
+                    // bg: { color: 0xffffff, transparent: true }, // Transparent background creates ugly edges
+                    autoRotation: 0.1,
+                },
+            })
+            if (viewer.init()) {
+                // viewer.enableHotKeys(false)
+                viewer.run()
+            }
+        
+    </script>
+  </body>
+</html>
