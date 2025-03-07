@@ -1,9 +1,14 @@
 ---
 draft: false
-date: 2024-01-31
+date:
+  created: 2024-01-31 
+  updated: 2024-02-01
 authors:
     - moenen
     - phil
+categories:
+    - GUI
+    - Molecules
 ---
 
 
@@ -55,7 +60,7 @@ python -m ipykernel install --user --name=ad-venv
 
 After selecting the ‘ad-venv’ virtual environment in the Jupyter UI, you can now access OpenAD with the use of “magic commands”.
 
-This means you can run any OpenAD command by prepending it with “%openad”.
+This means you can run any OpenAD command by prepending it with `%openad`.
 
 ```shell
 # Command in the CLI

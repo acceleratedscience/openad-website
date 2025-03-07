@@ -103,7 +103,7 @@ extra_css:
     - _css/carbon-page-header.css
     - _css/carbon-nav.css
     - _css/carbon-side-nav.css
-    - _css/carbon-page-layout.css
+    - _css/carbon-layout.css
     - _css/carbon-blog-meta.css
     - _css/carbon-admonitions.css
     - _css/main.css
@@ -112,7 +112,7 @@ extra_css:
 plugins:
     - blog:
           blog_dir: tutorials
-          # authors_profiles: false
+          post_date_format: medium
 
 # Enable page status
 extra:

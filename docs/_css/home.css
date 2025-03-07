@@ -3,7 +3,7 @@ body {
 	height: 100%;
 }
 body {
-	background: var(--carbon-darker);
+	background: var(--carbon-dark-d);
 }
 .md-header,
 .md-tabs {
@@ -18,7 +18,7 @@ body {
 	filter: saturate(0);
 	mask: radial-gradient(circle at center, black 35%, transparent 100%);
 	opacity: 0.3;
-	background: var(--carbon-darker);
+	background: var(--carbon-dark-d);
 	z-index: -1;
 	/* pointer-events: none; */
 }
@@ -30,7 +30,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-size: var(--font-size);
-	color: var(--carbon-light-less);
+	color: var(--carbon-light-d);
 }
 
 #welcome-wrap .content {

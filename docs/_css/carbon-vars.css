@@ -2,46 +2,69 @@
  * Single source of truth for all our variables.
  */
 body {
-  --font-size-xxlarge: 1.5rem; /* 24px */
-  --line-height-xxlarge: 2rem; /* 30px */
+	--font-size-xxlarge: 1.5rem; /* 24px */
+	--line-height-xxlarge: 2rem; /* 30px */
 
-  --font-size-xlarge: 1.25rem; /* 20px */
-  --line-height-xlarge: 1.75rem; /* 28px */
+	--font-size-xlarge: 1.25rem; /* 20px */
+	--line-height-xlarge: 1.75rem; /* 28px */
 
-  --font-size-large: 1rem; /* 16px */
-  --line-height-large: 1.375rem; /* 22px */
+	--font-size-large: 1rem; /* 16px */
+	--line-height-large: 1.375rem; /* 22px */
 
-  --font-size: 0.875rem; /* 14px */
-  --line-height: 1.2rem; /* 19px */
+	--font-size: 0.875rem; /* 14px */
+	--line-height: 1.2rem; /* 19px */
 
-  --font-size-small: 0.75rem; /* 12px */
-  --line-height-small: 1.0625rem; /* 17px */
+	--font-size-small: 0.75rem; /* 12px */
+	--line-height-small: 1.0625rem; /* 17px */
 
-  --font-size-xsmall: 0.625rem; /* 10px */
-  --line-height-xsmall: 0.9375rem; /* 15px */
+	--font-size-xsmall: 0.625rem; /* 10px */
+	--line-height-xsmall: 0.9375rem; /* 15px */
 
-  --carbon-light-less: #cacaca;
-  --carbon-light: #e5e5e5;
-  --carbon-lighter: #f4f4f4;
-  --carbon-gray: #a8a8a8;
-  --carbon-gray-light: #cacaca;
-  --carbon-dark-less: #525252;
-  --carbon-dark: #393939;
-  --carbon-darker: #161616;
-  --carbon-blue-light: #78a9ff;
-  --carbon-blue: #0f62fe;
-  --carbon-blue-dark: #0353e9;
+	/* Absolute carbon colors */
+	--carbon-light-l: #f4f4f4;
+	--carbon-light: #e5e5e5;
+	--carbon-light-d: #cacaca;
+	--carbon-gray-l: #cacaca;
+	--carbon-gray: #a8a8a8;
+	--carbon-gray-d: #828282;
+	--carbon-dark-l: #525252;
+	--carbon-dark: #393939;
+	--carbon-dark-d: #161616;
+	--carbon-blue-l: #78a9ff;
+	--carbon-blue: #0f62fe;
+	--carbon-blue-d: #0353e9;
 
-  /**
+	/**
    * Additional icon overrides
    * - - -
    * Most icon overrides are covered by mkdocs.yml
    * but not all icons are exposed, we we override
    * the rest in CSS.
    */
-  --md-toc-icon: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 3H2V4H11V3Z"/><path d="M11 6H2V7H11V6Z"/><path d="M11 9H2V10H11V9Z"/><path d="M11 12H2V13H11V12Z"/><path d="M14 3H13V4H14V3Z"/><path d="M14 6H13V7H14V6Z"/><path d="M14 9H13V10H14V9Z"/><path d="M14 12H13V13H14V12Z"/></svg>');
-  --carbon-icn-close: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.7L11.3 4L8 7.3L4.7 4L4 4.7L7.3 8L4 11.3L4.7 12L8 8.7L11.3 12L12 11.3L8.7 8L12 4.7Z"/></svg>');
-  --carbon-icn-caret-right: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L11 8L6 12V4Z"/></svg>');
-  --carbon-icn-left: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L7.705 12.295L3.915 8.5H14V7.5H3.915L7.705 3.705L7 3L2 8L7 13Z"/></svg>');
-  --carbon-icn-clock: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 15C6.61553 15 5.26216 14.5895 4.11101 13.8203C2.95987 13.0511 2.06266 11.9579 1.53285 10.6788C1.00303 9.3997 0.86441 7.99224 1.13451 6.63437C1.4046 5.2765 2.07129 4.02922 3.05026 3.05026C4.02922 2.07129 5.2765 1.4046 6.63437 1.13451C7.99224 0.86441 9.3997 1.00303 10.6788 1.53285C11.9579 2.06266 13.0511 2.95987 13.8203 4.11101C14.5895 5.26216 15 6.61553 15 8C15 9.85652 14.2625 11.637 12.9497 12.9497C11.637 14.2625 9.85652 15 8 15ZM8 2C6.81332 2 5.65328 2.3519 4.66658 3.01119C3.67989 3.67047 2.91085 4.60755 2.45673 5.7039C2.0026 6.80026 1.88378 8.00666 2.11529 9.17054C2.3468 10.3344 2.91825 11.4035 3.75736 12.2426C4.59648 13.0818 5.66558 13.6532 6.82946 13.8847C7.99335 14.1162 9.19975 13.9974 10.2961 13.5433C11.3925 13.0892 12.3295 12.3201 12.9888 11.3334C13.6481 10.3467 14 9.18669 14 8C14 6.4087 13.3679 4.88258 12.2426 3.75736C11.1174 2.63214 9.5913 2 8 2Z"/><path d="M10.295 11L7.5 8.205V3.5H8.5V7.79L11 10.295L10.295 11Z"/></svg>');
-  --carbon-icn-calendar: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13 2H11V1H10V2H6V1H5V2H3C2.45 2 2 2.45 2 3V13C2 13.55 2.45 14 3 14H13C13.55 14 14 13.55 14 13V3C14 2.45 13.55 2 13 2ZM13 13H3V6H13V13ZM13 5H3V3H5V4H6V3H10V4H11V3H13V5Z"/></svg>');
+	--md-toc-icon: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 3H2V4H11V3Z"/><path d="M11 6H2V7H11V6Z"/><path d="M11 9H2V10H11V9Z"/><path d="M11 12H2V13H11V12Z"/><path d="M14 3H13V4H14V3Z"/><path d="M14 6H13V7H14V6Z"/><path d="M14 9H13V10H14V9Z"/><path d="M14 12H13V13H14V12Z"/></svg>');
+	--carbon-icn-close: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.7L11.3 4L8 7.3L4.7 4L4 4.7L7.3 8L4 11.3L4.7 12L8 8.7L11.3 12L12 11.3L8.7 8L12 4.7Z"/></svg>');
+	--carbon-icn-caret-right: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L11 8L6 12V4Z"/></svg>');
+	--carbon-icn-left: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L7.705 12.295L3.915 8.5H14V7.5H3.915L7.705 3.705L7 3L2 8L7 13Z"/></svg>');
+	--carbon-icn-clock: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 15C6.61553 15 5.26216 14.5895 4.11101 13.8203C2.95987 13.0511 2.06266 11.9579 1.53285 10.6788C1.00303 9.3997 0.86441 7.99224 1.13451 6.63437C1.4046 5.2765 2.07129 4.02922 3.05026 3.05026C4.02922 2.07129 5.2765 1.4046 6.63437 1.13451C7.99224 0.86441 9.3997 1.00303 10.6788 1.53285C11.9579 2.06266 13.0511 2.95987 13.8203 4.11101C14.5895 5.26216 15 6.61553 15 8C15 9.85652 14.2625 11.637 12.9497 12.9497C11.637 14.2625 9.85652 15 8 15ZM8 2C6.81332 2 5.65328 2.3519 4.66658 3.01119C3.67989 3.67047 2.91085 4.60755 2.45673 5.7039C2.0026 6.80026 1.88378 8.00666 2.11529 9.17054C2.3468 10.3344 2.91825 11.4035 3.75736 12.2426C4.59648 13.0818 5.66558 13.6532 6.82946 13.8847C7.99335 14.1162 9.19975 13.9974 10.2961 13.5433C11.3925 13.0892 12.3295 12.3201 12.9888 11.3334C13.6481 10.3467 14 9.18669 14 8C14 6.4087 13.3679 4.88258 12.2426 3.75736C11.1174 2.63214 9.5913 2 8 2Z"/><path d="M10.295 11L7.5 8.205V3.5H8.5V7.79L11 10.295L10.295 11Z"/></svg>');
+	--carbon-icn-calendar: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13 2H11V1H10V2H6V1H5V2H3C2.45 2 2 2.45 2 3V13C2 13.55 2.45 14 3 14H13C13.55 14 14 13.55 14 13V3C14 2.45 13.55 2 13 2ZM13 13H3V6H13V13ZM13 5H3V3H5V4H6V3H10V4H11V3H13V5Z"/></svg>');
+}
+
+/* Relative carbon colors */
+[data-md-color-scheme="carbon"] {
+	--carbon-bg: #fff;
+	--carbon-text: var(--carbon-dark);
+	--carbon-text-soft: var(--carbon-dark-l);
+	--carbon-link: var(--carbon-blue);
+	--carbon-link-hover: var(--carbon-blue-d);
+	--carbon-soft: var(--carbon-light-l); /* Inline code */
+	--carbon-soft-medium: var(--carbon-light); /* borders */
+}
+[data-md-color-scheme="carbon-dark"] {
+	--carbon-bg: var(--carbon-dark);
+	--carbon-text: var(--carbon-gray-l);
+	--carbon-text-soft: var(--carbon-gray);
+	--carbon-link: var(--carbon-blue-l);
+	--carbon-link-hover: #a6c8ff;
+	--carbon-soft: var(--carbon-dark-l); /* Inline code */
+	--carbon-soft-medium: var(--carbon-gray-d); /* borders */
+}
