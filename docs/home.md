@@ -6,9 +6,9 @@ hide:
   - toc
 ---
 
-# OpenAD
+# OpenAD { class=short }
 
-**Open-source framework for molecular and materials discovery**
+### Open-source framework for molecular and materials discovery
 
 Open Accelerated Discovery (aka OpenAD) is an open-source framework for molecular and materials discovery developed at IBM Research.
 

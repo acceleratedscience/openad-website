@@ -1,12 +1,13 @@
-{% extends "main.html" %}
+{% extends "base.html" %}
+
 {% block tabs %}
 {{ super() }}
 
-<script src="_modules/lodash.min.js"></script>
-<script src="_modules/three.min.js"></script>
-<script src="_modules/Miew.min.js"></script>
-<link rel="stylesheet" href="_modules/Miew.min.css" />
-<link rel="stylesheet" href="_css/home.css" />
+<script src="/_modules/lodash.min.js"></script>
+<script src="/_modules/three.min.js"></script>
+<script src="/_modules/Miew.min.js"></script>
+<link rel="stylesheet" href="/_modules/Miew.min.css" />
+<link rel="stylesheet" href="/_css/home.css" />
 <!-- <script>
     // Function to run when page comes into view
     function onPageVisible() {
@@ -44,8 +45,8 @@
 
 
 <div id="miew-container"></div>
-<script src="_js/molecules-data.js"></script>
-<script src="_js/spinning-molecule.js"></script>
+<script src="/_js/molecules-data.js"></script>
+<script src="/_js/spinning-molecule.js"></script>
 {# 
 <section id="welcome-wrap" class="md-typeset">
 	<div class="content" markdown>
@@ -67,9 +68,14 @@
 
 {% endblock %}
 
-{# Hide original content #}
-{# {% block content %}
-{% endblock %} #}
+
+{# Main content #}
+{% block content %}
+<div id="home-wrap" data-md-color-scheme="carbon-dark">
+{{ page.content }}
+</div>
+{%  endblock %}
+
 
 {# Hide footer #}
 {% block footer %}{% endblock %}

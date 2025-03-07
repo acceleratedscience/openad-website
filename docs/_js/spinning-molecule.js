@@ -28,6 +28,5 @@ if (protein) {
 	viewer.load("2g64")
 } else {
 	const sdf = molecules[0]
-	console.log(sdf)
 	viewer.load(sdf, { sourceType: "immediate", fileType: "sdf" })
 }
