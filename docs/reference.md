@@ -40,6 +40,19 @@ hide:
 
 ---
 
+:carbon-icn-bee:
+:carbon-icn-link:
+:carbon-icn-machine-learning:
+:carbon-icn-megaphone:
+
+---
+
+![image](/_blog-assets/gui/openad-cli-welcome.png)
+
+![image](/_blog-assets/gui/openad-cli-welcome.png){ style='width: 682px' }
+
+---
+
 !!! note
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod

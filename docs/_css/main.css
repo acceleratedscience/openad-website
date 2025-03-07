@@ -1,0 +1,6 @@
+/* Adjust browser screenshots to their shadow don't count as width */
+.browser-ss {
+	/* margin: -31px -48px -67px -48px; */
+	margin: 0 -48px -30px -48px;
+	max-width: calc(100% + 96px) !important;
+}

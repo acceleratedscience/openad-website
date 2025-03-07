@@ -1,1 +1,1 @@
-# OpenAD Tutorials
+# Tutorials

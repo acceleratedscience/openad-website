@@ -6,7 +6,7 @@ hide:
   - toc
 ---
 
-# OpenAD Tutorials
+# Hello worls
 
 Hello world
 

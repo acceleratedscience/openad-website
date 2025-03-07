@@ -1,15 +1,17 @@
 ---
-date: 2024-01-31
 draft: false
+date: 2024-01-31
+authors:
+    - moenen
 ---
 
 
-# Loading, Visualizing and Triaging Molecules
+# Visualizing and Triaging Molecules
 
 In this tutorial you’ll learn how to use OpenAD from the Terminal or a Jupyter Notebook to:
 
 - Collate molecules from a number of SDF, CSV and SMI files
-- _Calculate the ESOL property for your molecules (*)_
+- _Calculate the ESOL property for your molecules ( see note below &nbsp; :carbon-icn-megaphone: )_
 - Visually inspect and triage the results
 - Export the top candidates into a new file
 
@@ -36,7 +38,9 @@ pip install openad
 openad
 ```
 
-![image](/_blog-assets/gui/openad-cli-welcome.png)
+<!-- ![alt text](https://cdn.britannica.com/55/174255-050-526314B6/brown-Guernsey-cow.jpg) -->
+
+![image](/_blog-assets/2025-03-10-gui/openad-cli-welcome.png){ class=browser-ss style='width: 682px' }
 
 ## Using Jupyter Notebook
 
@@ -46,7 +50,7 @@ If you plan to use Jupyter notebook, you’ll first have to port our virtual env
 python -m ipykernel install --user --name=ad-venv
 ```
 
-![image](/_blog-assets/gui/jupyter-venv.png)
+![image](/_blog-assets/2025-03-10-gui/jupyter-venv.png){ class=browser-ss style='width: 736px' }
 
 After selecting the ‘ad-venv’ virtual environment in the Jupyter UI, you can now access OpenAD with the use of “magic commands”.
 
@@ -87,7 +91,7 @@ Next you can quickly list your molecules…
 list molecules
 ```
 
-![image](/_blog-assets/gui/openad-cli-list-molecules.png)
+![image](/_blog-assets/2025-03-10-gui/openad-cli-list-molecules.png){ class=browser-ss style='width: 682px' }
 
 …or inspect them in the GUI.
 
@@ -95,7 +99,7 @@ list molecules
 show molecules
 ```
 
-![image](/_blog-assets/gui/molset-viewer-frame.png)
+![image](/_blog-assets/2025-03-10-gui/molset-viewer-frame.png){ class=browser-ss style='width: 752px' }
 
 ### Loading Molecules in Batch
 
@@ -103,9 +107,9 @@ You can load many molecules at once, from different file formats.
 
 Download the sample files below and then copy them into your workspace.Update the file path if needed.
 
-- sample_molecules1.sdf
-- sample_molecules2.csv
-- sample_molecules3.smi
+- [sample_molecules1.sdf](/_blog-assets/2025-03-10-gui/sample_molecules/sample_molecules1.sdf)
+- [sample_molecules2.csv](/_blog-assets/2025-03-10-gui/sample_molecules/sample_molecules2.csv)
+- [sample_molecules3.smi](/_blog-assets/2025-03-10-gui/sample_molecules/sample_molecules3.smi)
 
 ```shell
 import from '~/Downloads/sample_molecules1.sdf' to 'sample_molecules1.sdf'
@@ -135,7 +139,7 @@ If you’re using a Jupyter Notebook, we can load some example data into your MW
 
 Download the sample file below. Please note that this is random data, not actual ESOL values.
 
-[sample_molecules_esol.csv](#)
+[sample_molecules_esol.csv](/_blog-assets/2025-03-10-gui/sample_molecules/sample_molecules_esol.csv)
 
 Now let’s turn this CSV into a dataframe. Paste the code below into a Jupyter Notebook cell and update the file path if necessary.
 
@@ -160,7 +164,7 @@ If you now inspect any individual molecules that’s present in your MWS, you’
 %openad show mol CC(C)Cc1ccccc1
 ```
 
-![image](../../_blog-assets/gui/mol-viewer-esol.png)
+![image](../../_blog-assets/2025-03-10-gui/mol-viewer-esol.png){ class=browser-ss style='width: 736px' }
 
 ### Performing Basic Triage
 
@@ -173,10 +177,10 @@ open molecules
 1. First turn on the ESOL property in the “Identifiers & Properties” box on top.
 1. Sort your molecules by their ESOL value.
 1. Select the top-five molecules by clicking on the first one and shift-clicking on the last one.
-1. Choose ‘Actions’ > ‘keep selected’ to delete all other molecules.
-1. Choose ‘Actions’ > ‘save as’ and choose the format you want to save them as.
+1. Choose **Actions** > **keep selected** to delete all other molecules.
+1. Choose **Actions** > **save as** and choose the format you want to save them as.
 
-![image](../../_blog-assets/gui/mws-sort-by-esol.png)
+![image](../../_blog-assets/2025-03-10-gui/mws-sort-by-esol.png){ class=browser-ss style='width: 736px' }
 
-For further processing within OpenAD, we recommend storing your molecules into our own ‘molset.json` format. For export to other applications, you can choose between CSV, SDF or SMI.
+For further processing within OpenAD, we recommend storing your molecules into our own `molset.json` format. For export to other applications, you can choose between CSV, SDF or SMI.
 

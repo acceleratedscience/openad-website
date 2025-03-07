@@ -6,155 +6,158 @@
 site_name: OpenAD
 repo_url: https://github.com/acceleratedscience/openad-toolkit
 nav:
-  - Home: index.md
-  - Documentation:
-      - Installation: documentation/installation.md
-      - Base Concepts: documentation/base-concepts.md
-      - Test:
-          - Commands: documentation/commands.md
-      - Index: documentation/index.md
-      - About: documentation/about.md
-  - Tutorials:
-      - tutorials/index.md
-  - About: reference.md
-  - Category:
-      - Topic A: example/topic-a.md
-      - Topic B: example/topic-b.md
-      - Sub Theme:
-          - Topic C: example/sub-category/topic-c.md
-  # - Test: test.md
+    - Home: index.md
+    - Documentation:
+          - Installation: documentation/installation.md
+          - Base Concepts: documentation/base-concepts.md
+          - Test:
+                - Commands: documentation/commands.md
+          - Index: documentation/index.md
+          - About: documentation/about.md
+    - Tutorials:
+          - tutorials/index.md
+    - About: reference.md
+    - Category:
+          - Topic A: example/topic-a.md
+          - Topic B: example/topic-b.md
+          - Sub Theme:
+                - Topic C: example/sub-category/topic-c.md
+    # - Test: test.md
 
 # Theme configuration
 # ------------------------------------------------
 # https://squidfunk.github.io/mkdocs-material/setup
 
 theme:
-  name: material
-  palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: carbon/icn-dark-mode-auto
-        name: Dark mode auto
+    name: material
+    palette:
+        # Palette toggle for automatic mode
+        - media: "(prefers-color-scheme)"
+          toggle:
+              icon: carbon/icn-dark-mode-auto
+              name: Dark mode auto
 
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: carbon
-      toggle:
-        icon: carbon/icn-dark-mode-off
-        name: Dark mode on
+        # Palette toggle for light mode
+        - media: "(prefers-color-scheme: light)"
+          scheme: carbon
+          toggle:
+              icon: carbon/icn-dark-mode-off
+              name: Dark mode on
 
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: carbon-dark
-      toggle:
-        icon: carbon/icn-dark-mode-on
-        name: Dark mode off
+        # Palette toggle for dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: carbon-dark
+          toggle:
+              icon: carbon/icn-dark-mode-on
+              name: Dark mode off
 
-  # Replace icons
-  logo: _assets/icn-logo.svg
-  favicon: _assets/icn-logo.svg
-  icon:
-    menu: carbon/icn-hamburger
-    alternate: carbon/icn-language
-    search: carbon/icn-search
-    share: carbon/icn-share
-    close: carbon/icn-close
-    top: carbon/icn-arrow-up
-    edit: carbon/icn-edit
-    view: carbon/icn-file-html
-    repo: carbon/icn-github
-    previous: carbon/icn-arrow-left
-    next: carbon/icn-arrow-right
-    # tag: carbon/icn-star - https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#tag-icons-and-identifiers
-    admonition:
-      note: carbon/icn-megaphone
-      abstract: carbon/icn-result
-      info: carbon/icn-info
-      tip: carbon/icn-fire
-      success: carbon/icn-yes
-      question: carbon/icn-question
-      warning: carbon/icn-warning
-      failure: carbon/icn-no
-      danger: carbon/icn-caution
-      bug: carbon/icn-bug
-      example: carbon/icn-person
-      quote: carbon/icn-quote
+    # Replace icons
+    logo: _assets/icn-logo.svg
+    favicon: _assets/icn-logo.svg
+    icon:
+        menu: carbon/icn-hamburger
+        alternate: carbon/icn-language
+        search: carbon/icn-search
+        share: carbon/icn-share
+        close: carbon/icn-close
+        top: carbon/icn-arrow-up
+        edit: carbon/icn-edit
+        view: carbon/icn-file-html
+        repo: carbon/icn-github
+        previous: carbon/icn-arrow-left
+        next: carbon/icn-arrow-right
+        # tag: carbon/icn-star - https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#tag-icons-and-identifiers
+        admonition:
+            note: carbon/icn-megaphone
+            abstract: carbon/icn-result
+            info: carbon/icn-info
+            tip: carbon/icn-fire
+            success: carbon/icn-yes
+            question: carbon/icn-question
+            warning: carbon/icn-warning
+            failure: carbon/icn-no
+            danger: carbon/icn-caution
+            bug: carbon/icn-bug
+            example: carbon/icn-person
+            quote: carbon/icn-quote
 
-  features:
-    - navigation.tabs # Tabs for main sections
-    - navigation.instant # Navigate without reloading the page
-    - navigation.instant.progress # Progress bar
-    - navigation.top # Back to top link
-    # - navigation.path # Breadcrumbs - sponsors only
-    - toc.follow # Auto-scroll the TOC sidebar
-    - content.code.copy
-    - content.code.annotate
-    # - content.code.select # Auto-select, only available for sponsors
-    # - content.tooltips # HTML tooltips, rather annoying since you can't disable them on headers etc.
-  # Overrides let us specify different HTML files
-  # for certain pages, used to customize the landing
-  # as well as custom icons
-  custom_dir: docs/_overrides
+    features:
+        - navigation.tabs # Tabs for main sections
+        - navigation.instant # Navigate without reloading the page
+        - navigation.instant.progress # Progress bar
+        - navigation.top # Back to top link
+        # - navigation.path # Breadcrumbs - sponsors only
+        - toc.follow # Auto-scroll the TOC sidebar
+        - content.code.copy
+        - content.code.annotate
+        # - content.code.select # Auto-select, only available for sponsors
+        # - content.tooltips # HTML tooltips, rather annoying since you can't disable them on headers etc.
+    # Overrides let us specify different HTML files
+    # for certain pages, used to customize the landing
+    # as well as custom icons
+    custom_dir: docs/_overrides
 extra_css:
-  - _css/carbon-vars.css
-  - _css/carbon-color-palette.css
-  - _css/carbon-base.css
-  - _css/carbon-page-header.css
-  - _css/carbon-nav.css
-  - _css/carbon-side-nav.css
-  - _css/carbon-page-layout.css
-  - _css/carbon-blog-meta.css
+    - _css/carbon-vars.css
+    - _css/carbon-color-palette.css
+    - _css/carbon-base.css
+    - _css/carbon-page-header.css
+    - _css/carbon-nav.css
+    - _css/carbon-side-nav.css
+    - _css/carbon-page-layout.css
+    - _css/carbon-blog-meta.css
+    - _css/carbon-admonitions.css
+    - _css/main.css
 
 # Enable blog
 plugins:
-  - blog:
-      blog_dir: tutorials
+    - blog:
+          blog_dir: tutorials
+          # authors_profiles: false
 
 # Enable page status
 extra:
-  status:
-    new: This is New
+    status:
+        new: This is New
 
 # Extensions
 # ------------------------------------------------
 
 markdown_extensions:
-  # Turns every header into a link
-  - toc:
-      permalink: §
+    # Turns every header into a link
+    - toc:
+          permalink: §
 
-  # Allow setting attributes on elements
-  # eg. [link](url){data-preview}
-  - attr_list
+    # Allow setting attributes on elements
+    # eg. [link](url){data-preview}
+    - attr_list
 
-  # Icons
-  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#configuration
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-      options:
-        custom_icons:
-          - docs/_overrides/.icons
+    # Icons
+    # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#configuration
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+          options:
+              custom_icons:
+                  - docs/_overrides/.icons
 
-  # Code formatting
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-      auto_title: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+    # Code formatting
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+          auto_title: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
 
-  # Warning / note etc.
-  - admonition
+    # Warning / note etc.
+    - admonition
 
-  # Instant preview of links
-  # Nice to have feature, but only available to sponsors
-  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=data+preview#instant-previews
-  # - material.extensions.preview:
-  #     configurations:
-  #       - targets:
-  #           include:
-  #             - changelog/index.md
+    # Instant preview of links
+    # Nice to have feature, but only available to sponsors
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=data+preview#instant-previews
+    # - material.extensions.preview:
+    #     configurations:
+    #       - targets:
+    #           include:
+    #             - changelog/index.md

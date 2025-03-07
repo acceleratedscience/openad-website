@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .wrap {
-        border: solid 1px red;
-      }
-      .wrap:has(div) {
-        background: yellow;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      AAA
-      <div style="display: none"></div>
-      <div class="hide"></div>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 100px;
+			}
+			#wrap {
+				width: 80%;
+				background: beige;
+				border: solid 2px red;
+			}
+			#wrap img {
+				/* width: 100%; */
+				height: auto;
+				margin: 0 -40px;
+				display: block;
+				max-width: calc(100% + 80px);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<img
+				src="https://cdn.britannica.com/55/174255-050-526314B6/brown-Guernsey-cow.jpg"
+			/>
+		</div>
+	</body>
 </html>
