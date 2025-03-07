@@ -47,9 +47,9 @@ hide:
 
 ---
 
-![image](/_blog-assets/gui/openad-cli-welcome.png)
+![image](/_blog-assets/2025-03-10-gui/openad-cli-welcome.png)
 
-![image](/_blog-assets/gui/openad-cli-welcome.png){ style='width: 682px' }
+![image](/_blog-assets/2025-03-10-gui/openad-cli-welcome.png){ style='width: 682px' }
 
 ---
 
