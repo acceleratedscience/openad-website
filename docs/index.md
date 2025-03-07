@@ -1,39 +1,19 @@
 ---
-title: Welcome
+title: Home
 template: home.html
 hide:
   - navigation
   - toc
 ---
 
-# Hello worls
+# OpenAD
 
-Hello world
+**Open-source framework for molecular and materials discovery**
 
-[Hover me](https://example.com "I'm a tooltip!")
-[Hover me][example]
+Open Accelerated Discovery (aka OpenAD) is an open-source framework for molecular and materials discovery developed at IBM Research.
 
-[example]: https://example.com "I'm a resuable tooltip!"
+The OpenAD client is accessible from our command line interface, via Jupyter Notebook or our API. It provides unified access to a variety of tools and AI models for literature knowledge extraction, forward and retrosynthesis prediction, generative methods and property inference. OpenAD lets you train models on your own data, to then visualize and filter your candidate molecules.
 
-## Sub title
-
-Code block python:
-
-```python
-inp = None
-default_path = os.path.expanduser("~/.ipython/profile_default/startup")****
-if not os.path.exists(default_path):
-    os.mkdir(default_path)
-```
-
-Code block JS:
-
-```javascript
-const hello = 'world'
-```
-
-Code block CLI
-
-```shell
-pip install openad
-```
+[:carbon-icn-github: Install](https://github.com/acceleratedscience/openad-toolkit){ .md-button .md-button--primary target=_blank }
+[Documentation](https://acceleratedscience.github.io/openad-docs/){ .md-button target=_blank }
+[Tutorials](/blog/category/tutorials/){ .md-button .md-button--tertiary }

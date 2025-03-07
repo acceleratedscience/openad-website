@@ -109,7 +109,7 @@
 	--md-default-fg-color--light: var(--carbon-gray-l); /* TOC header */
 	--md-default-fg-color--lighter: var(--carbon-blue-l); /* Achor icons */
 	--md-default-fg-color--lightest: var(--carbon-gray); /* Copy icon */
-	--md-default-bg-color: var(--carbon-dark); /* Page background */
+	--md-default-bg-color: var(--carbon-bg); /* Page background */
 	--md-default-bg-color--light: rgba(255, 255, 255, 0.1);
 	--md-default-bg-color--lighter: #5e5e5e; /* Secondary button :hover */
 	--md-default-bg-color--lightest: #6f6f6f; /* Secondary button */

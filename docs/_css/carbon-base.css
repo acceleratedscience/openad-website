@@ -71,6 +71,9 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	margin-top: 6rem;
 	margin-bottom: 0;
 }
+.md-typeset h2.short {
+	margin-top: 3rem;
+}
 .md-typeset h3 {
 	font-size: 1.25rem; /* 20px */
 	font-weight: 400;

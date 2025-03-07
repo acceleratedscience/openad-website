@@ -46,7 +46,7 @@
 <div id="miew-container"></div>
 <script src="_js/molecules-data.js"></script>
 <script src="_js/spinning-molecule.js"></script>
-{# 
+
 <section id="welcome-wrap" class="md-typeset">
 	<div class="content" markdown>
 		<h1>OpenAD</h1>
@@ -63,13 +63,10 @@
 		</a>
 		<a class="md-button" href="/documentation/installation">Documentation</a>
 	</div>
-</section> #}
+</section>
 
 {% endblock %}
-
-{# Hide original content #}
-{# {% block content %}
-{% endblock %} #}
-
-{# Hide footer #}
-{% block footer %}{% endblock %}
+{% block content %}
+{% endblock %}
+{% block footer %}
+{% endblock %}

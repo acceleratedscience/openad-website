@@ -1,0 +1,43 @@
+# Note: we hide the avatar and description, but
+# these fields are required by the blog plugin.
+authors:
+    moenen:
+        name: Moenen Erbuer
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    phil:
+        name: Phil Downey
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    dean:
+        name: Dean Elzinga
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    derek:
+        name: Derek Ahneman
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    sri:
+        name: Srikanth Koneru
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    brian:
+        name: Brian Duenas
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    choi:
+        name: Daniel Choi
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    narcicco:
+        name: Narciso Albarracin
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    ryan:
+        name: Ryan DeCoster
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537
+    ray:
+        name: Ray Lopez
+        description: x
+        avatar: https://avatars.githubusercontent.com/u/122490537

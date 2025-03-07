@@ -6,23 +6,19 @@
 site_name: OpenAD
 repo_url: https://github.com/acceleratedscience/openad-toolkit
 nav:
+    # - Style Reference: style-reference.md
     - Home: index.md
-    - Documentation:
-          - Installation: documentation/installation.md
-          - Base Concepts: documentation/base-concepts.md
-          - Test:
-                - Commands: documentation/commands.md
-          - Index: documentation/index.md
-          - About: documentation/about.md
+    - Documentation: https://acceleratedscience.github.io/openad-docs/
     - Tutorials:
-          - tutorials/index.md
-    - About: reference.md
-    - Category:
-          - Topic A: example/topic-a.md
-          - Topic B: example/topic-b.md
-          - Sub Theme:
-                - Topic C: example/sub-category/topic-c.md
-    # - Test: test.md
+          - blog/category/tutorials/
+    - Blog:
+          - blog/index.md
+    - About: about.md
+    # - Category:
+    #       - Topic A: example/topic-a.md
+    #       - Topic B: example/topic-b.md
+    #       - Sub Theme:
+    #             - Topic C: example/sub-category/topic-c.md
 
 # Theme configuration
 # ------------------------------------------------
@@ -83,8 +79,8 @@ theme:
 
     features:
         - navigation.tabs # Tabs for main sections
-        - navigation.instant # Navigate without reloading the page
-        - navigation.instant.progress # Progress bar
+        # - navigation.instant # Navigate without reloading the page
+        # - navigation.instant.progress # Progress bar
         - navigation.top # Back to top link
         # - navigation.path # Breadcrumbs - sponsors only
         - toc.follow # Auto-scroll the TOC sidebar
@@ -111,7 +107,7 @@ extra_css:
 # Enable blog
 plugins:
     - blog:
-          blog_dir: tutorials
+          blog_dir: blog
           post_date_format: medium
 
 # Enable page status
