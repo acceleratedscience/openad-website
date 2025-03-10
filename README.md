@@ -20,10 +20,10 @@ links:
 ---
 ```
 
-- Any updates pushed to the `main` branch will immediately be deployed.
-- Any files that are edited or added directly on GitHub, will also trigger a fresh deployment.
-- Blog posts with `draft: true` in the header won't be included in the build, but can be previewed locally.
-- Deployment takes about 2-3 minutes, progress can be followed under the [Actions](/actions) tab.
+-   Any updates pushed to the `main` branch will immediately be deployed.
+-   Any files that are edited or added directly on GitHub, will also trigger a fresh deployment.
+-   Blog posts with `draft: true` in the header won't be included in the build, but can be previewed locally.
+-   Deployment takes about 2-3 minutes, progress can be followed under the [Actions](/actions) tab.
 
 <br>
 
@@ -32,7 +32,6 @@ links:
 ### Stack
 
 This is a heavily skinned version of the [Material theme](https://squidfunk.github.io/mkdocs-material/) for [MkDocs](https://www.mkdocs.org), which runs on Python. We use the Material [blog plugin](https://squidfunk.github.io/mkdocs-material/plugins/blog/) for the blog functionality.
-
 
 ### Run locally
 
@@ -46,6 +45,9 @@ pip install -r requirements.txt
 
 # Launch development server
 mkdocs serve
+
+# Launch at custom port
+mkdocs serve -a localhost:9999
 ```
 
 ### Build locally
