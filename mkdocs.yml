@@ -100,6 +100,7 @@ extra_css:
     - _css/carbon-nav.css
     - _css/carbon-side-nav.css
     - _css/carbon-layout.css
+    - _css/carbon-blog.css
     - _css/carbon-blog-meta.css
     - _css/carbon-admonitions.css
     - _css/main.css
@@ -111,6 +112,12 @@ plugins:
     - blog:
           blog_dir: blog
           post_date_format: medium
+          post_excerpt: required
+    
+    # Created nice cars for social media
+    # Can't get iage processing to work, abandoned for now
+    # https://squidfunk.github.io/mkdocs-material/plugins/requirements/image-processing/
+    # - social
 
 # See file for details
 # hooks:

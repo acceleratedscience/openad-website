@@ -34,6 +34,12 @@ body {
 	--carbon-blue: #0f62fe;
 	--carbon-blue-d: #0353e9;
 
+	--carbon-success: #198038;
+	--carbon-warning: #f1c21b;
+	--carbon-caution: #ff832b;
+	--carbon-error: #da1e28;
+	--carbon-success-soft: #87b454;
+
 	/**
 	 * Additional icon overrides
 	 * - - -
@@ -53,7 +59,7 @@ body {
 [data-md-color-scheme="carbon"] {
 	--carbon-bg: #fff;
 	--carbon-text: var(--carbon-dark);
-	--carbon-text-soft: var(--carbon-dark-l);
+	--carbon-text-soft: var(--carbon-gray);
 	--carbon-link: var(--carbon-blue);
 	--carbon-link-hover: var(--carbon-blue-d);
 	--carbon-soft: var(--carbon-light-l); /* Inline code */

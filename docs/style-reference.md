@@ -3,7 +3,7 @@ title: Custom Page Title
 status: new
 # subtitle: My Milkshake etc.
 hide:
-  - navigation
+    - navigation
 ---
 
 # Header One
@@ -32,11 +32,11 @@ hide:
 [:carbon-icn-bee: Secondary Button](#){ .md-button }
 [:carbon-icn-bee: Tertiary Button](#){ .md-button .md-button--tertiary }
 
-[Unique link](https://example.com 'With a unique tooltip')
+[Unique link](https://example.com "With a unique tooltip")
 
 [Repeated link] / [Repeated link] / [Repeated link]
 
-[Repeated link]: https://example.com 'With a repeated tooltip'
+[Repeated link]: https://example.com "With a repeated tooltip"
 
 ---
 
@@ -47,9 +47,9 @@ hide:
 
 ---
 
-![image](/_blog-assets/2025-03-10-gui/openad-cli-welcome.png)
+![image](_assets/hero.webp)
 
-![image](/_blog-assets/2025-03-10-gui/openad-cli-welcome.png){ style='width: 682px' }
+![image](_assets/hero.webp){ style='width: 500px' }
 
 ---
 
@@ -203,7 +203,7 @@ if not os.path.exists(default_path):
 Code block JS:
 
 ```javascript
-const hello = 'world'
+const hello = "world"
 ```
 
 Code block CLI

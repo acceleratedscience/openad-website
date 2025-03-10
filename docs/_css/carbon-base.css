@@ -104,6 +104,13 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	line-height: var(--line-height-large);
 }
 
+/* Lareg text */
+.md-typeset .large {
+	font-size: var(--font-size-xlarge);
+	line-height: var(--line-height-xlarge);
+}
+
+/* Small text */
 .md-typeset small {
 	font-size: var(--font-size);
 	line-height: var(--line-height);
@@ -114,6 +121,11 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 .md-typeset .xsmall {
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-small);
+}
+
+/* Soft text */
+.soft {
+	color: var(--carbon-text-soft);
 }
 
 /* Separator */

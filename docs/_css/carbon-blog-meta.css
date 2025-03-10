@@ -1,24 +1,5 @@
-/* Meta info on overview page */
-.md-post--excerpt .md-post__header {
-	gap: 0;
-	border-bottom: solid 1px var(--carbon-soft);
-	margin-bottom: 1rem;
-}
-.md-post--excerpt .md-post__header .md-author {
-	display: none;
-}
-.md-post--excerpt .md-post__header .md-meta__item:not(:last-child):after {
-	content: " - ";
-}
-.md-post--excerpt .md-post__header .md-meta {
-	font-size: var(--font-size);
-}
-
-/* ----- */
-
 /* Layout */
 .carbon-blog-meta {
-	/* border: solid 1px red; */
 	font-size: var(--font-size);
 	line-height: var(--line-height);
 	margin-bottom: 0;

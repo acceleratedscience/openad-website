@@ -1,0 +1,67 @@
+/* Excerpt inside blog post */
+h1 + .excerpt {
+	font-size: var(--font-size-xlarge);
+	line-height: var(--line-height-xlarge);
+	font-weight: 300;
+	margin: -2rem 0 2rem 0;
+	padding-bottom: 2rem;
+	border-bottom: solid 1px var(--carbon-soft);
+}
+
+/**
+ * Excerpt card
+ */
+
+/* Meta data */
+.md-post--excerpt .md-post__header {
+	gap: 0;
+	border-bottom: solid 1px var(--carbon-soft);
+	margin-bottom: 1rem;
+	margin-top: -0.8rem;
+}
+.md-post--excerpt .md-post__header .md-author {
+	display: none;
+}
+.md-post--excerpt .md-post__header .md-meta__item:after {
+	display: none;
+}
+.md-post--excerpt .md-post__header .md-meta__item:not(:first-child):before {
+	content: "-";
+	margin: 0 0.2rem 0 0.4rem;
+	color: var(--carbon-text-soft);
+}
+.md-post--excerpt .md-post__header .tutorial-flag + .md-meta__item:before {
+	display: none;
+}
+.md-post--excerpt .md-post__header .md-meta {
+	font-size: var(--font-size);
+}
+
+/* Card layout */
+.md-post--excerpt {
+	border: solid 1px var(--carbon-soft-medium);
+	padding: 2rem;
+	background: rgba(0, 0, 0, 0.01);
+}
+.md-post--excerpt h2 {
+	margin-bottom: 1rem;
+}
+.md-post--excerpt a.md-button {
+	margin-top: 1rem;
+}
+
+/* Tutorial card */
+.md-post--excerpt.tutorial {
+	border-left: solid 3px var(--carbon-warning);
+}
+.md-post--excerpt .tutorial-flag {
+	padding: 0.25rem 0.5rem;
+	margin: -0.25rem 0.75rem -0.25rem 0;
+	color: white;
+	background: var(--carbon-warning);
+}
+
+/* Non-tutorial card */
+.md-post--excerpt:not(.tutorial) a:not(.md-button) {
+	color: var(--carbon-text);
+}
