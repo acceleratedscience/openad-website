@@ -25,6 +25,16 @@
 .md-header__button.md-logo img {
 	width: 1.5rem;
 	height: 1.5rem;
+	display: none;
+}
+
+/* TEMPORARY - DISABLE LOGO */
+.md-header__button.md-logo {
+	width: 0;
+	padding-right: 0;
+}
+.md-header__button.md-logo img {
+	display: none;
 }
 
 /* Hide logo header in sidebar */
