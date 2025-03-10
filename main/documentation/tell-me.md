@@ -1,13 +1,7 @@
 # OpenAD Tell Me
 
----
-
 -   **Supported LLMs** [Ollama]
 -   **Ollama** requires an 8GB GPU.
-
----
-
-<br>
 
 ## Ollama Setup
 
@@ -15,12 +9,16 @@
 
 2.  Download the appropriate models.
 
-        ollama pull granite3.1-dense:8b-instruct-q4_1
-        ollama pull all-minilm:l6-v2
+    ```shell
+    ollama pull granite3.1-dense:8b-instruct-q4_1
+    ollama pull all-minilm:l6-v2
+    ```
 
 3.  Start the server if not already started.
 
-        ollama serve
+    ```shell
+    ollama serve
+    ```
 
 That's it for local usage. If you want to run Ollama remotely, continue below.
 
@@ -28,9 +26,11 @@ That's it for local usage. If you want to run Ollama remotely, continue below.
 
 1.  Check out our configuration file to launch ollama on SkyPilot: [ollama_setup.yaml](https://github.com/acceleratedscience/open-ad-toolkit/blob/main/openad/ollama_setup.yaml)
 
-        sky serve up ollama_setup.yaml
+    ```shell
+    sky serve up ollama_setup.yaml
+    ```
 
-2.  Set up local environment variables
+1.  Set up local environment variables
 
     -   For windows `setx OLLAMA_HOST=<sky-server-ip>:11434`
     -   For Linux and macOS `export OLLAMA_HOST=<sky-server-ip>:11434`
@@ -40,7 +40,9 @@ That's it for local usage. If you want to run Ollama remotely, continue below.
 
 > **Note:** If prompted for an API key and none was setup, just leave the input empty.
 
-    set llm ollama
-    tell me <enter prompt>
+```shell
+set llm ollama
+tell me <enter prompt>
+```
 
 [Ollama]: https://ollama.com

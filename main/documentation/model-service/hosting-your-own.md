@@ -1,5 +1,3 @@
-<sub>&larr; [OpenAD](../../#openad) &nbsp;/&nbsp; [Models Service](../models-service.md) / Hosting your Own Models</sub>
-
 # Hosting your Own Models Models
 
 Easily deploy any of our open-source models using AWS & Skypilot.

@@ -1,5 +1,3 @@
-<sub>&larr; [OpenAD](../../#openad) &nbsp;/&nbsp; [Models Service](../models-service.md) / Connecting to IBM-hosted Models</sub>
-
 # Connecting to IBM-hosted Models
 
 This service is for registered IBM partners only. Make sure you know who your group admin is.  

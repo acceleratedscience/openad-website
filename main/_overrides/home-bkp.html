@@ -1,17 +1,10 @@
-{#-
-	This file is a custom template used for the homepage.
--#}
+{% extends "main.html" %} {% block tabs %} {{ super() }}
 
-{% extends "base.html" %}
-
-{% block tabs %}
-{{ super() }}
-
-<script src="modules/lodash.min.js"></script>
-<script src="modules/three.min.js"></script>
-<script src="modules/Miew.min.js"></script>
-<link rel="stylesheet" href="modules/Miew.min.css" />
-<link rel="stylesheet" href="css/home.css" />
+<script src="_modules/lodash.min.js"></script>
+<script src="_modules/three.min.js"></script>
+<script src="_modules/Miew.min.js"></script>
+<link rel="stylesheet" href="_modules/Miew.min.css" />
+<link rel="stylesheet" href="_css/home.css" />
 <!-- <script>
     // Function to run when page comes into view
     function onPageVisible() {
@@ -48,9 +41,9 @@
 </script> -->
 
 <div id="miew-container"></div>
-<script src="js/molecules-data.js"></script>
-<script src="js/spinning-molecule.js"></script>
-{#
+<script src="_js/molecules-data.js"></script>
+<script src="_js/spinning-molecule.js"></script>
+
 <section id="welcome-wrap" class="md-typeset">
 	<div class="content" markdown>
 		<h1>OpenAD</h1>
@@ -93,6 +86,6 @@
 		>
 	</div>
 </section>
-#} {% endblock %} {# Main content #} {% block content %}
-<div id="home-wrap" data-md-color-scheme="carbon-dark">{{ page.content }}</div>
-{% endblock %} {# Hide footer #} {% block footer %}{% endblock %}
+
+{% endblock %} {% block content %} {% endblock %} {% block footer %} {% endblock
+%}

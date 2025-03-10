@@ -49,7 +49,10 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	font-weight: 400;
 }
 
-/* Header styles */
+/**
+ * Header styles
+ */
+
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -58,7 +61,7 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 .md-typeset h6 {
 	color: var(--md-default-fg-color);
 	position: relative;
-	margin-bottom: 0;
+	margin-bottom: 1rem;
 }
 .md-typeset h1 {
 	font-size: 2.5rem; /* 40px */
@@ -69,7 +72,6 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	font-size: 1.75rem; /* 28px */
 	font-weight: 300;
 	margin-top: 6rem;
-	margin-bottom: 0;
 }
 .md-typeset h2.short {
 	margin-top: 3rem;
@@ -83,6 +85,8 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	font-size: 1.0625rem; /* 17px */
 	font-weight: 600;
 }
+
+/* Anchor links */
 [dir="ltr"] .md-typeset .headerlink,
 .md-typeset .headerlink {
 	margin: 0;
@@ -97,6 +101,14 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	/* color: var(--md-typeset-color); */
 	color: var(--md-typeset-a-color);
 }
+
+.sub-title {
+	margin-top: -2rem;
+}
+
+/**
+ * Text styles
+ */
 
 /* Body text */
 .md-typeset {
@@ -187,7 +199,53 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	margin-right: 0.25rem;
 }
 
-/* Code blocks */
+/* Padded Lists */
+.padded-list-next + * > ol li:not(:first-child),
+.padded-list-next + * > ul li:not(:first-child),
+.padded-list-next + ol li:not(:first-child),
+.padded-list-next + ul li:not(:first-child) {
+	margin-top: 2rem;
+}
+
+/* Note blocks */
+[dir="ltr"] .md-typeset blockquote {
+	border-left: 3px solid var(--carbon-blue-l);
+}
+
+/**
+ * Code
+ */
+
+/* Inline code */
+code:not(.md-code__content) {
+	display: inline-block;
+	padding: 0 0.5rem;
+	background: var(--carbon-soft);
+	border: solid 1px var(--carbon-soft-hard);
+	color: var(--carbon-text-softer);
+	font-size: inherit;
+}
+
+/* Block code */
+.md-typeset code {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+}
+.md-typeset code.md-code__content,
+.highlight span.filename + pre > code.md-code__content {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+/* Consecutive blocks */
+.language-shell.highlight + .language-shell.highlight {
+	margin-top: -0.75rem;
+}
+.language-shell.highlight + .language-shell.highlight .filename {
+	display: none;
+}
+
+/* Code language */
 .highlight {
 	border-radius: 10px;
 }
@@ -204,35 +262,50 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	line-height: 1rem;
 	height: 1rem;
 	margin-bottom: 0.25rem;
+	margin-top: -1.25rem;
 }
-.md-typeset code.md-code__content,
-.highlight span.filename + pre > code.md-code__content {
-	border-radius: 3px;
-	padding: 1rem;
+
+/* Clipboard icon */
+.md-clipboard {
+	width: 1rem;
+	height: 1rem;
+	right: 0.5rem;
+	top: 0.5rem;
+}
+.md-clipboard::after {
+	width: 1rem;
+	height: 1rem;
+	mask-image: var(--carbon-icn-clipboard);
 }
 :hover > .md-clipboard {
 	color: white;
-}
-
-/* Inline code */
-code:not(.md-code__content) {
-	display: inline-block;
-	padding: 0 0.5rem;
-	background: var(--carbon-soft);
-	border: solid 1px var(--carbon-soft-medium);
-	color: var(--carbon-text-soft);
 }
 
 /**
  * Expandable sections
  */
 
+/* Reset */
+html .md-typeset details > :last-child {
+	margin: 0;
+}
+.md-typeset details p:last-child {
+	margin-bottom: 0;
+}
+
+/* Block */
 .md-typeset details {
 	box-shadow: none;
 	border: none;
-	font-size: var(--font-size);
-	line-height: var(--line-height);
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-large);
 	color: var(--md-typeset-color);
+	margin: 0.5rem 0;
+	padding: 1.5rem;
+	padding-top: 0.5rem;
+	border: solid 1px transparent;
+	border: dashed 1px var(--carbon-soft-hard);
+	border-radius: 0;
 }
 .md-typeset details:focus-visible,
 .md-typeset details:focus-within {
@@ -254,25 +327,51 @@ html .md-typeset summary:last-child,
 }
 
 /* Icon */
-.md-typeset summary::before {
+.md-typeset summary,
+[dir="ltr"] .md-typeset summary {
+	padding-left: 0.75rem;
+}
+.md-typeset summary::before,
+[dir="ltr"] .md-typeset summary::before {
 	background: var(--md-typeset-color);
 	mask-image: var(--carbon-icn-caret-right);
 	width: 1rem;
 	height: 1rem;
-	margin: 0.1625rem;
 	box-sizing: content-box;
-	position: static;
-	margin-left: -0.5rem;
+	position: absolute;
+	left: -0.5rem;
+	top: 0.1875rem; /* --line-height-large / 2 */
 	transition: transform 0.2s ease-in-out;
 	float: left;
+	z-index: 1;
 }
 .md-typeset summary::after {
+	/* Disabled, but can be used to create
+	background behind expand icons */
+	background: var(--carbon-bg);
+	mask-image: none;
+	position: absolute;
+	left: -0.5rem;
+	top: 0.1875rem;
+	margin: 0;
+	opacity: 1;
+	border-radius: 50%;
 	display: none;
 }
 
+/* Hover state */
+.md-typeset details:hover {
+	border: solid 1px var(--carbon-soft-hard);
+	background: var(--carbon-soft-soft);
+}
+
 /* Open state */
-.md-typeset details[open] summary {
-	color: var(--md-primary-bg-color--light);
+.md-typeset details[open] {
+	border: solid 1px var(--carbon-soft-hard);
+	background: var(--carbon-soft-soft);
+}
+.md-typeset details[open] summary::after {
+	transform: rotate(90deg);
 }
 .md-typeset details[open] summary::before {
 	transform: rotate(90deg);

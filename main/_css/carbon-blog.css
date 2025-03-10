@@ -39,9 +39,9 @@ h1 + .excerpt {
 
 /* Card layout */
 .md-post--excerpt {
-	border: solid 1px var(--carbon-soft-medium);
+	border: solid 1px var(--carbon-soft-hard);
 	padding: 2rem;
-	background: rgba(0, 0, 0, 0.01);
+	background: var(--carbon-soft-soft);
 }
 .md-post--excerpt h2 {
 	margin-bottom: 1rem;

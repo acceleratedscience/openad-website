@@ -37,8 +37,8 @@ This is a heavily skinned version of the [Material theme](https://squidfunk.gith
 
 ```shell
 # Create & activate a virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv ~/ad-venv
+source ~/ad-venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -58,7 +58,7 @@ mkdocs build
 
 ### Notes
 
-The [McDocs Material documentation](https://squidfunk.github.io/mkdocs-material/) is very thorough. One useful thing to know is that we can override templates with our own version, by mirroring the [Material templates](https://github.com/squidfunk/mkdocs-material/tree/master/src/templates) inside the `main/overrides` folder, and then setting the custom template in the page metadata:
+The [McDocs Material documentation](https://squidfunk.github.io/mkdocs-material/) is very thorough. One useful thing to know is that we can override templates with our own version, by mirroring the [Material templates](https://github.com/squidfunk/mkdocs-material/tree/master/src/templates) inside the `main/_overrides` folder, and then setting the custom template in the page metadata:
 
 ```markdown
 ---

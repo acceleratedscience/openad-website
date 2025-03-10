@@ -1,2 +1,2 @@
-main/overrides/**/*
-main/modules/**/*
+main/_overrides/**/*
+main/_modules/**/*

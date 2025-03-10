@@ -10,3 +10,7 @@
 	border-radius: 0;
 	margin-left: -1rem;
 }
+.md-typeset .admonition ul,
+.md-typeset .admonition ol {
+	margin-left: 0;
+}

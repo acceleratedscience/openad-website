@@ -12,10 +12,9 @@ https://github.com/acceleratedscience/open-ad-toolkit/tree/main/docs
 
 This is the full list of available commands.
 
-> [!IMPORTANT]
-> When running commands from Jupyter, prepend them with `%openad`
+!!! info
 
-<br>
+    When running commands from Jupyter, prepend them with `%openad`
 
 ## Table of Contents
 
@@ -41,8 +40,6 @@ This is the full list of available commands.
         -   [General](#general-1)
         -   [Retrosynthesis](#retrosynthesis)
         -   [Prediction](#prediction)
-
-<br>
 
 ## Main Commands
 
