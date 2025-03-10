@@ -111,14 +111,10 @@ plugins:
     - blog:
           blog_dir: blog
           post_date_format: medium
-    
-    # # Homemade plugin to convert relative images
-    # # to absolute URLS during build
-    # - plugins.image_url:
-    #       base_url: https://raw.githubusercontent.com/acceleratedscience/openad-tutorials/refs/heads/main/docs/
 
-hooks:
-    - hooks/image_url.py
+# See file for details
+# hooks:
+#     - custom_hooks.py
 
 # Enable page status
 extra:
