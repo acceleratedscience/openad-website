@@ -1,7 +1,11 @@
 {#-
-  The only thing customized in this file is swapping the order
-  of the md-logo & md-icon icons so the tray icon is on the left.
+  This file is a carbon override. Included changes:
+  - Swapped the order of the md-logo & md-icon icons so the tray icon is on the left.
+
+  Original:
+  https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/partials/header.html
 -#}
+
 {% set class = "md-header" %}
 {% if "navigation.tabs.sticky" in features %}
   {% set class = class ~ " md-header--shadow md-header--lifted" %}

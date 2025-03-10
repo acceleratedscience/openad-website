@@ -1,3 +1,11 @@
+{#-
+  This file is a carbon override. Included changes:
+  - Added IBM Research link
+
+  Original:
+  https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/partials/copyright.html
+-#}
+
 <div class="md-copyright">
   {% if config.copyright %}
     <div class="md-copyright__highlight">
@@ -5,10 +13,9 @@
     </div>
   {% endif %}
   {% if not config.extra.generator == false %}
-    Made with
+  <a href="https://research.ibm.com/" target="_blank">IBM Research</a> - made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
     </a>
-    at <a href="https://research.ibm.com/" target="_blank">IBM Research</a>
   {% endif %}
 </div>

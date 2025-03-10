@@ -4,15 +4,27 @@
 # https://squidfunk.github.io/mkdocs-material
 
 site_name: OpenAD
+docs_dir: main
 repo_url: https://github.com/acceleratedscience/openad-toolkit
 nav:
     # - Style Reference: style-reference.md
     - Home: index.md
-    - Documentation: https://acceleratedscience.github.io/openad-docs/
+    - Documentation:
+          - Installation: _docs/installation.md
+          - Tell Me: _docs/tell-me.md
+          - Commands: _docs/commands.md
+          - Developers: _docs/developers.md
+          - Getting Started: _docs/getting-started.md
+          - Plugins: _docs/plugins.md
+          - Model Service:
+              - Model Service: _docs/model-service/model-service.md
+              - Hosting Your Own: _docs/model-service/hosting-your-own.md
+              - IBM Hosted: _docs/model-service/ibm-hosted.md
+              - Wrapping Models: _docs/model-service/wrapping.md
     - Tutorials:
-          - blog/category/tutorials/
+          - _blog/category/tutorials/
     - Blog:
-          - blog/index.md
+          - _blog/index.md
     - About: about.md
     # - Category:
     #       - Topic A: example/topic-a.md
@@ -48,8 +60,9 @@ theme:
               name: Dark mode off
 
     # Replace icons
-    logo: _assets/icn-logo.svg
-    favicon: _assets/icn-logo.svg
+    logo: assets_main/icn-logo.svg
+    # favicon: assets_main/icn-logo.svg
+    favicon: assets_main/icn-bee.svg
     icon:
         menu: carbon/icn-hamburger
         alternate: carbon/icn-language
@@ -86,31 +99,33 @@ theme:
         - toc.follow # Auto-scroll the TOC sidebar
         - content.code.copy
         - content.code.annotate
-        # - content.code.select # Auto-select, only available for sponsors
+        # - content.code.select # Auto-select - sponsors only
         # - content.tooltips # HTML tooltips, rather annoying since you can't disable them on headers etc.
+    
     # Overrides let us specify different HTML files
     # for certain pages, used to customize the landing
     # as well as custom icons
-    custom_dir: docs/_overrides
+    custom_dir: main/overrides
+
 extra_css:
-    - _css/carbon-vars.css
-    - _css/carbon-color-palette.css
-    - _css/carbon-base.css
-    - _css/carbon-page-header.css
-    - _css/carbon-nav.css
-    - _css/carbon-side-nav.css
-    - _css/carbon-layout.css
-    - _css/carbon-blog.css
-    - _css/carbon-blog-meta.css
-    - _css/carbon-admonitions.css
-    - _css/main.css
+    - css/carbon-vars.css
+    - css/carbon-color-palette.css
+    - css/carbon-base.css
+    - css/carbon-page-header.css
+    - css/carbon-nav.css
+    - css/carbon-side-nav.css
+    - css/carbon-layout.css
+    - css/carbon-blog.css
+    - css/carbon-blog-meta.css
+    - css/carbon-admonitions.css
+    - css/main.css
 
 plugins:
     - search
   
     # Enable blog
     - blog:
-          blog_dir: blog
+          blog_dir: _blog
           post_date_format: medium
           post_excerpt: required
     
@@ -126,7 +141,7 @@ plugins:
 # Enable page status
 extra:
     status:
-        new: This is New
+        new: new content
 
 # Extensions
 # ------------------------------------------------
@@ -153,7 +168,7 @@ markdown_extensions:
           emoji_generator: !!python/name:material.extensions.emoji.to_svg
           options:
               custom_icons:
-                  - docs/_overrides/.icons
+                  - main/overrides/.icons
 
     # Code formatting
     - pymdownx.highlight:

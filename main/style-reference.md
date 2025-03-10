@@ -47,9 +47,9 @@ hide:
 
 ---
 
-![image](_assets/hero.webp)
+![image](assets_main/hero.webp)
 
-![image](_assets/hero.webp){ style='width: 500px' }
+![image](assets_main/hero.webp){ style='width: 500px' }
 
 ---
 

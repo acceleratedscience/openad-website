@@ -6,7 +6,7 @@ Work in progress. Currently this is just housing the new blog, but soon the docs
 
 ## Adding Blog Posts
 
-To publish content on the blog, simply add a `markdown` file to the `docs/tutorials/posts` directory.
+To publish content on the blog, simply add a `markdown` file to the `main/tutorials/posts` directory.
 
 Make sure to add a header to your markdown file:
 
@@ -58,7 +58,7 @@ mkdocs build
 
 ### Notes
 
-The [McDocs Material documentation](https://squidfunk.github.io/mkdocs-material/) is very thorough. One useful thing to know is that we can override templates with our own version, by mirroring the [Material templates](https://github.com/squidfunk/mkdocs-material/tree/master/src/templates) inside the `docs/_overrides` folder, and then setting the custom template in the page metadata:
+The [McDocs Material documentation](https://squidfunk.github.io/mkdocs-material/) is very thorough. One useful thing to know is that we can override templates with our own version, by mirroring the [Material templates](https://github.com/squidfunk/mkdocs-material/tree/master/src/templates) inside the `main/overrides` folder, and then setting the custom template in the page metadata:
 
 ```markdown
 ---
@@ -67,6 +67,6 @@ template: home.html
 ---
 ```
 
-To keep this project as much compatible as possible with the official MkDocs Materials, we chose not to rely on custom templates and instead opted for cold hard CSS overriding. These overrides are organized by theme under `docs/_css`.
+To keep this project as much compatible as possible with the official MkDocs Materials, we chose not to rely on custom templates and instead opted for cold hard CSS overriding. These overrides are organized by theme under `main/css`.
 
 The only page that is using a custom template if the homepage.
