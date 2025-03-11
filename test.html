@@ -5,25 +5,47 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			body {
-				margin: 100px;
+			table {
+				width: 100%;
+				table-layout: fixed;
+				border-collapse: collapse; /* Optional: Removes double borders */
 			}
-			#wrap {
-				width: 80%;
-				background: beige;
-				border: solid 1px green;
-				float: left;
-			}
-			#wrap > div {
-				float: left;
-				border: solid 1px red;
+
+			th,
+			td {
+				border: 1px solid #ddd; /* Optional: Adds borders for clarity */
+				padding: 8px;
+				text-align: left;
+				width: 25%;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="wrap">
-			<div><div>Moenen Erbuer</div></div>
-			<div><div>Phil Downey</div></div>
+		<div style="width: 80%; margin: 0 auto">
+			<table>
+				<thead>
+					<tr>
+						<th>Header 1</th>
+						<th>Header 2</th>
+						<th>Header 3</th>
+						<th>Header 4</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Data 1</td>
+						<td>Data 2</td>
+						<td>Data 3</td>
+						<td>Data 4</td>
+					</tr>
+					<tr>
+						<td>More Data 1</td>
+						<td>More Data 2</td>
+						<td>More Data 3</td>
+						<td>More Data 4</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</body>
 </html>

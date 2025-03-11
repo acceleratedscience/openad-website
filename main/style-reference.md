@@ -6,6 +6,10 @@ hide:
     - navigation
 ---
 
+<div class="padded-list-next"></div>
+<div class="tight-list-next"></div>
+<div class='table-full-width-next'></div>
+
 # Header One
 
 ## Header Two
@@ -32,6 +36,10 @@ hide:
 [:carbon-icn-bee: Secondary Button](#){ .md-button }
 [:carbon-icn-bee: Tertiary Button](#){ .md-button .md-button--tertiary }
 
+[Primary Button](#){ .md-button .md-button--primary .btn-large }
+[Secondary Button](#){ .md-button .btn-large }
+[Tertiary Button](#){ .md-button .md-button--tertiary .btn-large }
+
 [Unique link](https://example.com "With a unique tooltip")
 
 [Repeated link] / [Repeated link] / [Repeated link]
@@ -44,6 +52,29 @@ hide:
 :carbon-icn-link:
 :carbon-icn-machine-learning:
 :carbon-icn-megaphone:
+:carbon-icn-yes:{ style="color: var(--carbon-success)"" }
+:carbon-icn-no:{ style="color: var(--carbon-error)"" }
+
+:carbon-icn-yes:{ .inline } I'm an inline icon
+
+<small>:carbon-icn-yes:{ .inline } I'm an inline icon in small text</small>
+
+**Flag**{ .flag }
+**Flag**{ .flag .green }
+**Flag**{ .flag .yellow }
+**Flag**{ .flag .orange }
+**Flag**{ .flag .red }
+**Flag**{ .flag .blue }
+
+# I'm an Header 1 inline flag **Flag**{ .flag } { style='margin: 0' }
+
+## I'm an Header 2 inline flag **Flag**{ .flag } { style='margin: 0' }
+
+### I'm an Header 3 inline flag **Flag**{ .flag } { style='margin: 0' }
+
+I'm a regular text **flag**{ .flag } inline
+
+<small>I'm a small text **flag**{ .flag } `inline next to code`</small>
 
 ---
 

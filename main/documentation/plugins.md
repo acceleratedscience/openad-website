@@ -2,34 +2,38 @@
 
 <!-- about_plugin -->
 
-Plugins are how molecular tools and AI models are made available to the OpenAD client. They provide drastically simplified access to a series of advanced tools, and they make it easy for your own Python applications to interface with OpenAD.
-
-Creating your own plugins is easy if you have a basic understanding of Python.
+Plugins provide drastically simplified access to a series of advanced tools, and make it easy for your own Python applications to interface with OpenAD.
 
 <!-- /about_plugin -->
 
-### Creating Your Own Plugin
+## Creating Your Own Plugin
 
-You can create your first plugin in just minutes. This creates the ability for your own projects (or your favorite tools) to access OpenAD's powerful visualisation capabilities and more.
+Creating your own plugins is easy if you have a basic understanding of Python. With only a few steps you can expose your own projects (or your favorite tools) to access OpenAD's powerful visualisation capabilities and more.
 
-We will be publishing a detailed tutorial soon on this page.
+!!! note
+    
+    We will be publishing a detailed developer tutorial soon. Come back in a few weeks.
 
 ## Available Plugins
 
 Currently there are two publicly available plugins available.
 
-1.  **Deep Search**<br>
-    Find molecules by similarity or substructure, scan patents for molecules and vice versa and search across available Deep Search collections.<br>
-    More information about this plugin can be found in the [openad-plugin-ds](https://github.com/acceleratedscience/openad-plugin-ds) repo.
+<div class="padded-list-next"></div>
+
+1.  **Deep Search**  
+    Find molecules by similarity or substructure, scan patents for molecules and vice versa and search across available Deep Search collections.
 
     ```shell
     pip install git+https://github.com/acceleratedscience/openad-plugin-ds
     ```
 
-2.  **RXN**<br>
-    RXN helps you predict chemical reactions, retrosynthesis pathways and experimental procedures.<br>
-    More information about this plugin can be found in the [openad-plugin-rxn](https://github.com/acceleratedscience/openad-plugin-rxn) repo.
+    For more information visit the [openad-plugin-ds](https://github.com/acceleratedscience/openad-plugin-ds) repo.
+
+2.  **RXN**  
+    Predict chemical reactions, retrosynthesis pathways and experimental procedures.
 
     ```shell
     pip install git+https://github.com/acceleratedscience/openad-plugin-rxn
     ```
+    
+    For more information visit the  [openad-plugin-rxn](https://github.com/acceleratedscience/openad-plugin-rxn) repo.

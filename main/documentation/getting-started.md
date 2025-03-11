@@ -12,7 +12,11 @@ Get started with Jupyter Notebook examples:
 
 ```shell
 init_magic
+```
+```shell
 init_examples
+```
+```shell
 jupyter lab ~/openad_notebooks/Table_of_Contents.ipynb
 ```
 
@@ -34,9 +38,17 @@ jupyter lab ~/openad_notebooks/Table_of_Contents.ipynb
 
 -   **Enter the command shell**
 
+    Here you'll find further instructions on how to use OpenAD.
+
     ```shell
     openad
     ```
+
+    <!-- ![OpenAD CLI Welcome](../../_assets_main/docs/openad-cli.png){ style='width:500px' } -->
+
+    <div style="background: #282828; padding: 1rem; border-radius: 3px;">
+        <img src="../../_assets_main/docs/openad-cli.png" width="500" style="max-width: 100%" />
+    </div>
 
 -   **Exit the command shell**<br>
     Hit `ctrl+c` or run:
@@ -98,9 +110,11 @@ The following commands only need to be run once after installation:
 
     <details>
     <summary><b>Alternative:</b> Manually add magic commands</summary>
-    <div markdown="block">
+    <div markdown>
 
     If you don't want to activate magic commands in all Notebooks, you can instead activate them for individual Notebooks.
+
+    <div class="tight-list-next"></div>
 
     -   Run `init_examples`
     -   Copy the file `~/openad_notebooks/openad.ipynb` to the same directory as the Notebook you wish to activate.
@@ -118,32 +132,41 @@ The following commands only need to be run once after installation:
 
 <br>
 
-###### Launching OpenAD in Jupyter
+### Launching OpenAD in Jupyter
 
 1.  **Open any Notebook**<br>
-    The following command will open up the example Notebook:
-
+    Launch Jupyter lab to create a fresh notebook, or get started with our example Notebook:
+    
+    ```shell
+    jupyter lab
+    ```
     ```shell
     jupyter lab ~/openad_notebooks/Table_of_Contents.ipynb
     ```
 
-1.  **Select the kernel**<br>
-    Make sure to select the "ad-venv" iPython kernel. You can do this under _Kernel > Change Kernel_, or in the latest versions of Jupyter by clicking the kernel name in the top right hand corner. If you don't see your iPython kernel, make sure you followed the Jupyter Setup instructions listed above.
+2.  **Select the kernel**<br>
+    Make sure to select the "ad-venv" iPython kernel you just created. You can do this under _Kernel > Change Kernel_, or by clicking the kernel name in the top right hand corner. If you don't see your iPython kernel, make sure you followed the Jupyter Setup instructions listed above.
 
-    ![Jupyter Notebook kernel](../assets/jupyter-notebook-kernel.png)
-    ![Jupyter Lab kernel](../assets/jupyter-lab-kernel.png)
-    <!-- <img src="../assets/jupyter-notebook-kernel.png"> -->
-    <!-- <img src="../assets/jupyter-lab-kernel.png"> -->
+    ![Jupyter Lab kernel](../../_assets_main/docs/jupyter-lab-kernel.png){ class=browser-ss style='width: 752px' }
 
-1.  **Magic Commands**<br>
-    Magic commands let you access any OpenAD CLI command from within Jupyter. They are invoked by the `%openad` prefix.
+3.  **Magic Commands**<br>
+    Magic commands let you access any OpenAD CLI command from within Jupyter. They are invoked by the `%openad` prefix. Try listing your files as a test:
 
-    ```shell
+    ```python
     %openad list files
     ```
 
-    If you wish to retrieve data from an OpenAD command, you can use the `%openadd` prefix instead. This will return raw, unstyled data for further processing.
+    If you wish to retrieve data from an OpenAD command, you can use the `%openadd` prefix instead. This will return raw, unstyled data for further processing. For example:
 
-    ```shell
+    ```python
     my_data = %openadd display data 'my_data_file.csv'
+
+    for item in my_data:
+        print(item.smiles)
+    ```
+
+    To see the available commands, you consult the [Commands](commands.md) page, or you can request inline help:
+
+    ```python
+    %openad ?
     ```

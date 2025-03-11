@@ -1,7 +1,11 @@
 # OpenAD Tell Me
 
--   **Supported LLMs** [Ollama]
--   **Ollama** requires an 8GB GPU.
+The "Tell Me" function lets you inquire an LLM on how to do certain things with OpenAD.
+
+!!! info
+
+    -   **Supported LLMs** [Ollama]
+    -   **Ollama** requires an 8GB GPU.
 
 ## Ollama Setup
 
@@ -11,6 +15,8 @@
 
     ```shell
     ollama pull granite3.1-dense:8b-instruct-q4_1
+    ```
+    ```shell
     ollama pull all-minilm:l6-v2
     ```
 
@@ -42,6 +48,8 @@ That's it for local usage. If you want to run Ollama remotely, continue below.
 
 ```shell
 set llm ollama
+```
+```shell
 tell me <enter prompt>
 ```
 

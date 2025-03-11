@@ -6,7 +6,21 @@
 {% import "macros.html" as macros %}
 
 
+{% block tabs %}
+{{ super() }}
 
+
+{# Spinning molecule #}
+<div id="miew-container"></div>
+<script src="_modules/lodash.min.js"></script>
+<script src="_modules/three.min.js"></script>
+<script src="_modules/Miew.min.js"></script>
+<link rel="stylesheet" href="_modules/Miew.min.css" />
+<link rel="stylesheet" href="_css/home.css" />
+<script src="_js/molecules-data.js"></script>
+<script src="_js/spinning-molecule.js"></script>
+
+{% endblock %}
 
 {# Main content #}
 {% block content %}
@@ -80,36 +94,16 @@
 
 <!-- Students -->
 <div id="block-students" class="page-block">
-	<div class="lottie-wrap">
-		<lottie-player
-			autoplay
-			loop
-			mode="normal"
-			src="_assets_main/home/lotties/ai_chip.json"
-			speed="0.2"
-		>
-	</div>
 	<div>
 		<h2>Accessible to Students</h2>
-		<p>OpenAD is fully open source and an excellent way for chemistry students to get familiar with the world of computational chemistry.</p>
+		<p>OpenAD is fully open source and an excellent way for chemistry students to get familiar with the world of computational chemistry</p>
 		<p>We're working hard to make things accesible for scientists who do not have a background in computer science.</p>
-		<a href="blog/category/tutorials" class="md-button md-button--primary">Start learning</a>
+		<a href="/contact" class="md-button md-button--primary">Request a meeting</a>
 	</div>
 </div>
 
 <!-- Enterprise -->
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div id="block-enterprise" class="page-block">
-	<div class="lottie-wrap">
-		<lottie-player
-			autoplay
-			loop
-			mode="normal"
-			src="_assets_main/home/lotties/network_vis.json"
-			speed="0.05"
-		>
-	</div>
-	</lottie-player>
 	<div>
 		<h2>Enterprise Solutions</h2>
 		<p>IBM provides custom deployments on your company's premises with hands-on support.</p>
@@ -117,25 +111,14 @@
 	</div>
 </div>
 
-{# Spinning molecule #}
-<script src="_modules/lodash.min.js"></script>
-<script src="_modules/three.min.js"></script>
-<script src="_modules/Miew.min.js"></script>
-<link rel="stylesheet" href="_modules/Miew.min.css" />
-<link rel="stylesheet" href="_css/home.css" />
-<div id="miew-container"></div>
-<script src="_js/molecules-data.js"></script>
-<script src="_js/spinning-molecule.js"></script>
-
-{# Background images #}
-<div id="bg-features" class="bg-image"></div>
+{# <div id="bg-features" class="bg-image"></div>
 <div id="bg-students" class="bg-image"></div>
-<div id="bg-enterprise" class="bg-image"></div>
+<div id="bg-enterprise" class="bg-image"></div> #}
 
 </div>
 
 {# Scroll behavior #}
-<script src="_js/scroll-behavior.js"></script>
+{# <script src="_js/scroll-behavior.js"></script> #}
 
 {% endblock %}
 

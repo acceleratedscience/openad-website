@@ -3,19 +3,14 @@
 OpenAD is fully open source and we encourage contributions.  
 If you have any questions, please [get in touch](../about.md).
 
-<details markdown>
-<summary>Install using pip</summary>
-<div markdown>
-Nulla porttitor dui sit amet erat consectetur, fringilla sagittis justo consectetur. Nullam quis ligula imperdiet, cursus ex ac, auctor dui. Mauris ac massa ac augue fermentum ornare. Curabitur massa lorem, ultrices eu egestas id, egestas in nunc. Phasellus eu pretium urna. Integer non massa non erat elementum aliquam semper in massa. Mauris ac sem in quam faucibus convallis. Vestibulum hendrerit porttitor dapibus. Phasellus in ex lorem. Morbi auctor lorem vitae enim aliquet pellentesque. Pellentesque egestas et lorem quis feugiat. Morbi accumsan turpis sit amet quam venenatis posuere. Nam id enim sit amet neque imperdiet commodo. Donec ut massa quis ante bibendum pretium vel sed diam.
-</div>
-</details>
-
 ## Developing Plugins
 
 Building your own OpenAD plugin lets you to integrate your own tools into the OpenAD workflow.  
 Stay tuned here for documentation on how to do this.
 
-**C O M I N G &nbsp; S O O N**
+!!! note
+    
+    We will be publishing a detailed developer tutorial soon. Come back in a few weeks.
 
 ## Installation for Development
 

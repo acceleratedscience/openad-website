@@ -7,21 +7,21 @@ site_name: OpenAD
 docs_dir: main
 repo_url: https://github.com/acceleratedscience/openad-toolkit
 nav:
-    - Style Reference: style-reference.md
+    # - Style Reference: style-reference.md
     - Home: index.md
     - Documentation:
-        - Installation: documentation/installation.md
-        - Getting Started: documentation/getting-started.md
-        - Model Service:
-            - About: documentation/model-service/about.md
-            - Hosting Your Own: documentation/model-service/hosting-your-own.md
-            - IBM Hosted: documentation/model-service/ibm-hosted.md
-            - Wrapping Models: documentation/model-service/wrapping.md
-        - Commands: documentation/commands.md
-        - Plugins: documentation/plugins.md
-        - Tell Me: documentation/tell-me.md
-        - Developers: documentation/developers.md
-        - Troubleshooting: documentation/troubleshooting.md
+          - Installation: documentation/installation.md
+          - Getting Started: documentation/getting-started.md
+          - Model Service:
+                - About: documentation/model-service/about.md
+                - Setup: documentation/model-service/setup.md
+                - Wrapping Models: documentation/model-service/wrapping.md
+                - IBM Hosted: documentation/model-service/ibm-hosted.md
+          - Commands: documentation/commands.md
+          - Plugins: documentation/plugins.md
+          - Tell Me: documentation/tell-me.md
+          - Developers: documentation/developers.md
+          - Troubleshooting: documentation/troubleshooting.md
     - Tutorials:
           - blog/category/tutorials/
     - Blog:
@@ -102,7 +102,7 @@ theme:
         - content.code.annotate
         # - content.code.select # Auto-select - sponsors only
         # - content.tooltips # HTML tooltips, rather annoying since you can't disable them on headers etc.
-    
+
     # Overrides let us specify different HTML files
     # for certain pages, used to customize the landing
     # as well as custom icons
@@ -119,17 +119,18 @@ extra_css:
     - _css/carbon-blog.css
     - _css/carbon-blog-meta.css
     - _css/carbon-admonitions.css
+    - _css/carbon-commands.css
     - _css/main.css
 
 plugins:
     - search
-  
+
     # Enable blog
     - blog:
           blog_dir: blog
           post_date_format: medium
           post_excerpt: required
-    
+
     # Created nice cars for social media
     # Can't get iage processing to work, abandoned for now
     # https://squidfunk.github.io/mkdocs-material/plugins/requirements/image-processing/

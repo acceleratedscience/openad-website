@@ -30,3 +30,26 @@ if (protein) {
 	const sdf = molecules[0]
 	viewer.load(sdf, { sourceType: "immediate", fileType: "sdf" })
 }
+
+/**
+ * Increase rotation speed as you scroll down
+ */
+
+const autoRotMin = 0.05
+const autoRotMax = 0.5
+const autoRotRange = autoRotMax - autoRotMin
+
+function onScroll() {
+	const scroll = window.scrollY
+	console.log(scroll)
+	const scrollDist = 1000
+	const pct = scroll / scrollDist
+	if (scroll < 1000) {
+		viewer.settings.set("autoRotation", autoRotMin + autoRotRange * pct)
+	} else {
+		viewer.settings.set("autoRotation", 1)
+	}
+}
+
+let onScrollDebounced = _.throttle(onScroll, 100)
+window.addEventListener("scroll", onScrollDebounced)

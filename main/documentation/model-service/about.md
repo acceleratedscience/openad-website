@@ -1,25 +1,23 @@
 # OpenAD Model Service
 
-The OpenAD model service lets you run machine learning models without the technical overhead.
+Run machine learning models without the technical overhead.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✅ &nbsp;&nbsp;Run inference in the cloud instead of locally.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✅ &nbsp;&nbsp;Deploy ML models as services with minimal setup.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✅ &nbsp;&nbsp;Seamless integration with OpenAD Toolkit CLI and notebooks.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✅ &nbsp;&nbsp;Focus on using models, not managing infrastructure.
+&nbsp;&nbsp;  :carbon-icn-yes-full:{ .inline style="color: var(--carbon-success)" } Deploy ML models as services with minimal setup.  
+&nbsp;&nbsp;  :carbon-icn-yes-full:{ .inline style="color: var(--carbon-success)" } Focus on using models, not managing infrastructure.  
+&nbsp;&nbsp;  :carbon-icn-yes-full:{ .inline style="color: var(--carbon-success)" } Run inference in the cloud instead of locally.  
+&nbsp;&nbsp;  :carbon-icn-yes-full:{ .inline style="color: var(--carbon-success)" } Seamless integration with OpenAD Toolkit CLI and notebooks.  
 
-<br>
+## [Setting up a Model](setup.md) **Easy**{ .flag .green }
+Learn how to set up one of our open-source models:
 
-**[Connecting to IBM-hosted Models](models-service/ibm-hosted.md)**  
-If your company has a partnership with IBM, you can connect directly to the IBM-hosted models.  
-_These are models that are plug-and-play ready._  
-&ensp; &#8594; IBM Partners
+- On your local machine
+- Containerized using Docker or Podman
+- Deployed to AWS using SkyPilot
 
-**[Hosting your Own Models](models-service/hosting-your-own.md)**  
-Learn how to self-host any of our open-source models.  
-_These are models that have been 'wrapped' by us to work with OpenAD._  
-&ensp; &#8594; Most users
+## [Wrapping New Models](wrapping.md) **Advanced**{ .flag .yellow }
+Learn how wrap any model for use with OpenAD.
 
-**[Wrapping New Models](models-service/wrapping-new.md)**  
-Learn how wrap any model for use with OpenAD.  
-_Make any model work with OpenAD_  
-&ensp; &#8594; Advanced
+
+## [Connecting to IBM-hosted Models](ibm-hosted.md) **IBM Partners**{ .flag .blue }
+Connect directly to the IBM-hosted plug-and-play models.  
+Only available to IBM partners.

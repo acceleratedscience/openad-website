@@ -1,3 +1,4 @@
+/* Container */
 html,
 body {
 	height: 100%;
@@ -6,10 +7,116 @@ body {
 	background: var(--carbon-dark-d);
 	color: var(--carbon-light-d);
 }
+
+/* Reset */
 .md-header,
 .md-tabs {
 	background: transparent;
 }
+h1:hover a.headerlink,
+h2:hover a.headerlink {
+	display: none;
+}
+
+/* Entire page content */
+#home-wrap {
+	/* margin-bottom: 6rem; */
+}
+
+/* Full-page blocks */
+.page-block {
+	/* border: solid 1px brown; */
+	height: 100vh;
+	padding: 6rem 0;
+	position: relative;
+}
+.page-block:not(.top) {
+	align-content: end;
+}
+.page-block p {
+	max-width: 30rem;
+}
+
+/* Lottie player */
+.page-block > .lottie-wrap {
+	/* border: solid 1px green; */
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	align-content: center;
+	pointer-events: none;
+}
+.page-block lottie-player {
+	/* border: solid 1px red; */
+	width: 50%;
+	height: 50%;
+	margin: 0 auto 20% auto;
+	z-index: 1;
+	opacity: 0.5;
+}
+
+/**
+ * Hero content
+ */
+#hero {
+	min-height: calc(100vh - 8.5rem);
+	/* border: solid 1px red; */
+}
+#hero > p {
+	font-size: var(--font-size);
+	margin: 0;
+}
+.md-typeset #hero h1 {
+	font-size: 4.5rem;
+	line-height: 5rem;
+	margin: 0;
+}
+.md-typeset #hero h2 {
+	margin: 0;
+}
+#hero .intro {
+	max-width: 30rem;
+	margin: 1rem 0 2rem 0;
+	font-size: var(--font-size-xlarge);
+	line-height: var(--line-height-xlarge);
+	font-weight: 300;
+}
+
+/**
+ * Features
+ */
+#block-features .features-wrap {
+	/* border: solid 1px white; */
+	display: flex;
+	flex-wrap: wrap;
+	/* margin-bottom: 6rem; */
+}
+#block-features .features-wrap .feature {
+	/* border: dashed 1px white; */
+	flex: 0 0 33.333%;
+	padding: 1rem;
+	display: flex;
+	gap: 1rem;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+}
+#block-features .features-wrap .feature svg {
+	--size: 3.5rem;
+	width: var(--size);
+	height: var(--size);
+	flex: 0 0 var(--size);
+}
+#block-features .features-wrap .feature h3 {
+	margin: 0;
+}
+
+/**
+ * Backgrounds
+ */
+
+/* Spinning molecule */
 #miew-container {
 	position: fixed;
 	top: 0;
@@ -23,25 +130,47 @@ body {
 	z-index: -1;
 }
 
-#home-wrap {
-	max-width: 35rem;
+/* Background image */
+.bg-image {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background: var(--carbon-dark-d);
+	opacity: 0;
 }
-
-/* #welcome-wrap {
+.bg-image::after {
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: var(--font-size);
-	color: var(--carbon-light-d);
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	opacity: 0.5;
 }
 
-#welcome-wrap .content {
-	width: 35rem;
+/* Features */
+#bg-features.bg-image {
+	background: transparent;
+	/* z-index: -2; */
 }
-#welcome-wrap .content h1,
-#welcome-wrap .content h4 {
-	margin-bottom: 1rem;
-	color: white;
-} */
+#bg-features.bg-image::after {
+	background: var(--carbon-dark);
+	opacity: 0.5;
+	/* background-image: url(../_assets_main/home/enterprise-1.jpg); */
+}
+
+/* Students */
+#bg-students.bg-image::after {
+	background: #000;
+	/* background: url(../_assets_main/home/students-1.jpg) bottom center no-repeat; */
+}
+
+/* Enterprise */
+#bg-enterprise.bg-image::after {
+	background: var(--carbon-blue-d);
+	/* background-image: url(../_assets_main/home/enterprise-1.jpg); */
+}
