@@ -10,7 +10,9 @@ categories:
     - Tutorials
 ---
 
-# Visualizing and Triaging Molecules
+# Property Generation & Visualizing Molecules
+
+<!-- # Visualizing and Triaging Molecules -->
 
 <div class='excerpt'>Learn how to use OpenAD in a terminal or Jupyter Notebook to load, organize, visualize and triage your molecule sets.</div>
 
