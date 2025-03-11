@@ -21,5 +21,3 @@ OpenAD is a low-code accelerator to your research. Designed to integrate into yo
 [Documentation](documentation/installation.md){ .md-button .btn-large }
 [Tutorials](blog/category/tutorials/){ .md-button .md-button--tertiary .btn-large }
 </div>
-
-

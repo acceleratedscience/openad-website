@@ -27,11 +27,6 @@ nav:
     - Blog:
           - blog/index.md
     - About: about.md
-    - Category:
-          - Topic A: example/topic-a.md
-          - Topic B: example/topic-b.md
-          - Sub Theme:
-                - Topic C: example/sub-category/topic-c.md
 
 # Theme configuration
 # ------------------------------------------------
