@@ -14,7 +14,7 @@ IBM Research
 <!-- # Open Source<br>Molecular & Materials<br>Discovery -->
 
 <div class="intro">
-OpenAD is a low-code accelerator to your research. Designed to integrate into your existing workflows via Jupyter Notebook, CLI or API, it provides unified access to a variety of tools and AI models as well as convenient visualisation cepabilities.
+OpenAD is a low-code accelerator to your research. Designed to integrate into your existing workflows via Jupyter Notebook, CLI or API, it provides unified access to a variety of tools and AI models as well as convenient visualisation capabilities.
 </div>
 
 [:carbon-icn-github: Install for free](https://github.com/acceleratedscience/openad-toolkit){ .md-button .md-button--primary target=\_blank .btn-large }
