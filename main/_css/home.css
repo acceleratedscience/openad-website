@@ -52,7 +52,7 @@ h2:hover a.headerlink {
 	/* border: solid 1px red; */
 	width: 50%;
 	height: 50%;
-	margin: 0 auto 20% auto;
+	margin: 0 auto 10% auto;
 	z-index: 1;
 	opacity: 0.5;
 }
