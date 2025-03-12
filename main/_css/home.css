@@ -1,13 +1,3 @@
-/* Container */
-html,
-body {
-	height: 100%;
-}
-body {
-	background: var(--carbon-dark-d);
-	color: var(--carbon-light-d);
-}
-
 /* Reset */
 .md-header,
 .md-tabs {
@@ -16,6 +6,20 @@ body {
 h1:hover a.headerlink,
 h2:hover a.headerlink {
 	display: none;
+}
+
+/**
+ * Layout
+ */
+
+/* Container */
+html,
+body {
+	height: 100%;
+}
+body {
+	background: var(--carbon-dark-d);
+	color: var(--carbon-light-d);
 }
 
 /* Entire page content */
@@ -33,7 +37,26 @@ h2:hover a.headerlink {
 .page-block:not(.top) {
 	align-content: end;
 }
-.page-block p {
+
+/* Vertical full-page block sections */
+.page-block .vertical-sections {
+	/* border: solid 1px blue; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+/* Text width  */
+p {
+	max-width: 40rem;
+}
+.text-wide {
+	/* border: solid 1px red; */
+	max-width: 50rem;
+}
+.text-narrow {
+	/* border: solid 1px green; */
 	max-width: 30rem;
 }
 
@@ -65,7 +88,7 @@ h2:hover a.headerlink {
 	min-height: calc(100vh - 8.5rem);
 	align-content: center;
 }
-#hero > p {
+#hero > p:not(.intro) {
 	font-size: var(--font-size);
 	margin: 0;
 }
@@ -77,12 +100,20 @@ h2:hover a.headerlink {
 .md-typeset #hero h2 {
 	margin: 0;
 }
-#hero .intro {
-	max-width: 30rem;
+#hero p.intro {
 	margin: 1rem 0 2rem 0;
-	font-size: var(--font-size-xlarge);
-	line-height: var(--line-height-xlarge);
-	font-weight: 300;
+}
+
+/**
+ * About
+ */
+
+#block-about {
+	padding-top: 0;
+	align-content: baseline;
+}
+#block-about h2 {
+	margin-top: 0;
 }
 
 /**

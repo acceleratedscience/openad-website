@@ -130,6 +130,7 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 .md-typeset .large {
 	font-size: var(--font-size-xlarge);
 	line-height: var(--line-height-xlarge);
+	font-weight: 300;
 }
 
 /* Small text */
