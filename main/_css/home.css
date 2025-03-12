@@ -7,10 +7,6 @@
 	display: none;
 }
 
-.md-content {
-	overflow: hidden;
-}
-
 /**
  * Layout
  */
@@ -41,7 +37,7 @@ body {
 	align-content: end;
 }
 
-/* Vertical full-page block sections */
+/* Vertical sections for when we want to divide a full-page block - NOT USED */
 .page-block .vertical-sections {
 	/* border: solid 1px blue; */
 	display: flex;
@@ -162,16 +158,16 @@ p {
 }
 
 /* Students */
-#block-students .ripples-wrap {
+#bg-students .ripples-wrap {
+	/* border: solid 1px yellow; */
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	/* border: solid 1px yellow; */
 	align-content: center;
 }
-#block-students .ripples-wrap #ripples {
+#bg-students .ripples-wrap #ripples {
 	width: 100%;
 	margin: 0 auto 10% auto;
 }
@@ -204,6 +200,7 @@ p {
 	z-index: -1;
 	background: var(--carbon-dark-d);
 	opacity: 0;
+	overflow: hidden;
 }
 .bg-image::after {
 	width: 100%;
@@ -218,7 +215,8 @@ p {
 
 /* Features */
 #bg-features.bg-image {
-	background: transparent;
+	background: var(--carbon-dark);
+	/* background: transparent; */
 	/* z-index: -2; */
 }
 #bg-features.bg-image::after {
@@ -304,7 +302,7 @@ p {
 		height: auto;
 		margin-bottom: 50%;
 	}
-	#block-students .ripples-wrap {
+	#bg-students .ripples-wrap {
 		margin-bottom: 50%;
 	}
 }

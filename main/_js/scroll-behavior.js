@@ -21,6 +21,7 @@ const bgStudents = document.getElementById("bg-students")
 // Scroll handler
 let onScrollDebounced = _.throttle(onScroll, 100)
 window.addEventListener("scroll", onScrollDebounced)
+onScrollDebounced() // Trigger scroll on page load
 
 function onScroll() {
 	const scroll = window.scrollY

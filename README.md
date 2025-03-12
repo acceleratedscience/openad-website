@@ -6,7 +6,7 @@ Work in progress. Currently this is just housing the new blog, but soon the docs
 
 ## Adding Blog Posts
 
-To publish content on the blog, simply add a `markdown` file to the `main/tutorials/posts` directory.
+To publish a new blog post, simply add a `markdown` file to the [`main/blog/posts`](openad-tutorials/tree/main/main/blog/posts) directory. You can do this directly from GitHub without downloading the repository.
 
 Make sure to add a header to your markdown file:
 

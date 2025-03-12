@@ -12,52 +12,52 @@
 {{ page.content }}
 
 {% set features = [
-		{
-            "title": "CLI + GUI",
-            "icon": "pictograms/pict-cli-gui.svg",
-            "description": "A powerful hybrid combining the command line with a graphical user interface."
-        },
-		{
-            "title": "Jupyter Notebook",
-            "icon": "pictograms/pict-jupyter.svg",
-            "description": "Fully integrated with Jupyter Lab through magic commands."
-        },
-        {
-            "title": "Workspace",
-            "icon": "pictograms/pict-workspace.svg",
-            "description": "Store, organize & visualize your molecules in SFD, CSV, MOL, PDB or CIF format."
-        },
-        {
-            "title": "Model Service",
-            "icon": "pictograms/pict-model.svg",
-            "description": "Run machine learning models without the technical overhead."
-        },
-		{
-            "title": "Workflow Integration",
-            "icon": "pictograms/pict-integration.svg",
-            "description": "Easily integrate into your existing research workflows and data pipelines."
-        },
-        {
-            "title": "Visualization",
-            "icon": "pictograms/pict-visualization.svg",
-            "description": "Interactive 2D and 3D visualizations of molecular structures."
-        },
-        {
-            "title": "Extendable",
-            "icon": "pictograms/pict-extendable.svg",
-            "description": "Extend functionality by building your own plugins and model wrappers."
-        },
-		{
-			"title": "Cutting Edge",
-			"icon": "pictograms/pict-pharma.svg",
-			"description": "Used & trusted by Fortune 500 IBM partners across the globe."
-		},
-		{
-			"title": "Open Source",
-			"icon": "pictograms/pict-open-source.svg",
-			"description": "Built fully open source and available under the MIT license."
-		}
-    ] %}
+	{
+		"title": "CLI + GUI",
+		"icon": "pictograms/pict-cli-gui.svg",
+		"description": "A powerful hybrid combining the command line with a graphical user interface."
+	},
+	{
+		"title": "Jupyter Notebook",
+		"icon": "pictograms/pict-jupyter.svg",
+		"description": "Fully integrated with Jupyter Lab through magic commands."
+	},
+	{
+		"title": "Workspace",
+		"icon": "pictograms/pict-workspace.svg",
+		"description": "Store, organize & visualize your molecules in SFD, CSV, MOL, PDB or CIF format."
+	},
+	{
+		"title": "Model Service",
+		"icon": "pictograms/pict-model.svg",
+		"description": "Run machine learning models without the technical overhead."
+	},
+	{
+		"title": "Workflow Integration",
+		"icon": "pictograms/pict-integration.svg",
+		"description": "Easily integrate into your existing research workflows and data pipelines."
+	},
+	{
+		"title": "Visualization",
+		"icon": "pictograms/pict-visualization.svg",
+		"description": "Interactive 2D and 3D visualizations of molecular structures."
+	},
+	{
+		"title": "Extendable",
+		"icon": "pictograms/pict-extendable.svg",
+		"description": "Extend functionality by building your own plugins and model wrappers."
+	},
+	{
+		"title": "Cutting Edge",
+		"icon": "pictograms/pict-pharma.svg",
+		"description": "Used & trusted by Fortune 500 IBM partners across the globe."
+	},
+	{
+		"title": "Open Source",
+		"icon": "pictograms/pict-open-source.svg",
+		"description": "Built fully open source and available under the MIT license."
+	}
+] %}
 
 
 <div id="block-about" class="page-block">
@@ -82,44 +82,8 @@
 	</div>
 </div>
 
-{# <!-- <div id="block-features" class="page-block">
-	<div class="vertical-sections">
-		<div>
-			<h2>About</h2>
-			<p class="large">OpenAD is designed to integrate into your existing workflows via Jupyter Notebook, CLI or API, using a low-code approach to accelerate your research. It provides unified access to a variety of tools and AI models as well as convenient visualisation capabilities.</p>
-		</div>
-		<div>
-			<h2>Features</h2>
-			<div class="features-wrap">
-				{% for feature in features %}
-				<div class="feature">
-					{{ macros.inline_svg(feature.icon) | safe }}
-					<div>
-						<h3>{{ feature.title }}</h3>
-						{{ feature.description }}
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-</div> --> #}
-
 <!-- Students -->
 <div id="block-students" class="page-block">
-	<div class="ripples-wrap">
-		{% include 'ripples.html' %}
-	</div>
-	{# <div class="lottie-wrap">
-		<lottie-player
-			autoplay
-			loop
-			mode="normal"
-			src="_assets_main/home/lotties/ai_chip.json"
-			speed="0.2"
-			style="margin-bottom: 20%"
-		>
-	</div> #}
 	<div>
 		<h2>Accessible to Students</h2>
 		<div class="text-narrow">
@@ -162,7 +126,11 @@
 
 {# Background images #}
 <div id="bg-features" class="bg-image"></div>
-<div id="bg-students" class="bg-image"></div>
+<div id="bg-students" class="bg-image">
+	<div class="ripples-wrap">
+		{% include 'ripples.html' %}
+	</div>
+</div>
 <div id="bg-enterprise" class="bg-image"></div>
 
 </div>
