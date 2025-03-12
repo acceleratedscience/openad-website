@@ -1,0 +1,67 @@
+<style>
+    #ripples {
+        /* border: solid 1px orange; */
+        width: 600px;
+        height: 600px;
+        position: relative;
+    }
+    /* #ripples .center {
+        width: 0;
+        height: 0;
+        position: relative;
+        left: 50%;
+        top: 50%;
+    } */
+    #ripples > div {
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        border: solid 1px #fff;
+        /* padding: 50px; */
+        opacity: 0;
+        animation: ripple 10s 1 cubic-bezier(0.115, 0.490, 0.355, 1.000);
+    }
+
+    @keyframes ripple {
+        from {
+            padding: 25px;
+            opacity: 0.5;
+        }
+        to {
+            padding: 70%;
+            opacity: 0;
+        }
+    }
+</style>
+
+<div id="ripples"></div>
+
+<script>
+    let to
+    const ripples = document.getElementById('ripples')
+    ripples.addEventListener('click', addBubble)
+    
+    addBubble()
+
+    function addBubble() {
+        const div = document.createElement('div')
+        const r1 = 45 + Math.random() * 10
+        const r2 = 45 + Math.random() * 10
+        div.style.transform = `translate(-${r1}%, -${r2}%)`
+        ripples.appendChild(div)
+        // if (ripples.children.length > 10) {
+        //     ripples.children[0].remove()
+        // }
+        setTimeout(() => {
+            div.remove()
+        }, 11000)
+
+        const nextTimeout = 500 + Math.random() * 3000
+        clearTimeout(to)
+        to = setTimeout(addBubble, nextTimeout)
+    }
+</script>

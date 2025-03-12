@@ -62,8 +62,9 @@
 
 <div id="block-about" class="page-block">
 	<h2>About</h2>
-	<p class="large text-narrow">OpenAD is designed to integrate into your existing workflows via Jupyter Notebook, CLI or API, using a low-code approach to accelerate your research. It provides unified access to a variety of tools and AI models as well as convenient visualisation capabilities.</p>
-	<img src="_assets_main/home/openad-ui.png" style="position: relative; right: -5rem; margin-top: -8rem">
+	<p class="large">OpenAD is designed to integrate into your existing workflows via Jupyter Notebook, CLI or API, using a low-code approach to accelerate your research. It provides unified access to a variety of tools and AI models as well as convenient visualisation capabilities.</p>
+	{% include 'screens.html' %}
+	{# <img src="_assets_main/home/openad-ui.png" style="position: relative; right: -5rem; margin-top: -8rem"> #}
 </div>
 
 <div id="block-features" class="page-block">
@@ -106,7 +107,10 @@
 
 <!-- Students -->
 <div id="block-students" class="page-block">
-	<div class="lottie-wrap">
+	<div class="ripples-wrap">
+		{% include 'ripples.html' %}
+	</div>
+	{# <div class="lottie-wrap">
 		<lottie-player
 			autoplay
 			loop
@@ -115,12 +119,12 @@
 			speed="0.2"
 			style="margin-bottom: 20%"
 		>
-	</div>
+	</div> #}
 	<div>
 		<h2>Accessible to Students</h2>
 		<div class="text-narrow">
-			<p>OpenAD is fully open source and an excellent way for chemistry students to get familiar with the world of computational chemistry.</p>
-			<p>We're working hard to make things accesible for scientists who do not have a background in computer science.</p>
+			<p>OpenAD is fully open source, providing a stepping stone for students to get familiar with the world of computational chemistry.</p>
+			<p>We're working hard to make resources more accesible for scientists who do not have a background in computer science.</p>
 			<a href="blog/category/tutorials" class="md-button md-button--primary">Start learning</a>
 		</div>
 	</div>

@@ -1,0 +1,24 @@
+{#-
+	This file is a custom template used for the homepage.
+-#}
+
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{# Main content #}
+{% block content %}
+<div id="home-wrap" data-md-color-scheme="carbon-dark" style="background: #333;">
+
+
+{% include 'ripples.html' %}
+
+{# include 'screens.html' #}
+
+</div>
+{% endblock %}
+
+
+
+{# Hide footer #}
+{% block footer %}
+{% endblock %}

@@ -9,7 +9,7 @@ hide:
 <div id="hero" markdown>
 IBM Research
 
-## Open Accelerated Discovery
+**Open Accelerated Discovery**{ .fake-h2 }
 
 # Open Source<br>Molecular & Materials<br>Research Tools
 
