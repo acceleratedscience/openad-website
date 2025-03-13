@@ -38,6 +38,7 @@ body {
 	--carbon-text-soft: var(--carbon-gray);
 	--carbon-link: var(--carbon-blue-l);
 	--carbon-link-hover: #a6c8ff;
+	--carbon-soft-soft: rgba(255, 255, 255, 0.1);
 	--carbon-soft: var(--carbon-dark-l); /* Inline code */
 	--carbon-soft-hard: var(--carbon-gray-d); /* borders */
 }

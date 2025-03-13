@@ -61,8 +61,21 @@
 	.md-search__input
 	+ .md-search__icon {
 	left: 0.75rem;
-	color: black;
-	/* opacity: 1; */
+	color: var(--carbon-text);
+}
+
+/* Reset icon */
+.md-search__options,
+[dir="ltr"] .md-search__options {
+	/* background: pink; */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	align-content: center;
+}
+.md-search__options button {
+	height: 100%;
+	padding-right: 2rem;
 }
 
 /**
@@ -72,7 +85,7 @@
 /* Search meta */
 .md-search-result__meta,
 [dir="ltr"] .md-search-result__meta {
-	background: var(--carbon-gray-l);
+	background: var(--carbon-soft-soft);
 	height: 2rem;
 	line-height: 2rem;
 	padding-left: 0.75rem;
