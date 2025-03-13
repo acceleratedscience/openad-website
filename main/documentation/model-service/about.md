@@ -7,7 +7,7 @@ Run machine learning models without the technical overhead.
 &nbsp;&nbsp; :carbon-icn-yes-full:{ .inline style="color: var(--carbon-success)" } Run inference in the cloud instead of locally.  
 &nbsp;&nbsp; :carbon-icn-yes-full:{ .inline style="color: var(--carbon-success)" } Seamless integration with OpenAD Toolkit CLI and notebooks.
 
-## [Prepackaged Models](setup.md) **Easy**{ .flag .green }
+## [Prepackaged Models](prepackaged-models.md) **Easy**{ .flag .green }
 
 Learn how to set up one of our open-source models:
 
