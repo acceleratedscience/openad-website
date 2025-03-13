@@ -160,7 +160,6 @@ p {
  * Students
  */
 #block-students lottie-player {
-	margin-bottom: 20%;
 	filter: hue-rotate(-30deg) saturate(0.6);
 }
 

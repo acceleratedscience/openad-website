@@ -11,7 +11,7 @@
 }
 
 /* Color scheme */
-[data-md-color-scheme="carbon"] .md-header,
+/* [data-md-color-scheme="carbon"] .md-header,
 [data-md-color-scheme="carbon"] .md-tabs {
 	background: var(--carbon-dark-d);
 	color: var(--carbon-gray-l);
@@ -20,7 +20,7 @@
 [data-md-color-scheme="carbon-dark"] .md-tabs {
 	background: var(--carbon-dark);
 	color: var(--carbon-gray-l);
-}
+} */
 
 /* Set all icons to 1rem */
 .md-header .md-icon svg {
