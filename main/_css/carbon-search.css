@@ -1,0 +1,118 @@
+.md-header__inner {
+	/* background: purple; */
+}
+
+/* Reset */
+.md-search {
+	padding: 0;
+	height: 2rem;
+}
+.md-search__inner {
+	padding: 0;
+	font-size: 0;
+	line-height: 0;
+}
+[dir="ltr"] .md-search__output,
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+	border-radius: 0;
+}
+
+/**
+ * Search bar
+ */
+
+.md-search__input,
+[dir="ltr"] .md-search__input {
+	font-size: var(--font-size);
+	background: var(--carbon-dark-l);
+	background: rgba(255, 255, 255, 0.2);
+	padding-left: 2rem;
+}
+
+/* Expanded */
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+	height: 3rem;
+}
+[data-md-toggle="search"]:checked ~ .md-header .md-search__input {
+	font-size: var(--font-size-large);
+	height: 3rem;
+	line-height: 3rem;
+	padding-left: 2.5rem;
+}
+[data-md-toggle="search"]:checked ~ .md-header .md-search__output {
+	top: 3rem;
+}
+
+/* Search icon */
+.md-search__input + .md-search__icon,
+[dir="ltr"] .md-search__icon[for="__search"] {
+	width: 1rem;
+	height: 1rem;
+	/* background: pink; */
+	position: absolute;
+	top: 50%;
+	left: 0.5rem;
+	margin-top: -0.55rem;
+	color: white;
+	opacity: 0.6;
+}
+[data-md-toggle="search"]:checked
+	~ .md-header
+	.md-search__input
+	+ .md-search__icon {
+	left: 0.75rem;
+	color: black;
+	/* opacity: 1; */
+}
+
+/**
+ * Search results
+ */
+
+/* Search meta */
+.md-search-result__meta,
+[dir="ltr"] .md-search-result__meta {
+	background: var(--carbon-gray-l);
+	height: 2rem;
+	line-height: 2rem;
+	padding-left: 0.75rem;
+}
+
+/* Results */
+.md-search-result .md-typeset,
+.md-search-result .md-typeset code {
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-small);
+}
+.md-search-result .md-typeset code {
+	padding: 0 0.25rem;
+}
+.md-search-result .md-typeset h1 {
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-large);
+}
+.md-search-result .md-typeset h2 {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+}
+
+/* Result icon */
+.md-search-result__icon {
+	width: 1rem;
+	height: 1rem;
+}
+.md-search-result__icon:after {
+	mask-image: var(--carbon-icn-search-result);
+}
+
+.md-search-result__article {
+	padding: 1rem;
+}
+.md-search-result__more {
+	position: relative;
+	top: -1rem;
+}
+.md-search-result__more > summary > div {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+}

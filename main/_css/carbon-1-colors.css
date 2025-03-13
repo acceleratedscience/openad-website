@@ -1,6 +1,49 @@
+/* Absolute carbon colors */
+body {
+	--carbon-light-l: #f4f4f4;
+	--carbon-light: #e5e5e5;
+	--carbon-light-d: #cacaca;
+	--carbon-gray-l: #cacaca;
+	--carbon-gray: #a8a8a8;
+	--carbon-gray-d: #828282;
+	--carbon-dark-l: #525252;
+	--carbon-dark: #393939;
+	--carbon-dark-d: #161616;
+	--carbon-blue-l: #78a9ff;
+	--carbon-blue: #0f62fe;
+	--carbon-blue-d: #0353e9;
+
+	--carbon-success: #198038;
+	--carbon-warning: #f1c21b;
+	--carbon-caution: #ff832b;
+	--carbon-error: #da1e28;
+	--carbon-success-soft: #87b454;
+}
+
+/* Relative carbon colors */
+[data-md-color-scheme="carbon"] {
+	--carbon-bg: #fff;
+	--carbon-text: var(--carbon-dark);
+	--carbon-text-softer: var(--carbon-dark-l);
+	--carbon-text-soft: var(--carbon-gray);
+	--carbon-link: var(--carbon-blue);
+	--carbon-link-hover: var(--carbon-blue-d);
+	--carbon-soft-soft: rgba(0, 0, 0, 0.02);
+	--carbon-soft: var(--carbon-light-l); /* Inline code */
+	--carbon-soft-hard: var(--carbon-light); /* borders */
+}
+[data-md-color-scheme="carbon-dark"] {
+	--carbon-bg: var(--carbon-dark-d);
+	--carbon-text: var(--carbon-gray-l);
+	--carbon-text-soft: var(--carbon-gray);
+	--carbon-link: var(--carbon-blue-l);
+	--carbon-link-hover: #a6c8ff;
+	--carbon-soft: var(--carbon-dark-l); /* Inline code */
+	--carbon-soft-hard: var(--carbon-gray-d); /* borders */
+}
+
 /**
- * Carbon color palettes
- * Overriding the original color palette
+ * MkDocs overrides
  * https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
  */
 

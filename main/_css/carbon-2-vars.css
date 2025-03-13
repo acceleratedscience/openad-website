@@ -20,26 +20,6 @@ body {
 	--font-size-xsmall: 0.625rem; /* 10px */
 	--line-height-xsmall: 0.9375rem; /* 15px */
 
-	/* Absolute carbon colors */
-	--carbon-light-l: #f4f4f4;
-	--carbon-light: #e5e5e5;
-	--carbon-light-d: #cacaca;
-	--carbon-gray-l: #cacaca;
-	--carbon-gray: #a8a8a8;
-	--carbon-gray-d: #828282;
-	--carbon-dark-l: #525252;
-	--carbon-dark: #393939;
-	--carbon-dark-d: #161616;
-	--carbon-blue-l: #78a9ff;
-	--carbon-blue: #0f62fe;
-	--carbon-blue-d: #0353e9;
-
-	--carbon-success: #198038;
-	--carbon-warning: #f1c21b;
-	--carbon-caution: #ff832b;
-	--carbon-error: #da1e28;
-	--carbon-success-soft: #87b454;
-
 	/**
 	 * Additional icon overrides
 	 * - - -
@@ -54,26 +34,5 @@ body {
 	--carbon-icn-clock: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 15C6.61553 15 5.26216 14.5895 4.11101 13.8203C2.95987 13.0511 2.06266 11.9579 1.53285 10.6788C1.00303 9.3997 0.86441 7.99224 1.13451 6.63437C1.4046 5.2765 2.07129 4.02922 3.05026 3.05026C4.02922 2.07129 5.2765 1.4046 6.63437 1.13451C7.99224 0.86441 9.3997 1.00303 10.6788 1.53285C11.9579 2.06266 13.0511 2.95987 13.8203 4.11101C14.5895 5.26216 15 6.61553 15 8C15 9.85652 14.2625 11.637 12.9497 12.9497C11.637 14.2625 9.85652 15 8 15ZM8 2C6.81332 2 5.65328 2.3519 4.66658 3.01119C3.67989 3.67047 2.91085 4.60755 2.45673 5.7039C2.0026 6.80026 1.88378 8.00666 2.11529 9.17054C2.3468 10.3344 2.91825 11.4035 3.75736 12.2426C4.59648 13.0818 5.66558 13.6532 6.82946 13.8847C7.99335 14.1162 9.19975 13.9974 10.2961 13.5433C11.3925 13.0892 12.3295 12.3201 12.9888 11.3334C13.6481 10.3467 14 9.18669 14 8C14 6.4087 13.3679 4.88258 12.2426 3.75736C11.1174 2.63214 9.5913 2 8 2Z"/><path d="M10.295 11L7.5 8.205V3.5H8.5V7.79L11 10.295L10.295 11Z"/></svg>');
 	--carbon-icn-calendar: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13 2H11V1H10V2H6V1H5V2H3C2.45 2 2 2.45 2 3V13C2 13.55 2.45 14 3 14H13C13.55 14 14 13.55 14 13V3C14 2.45 13.55 2 13 2ZM13 13H3V6H13V13ZM13 5H3V3H5V4H6V3H10V4H11V3H13V5Z"/></svg>');
 	--carbon-icn-clipboard: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14 5V14H5V5H14ZM14 4H5C4.73478 4 4.48043 4.10536 4.29289 4.29289C4.10536 4.48043 4 4.73478 4 5V14C4 14.2652 4.10536 14.5196 4.29289 14.7071C4.48043 14.8946 4.73478 15 5 15H14C14.2652 15 14.5196 14.8946 14.7071 14.7071C14.8946 14.5196 15 14.2652 15 14V5C15 4.73478 14.8946 4.48043 14.7071 4.29289C14.5196 4.10536 14.2652 4 14 4Z"/><path d="M2 9H1V2C1 1.73478 1.10536 1.48043 1.29289 1.29289C1.48043 1.10536 1.73478 1 2 1H9V2H2V9Z"/></svg>');
-}
-
-/* Relative carbon colors */
-[data-md-color-scheme="carbon"] {
-	--carbon-bg: #fff;
-	--carbon-text: var(--carbon-dark);
-	--carbon-text-softer: var(--carbon-dark-l);
-	--carbon-text-soft: var(--carbon-gray);
-	--carbon-link: var(--carbon-blue);
-	--carbon-link-hover: var(--carbon-blue-d);
-	--carbon-soft-soft: rgba(0, 0, 0, 0.02);
-	--carbon-soft: var(--carbon-light-l); /* Inline code */
-	--carbon-soft-hard: var(--carbon-light); /* borders */
-}
-[data-md-color-scheme="carbon-dark"] {
-	--carbon-bg: var(--carbon-dark-d);
-	--carbon-text: var(--carbon-gray-l);
-	--carbon-text-soft: var(--carbon-gray);
-	--carbon-link: var(--carbon-blue-l);
-	--carbon-link-hover: #a6c8ff;
-	--carbon-soft: var(--carbon-dark-l); /* Inline code */
-	--carbon-soft-hard: var(--carbon-gray-d); /* borders */
+	--carbon-icn-search-result: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H8V1H0V0ZM0 2H8V3H0V2ZM5 4H0V5H5V4ZM9 12C10.6569 12 12 10.6569 12 9C12 7.34315 10.6569 6 9 6C7.34315 6 6 7.34315 6 9C6 10.6569 7.34315 12 9 12ZM12.1599 11.4529C12.6864 10.7755 13 9.92437 13 9C13 6.79086 11.2091 5 9 5C6.79086 5 5 6.79086 5 9C5 11.2091 6.79086 13 9 13C9.92434 13 10.7754 12.6865 11.4528 12.16L14.8036 15.5108L15.5107 14.8037L12.1599 11.4529Z"/></svg>');
 }

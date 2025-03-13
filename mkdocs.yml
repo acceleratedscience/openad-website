@@ -104,12 +104,13 @@ theme:
     custom_dir: main/_overrides
 
 extra_css:
-    - _css/carbon-vars.css
-    - _css/carbon-color-palette.css
-    - _css/carbon-base.css
+    - _css/carbon-1-colors.css
+    - _css/carbon-2-vars.css
+    - _css/carbon-3-base.css
     - _css/carbon-page-header.css
     - _css/carbon-nav.css
     - _css/carbon-side-nav.css
+    - _css/carbon-search.css
     - _css/carbon-layout.css
     - _css/carbon-blog.css
     - _css/carbon-blog-meta.css

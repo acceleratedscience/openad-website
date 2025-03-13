@@ -338,6 +338,10 @@ code {
 }
 
 /* Block code */
+[data-md-color-scheme="carbon-dark"] .md-typeset code {
+	background: var(--carbon-dark);
+	color: var(--carbon-gray-l);
+}
 .md-typeset code {
 	font-size: var(--font-size);
 	line-height: var(--line-height);
