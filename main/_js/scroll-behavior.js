@@ -2,11 +2,17 @@
  * Increase rotation speed as you scroll down
  */
 
+// Detect scroll distance per step
+let prevScroll = window.scrollY
+let scroll = window.scrollY
+let scrollDist = 0
+
 // Molecule rotation speed
 const autoRotMin = 0.05
-const autoRotMax = 0.5
-const autoRotRange = autoRotMax - autoRotMin
-const scrollRange = 1000 // The distance over which the rotation speed increases
+const autoRotSensitivity = 50 // The distance you need to scroll to reach max rotation speed
+const autoRotFactor = 2 // How much to speed up
+let autoRotSpeed = autoRotMin
+let autoRotTaperTmt = 0 // Timeout to taper of rotation speed
 
 // Screens
 const screens = Array.from(document.getElementsByClassName("screen"))
@@ -24,21 +30,20 @@ window.addEventListener("scroll", onScrollDebounced)
 onScrollDebounced() // Trigger scroll on page load
 
 function onScroll() {
-	const scroll = window.scrollY
+	// Detect scroll distance
+	prevScroll = scroll
+	scroll = window.scrollY
+	scrollDist = scroll - prevScroll
 
 	/**
 	 * Control molecule rotation speed
 	 */
 
-	const pct1 = scroll / scrollRange
-	if (scroll < scrollRange) {
-		viewer.settings.set("autoRotation", autoRotMin + autoRotRange * pct1)
-	} else {
-		viewer.settings.set("autoRotation", 1)
-	}
+	// Inscrease rotation based on your scroll speed, then taper off
+	setRotSpeed()
 
 	/**
-	 * Control screens
+	 * Control UI screens
 	 */
 
 	// const pct2 = (scroll - window.innerHeight) / window.innerHeight
@@ -87,5 +92,36 @@ function onScroll() {
 		bgStudents.style.opacity = 0
 	} else if (pctStudents > 1) {
 		bgStudents.style.opacity = 1
+	}
+}
+
+// Slow down rotation back to normal if no scrolliong detected
+function setRotSpeed() {
+	const prevAutoRotSpeed = autoRotSpeed
+
+	// Calculate proposed rotation speed based on scroll distance
+	const proposedAutoRotSpeed =
+		autoRotMin +
+		(Math.min(Math.abs(scrollDist), autoRotSensitivity) /
+			autoRotSensitivity) * // Normalize to 0-1
+			autoRotFactor // Multiply by factor
+
+	// Only apply the new speed if it's greated than the previous one.
+	// This is to avoid  that scrolling slowly would slow down the rotation.
+	if (proposedAutoRotSpeed > prevAutoRotSpeed) {
+		autoRotSpeed = proposedAutoRotSpeed
+		viewer.settings.set("autoRotation", autoRotSpeed)
+		_taper()
+	}
+
+	// Taper off rotation speed
+	function _taper() {
+		clearTimeout(autoRotTaperTmt)
+		autoRotTaperTmt = setTimeout(() => {
+			autoRotSpeed = Math.max(autoRotSpeed * 0.93, autoRotMin)
+			viewer.settings.set("autoRotation", autoRotSpeed)
+			// console.log(autoRotSpeed)
+			if (autoRotSpeed > autoRotMin) _taper()
+		}, 100)
 	}
 }

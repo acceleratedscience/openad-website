@@ -63,7 +63,7 @@
 <div id="block-about" class="page-block">
 	<h2>About</h2>
 	<p class="large">OpenAD is designed to integrate into your existing workflows via Jupyter Notebook, CLI or API, using a low-code approach to accelerate your research. It provides unified access to a variety of tools and AI models as well as convenient visualisation capabilities.</p>
-	{% include 'screens.html' %}
+	{% include 'partials/custom-screens.html' %}
 	{# <img src="_assets_main/home/openad-ui.png" style="position: relative; right: -5rem; margin-top: -8rem"> #}
 </div>
 
@@ -84,6 +84,9 @@
 
 <!-- Students -->
 <div id="block-students" class="page-block">
+	<div class="lottie-wrap">
+		<lottie-player autoplay loop mode="normal" speed="1" src="_assets_main/home/lotties/lottie-4.json"></lottie-player>
+	</div>
 	<div>
 		<h2>Accessible to Students</h2>
 		<div class="text-narrow">
@@ -98,19 +101,12 @@
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div id="block-enterprise" class="page-block">
 	<div class="lottie-wrap">
-		<lottie-player
-			autoplay
-			loop
-			mode="normal"
-			src="_assets_main/home/lotties/network_vis.json"
-			speed="0.05"
-		>
+		<lottie-player autoplay loop mode="normal" speed="0.05" src="_assets_main/home/lotties/network_vis.json"></lottie-player>
 	</div>
-	</lottie-player>
 	<div>
-		<h2>Enterprise Solutions</h2>
-		<p>IBM provides custom deployments on your company's premises with hands-on support.</p>
-		<a href="/contact" class="md-button md-button--primary">Request a meeting</a>
+		<h2>For Organisations</h2>
+		<p>Learn more about how IBM can provide bespoke solutions for your company.</p>
+		<a href="https://airtable.com/appfnZTaijGi51vSZ/pagFOvB3eMZZtXIhp/form" class="md-button md-button--primary">Request a meeting</a>
 	</div>
 </div>
 
@@ -127,9 +123,9 @@
 {# Background images #}
 <div id="bg-features" class="bg-image"></div>
 <div id="bg-students" class="bg-image">
-	<div class="ripples-wrap">
-		{% include 'ripples.html' %}
-	</div>
+	<!-- <div class="ripples-wrap">
+		{# include 'custom-ripples--unused.html' #}
+	</div> -->
 </div>
 <div id="bg-enterprise" class="bg-image"></div>
 

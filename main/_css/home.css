@@ -78,7 +78,6 @@ p {
 	max-height: 100%;
 	margin: 0 auto 10% auto;
 	z-index: 1;
-	opacity: 0.5;
 }
 
 /**
@@ -157,19 +156,20 @@ p {
 	margin: 0;
 }
 
-/* Students */
-#bg-students .ripples-wrap {
-	/* border: solid 1px yellow; */
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	align-content: center;
+/**
+ * Students
+ */
+#block-students lottie-player {
+	margin-bottom: 20%;
+	filter: hue-rotate(-30deg) saturate(0.6);
 }
-#bg-students .ripples-wrap #ripples {
-	width: 100%;
-	margin: 0 auto 10% auto;
+
+/**
+ * Enterprise
+ */
+#block-enterprise lottie-player {
+	align-content: center;
+	opacity: 1;
 }
 
 /**
@@ -215,8 +215,8 @@ p {
 
 /* Features */
 #bg-features.bg-image {
-	background: var(--carbon-dark);
-	/* background: transparent; */
+	/* background: var(--carbon-dark); */
+	background: transparent;
 	/* z-index: -2; */
 }
 #bg-features.bg-image::after {
@@ -270,7 +270,7 @@ p {
 }
 
 /* RESPONSOVE CUSTOM */
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 640px) {
 	/* Main title smaller */
 	.md-typeset #hero h1 {
 		font-size: 3rem;
@@ -302,13 +302,10 @@ p {
 		height: auto;
 		margin-bottom: 50%;
 	}
-	#bg-students .ripples-wrap {
-		margin-bottom: 50%;
-	}
 }
 
 /* RESPONSOVE CUSTOM */
-@media screen and (max-width: 26rem) {
+@media screen and (max-width: 420px) {
 	/* Collapse buttons */
 	.md-typeset #hero .intro + p > a {
 		flex-basis: 100%;

@@ -1,8 +1,8 @@
 ---
 title: About
 hide:
-  - navigation
-  - toc
+    - navigation
+    - toc
 ---
 
 # About OpenAD
@@ -12,10 +12,11 @@ It is being developed at [IBM Research](https://research.ibm.com) and was launch
 
 ## Feedback { class=short }
 
-- **Feature requests, feedback and questions:**<br>
-  [openad.toolkit@ibm.com](mailto:openad.toolkit@ibm.com)
-- **Bug reports:**<br>
-  [Create issue on GitHub](https://github.com/acceleratedscience/open-ad-toolkit/issues)
+-   **Feedback and questions:**
+-   [Get it touch](https://airtable.com/appfnZTaijGi51vSZ/pagFOvB3eMZZtXIhp/form)
+    <!-- [openad.toolkit@ibm.com](mailto:openad.toolkit@ibm.com) -->
+-   **Feature requests & bug reports:**<br>
+    [Create issue on GitHub](https://github.com/acceleratedscience/open-ad-toolkit/issues)
 
 ## Team { class=short }
 
