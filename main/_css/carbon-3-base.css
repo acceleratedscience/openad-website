@@ -176,7 +176,8 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	color: white;
 	background: var(--md-default-bg-color--lightest);
 }
-.md-typeset .md-button:hover {
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
 	color: white;
 	background: var(--md-default-bg-color--lighter);
 	border-color: transparent;
@@ -186,7 +187,8 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 .md-typeset .md-button--primary {
 	background: var(--md-accent-bg-color);
 }
-.md-typeset .md-button--primary:hover {
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
 	background: var(--md-accent-bg-color--light);
 	border-color: transparent;
 }
@@ -198,7 +200,8 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 	/* border: solid 1px var(--md-default-fg-color); */ /* Carbon official border, but too harsh */
 	border: solid 1px var(--md-default-bg-color--lightest);
 }
-.md-typeset .md-button--tertiary:hover {
+.md-typeset .md-button--tertiary:hover,
+.md-typeset .md-button--tertiary:focus {
 	color: var(--md-default-bg-color);
 	background: var(--md-primary-bg-color);
 	border-color: transparent;

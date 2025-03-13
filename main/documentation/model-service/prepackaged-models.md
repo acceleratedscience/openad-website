@@ -9,15 +9,17 @@
 There's different ways to running our models, depending on your needs.
 
 1. [Runninig a model locally](#)  
-_Quick setup, low overhead, slow performance_
+   _Quick setup, low overhead, slow performance_
 2. [Containerize a model](#)  
-_Deploy your model anywhere using Docker or Podman_
+   _Deploy your model anywhere using Docker or Podman_
 3. [Deploy to SkyPilot on AWS](#)  
-_Leverage cloud computing power_
+   _Leverage cloud computing power_
 
 ## Available Models
 
-<!--  -->
+!!! note
+
+    More models are available, documentation will be added in the coming days.
 
 <details markdown><summary>GT4SD - Generation inference</summary>
 <div markdown="block">
@@ -190,15 +192,13 @@ Documentation on [GitHub](https://github.com/acceleratedscience/molformer_infere
         ```
 
     -   After installation, verify if you have cloud access
-        
+
         ```shell
         sky check
         ```
 
     </div>
     </details>
-
-
 
 ### Spinning Up a Model
 

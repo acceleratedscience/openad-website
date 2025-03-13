@@ -14,7 +14,7 @@ nav:
           - Getting Started: documentation/getting-started.md
           - Model Service:
                 - About: documentation/model-service/about.md
-                - Setup: documentation/model-service/setup.md
+                - Prepackaged Models: documentation/model-service/prepackaged-models.md
                 - Wrapping Models: documentation/model-service/wrapping.md
                 - IBM Hosted: documentation/model-service/ibm-hosted.md
           - Commands: documentation/commands.md
