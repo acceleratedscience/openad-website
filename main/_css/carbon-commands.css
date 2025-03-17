@@ -2,6 +2,11 @@
  * Styles specifically for the command documentation page.
  */
 
+/* Reset */
+.md-typeset pre {
+	margin: 0;
+}
+
 /* Base */
 details[code] {
 	background: var(--carbon-text-softer);
@@ -38,7 +43,7 @@ details[code][open] {
 details[code][open] summary {
 	background: var(--carbon-text);
 	color: var(--carbon-bg);
-	margin: -0.5rem -1.5rem 0.5rem -1.5rem;
+	margin: -0.5rem -1.5rem 1.5rem -1.5rem;
 	padding: 0.5rem 1.5rem;
 	outline: solid 1px var(--carbon-text);
 }

@@ -321,6 +321,11 @@ h3 strong.flag {
  * Code
  */
 
+/* Reset */
+.md-typeset pre {
+	margin: 0;
+}
+
 /* Font */
 code {
 	font-family: "IBM Plex Mono", monospace;
@@ -357,7 +362,7 @@ code {
 
 /* Consecutive blocks */
 .language-shell.highlight + .language-shell.highlight {
-	margin-top: -0.75rem;
+	margin-top: 0.25rem;
 }
 .language-shell.highlight + .language-shell.highlight .filename {
 	display: none;
@@ -411,7 +416,7 @@ code {
 
 /* Reset */
 html .md-typeset details > :last-child {
-	margin: 0;
+	margin-bottom: 0;
 }
 .md-typeset details p:last-child {
 	margin-bottom: 0;
