@@ -23,6 +23,8 @@ const viewer = new Miew({
 if (viewer.init()) {
 	// viewer.enableHotKeys(false)
 	viewer.run()
+
+	console.log(888, viewer)
 }
 if (protein) {
 	viewer.load("2g64")

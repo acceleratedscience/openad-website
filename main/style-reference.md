@@ -6,6 +6,7 @@ hide:
     - navigation
 ---
 
+<!-- To document: -->
 <div class="padded-list-next"></div>
 <div class="tight-list-next"></div>
 <div class='table-full-width-next'></div>
@@ -78,13 +79,26 @@ I'm a regular text **flag**{ .flag } inline
 
 ---
 
-![image](_assets_main/hero.webp)
+![image](_assets_main/home/screen-cli.png)
 
-![image](_assets_main/hero.webp){ width=500 }
+![image](_assets_main/home/screen-cli.png){ width=652 }
 
-![image](_assets_main/hero.webp){ style='width: 500px' }
+![image](_assets_main/home/screen-cli.png){ width=652 style='border: solid 10px var(--carbon-blue)' }
 
 ---
+
+&uarr; Up arrow  
+&darr; Down arrow  
+&larr; Left arrow  
+&rarr; Right arrow  
+&harr; Double headed arrow  
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+___
 
 !!! note
 

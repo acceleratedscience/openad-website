@@ -1,4 +1,4 @@
-# Essentials
+# Essentials & navigation
 # ------------------------------------------------
 # https://www.mkdocs.org
 # https://squidfunk.github.io/mkdocs-material
@@ -24,9 +24,10 @@ nav:
           - Developers: documentation/developers.md
           - Troubleshooting: documentation/troubleshooting.md
     - Tutorials:
-          - blog/category/tutorials/
-    - Blog:
+          - Tutorials: blog/category/tutorials
           - blog/index.md
+    # - Blog:
+    #       - blog/index.md
     - About: about.md
 
 # Theme configuration

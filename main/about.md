@@ -7,33 +7,31 @@ hide:
 
 # About OpenAD
 
-OpenAD is an open-source framework for molecular and materials discovery.<br>
+OpenAD is an open-source toolkit for molecular and materials discovery.  
 It is being developed at [IBM Research](https://research.ibm.com) and was launched in November 2023.
 
 ## Feedback { class=short }
 
--   **Feedback and questions:**
--   [Get it touch](https://airtable.com/appfnZTaijGi51vSZ/pagFOvB3eMZZtXIhp/form)
+-   **Feedback and questions:** [Get it touch](https://airtable.com/appfnZTaijGi51vSZ/pagFOvB3eMZZtXIhp/form)
     <!-- [openad.toolkit@ibm.com](mailto:openad.toolkit@ibm.com) -->
--   **Feature requests & bug reports:**<br>
-    [Create issue on GitHub](https://github.com/acceleratedscience/open-ad-toolkit/issues)
+-   **Feature requests & bug reports:** [Create issue on GitHub](https://github.com/acceleratedscience/open-ad-toolkit/issues)
 
 ## Team { class=short }
 
-**Srikanth Koneru**<br>
+**Srikanth Koneru**  
 Product and Engineering Lead
 
-**Phil Downey**<br>
+**Phil Downey**  
 Product Manager
 
-**Dean Elzinga**<br>
+**Dean Elzinga**  
 Research Software Engineer / Data Science
 
-**Daniel Choi**<br>
+**Daniel Choi**  
 Software Engineer (MLOps)
 
-**Brian Deuenas**<br>
+**Brian Deuenas**  
 Research Software Developer
 
-**Moenen Erbuer**<br>
+**Moenen Erbuer**  
 Interface and Experience Lead

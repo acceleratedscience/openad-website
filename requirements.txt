@@ -1,10 +1,2 @@
 mkdocs==1.6.1
 mkdocs-material==9.6.7
-# mkdocs-material[imaging]
-# cairo
-# freetype
-# libffi
-# libjpeg
-# libpng
-# zlib
-# pngquant
