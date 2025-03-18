@@ -3,7 +3,6 @@
 -#}
 
 {% extends "base.html" %}
-{% import "macros.html" as macros %}
 
 {# Main content #}
 {% block content %}
@@ -72,7 +71,7 @@
 	<div class="features-wrap">
 		{% for feature in features %}
 		<div class="feature">
-			{{ macros.inline_svg(feature.icon) | safe }}
+			{% include feature.icon | safe %}
 			<div>
 				<h3>{{ feature.title }}</h3>
 				{{ feature.description }}

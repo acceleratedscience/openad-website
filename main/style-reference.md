@@ -80,6 +80,8 @@ I'm a regular text **flag**{ .flag } inline
 
 ![image](_assets_main/hero.webp)
 
+![image](_assets_main/hero.webp){ width=500 }
+
 ![image](_assets_main/hero.webp){ style='width: 500px' }
 
 ---

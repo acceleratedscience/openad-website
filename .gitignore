@@ -3,4 +3,5 @@
 __pycache__/
 site/
 .venv/
-test*
+Test.*
+test.*

@@ -1,39 +1,22 @@
-# OpenAD Blog
+# OpenAD Website
 
-Work in progress. Currently this is just housing the new blog, but soon the docs and the marketing website will join under the same roof.
+This repo holds the public OpenAD website.
 
-<br>
+[openad.accelerate.science](https://openad.accelerate.science)
 
-## Adding Blog Posts
-
-To publish a new blog post, simply add a `markdown` file to the [`main/blog/posts`](openad-tutorials/tree/main/main/blog/posts) directory. You can do this directly from GitHub without downloading the repository.
-
-Make sure to add a header to your markdown file:
-
-```markdown
----
-date: 2025-03-06
-draft: true
-links:
-    - local/related-link.md
-    - http://external-related-link.com
----
-```
-
--   Any updates pushed to the `main` branch will immediately be deployed.
--   Any files that are edited or added directly on GitHub, will also trigger a fresh deployment.
--   Blog posts with `draft: true` in the header won't be included in the build, but can be previewed locally.
--   Deployment takes about 2-3 minutes, progress can be followed under the [Actions](/actions) tab.
+- Marketing page
+- Documentation
+- Blog / Tutorials
 
 <br>
 
-## For Developers
+[![Create blog post](main/_assets_main/create-post.svg)](README-blog.md)
 
-### Stack
+<br>
 
-This is a heavily skinned version of the [Material theme](https://squidfunk.github.io/mkdocs-material/) for [MkDocs](https://www.mkdocs.org), which runs on Python. We use the Material [blog plugin](https://squidfunk.github.io/mkdocs-material/plugins/blog/) for the blog functionality.
+### Run local
 
-### Run locally
+> Note: you can publish blog posts directly from GitHub.
 
 ```shell
 # Create & activate a virtual environment
@@ -46,19 +29,42 @@ pip install -r requirements.txt
 # Launch development server
 mkdocs serve
 
-# Launch at custom port
+# Optional: launch on custom port
 mkdocs serve -a localhost:9999
 ```
 
-### Build locally
+### Build local
 
 ```shell
 mkdocs build
 ```
 
-### Notes
+### Publish
+Just push the `main` branch to GitHub, deployment is automated with GitHub actions.
 
-The [McDocs Material documentation](https://squidfunk.github.io/mkdocs-material/) is very thorough. One useful thing to know is that we can override templates with our own version, by mirroring the [Material templates](https://github.com/squidfunk/mkdocs-material/tree/master/src/templates) inside the `main/_overrides` folder, and then setting the custom template in the page metadata:
+<br>
+
+## Developer Notes
+
+### Stack
+
+This is a heavily skinned version of the [Material theme](https://squidfunk.github.io/mkdocs-material/) for [MkDocs](https://www.mkdocs.org), which is a Python-based website generator that builds a website from markdown files.
+
+We use the Material [blog plugin](https://squidfunk.github.io/mkdocs-material/plugins/blog/) for the blog functionality.
+
+### Architecture
+
+- All content lives inside markdown files in the [/main](main) directory.
+- Navigation and all other site settings are controlled from [mkdocs.yml](mkdocs.yml)
+- The homepage as well as certain components use HTML overrides, more on which below.
+
+#### HTML overrides
+
+Overrides let us customize the HTML components that are used to render the site, by mirroring the [Material templates](https://github.com/squidfunk/mkdocs-material/tree/master/src/templates) inside the `main/_overrides` folder.
+
+For components, we can simply override [the original templates]((https://github.com/squidfunk/mkdocs-material/tree/master/src/templates)) with our own version by mirroring them inside the `main/_overrides` folder.
+
+For full-page overrides (only used for the homepage), we can specify a custom template in the page metadata:
 
 ```markdown
 ---
@@ -67,6 +73,13 @@ template: home.html
 ---
 ```
 
-To keep this project as much compatible as possible with the official MkDocs Materials, we chose not to rely on custom templates and instead opted for cold hard CSS overriding. These overrides are organized by theme under `main/css`.
+In most cases we opted for cold hard CSS overrides (see [main/_css](main/_css)) to maintain compatibility with MkDocs.
 
-The only page that is using a custom template if the homepage.
+<br>
+
+### Documentation
+
+- [MkDocs documentation](https://www.mkdocs.org) - The base framework
+- [Material documentation](https://squidfunk.github.io/mkdocs-material/) - Material is a theme for MkDocs with a bunch of additional functionality built in.
+  
+## Domain Name
