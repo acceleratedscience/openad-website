@@ -2,11 +2,11 @@
 
 ## Tl;dr
 
-Copy the [example post file](yyyy-mm-dd--EXAMPLE_POST_1.md), update the header parameters and drop it inside [posts/tutorials](posts/tutorials)
+Duplicate the [example post file](main/blog/posts/tutorials/yyyy-mm-dd--EXAMPLE_POST_1.md) and update the header parameters and filename.
 
-If you will use images, copy the [example post folder](yyyy-mm-dd--EXAMPLE_POST_2) instead and store you images inside.
+If you will use images, copy the [example post folder](main/blog/posts/tutorials/yyyy-mm-dd--EXAMPLE_POST_2) instead and store you images inside.
 
-> [!NOTE] No need to clone this repo
+> [!NOTE] No need to clone this repo  
 > You can add or edit posts directly on GitHub and they will be published immediately unless `draft: true` is set.
 
 <br><br>
@@ -31,7 +31,7 @@ If you will use images, copy the [example post folder](yyyy-mm-dd--EXAMPLE_POST_
 ## Notes
 
 -   Any updates pushed to the `main` branch will immediately be deployed.
--   Deployment takes about 2-3 minutes, progress can be followed under the [Actions](/actions) tab.
+-   Deployment takes about 2-3 minutes, progress can be followed under the [Actions](../../actions) tab.
 
 
 

@@ -1,6 +1,6 @@
 # OpenAD Website
 
-This repo holds the public OpenAD website.
+This repo holds the public OpenAD website:
 
 [openad.accelerate.science](https://openad.accelerate.science)
 
