@@ -20,8 +20,8 @@ This repo holds the public OpenAD website:
 
 ```shell
 # Create & activate a virtual environment
-python3 -m venv ~/ad-venv
-source ~/ad-venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -53,17 +53,23 @@ This is a heavily skinned version of the [Material theme](https://squidfunk.gith
 
 We use the Material [blog plugin](https://squidfunk.github.io/mkdocs-material/plugins/blog/) for the blog functionality.
 
+<br>
+
 ### Architecture
 
 - All content lives inside markdown files in the [/main](main) directory.
-- Navigation and all other site settings are controlled from [mkdocs.yml](mkdocs.yml)
+- Navigation and all other site settings are controlled from [mkdocs.yml](mkdocs.yml).
 - The homepage as well as certain components use HTML overrides, more on which below.
+- The build is written to [/site](site).
+- A GitHub workflow called [ci.yml](.github/workflows/ci.yml) runs the build command and stores the build files into a branch called `gh-pages`, which is connected to our URL via GitHub Pages (see [Hosting & Domain Name](#hosting--domain-name) below).
 
-#### HTML overrides
+<br>
+
+### HTML overrides
 
 Overrides let us customize the HTML components that are used to render the site, by mirroring the [Material templates](https://github.com/squidfunk/mkdocs-material/tree/master/src/templates) inside the `main/_overrides` folder.
 
-For components, we can simply override [the original templates]((https://github.com/squidfunk/mkdocs-material/tree/master/src/templates)) with our own version by mirroring them inside the `main/_overrides` folder.
+For components, we can simply override [the original templates]((https://github.com/squidfunk/mkdocs-material/tree/master/src/templates)) with our own version by mirroring them inside the [/main/_overrides](main/_overrides) folder.
 
 For full-page overrides (only used for the homepage), we can specify a custom template in the page metadata:
 
