@@ -16,7 +16,7 @@ IBM Research
 <!-- # Open Source<br>Molecular & Materials<br>Discovery -->
 
 <p class="intro large">
-OpenAD simplifies access to scientific discovery AI models and services, APIs, and visualizations through an intuitive user toolkit. This enables data scientists and application developers to easily enhance or develop their innovative scientific discovery applications.
+OpenAD is an intuitive toolkit that simplifies access to a variety of AI models and services for scientific discovery. Together with its convenient visualisation capabilities, OpenAD empowers scientists across industries to enhance their discovery process.
 </p>
 
 [:carbon-icn-github: Install for free](https://github.com/acceleratedscience/openad-toolkit){ .md-button .md-button--primary target=\_blank .btn-large }
