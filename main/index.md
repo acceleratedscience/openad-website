@@ -11,7 +11,7 @@ IBM Research
 
 **Open Accelerated Discovery**{ .fake-h2 }
 
-# Open Source<br>Molecular & Materials<br>Research Tools
+# Open Source<br>Molecular & Materials<br>Research Toolkit
 
 <!-- # Open Source<br>Molecular & Materials<br>Discovery -->
 
