@@ -2,15 +2,14 @@
 draft: false
 date:
     created: 2025-03-07
-    updated: 2024-02-01
+    # updated: 2024-02-01
 authors:
     - moenen
-    - phil
 categories:
     - Tutorials
 ---
 
-# Property Generation & Visualizing Molecules
+# How to Generate Molecule Properties & Visualize the Results
 
 <!-- # Visualizing and Triaging Molecules -->
 
