@@ -7,7 +7,7 @@ site_name: OpenAD
 docs_dir: main
 repo_url: https://github.com/acceleratedscience/openad-toolkit
 nav:
-    - Style Reference: style-reference.md
+    # - Style Reference: style-reference.md
     - Home: index.md
     - Documentation:
           - Installation: documentation/installation.md

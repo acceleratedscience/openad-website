@@ -97,12 +97,6 @@ p {
 	line-height: 5rem;
 	margin: 0;
 }
-.md-typeset #hero strong.fake-h2 {
-	font-size: 1.75rem;
-	line-height: 2rem;
-	font-weight: 300;
-	color: var(--md-default-fg-color);
-}
 #hero p.intro {
 	margin: 1rem 0 2rem 0;
 }
