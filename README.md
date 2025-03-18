@@ -40,6 +40,7 @@ mkdocs build
 ```
 
 ### Publish
+
 Just push the `main` branch to GitHub, deployment is automated with GitHub actions.
 
 <br>
@@ -81,5 +82,11 @@ In most cases we opted for cold hard CSS overrides (see [main/_css](main/_css)) 
 
 - [MkDocs documentation](https://www.mkdocs.org) - The base framework
 - [Material documentation](https://squidfunk.github.io/mkdocs-material/) - Material is a theme for MkDocs with a bunch of additional functionality built in.
-  
-## Domain Name
+
+<br>
+
+## Hosting & Domain Name
+
+This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is regsitered with Google domains, with the [CNAME](CNAME) file connecting it.
+
+Note that setting the domain name in the GitHub pages settings is not enough, as the build process will rebuild the `gh-pages` branch every time, wiping out the custom domain.
