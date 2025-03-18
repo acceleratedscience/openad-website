@@ -18,7 +18,6 @@ nav:
                 - Wrapping Models: documentation/model-service/wrapping.md
                 - IBM Hosted: documentation/model-service/ibm-hosted.md
           - Commands: documentation/commands.md
-          - Commands Example: documentation/commands-example.md
           - Plugins: documentation/plugins.md
           - Tell Me: documentation/tell-me.md
           - Developers: documentation/developers.md
