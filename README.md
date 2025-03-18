@@ -1,4 +1,5 @@
 # OpenAD Website
+<!-- Author: moenen.erbuer@ibm.com -->
 
 This repo holds the public OpenAD website:
 
@@ -93,6 +94,6 @@ In most cases we opted for cold hard CSS overrides (see [main/_css](main/_css)) 
 
 ## Hosting & Domain Name
 
-This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is regsitered with Google domains, with the [CNAME](CNAME) file connecting it.
+This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is regsitered with Google domains, with the [CNAME](main/CNAME) file connecting it.
 
 Note that setting the domain name in the GitHub pages settings is not enough, as the build process will rebuild the `gh-pages` branch every time, wiping out the custom domain. [More info](https://github.com/mkdocs/mkdocs/issues/1257).
