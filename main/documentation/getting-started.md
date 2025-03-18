@@ -44,8 +44,6 @@ jupyter lab ~/openad_notebooks/Table_of_Contents.ipynb
     openad
     ```
 
-    <!-- ![OpenAD CLI Welcome](../../_assets_main/docs/openad-cli.png){ style='width:500px' } -->
-
     <div style="background: #282828; padding: 1rem; border-radius: 3px;">
         <img src="../../_assets_main/docs/openad-cli.png" width="500" style="max-width: 100%" />
     </div>
