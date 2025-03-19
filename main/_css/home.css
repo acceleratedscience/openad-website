@@ -214,19 +214,19 @@ p {
 #bg-features.bg-image::after {
 	background: var(--carbon-dark);
 	opacity: 0.5;
-	/* background-image: url(../_assets_main/home/enterprise-1.jpg); */
+	/* background-image: url(../_assets/home/enterprise-1.jpg); */
 }
 
 /* Students */
 #bg-students.bg-image::after {
 	background: #000;
-	/* background: url(../_assets_main/home/students-1.jpg) bottom center no-repeat; */
+	/* background: url(../_assets/home/students-1.jpg) bottom center no-repeat; */
 }
 
 /* Enterprise */
 #bg-enterprise.bg-image::after {
 	background: var(--carbon-blue-d);
-	/* background-image: url(../_assets_main/home/enterprise-1.jpg); */
+	/* background-image: url(../_assets/home/enterprise-1.jpg); */
 }
 
 /**

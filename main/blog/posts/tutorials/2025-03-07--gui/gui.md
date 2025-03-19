@@ -1,5 +1,6 @@
 ---
 draft: false
+description: How to visualize molecules in Jupyter Notebook or the terminal.
 date:
     created: 2025-03-07
     # updated: 2024-02-01
@@ -60,7 +61,7 @@ If you plan to use Jupyter notebook, you’ll first have to port our virtual env
 python -m ipykernel install --user --name=ad-venv
 ```
 
-![image](assets/jupyter-venv.png){ class=browser-ss style='width: 736px' }
+![Jupyer Notebook kernel](assets/jupyter-venv.png){ class=browser-ss style='width: 736px' }
 
 After selecting the ‘ad-venv’ virtual environment in the Jupyter UI, you can now access OpenAD with the use of “magic commands”.
 
@@ -101,7 +102,7 @@ Next you can quickly list your molecules…
 list molecules
 ```
 
-![image](assets/openad-cli-list-molecules.png){ class=browser-ss style='width: 682px' }
+![List your molecules in the terminal](assets/openad-cli-list-molecules.png){ class=browser-ss style='width: 682px' }
 
 …or inspect them in the GUI.
 
@@ -109,17 +110,17 @@ list molecules
 show molecules
 ```
 
-![image](assets/molset-viewer-frame.png){ class=browser-ss style='width: 752px' }
+![Display molecules in the browser](assets/molset-viewer-frame.png){ class=browser-ss style='width: 752px' }
 
 ### Loading Molecules in Batch
 
 You can load many molecules at once, from different file formats.
 
-Download the sample files below and then copy them into your workspace.Update the file path if needed.
+Download the sample files below and then copy them into your workspace. Update the file path if needed.
 
--   [sample_molecules1.sdf](assets/sample_molecules/sample_molecules1.sdf)
--   [sample_molecules2.csv](assets/sample_molecules/sample_molecules2.csv)
--   [sample_molecules3.smi](assets/sample_molecules/sample_molecules3.smi)
+-   [sample_molecules1.sdf](/_assets/sample_molecules/sample_molecules1.sdf)
+-   [sample_molecules2.csv](/_assets/sample_molecules/sample_molecules2.csv)
+-   [sample_molecules3.smi](/_assets/sample_molecules/sample_molecules3.smi)
 
 ```shell
 import from '~/Downloads/sample_molecules1.sdf' to 'sample_molecules1.sdf'
@@ -174,7 +175,7 @@ If you now inspect any individual molecules that’s present in your MWS, you’
 %openad show mol CC(C)Cc1ccccc1
 ```
 
-![image](assets/mol-viewer-esol.png){ class=browser-ss style='width: 736px' }
+![See a molecule's ESOL property](assets/mol-viewer-esol.png){ class=browser-ss style='width: 736px' }
 
 ### Performing Basic Triage
 
@@ -190,6 +191,6 @@ open molecules
 1. Choose **Actions** > **keep selected** to delete all other molecules.
 1. Choose **Actions** > **save as** and choose the format you want to save them as.
 
-![image](assets/mws-sort-by-esol.png){ class=browser-ss style='width: 736px' }
+![Sort your molecules by ESOL](assets/mws-sort-by-esol.png){ class=browser-ss style='width: 736px' }
 
 For further processing within OpenAD, we recommend storing your molecules into our own `molset.json` format. For export to other applications, you can choose between CSV, SDF or SMI.

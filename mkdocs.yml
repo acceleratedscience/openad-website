@@ -57,9 +57,9 @@ theme:
               name: Dark mode off
 
     # Replace icons
-    logo: _assets_main/icn-logo.svg
-    # favicon: _assets_main/icn-logo.svg
-    favicon: _assets_main/icn-bee.svg
+    logo: _assets/icn-logo.svg
+    # favicon: _assets/icn-logo.svg
+    favicon: _assets/icn-bee.svg
     icon:
         menu: carbon/icn-hamburger
         alternate: carbon/icn-language

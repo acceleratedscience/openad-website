@@ -11,7 +11,7 @@ This repo holds the public OpenAD website:
 
 <br>
 
-[![Create blog post](main/_assets_main/create-post.svg)](README-blog.md)
+[![Create blog post](main/_assets/create-post.svg)](README-blog.md)
 
 <br>
 
