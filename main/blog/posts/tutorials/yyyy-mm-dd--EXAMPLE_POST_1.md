@@ -2,6 +2,8 @@
 draft: true # Set to true to publish
 description: Add a one-sentence description here for search results and social sharing. Limit it to *maximum* 150 characters. This parahraph has 147 characters. # # Replace
 date: 2030-01-01 # Set the date, sync with the parent folder name
+categories:
+    - Tutorials
 links:
     - local/related-link.md # Remove or replace
     - http://external-related-link.com # Remove or replace
