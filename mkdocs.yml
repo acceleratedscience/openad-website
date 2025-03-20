@@ -23,7 +23,7 @@ nav:
           - Developers: documentation/developers.md
           - Troubleshooting: documentation/troubleshooting.md
     - Tutorials:
-          - Tutorials: blog/category/tutorials
+          - Tutorials: blog/category/tutorials.md
           - blog/index.md
     # - Blog:
     #       - blog/index.md
@@ -133,9 +133,14 @@ plugins:
     # https://squidfunk.github.io/mkdocs-material/plugins/requirements/image-processing/
     # - social
 
+# https://www.mkdocs.org/user-guide/configuration/#validation-of-absolute-links
+validation:
+    links:
+        absolute_links: relative_to_docs
+
 # See file for details
-# hooks:
-#     - custom_hooks.py
+hooks:
+    - custom_hooks.py
 
 # Enable page status
 extra:

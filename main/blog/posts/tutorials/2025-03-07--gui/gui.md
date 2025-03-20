@@ -14,7 +14,7 @@ categories:
 
 <!-- # Visualizing and Triaging Molecules -->
 
-<div class='excerpt'>Learn how to use OpenAD in a terminal or Jupyter Notebook to load, organize, visualize and triage your molecule sets.</div>
+Learn how to use OpenAD in a terminal or Jupyter Notebook to load, organize, visualize and triage your molecule sets.
 
 <!-- more -->
 

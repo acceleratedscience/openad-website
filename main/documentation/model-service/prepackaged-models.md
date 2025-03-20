@@ -179,7 +179,7 @@ Documentation on [GitHub](https://github.com/acceleratedscience/molformer_infere
 
     Starting from a terminal window:
 
-    -   If you are running OpenAD in a virtual environment, make sure your virtual environment is activated. If you followed the [default installation instructions](installation.md), you should be able to run:
+    -   If you are running OpenAD in a virtual environment, make sure your virtual environment is activated. If you followed the [default installation instructions](../installation.md), you should be able to run:
 
         ```shell
         source ~/ad-venv/bin/activate

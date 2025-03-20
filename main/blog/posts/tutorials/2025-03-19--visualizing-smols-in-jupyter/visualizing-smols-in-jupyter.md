@@ -15,11 +15,9 @@ Learn how to use OpenAD to visualize molecules in 2D and 3D from different sourc
 
 <!-- more -->
 
-## Install OpenAD
+<!-- INSERT:INSTALL_OPENAD_JUP.md -->
 
-If you haven't already, [install OpenAD](/documentation/installation/#installing-openad) and activate the [OpenAD magic commands](/documentation/getting-started/#getting-started-jupyter).
-
-👍 Congrats, that was the hard part.
+<!-- INSERT:JUP_VS_CLI.md -->
 
 ## Visualizing a Single Molecule
 
