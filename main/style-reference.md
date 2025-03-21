@@ -85,6 +85,8 @@ I'm a regular text **flag**{ .flag } inline
 
 ![image](_assets/home/screen-cli.png){ width=652 style='border: solid 10px var(--carbon-blue)' }
 
+![image](_assets/home/screen-cli.png){ .browser-ss }
+
 ---
 
 &uarr; Up arrow  

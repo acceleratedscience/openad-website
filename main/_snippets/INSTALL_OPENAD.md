@@ -1,3 +1,7 @@
 ## Install OpenAD
 
-If you haven't already, [install OpenAD](/documentation/installation.md#installing-openad).
+Find more detailed installation instructions [here](/documentation/installation.md).
+
+```shell
+pip install openad
+```
