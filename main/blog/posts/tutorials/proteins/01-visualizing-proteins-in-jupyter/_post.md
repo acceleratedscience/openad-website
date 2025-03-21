@@ -59,3 +59,5 @@ Inside the macromolecule viewer, you'll find a 3D visualization as well as the m
 If you need to see more details or get access to more advanced renderings, there's a link to  the molecule's PDB entry page.
 
 ![Protein Databank entry](pdb-entry.png){ .img-border }
+
+<!-- INSERT:CONTINUE_LEARNING_PROTEINS.md -->
