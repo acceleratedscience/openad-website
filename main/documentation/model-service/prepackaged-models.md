@@ -8,11 +8,11 @@
 
 There's different ways to running our models, depending on your needs.
 
-1. [Runninig a model locally](#)  
+1. [Runninig a model locally](#running-a-model-locally)  
    _Quick setup, low overhead, slow performance_
-2. [Containerize a model](#)  
+2. [Containerize a model](#containerizing-a-model)  
    _Deploy your model anywhere using Docker or Podman_
-3. [Deploy to SkyPilot on AWS](#)  
+3. [Deploy to SkyPilot on AWS](#deploying-to-skypilot-on-aws)  
    _Leverage cloud computing power_
 
 ## Available Models
