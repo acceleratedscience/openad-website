@@ -66,8 +66,8 @@ Delete all command directories except the `hello_world` one.
 ### 4. Create Your First Command
 
 - Duplicate the [commands/hello_world] directory as a scaffold for your first command. Edit all parts where you see `# <-- EDIT`, the comments will guide you.
-- Create your command definition using pyparsing. You may want to read our [crash course on pyparsing](#pyparsing-crash-course) below.
-- Put your command logic inside `def exec_command()`. Read below about [how to return data](#returning-data).
+- Create your command definition using pyparsing. You may want to read our [crash course on pyparsing](knowledge-base.md#pyparsing-crash-course) below.
+- Put your command logic inside `def exec_command()`. Read below about [how to return data](knowledge-base.md#returning-data).
 
 Repeat for your next commands.
   

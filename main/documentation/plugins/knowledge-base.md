@@ -2,6 +2,11 @@
 
 Below a few key concepts you will want to familiarize yourself with if you're going to develop an OpenAD plugin.
 
+## Pyparsing Crash Course
+
+!!! note
+    Coming soon
+
 ## Working with Data
 
 ### Returning Data
@@ -54,7 +59,7 @@ Note that the `%openadd` magic command (which is used to store raw data from a c
 foo = %openad demo hello world
 ```
 
-Learn more about [display modes](display-modes) below.
+Learn more about [display modes](#display-modes) below.
 
 ## Printing Text
 
