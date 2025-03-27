@@ -1,3 +1,8 @@
+/* Reset */
+[dir="ltr"] .md-nav--primary .md-nav__item > .md-nav__link {
+	margin: 0;
+}
+
 /* Font size */
 .md-nav {
 	font-size: var(--font-size);
@@ -29,16 +34,56 @@
 	padding: 0 1rem;
 	color: var(--md-default-fg-color);
 }
-.md-nav--primary .md-nav__item
 
 /* Color */
-.md-nav__link {
-	opacity: 0.7;
-}
 .md-nav__link[for]:hover,
 .md-nav__link[href]:hover {
-	color: var(--md-default-fg-color);
-	opacity: 1;
+	color: var(--carbon-blue);
+}
+
+/**
+ * Section item
+ */
+.md-nav__link.md-nav__container {
+	/* background: pink; */
+}
+
+/* Active section header */
+.md-nav--primary
+	.md-nav__item--active
+	> .md-nav__link:has(.md-nav__icon):has(.md-nav__link--active) {
+	background: var(--md-default-bg-color--light);
+	border-right: solid 3px var(--carbon-blue);
+}
+
+/* Active section header icon */
+.md-nav--primary
+	.md-nav__item--active
+	> .md-nav__link:has(.md-nav__icon)
+	.md-nav__icon::after {
+	background: var(--carbon-blue);
+}
+
+/* Passive section header link */
+.md-nav__container > .md-nav__link:first-child {
+	color: var(--carbon-black);
+	/* border: solid 1px red; */
+	padding: 0;
+}
+
+/* .md-nav__item .md-nav__link--active {
+	background: orange;
+} */
+/* md-nav__item--active */
+
+/* Expanded section */
+.md-nav__item.md-nav__item--nested.md-nav__item--active {
+	border-left: solid 1px var(--carbon-light-d);
+}
+.md-nav--primary
+	> .md-nav__list
+	> .md-nav__item.md-nav__item--nested.md-nav__item--active {
+	border: none;
 }
 
 /**
@@ -91,13 +136,13 @@
 /* RESPONSOVE < MEDIUM */
 @media screen and (max-width: 76.2344em) {
 	/**
-   * Expose close button
-   * - - -
-   * The template doesn't keep the close button
-   * where the open button was, very bad UX.
-   * We push the nav down when there's no sub-level enabled,
-   * and overlay the close icon in the open state.
-   */
+	 * Expose close button
+	 * - - -
+	 * The template doesn't keep the close button
+	 * where the open button was, very bad UX.
+	 * We push the nav down when there's no sub-level enabled,
+	 * and overlay the close icon in the open state.
+	 */
 
 	[data-md-toggle="drawer"]:checked
 		~ .md-header
@@ -131,8 +176,8 @@
 	}
 
 	/**
-   * Nested Header
-   */
+   	 * Nested Header
+   	 */
 	.md-sidebar.md-sidebar--primary .md-nav--primary .md-nav__title {
 		padding: 0;
 		padding-left: 2.5rem;
@@ -164,8 +209,8 @@
 	}
 
 	/**
-   * Resets
-   */
+   	 * Resets
+     */
 	.md-nav--primary .md-nav__title[for="__drawer"] {
 		background: transparent;
 	}
@@ -193,7 +238,8 @@
 		.md-nav--lifted
 		> .md-nav__list
 		> .md-nav__item--active
-		> .md-nav__link:not(.md-nav__container) {
+		> .md-nav__link {
+		/* :not(.md-nav__container) */
 		display: none;
 	}
 
@@ -211,7 +257,14 @@
 	}
 	.md-nav__link {
 		margin: 0;
-		padding-left: 1rem;
+	}
+	.md-nav__link:not(.md-nav__container) {
+		padding-left: 1.5rem;
+		/* border: solid 1px red; */
+	}
+	label.md-nav__link:not(.md-nav__container) {
+		/* padding-left: 1.5rem; */
+		/* border: solid 1px blue; */
 	}
 
 	/* Indentation for second level */

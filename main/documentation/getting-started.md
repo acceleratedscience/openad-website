@@ -44,9 +44,9 @@ jupyter lab ~/openad_notebooks/Table_of_Contents.ipynb
     openad
     ```
 
-    <div style="background: #282828; padding: 1rem; border-radius: 3px;">
-        <img src="../../_assets/docs/openad-cli.png" width="500" style="max-width: 100%" />
-    </div>
+    <p class="cli-ss-wrap" markdown>
+    ![OpenAD CLI](_assets/openad-cli.png){ width="500" style="max-width: 100%" }
+    </p>
 
 -   **Exit the command shell**<br>
     Hit `ctrl+c` or run:
@@ -145,7 +145,7 @@ The following commands only need to be run once after installation:
 2.  **Select the kernel**<br>
     Make sure to select the "ad-venv" iPython kernel you just created. You can do this under _Kernel > Change Kernel_, or by clicking the kernel name in the top right hand corner. If you don't see your iPython kernel, make sure you followed the Jupyter Setup instructions listed above.
 
-    ![Jupyter Lab kernel](../_assets/docs/jupyter-lab-kernel.png){ class=browser-ss style='width: 752px' }
+    ![Jupyter Lab kernel](_assets/jupyter-lab-kernel.png){ class=browser-ss style='width: 752px' }
 
 3.  **Magic Commands**<br>
     Magic commands let you access any OpenAD CLI command from within Jupyter. They are invoked by the `%openad` prefix. Try listing your files as a test:

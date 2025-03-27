@@ -13,20 +13,21 @@ nav:
           - Installation: documentation/installation.md
           - Getting Started: documentation/getting-started.md
           - Model Service:
-                - About: documentation/model-service/about.md
+                - documentation/model-service/index.md
                 - Prepackaged Models: documentation/model-service/prepackaged-models.md
                 - Wrapping Models: documentation/model-service/wrapping.md
                 - IBM Hosted: documentation/model-service/ibm-hosted.md
           - Commands: documentation/commands.md
-          - Plugins: documentation/plugins.md
+          - Plugins:
+                - documentation/plugins/index.md
+                - Available Plugins: documentation/plugins/available-plugins.md
+                - Developer Guide: documentation/plugins/developer-guide.md
+                - Knowledge Base: documentation/plugins/knowledge-base.md
           - Tell Me: documentation/tell-me.md
           - Developers: documentation/developers.md
           - Troubleshooting: documentation/troubleshooting.md
     - Tutorials:
-          - Tutorials: blog/category/tutorials.md
           - blog/index.md
-    # - Blog:
-    #       - blog/index.md
     - About: about.md
 
 # Theme configuration
@@ -89,6 +90,7 @@ theme:
 
     features:
         - navigation.tabs # Tabs for main sections
+        - navigation.indexes # Overview pages for sections
         # - navigation.instant # Navigate without reloading the page
         # - navigation.instant.progress # Progress bar
         - navigation.top # Back to top link

@@ -14,7 +14,7 @@ Before you continue, make sure you know who your group admin is.
     Go to [open.accelerate.science](https://open.accelerate.science) and log in with your IBMid, create one if necessary.  
     You'll see: _"Your account is pending to be added to a group"_
 
-    ![OpenAD Portal](../../_assets/docs/openad-portal-landing.png){ width=623px style='border: solid 1px var(--carbon-soft-hard)' }
+    ![OpenAD Portal](../_assets/openad-portal-landing.png){ width=623px style='border: solid 1px var(--carbon-soft-hard)' }
 
 2.  **Request Group Assignment**  
     Log out and contact your group administrator.  
@@ -43,7 +43,7 @@ If you haven't already, [install OpenAD](../installation.md).
 
 To see what model subscriptions you have access to, check the **Your Subscriptions** tab in the OpenAD Portal.
 
-![OpenAD Portal](../../_assets/docs/openad-portal-services.png){ width=496px style='border: solid 1px var(--carbon-soft-hard)' }
+![OpenAD Portal](../_assets/openad-portal-services.png){ width=496px style='border: solid 1px var(--carbon-soft-hard)' }
 
 ### 3.2. Configure Authentication
 
