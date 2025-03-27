@@ -1,4 +1,4 @@
-# Setting Up a Model
+# Prepackaged Models
 
 !!! warning
 

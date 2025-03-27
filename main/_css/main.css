@@ -1,5 +1,15 @@
-/* Adjust browser screenshots to their shadow don't count as width */
+/* Adjust browser screenshot margins to their shadow doesn't count as width */
 .browser-ss {
 	margin: -37px -55px -73px -55px;
 	max-width: calc(100% + 110px) !important;
+}
+
+/* Wrap with dark background to display CLI screenshot more nicely */
+.cli-ss-wrap {
+	background: #282828;
+	padding: 1rem;
+	border-radius: 3px;
+	font-size: 0;
+	line-height: 0;
+	margin: 1rem 0;
 }

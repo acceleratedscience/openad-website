@@ -1,20 +1,4 @@
-# OpenAD Plugins
-
-<!-- about_plugin -->
-
-Plugins provide drastically simplified access to a series of advanced tools, and make it easy for your own Python applications to interface with OpenAD.
-
-<!-- /about_plugin -->
-
-## Creating Your Own Plugin
-
-Creating your own plugins is easy if you have a basic understanding of Python. With only a few steps you can expose your own projects (or your favorite tools) to access OpenAD's powerful visualisation capabilities and more.
-
-!!! note
-    
-    We will be publishing a detailed developer tutorial soon. Come back in a few weeks.
-
-## Available Plugins
+# Available Plugins
 
 Currently there are two publicly available plugins available.
 
