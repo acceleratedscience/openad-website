@@ -12,8 +12,8 @@ categories:
 
 Learn how to use OpenAD to visualize proteins and other macromolecules from:
 
-- PDB or CIF files
 - FASTA strings
+- PDB or CIF files
 
 <!-- more -->
 
@@ -21,14 +21,20 @@ Learn how to use OpenAD to visualize proteins and other macromolecules from:
 
 <!-- INSERT:JUP_VS_CLI.md -->
 
-## Visualizing PDF and CIF Files
+## Visualizing FASTA string
+
+```shell
+%openad show protein 'MSLNRHFTVSVFIVCKDKVLLHLHKKAKKMLPLGGHIEVNELPEEACIREAKEEAGLNVTLYNPIDINLKKSCDLSGEKLLINPIHTILGDVSPNHSHIDFVYYATTTSFETSPEIGESKILKWYSKEDLKNAHNIQENILVMATEALDLLEGHHHHHH'
+```
+
+## Visualizing PDB and CIF Files
 
 Let's start with downloading some sample proteins:
 
 - [2g64.cif](/_assets/sample_molecules/2g64.cif)
 - [9bq4.pdb](/_assets/sample_molecules/9bq4.pdb)
 
-In order to visualize a PDF or CIF file, all we need to do is to import them into your workspace. Update the source paths if needed.
+In order to visualize a PDB or CIF file, all we need to do is to import them into your workspace. Update the source paths if needed.
 
 ```shell
 %openad import from '~/Downloads/2g64.cif' to '2g64.cif'
