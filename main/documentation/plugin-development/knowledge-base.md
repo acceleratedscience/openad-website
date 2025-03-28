@@ -1,11 +1,6 @@
 # Knowledge Base
 
-Below a few key concepts you will want to familiarize yourself with if you're going to develop an OpenAD plugin.
-
-## Pyparsing Crash Course
-
-!!! note
-    Coming soon
+A few key concepts to familiarize yourself with developing an OpenAD plugin.
 
 ## Working with Data
 
@@ -69,7 +64,7 @@ OpenAD has its own simple XML styling syntax to massage your output for a more p
 
 We plan to document this in more detail at some point in the future. Until then, there's a practical demo with the [`demo output styles`](https://github.com/acceleratedscience/openad-plugin-demo/tree/main/openad_plugin_demo/commands/output_styles) command that covers most of it. You can also check out the [style parser](https://github.com/acceleratedscience/openad-tools/blob/main/openad_tools/style_parser.py) to see what more it can do.
 
-!!! Warning
+!!! warning
     All output functions (including `output_table()`) will return the styled content in Jupyter instead of printing it. So unless you're using it to return the result of your function, you will need to add `return_val=False` to your output function. For example:
 
     ```python
@@ -140,14 +135,3 @@ if GLOBAL_SETTINGS["display"] == "notebook":
 if GLOBAL_SETTINGS["display"] == "api":
     return baz
 ```
-
-
-
-
-
-[plugin_grammar_def.py]: https://github.com/acceleratedscience/openad-plugin-demo/blob/main/openad_plugin_demo/plugin_grammar_def.py
-[plugin_params.py]: https://github.com/acceleratedscience/openad-plugin-demo/blob/main/openad_plugin_demo/plugin_params.py
-[plugin_description.txt]: https://github.com/acceleratedscience/openad-plugin-demo/blob/main/openad_plugin_demo/plugin_description.txt
-[/commands]: https://github.com/acceleratedscience/openad-plugin-demo/blob/main/openad_plugin_demo/commands
-[commands/hello_world]: https://github.com/acceleratedscience/openad-plugin-demo/blob/main/openad_plugin_demo/commands/hello_world
-[XXXXX]: https://github.com/acceleratedscience/openad-plugin-demo/blob/main/openad_plugin_demo/XXXXXX
