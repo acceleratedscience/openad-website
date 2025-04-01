@@ -375,10 +375,10 @@ code {
 }
 
 /* Consecutive blocks */
-.language-shell.highlight + .language-shell.highlight {
+.highlight + .highlight {
 	margin-top: 0.25rem;
 }
-.language-shell.highlight + .language-shell.highlight .filename {
+.highlight + .highlight .filename {
 	display: none;
 }
 

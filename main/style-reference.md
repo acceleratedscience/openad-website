@@ -10,6 +10,9 @@ hide:
 <div class="padded-list-next"></div>
 <div class="tight-list-next"></div>
 <div class='table-full-width-next'></div>
+<p class="cli-ss-wrap" markdown>
+    ![OpenAD CLI](_assets/openad-cli.png){ width="500" style="max-width: 100%" }
+</p>
 
 # Header One
 
