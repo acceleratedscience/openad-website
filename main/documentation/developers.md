@@ -5,12 +5,9 @@ If you have any questions, please [get in touch](../about.md).
 
 ## Developing Plugins
 
-Building your own OpenAD plugin lets you to integrate your own tools into the OpenAD workflow.  
-Stay tuned here for documentation on how to do this.
+Building your own OpenAD plugin lets you to integrate your own tools into the OpenAD workflow.
 
-!!! note
-    
-    We will be publishing a detailed developer tutorial soon. Come back in a few weeks.
+Jump to the [plugin developer guide](plugin-development/index.md) for detailed instructions.
 
 ## Installation for Development
 

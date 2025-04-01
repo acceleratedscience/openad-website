@@ -1,6 +1,10 @@
-# Available Plugins
+# OpenAD Plugins
 
-Currently there are two publicly available plugins available.
+<!-- about_plugin -->
+Plugins provide drastically simplified access to a series of advanced tools, and make it easy for your own Python applications to interface with OpenAD.
+<!-- /about_plugin -->
+
+## Available Plugins
 
 <div class="padded-list-next"></div>
 
@@ -21,3 +25,8 @@ Currently there are two publicly available plugins available.
     ```
     
     For more information visit the  [openad-plugin-rxn](https://github.com/acceleratedscience/openad-plugin-rxn) repo.
+
+## Developer Guide
+
+Develop your own plugin in minutes with our plugin scaffold and a basic understanding of Python.  
+Head over to our [Plugin Developer Guide](plugin-development/index.md).
