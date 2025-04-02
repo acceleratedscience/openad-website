@@ -69,8 +69,9 @@ Remove everything under `# --- Edit below this line --- #` and replace with any 
 - Duplicate the [commands/hello_world] directory as a scaffold for your first command.
 - Look for `# <-- UPDATE` and update the import statements to `openad_plugin_<plugin_name>`
 - Look for `# <-- EDIT` and edit, the comments will guide you.
-- Look for `# Command definition` and compose your command definition.  
-Get up to speed with our [PyParsing 101].
+- Look for `# Command definition` and compose your command definition. Some tips:
+    - Get up to speed with our [PyParsing 101]
+    - Save time with our readymade PyParsing definitions: [openad_tools.grammar_def.py](https://github.com/acceleratedscience/openad-tools/blob/main/openad_tools/grammar_def.py)
 - Put your command logic inside `def exec_command()`.  
 Check our [Knowledge Base](knowledge-base.md) to learn about how to return data, use our display tools and more.
 
