@@ -2,6 +2,8 @@
 draft: false
 description: Start-to-finish guide on how to create an OpenAD plugin, building an RDKit integration as example.
 date: 2025-04-02
+authors:
+    - moenen
 categories:
     - Tutorials
     - Plugins
