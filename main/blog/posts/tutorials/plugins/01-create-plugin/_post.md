@@ -7,6 +7,8 @@ authors:
 categories:
     - Tutorials
     - Plugins
+links:
+    - Plugin Developer Guide: documentation/plugin-development
 ---
 
 # How to Build a Plugin for OpenAD
@@ -22,7 +24,7 @@ This is an example plugin implementation. For a more general (and shorter) guide
 !!! note
     Download the finished plugin from GitHub: [openad-plugin-tutorial](https://github.com/acceleratedscience/openad-plugin-tutorial)
 
-## 1. 
+## 1. Creating the Scaffold
 
 <div class="padded-list" markdown>
 

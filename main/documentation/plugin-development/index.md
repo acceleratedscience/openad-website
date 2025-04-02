@@ -1,15 +1,9 @@
-<!--
-TODO:
-When creating your own plugin documentation, make sure to follow the same desciption patterns as other OpenAD commands.
-- We have a number of readymade grammar definitions that can be imported as building blocks. You can check this out here:
--->
-
 # Plugin Developer Guide
 
 Creating your own plugins is easy if you have a basic understanding of Python. With only a few steps you can expose your own projects (or your favorite tools) to access OpenAD's powerful visualisation capabilities and more.
 
 !!! info
-	For a detailed start-to-finish example, check out our [How to Build a Plugin for OpenAD](https://openad.accelerate.science/blog/2025/04/02/how-to-build-a-plugin-for-openad) tutorial
+	For a detailed start-to-finish example, check out our [How to Build a Plugin for OpenAD](/blog/posts/tutorials/plugins/01-create-plugin/_post.md) tutorial
 
 ## Tl;dr
 

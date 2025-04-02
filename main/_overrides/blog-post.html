@@ -42,8 +42,6 @@
                 </span>
               {% endif %}
             </div>
-
-            
             
             <!-- Read time -->
             {% if page.config.readtime %}
@@ -65,7 +63,9 @@
               <div class="authors">
               <span>
                 By {% for author in page.authors %}
-                  <a href="{{ url }}">{{ author.name }}{{i}}</a><span class="comma">{% if not loop.last %}, {% endif %}</span>
+                  {% if url %}<a href="{{ url }}">{{ author.name }}{{i}}</a>
+                  {% else %}<span>{{ author.name }}{{i}}</span>{% endif %}
+                  <span class="comma">{% if not loop.last %}, {% endif %}</span>
                 {% endfor %}
               </span>
               <span>
@@ -89,17 +89,18 @@
               </div>
             {% endif %}
 
-            <!-- Reference links -->
-            {% if page.config.links %}
-              <div class="references">
-                {{ lang.t("blog.references") }}
-                {% for nav_item in page.config.links %}
-                  {% set path = "__ref_" ~ loop.index %}
-                  {{ item.render(nav_item, path, 1) }}
-                {% endfor %}
-              </div>
-            {% endif %}
           </nav>
+
+          <!-- Reference links -->
+          {% if page.config.links %}
+            <div class="references">
+              {{ lang.t("blog.references") }}:
+              {% for nav_item in page.config.links %}
+                {% set path = "__ref_" ~ loop.index %}
+                {{ item.render(nav_item, path, 1) }}
+              {% endfor %}
+            </div>
+          {% endif %}
 
           {% if "toc.integrate" in features %}
             {% include "partials/toc.html" %}
