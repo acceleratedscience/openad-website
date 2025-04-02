@@ -1,36 +1,18 @@
 ---
 title: Custom Page Title
-status: new
 # subtitle: My Milkshake etc.
+status: new
 hide:
     - navigation
 ---
 
-<!-- To document: -->
-<div class="padded-list" markdown></div>
-<div class="tight-list" markdown></div>
-<div class='table-full-width-next'></div>
-<p class="cli-ss-wrap" markdown>
-    ![OpenAD CLI](_assets/openad-cli.png){ width="500" style="max-width: 100%" }
-</p>
+# Style Reference
 
-# Header One
+This file contains examples on how to style markdown for the OpenAD website.
 
-## Header Two
+---
 
-### Header Three
-
-#### Header Four
-
-##### Header Five
-
-###### Header Six Lorem Ipsum Dolor sit Amet
-
-**Lorem ipsum dolor sit amet, consectetur adipiscing elit.** _Nam gravida gravida euismod. Aliquam erat volutpat._ In at viverra ligula. Ut vitae sollicitudin tortor. Duis varius ultrices augue id feugiat. Morbi sed sapien tellus. Ut gravida ultricies interdum. Nam fermentum, risus et lacinia condimentum, nunc sem convallis sapien, non tempus tortor sem sed purus. Mauris vitae leo tortor. <em>Nulla ac urna elit.</em> Suspendisse mi arcu, placerat ut dui at, convallis dapibus diam. Cras libero purus, commodo quis libero a, fermentum consectetur ante.
-
-<small>**Lorem ipsum dolor sit amet, consectetur adipiscing elit.** _Nam gravida gravida euismod. Aliquam erat volutpat._ In at viverra ligula. Ut vitae sollicitudin tortor. Duis varius ultrices augue id feugiat. Morbi sed sapien tellus. Ut gravida ultricies interdum. Nam fermentum, risus et lacinia condimentum, nunc sem convallis sapien, non tempus tortor sem sed purus. Mauris vitae leo tortor. <em>Nulla ac urna elit.</em> Suspendisse mi arcu, placerat ut dui at, convallis dapibus diam. Cras libero purus, commodo quis libero a, fermentum consectetur ante.</small>
-
-<div class="xsmall"><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b> <i>Nam gravida gravida euismod. Aliquam erat volutpat.</i> Ut vitae sollicitudin tortor. Duis varius ultrices augue id feugiat. Morbi sed sapien tellus. Ut gravida ultricies interdum. Nam fermentum, risus et lacinia condimentum, nunc sem convallis sapien, non tempus tortor sem sed purus. Mauris vitae leo tortor. <em>Nulla ac urna elit.</em> Suspendisse mi arcu, placerat ut dui at, convallis dapibus diam. Cras libero purus, commodo quis libero a, fermentum consectetur ante.</div>
+## Buttons
 
 [Primary Button](#){ .md-button .md-button--primary }
 [Secondary Button](#){ .md-button }
@@ -44,6 +26,10 @@ hide:
 [Secondary Button](#){ .md-button .btn-large }
 [Tertiary Button](#){ .md-button .md-button--tertiary .btn-large }
 
+---
+
+## Links
+
 [Unique link](https://example.com "With a unique tooltip")
 
 [Repeated link] / [Repeated link] / [Repeated link]
@@ -51,6 +37,8 @@ hide:
 [Repeated link]: https://example.com "With a repeated tooltip"
 
 ---
+
+## Icons
 
 :carbon-icn-bee:
 :carbon-icn-link:
@@ -63,34 +51,9 @@ hide:
 
 <small>:carbon-icn-yes:{ .inline } I'm an inline icon in small text</small>
 
-**Flag**{ .flag }
-**Flag**{ .flag .green }
-**Flag**{ .flag .yellow }
-**Flag**{ .flag .orange }
-**Flag**{ .flag .red }
-**Flag**{ .flag .blue }
+<br>
 
-# I'm an Header 1 inline flag **Flag**{ .flag } { style='margin: 0' }
-
-## I'm an Header 2 inline flag **Flag**{ .flag } { style='margin: 0' }
-
-### I'm an Header 3 inline flag **Flag**{ .flag } { style='margin: 0' }
-
-I'm a regular text **flag**{ .flag } inline
-
-<small>I'm a small text **flag**{ .flag } `inline next to code`</small>
-
----
-
-![image](_assets/home/screen-cli.png)
-
-![image](_assets/home/screen-cli.png){ width=652 }
-
-![image](_assets/home/screen-cli.png){ width=652 style='border: solid 10px var(--carbon-blue)' }
-
-![image](_assets/home/screen-cli.png){ .browser-ss }
-
----
+Useful HTML characters:
 
 &uarr; Up arrow  
 &darr; Down arrow  
@@ -98,12 +61,50 @@ I'm a regular text **flag**{ .flag } inline
 &rarr; Right arrow  
 &harr; Double headed arrow  
 
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+---
 
-___
+## Flags
+
+**Flag**{ .flag }
+**Flag**{ .flag .green }
+**Flag**{ .flag .yellow }
+**Flag**{ .flag .orange }
+**Flag**{ .flag .red }
+**Flag**{ .flag .blue }
+
+I'm a regular text **flag**{ .flag } inline
+
+<small>I'm a small text **flag**{ .flag } `inline next to code`</small>
+
+---
+
+## Images
+
+Regular image:
+
+![image](_assets/home/screen-cli.png)
+
+Retina display screenshit with correct pixel width set:
+
+![image](_assets/home/screen-cli.png){ width=652 }
+
+Image with custom styling:
+
+![image](_assets/home/screen-cli.png){ width=652 style='border: solid 10px var(--carbon-blue)' }
+
+Browser screenshot from macOS Chrome with shadow:
+
+![image](blog/posts/tutorials/plugins/01-create-plugin/mol-with-fp_ap.png){ width=752 .browser-ss }
+
+Terminal screenshot from macOS in full-width box:
+
+<p class="cli-ss-wrap" markdown>
+    ![OpenAD CLI](_assets/home/screen-cli.png){ width="652" style="max-width: 100%" }
+</p>
+
+---
+
+## Admonitions
 
 !!! note
 
@@ -221,48 +222,101 @@ ___
 
 ---
 
-## Code Preview
+## Code Blocks
 
-Some text
-
-### Sub-sub title
+Here is some `hello world` inline code.
 
 Code block python:
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida gravida euismod. Aliquam erat volutpat. In at viverra ligula. Ut vitae sollicitudin tortor. Duis varius ultrices augue id feugiat. Morbi sed sapien tellus. Ut gravida ultricies interdum. Nam fermentum, risus et lacinia condimentum, nunc sem convallis sapien, non tempus tortor sem sed purus. Mauris vitae leo tortor. Nulla ac urna elit. Suspendisse mi arcu, placerat ut dui at, convallis dapibus diam. Cras libero purus, commodo quis libero a, fermentum consectetur ante.</p>
-
-<p>Note: expanding headers are not picked up by the table of contents, nor are markdown rules applied inside.</p>
-
 ```python
-import os
-
-hello = 123
-print(hello)
-
-def test(foo=123):
-    """
-    Hello
-    """
-    if hello == foo:
-        return True
-
-inp = None
-default_path = os.path.expanduser("~/.ipython/profile_default/startup")****
-if not os.path.exists(default_path):
-    os.mkdir(default_path)
+print("hello world")
 ```
 
 Code block JS:
 
 ```javascript
-const hello = "world"
+console.log('hello world')
 ```
 
 Code block CLI
 
 ```shell
-pip install openad
+pip install hello-world
 ```
+
+---
+
+## Tables
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+---
+
+## Text styles
+
+**Lorem ipsum dolor sit amet, consectetur adipiscing elit.** _Nam gravida gravida euismod. Aliquam erat volutpat._ In at viverra ligula. Ut vitae sollicitudin tortor. Duis varius ultrices augue id feugiat. Morbi sed sapien tellus. Ut gravida ultricies interdum. Nam fermentum, risus et lacinia condimentum, nunc sem convallis sapien, non tempus tortor sem sed purus. Mauris vitae leo tortor. <em>Nulla ac urna elit.</em> Suspendisse mi arcu, placerat ut dui at, convallis dapibus diam. Cras libero purus, commodo quis libero a, fermentum consectetur ante.
+
+<small>**Lorem ipsum dolor sit amet, consectetur adipiscing elit.** _Nam gravida gravida euismod. Aliquam erat volutpat._ In at viverra ligula. Ut vitae sollicitudin tortor. Duis varius ultrices augue id feugiat. Morbi sed sapien tellus. Ut gravida ultricies interdum. Nam fermentum, risus et lacinia condimentum, nunc sem convallis sapien, non tempus tortor sem sed purus. Mauris vitae leo tortor. <em>Nulla ac urna elit.</em> Suspendisse mi arcu, placerat ut dui at, convallis dapibus diam. Cras libero purus, commodo quis libero a, fermentum consectetur ante.</small>
+
+<div class="xsmall"><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b> <i>Nam gravida gravida euismod. Aliquam erat volutpat.</i> Ut vitae sollicitudin tortor. Duis varius ultrices augue id feugiat. Morbi sed sapien tellus. Ut gravida ultricies interdum. Nam fermentum, risus et lacinia condimentum, nunc sem convallis sapien, non tempus tortor sem sed purus. Mauris vitae leo tortor. <em>Nulla ac urna elit.</em> Suspendisse mi arcu, placerat ut dui at, convallis dapibus diam. Cras libero purus, commodo quis libero a, fermentum consectetur ante.</div>
+
+---
+
+## Lists
+
+<div class="padded-list" markdown>
+- This is a padded list, looks better when there's code blocks in the list.
+
+    ```shell
+    foo bar
+    ```
+
+- This is a padded list, looks better when there's code blocks in the list.
+
+    ```shell
+    foo bar
+    ```
+
+<div class="tight-list" markdown>
+
+- This is a tight list inside a padded list.
+- This is a tight list inside a padded list.
+- This is a tight list inside a padded list.
+
+</div>
+
+- This is a padded list, looks better when there's code blocks in the list.
+
+    ```shell
+    foo bar
+    ```
+
+</div>
+
+---
+
+## Header Styles
+
+# Header One
+
+## Header Two
+
+### Header Three
+
+#### Header Four
+
+##### Header Five
+
+###### Header Six
+
+# I'm an Header 1 inline flag **Flag**{ .flag } { style='margin: 0' }
+
+## I'm an Header 2 inline flag **Flag**{ .flag } { style='margin: 0' }
+
+### I'm an Header 3 inline flag **Flag**{ .flag } { style='margin: 0' }
 
 ---
 
