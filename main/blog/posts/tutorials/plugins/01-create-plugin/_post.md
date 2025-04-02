@@ -15,14 +15,14 @@ In this tutorial, we'll build an OpenAD plugin from start to finish, allowing yo
 
 We'll use Greg Landrum's [2022 blog post on generating fingerprints with RDKIt](https://greglandrum.github.io/rdkit-blog/posts/2023-01-18-fingerprint-generator-tutorial.html) and implement this functionality in our plugin.
 
-This is an example plugin implementation. For a more general guide on building plugins for OpenAD, check out our [Plugin Developer Guide](/documentation/plugin-development/index.md).
+This is an example plugin implementation. For a more general (and shorter) guide on building plugins for OpenAD, check out our [Plugin Developer Guide](/documentation/plugin-development/index.md).
 
 !!! note
     Download the finished plugin from GitHub: [openad-plugin-tutorial](https://github.com/acceleratedscience/openad-plugin-tutorial)
 
-## 1. Creating the Scaffold
+## 1. 
 
-<div class="padded-list-next"></div>
+<div class="padded-list" markdown>
 
 1. Clone the [demo plugin repository](https://github.com/acceleratedscience/openad-plugin-demo) to use as a scaffold.
 ```shell
@@ -42,7 +42,7 @@ git clone --no-remote git@github.com:acceleratedscience/openad-plugin-demo.git
     mv openad_plugin_demo openad_plugin_fingerprint
     ```
 
-1. Delete all commands inside the `/commands` directory, except `/hello_world`.
+2. Delete all commands inside the `/commands` directory, except `/hello_world`.
 
 3. Update `pyproject.toml` and set the `name` field to `openad_plugin_fingerprint`.
 
@@ -61,12 +61,12 @@ website: null
 
 2. Open `plugin_params.py` and delete everything below `# --- Edit below this line --- #`
 
-2. Rename the `/hello_world` directory to `/calculate_fp`.
+3. Rename the `/hello_world` directory to `/calculate_fp`.
 
-3. Open `/calculate_fp/command.py` and look for `# <-- UPDATE` and update the import statements so they point to `calculate_fp`
+4. Open `/calculate_fp/command.py` and look for `# <-- UPDATE` and update the import statements so they point to `openad_plugin_fingerprint`
 
-4. Install the plugin  
-    If you haven't already, make sure your file cursor is pointed to the main `/openad-plugin-fingerprint` directory, and if you have installed OpenAD in a virtual environment, of course make sure you have the virtual environment activated. We'll install the plugin with the `--editable` flag, so we can update the code and see the results in realtime.
+5. Install the plugin  
+    If you haven't already, make sure your file cursor is pointed to the parent `/openad-plugin-fingerprint` directory, and if you have installed OpenAD in a virtual environment, of course make sure you have the virtual environment activated. We'll install the plugin with the `--editable` flag, so we can update the code and see the results in real time.
 
     ```shell
     cd openad-plugin-fingerprint
@@ -75,7 +75,9 @@ website: null
     pip install -e .
     ```
 
-1. Launch openad and run `fp ?` - you should see the plugin's splash screen with the `fp hello world` command listed
+6. Launch openad and run `fp ?` - you should see the plugin's splash screen with the `fp hello world` command listed
+
+</div>
 
 ## 2. Command Documentation
 
@@ -85,11 +87,9 @@ We'll start with the command documentation. The `help_dict_create_v2()` function
 
 Let's start with defining what our plugin will do:
 
-<div class="tight-list-next"></div>
-
 - Input: one or more SMILES identifiers, or the molecules in your molecule working set (MWS)
 - Calculate one of 5 types of fingerprints:
-    - `mfp` - Morgan fingeprint (default)
+    - `mfp` - Morgan fingerprint (default)
     - `rdk` - RDKit fingerprint
     - `ap`  - Atom pair fingerprint
     - `tt`  - Topological torsion fingerprint
@@ -105,9 +105,9 @@ Calculate default fingerprint for a single molecule.
 - `fp calc for [CC(C)[N+](=O)[O-],O=C1CNC(=O)N1,Nc1ccccc1O]`  
 Calculate default fingerprint for a list of molecules.
 - `fp calc for @mws`  
-Calculate default fingeprint for all molecules in my molecule working set.
+Calculate default fingerprint for all molecules in my molecule working set.
 - `fp calc for @mws update`  
-Calculate default fingeprint for all molecules in my MWS, then update MWS with results.
+Calculate default fingerprint for all molecules in my MWS, then update MWS with results.
 - `fp calc tt for C1=CC(=C(C=C1CCN)O)O`  
 Calculate topological torsion fingerprint for a single molecule.
 - etc.
@@ -147,7 +147,7 @@ grammar_help.append(
 
 ### Writing Plugin Description
 
-Let's describe to our plugin users what our plugin does, what the options are, and how it's supposed to be used, while using the [OpenAD styling syntax](/documentation/plugin-development/knowledge-base.md#printing-text) to create a clean and organized help screen.
+Let's describe to the users what our plugin does, what the options are, and how it's supposed to be used, while using the [OpenAD styling syntax](/documentation/plugin-development/knowledge-base.md#printing-text) to create a clean and organized help screen.
 
 ```text
 Calculate different types of molecule fingerprints using RDKit. This will return the RDKit fingerprint object for further processing.
@@ -157,7 +157,7 @@ You can either pass a single SMILES, a a list of smiles, or refer to your molecu
 
 <h1>Fingerprint types</h1>
 
-<cmd>mfp</cmd>: Morgan fingeprint (default)
+<cmd>mfp</cmd>: Morgan fingerprint (default)
 <cmd>rdk</cmd>: RDKit fingerprint
 <cmd>ap</cmd>:  Atom pair fingerprint
 <cmd>tt</cmd>:  Topological torsion fingerprint
@@ -201,7 +201,7 @@ fp calc ?
 
 ## 3. Command Grammar
 
-Earlier you duplicated `commands/hello_world` and renamed it to `commands/calculate_fp`. Inside is the `command.py` file where all the action happens.
+Earlier you duplicated `commands/hello_world` and renamed it to `commands/calculate_fp`. Inside you'll find the `command.py` file, which is where all the action happens.
 
 ### Notes
 
@@ -209,15 +209,17 @@ Earlier you duplicated `commands/hello_world` and renamed it to `commands/calcul
 - Each word in a command is represented by a "grammar definition". We'll store our grammar definitions in `plugin_grammar_def.py` so they can be reused across commands.
 - We have a number of readymade grammar definitions that can be imported as building blocks. You can check these out here: [openad_tools.grammar_def.py](https://github.com/acceleratedscience/openad-tools/blob/main/openad_tools/grammar_def.py)
 
-<div class="padded-list-next"></div>
+### Compiling the Command
 
-1. We want to support individual an molecule identifier as well as a list of identifiers as input. For this we can simply import the `molecule_identifier_s` definition, which handles both.
+<div class="padded-list" markdown>
+
+1. We want to support an individual molecule identifier as well as a list of identifiers as input. For this we can simply import the `molecule_identifier_s` definition, which handles both.
 
     ```python
     from openad_tools.grammar_def import molecule_identifier_s
     ```
 
-1. Then we'll create the other parts of our command and store them in `plugin_grammar_def.py`.  
+2. Then we'll create the other parts of our command and store them in `plugin_grammar_def.py`.  
     Two things to note: we'll support both `calc` as `calculate`, and the identifier for the word `for` is called `f_or` so it doesn't interfer with the Python's "for" used for looping.
     
     ```python
@@ -240,7 +242,7 @@ Earlier you duplicated `commands/hello_world` and renamed it to `commands/calcul
     from openad_plugin_fingerprint.plugin_grammar_def import calculate, fp_type, f_or, clause_update
     ```
 
-2. Let's now put them togther to create our command.
+3. Let's now put them together to create our command.
    
     ```python
     # Command definition
@@ -255,10 +257,11 @@ Earlier you duplicated `commands/hello_world` and renamed it to `commands/calcul
         )(self.parser_id)
     )
     ```
+</div>
 
 ## 4. Testing the Parser
 
-Now the command is in place, let's test if it gets parsed as intended. Don't forget to reboot OpenAD for changed to take effect.
+Now the command is in place, let's test if it gets parsed as intended. Don't forget to reboot OpenAD for the changed to take effect.
 
 ```python
 def exec_command(self, cmd_pointer, parser):
@@ -309,7 +312,7 @@ def exec_command(self, cmd_pointer, parser):
     cmd = parser.as_dict()
     # print(cmd)
 
-    # parse identifiers
+    # Parse identifiers
     from_mws = "mws" in cmd
     # A. from molecule working set
     if from_mws:
@@ -474,7 +477,7 @@ Numpy array:
 
 ### Calculating Fingerprints for your Molecule Working Set
 
-More practical would be to update all molecules in the MWS with a certain fingeprint.  
+More practical would be to update all molecules in the MWS with a certain fingerprint.  
 To demo this, we'll first need to add a few molecules to the MWS:
 ```shell
 add mol CC(C)[N+](=O)[O-] basic force
@@ -482,7 +485,7 @@ add mol O=C1CNC(=O)N1 basic force
 add mol Nc1ccccc1O basic force
 ```
 
-Then we can calculate the topological torsion fingeprint and update our molecules with the result:
+Then we can calculate the topological torsion fingerprint and update our molecules with the result:
 ```python
 fp calc ap for @mws update
 ```

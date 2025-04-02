@@ -4,21 +4,16 @@ When creating your own plugin documentation, make sure to follow the same descip
 - We have a number of readymade grammar definitions that can be imported as building blocks. You can check this out here:
 -->
 
-# Plugin Developer Guide <!-- omit in toc -->
+# Plugin Developer Guide
 
 Creating your own plugins is easy if you have a basic understanding of Python. With only a few steps you can expose your own projects (or your favorite tools) to access OpenAD's powerful visualisation capabilities and more.
 
-## Tl;dr <!-- omit in toc -->
+!!! info
+	For a detailed start-to-finish example, check out our [How to Build a Plugin for OpenAD](https://openad.accelerate.science/blog/2025/04/02/how-to-build-a-plugin-for-openad) tutorial
 
-Clone the [Demo plugin](https://github.com/acceleratedscience/openad-plugin-demo), install with `-e` and figure it out based on the instructions in the file.
+## Tl;dr
 
-<!-- ### Table of Contents
-- [Step-by-Step Guide](#step-by-step-guide)
-	- [1. Download the Demo Plugin Scaffold](#1-download-the-demo-plugin-scaffold)
-	- [2. Set Plugin Parameters](#2-set-plugin-parameters)
-	- [3. Clean Up](#3-clean-up)
-	- [4. Create Your First Command](#4-create-your-first-command)
-	- [5. Test Your Code](#5-test-your-code) -->
+Clone the [Demo plugin](https://github.com/acceleratedscience/openad-plugin-demo), then `pip install -e .` and let the in-file instructions guid you.
   
 ## Step-by-Step Guide
 

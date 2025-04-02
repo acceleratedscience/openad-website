@@ -31,7 +31,7 @@ openad
 
 <!-- Note: step 1 & 2 are repeated, make sure any updates are done in both places -->
 
-<div class="padded-list-next"></div>
+<div class="padded-list" markdown>
 
 1.  **Before you start**  
     Ensure you're running Python 3.10.10+ or 3.11 - see [Upgrading Python](installation.md#upgrading-python).
@@ -65,11 +65,13 @@ openad
 
 4.  Continue to [Getting Started]
 
+</div>
+
 ## Installing on Windows
 
 In order to run OpenAD on Windows 11, you will need to install the Ubuntu [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) package.
 
-<div class="padded-list-next"></div>
+<div class="padded-list" markdown>
 
 1.  **Verify Windows version**  
     To check if you are running Windows 11 or later, press `Win` + `R`, type "winver", and press `Enter`. A window will open showing your Windows version.
@@ -88,13 +90,15 @@ In order to run OpenAD on Windows 11, you will need to install the Ubuntu [WSL](
 
 4.  Continue to [Getting Started]
 
+</div>
+
 ## Appendix
 
 ### Upgrading Python
 
 There's many ways to install or upgrade Python. We'll use `pyenv`.
 
-<div class="padded-list-next"></div>
+<div class="padded-list" markdown>
 
 1.  **Install pyenv**
 
@@ -138,6 +142,8 @@ There's many ways to install or upgrade Python. We'll use `pyenv`.
     ```shell
     pyenv shell 3.11
     ```
+
+</div>
 
 ### Linux Notes
 

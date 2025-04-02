@@ -7,8 +7,8 @@ hide:
 ---
 
 <!-- To document: -->
-<div class="padded-list-next"></div>
-<div class="tight-list-next"></div>
+<div class="padded-list" markdown></div>
+<div class="tight-list" markdown></div>
 <div class='table-full-width-next'></div>
 <p class="cli-ss-wrap" markdown>
     ![OpenAD CLI](_assets/openad-cli.png){ width="500" style="max-width: 100%" }

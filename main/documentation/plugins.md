@@ -6,7 +6,7 @@ Plugins provide drastically simplified access to a series of advanced tools, and
 
 ## Available Plugins
 
-<div class="padded-list-next"></div>
+<div class="padded-list" markdown>
 
 1.  **Deep Search**  
     Find molecules by similarity or substructure, scan patents for molecules and vice versa and search across available Deep Search collections.
@@ -25,6 +25,8 @@ Plugins provide drastically simplified access to a series of advanced tools, and
     ```
     
     For more information visit the  [openad-plugin-rxn](https://github.com/acceleratedscience/openad-plugin-rxn) repo.
+
+</div>
 
 ## Developer Guide
 

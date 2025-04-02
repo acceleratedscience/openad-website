@@ -13,7 +13,7 @@ Jump to the [plugin developer guide](plugin-development/index.md) for detailed i
 
 <details markdown>
 <summary>Install using the setup wizard (uses poetry)</summary>
-<div markdown>
+<div class="padded-list" markdown>
 
 1.  **Step 1: Download the repo**
 
@@ -39,8 +39,7 @@ Jump to the [plugin developer guide](plugin-development/index.md) for detailed i
 
 <details markdown>
 <summary>Install using pip</summary>
-<div class="padded-list-next"></div>
-<div markdown>
+<div class="padded-list" markdown>
 
 <!-- Note: step 1 & 2 are repeated, make sure any updates are done in both places -->
 
