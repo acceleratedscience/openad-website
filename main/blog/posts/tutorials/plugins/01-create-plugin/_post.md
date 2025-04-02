@@ -8,7 +8,7 @@ categories:
     - Tutorials
     - Plugins
 links:
-    - Plugin Developer Guide: documentation/plugin-development
+    - Plugin Developer Guide: docs/plugin-development
 ---
 
 # How to Build a Plugin for OpenAD
@@ -19,7 +19,7 @@ In this tutorial, we'll build an OpenAD plugin from start to finish, allowing yo
 
 We'll use Greg Landrum's [2022 blog post on generating fingerprints with RDKIt](https://greglandrum.github.io/rdkit-blog/posts/2023-01-18-fingerprint-generator-tutorial.html) and implement this functionality in our plugin.
 
-This is an example plugin implementation. For a more general (and shorter) guide on building plugins for OpenAD, check out our [Plugin Developer Guide](/documentation/plugin-development/index.md).
+This is an example plugin implementation. For a more general (and shorter) guide on building plugins for OpenAD, check out our [Plugin Developer Guide](/docs/plugin-development/index.md).
 
 !!! note
     Download the finished plugin from GitHub: [openad-plugin-tutorial](https://github.com/acceleratedscience/openad-plugin-tutorial)
@@ -151,7 +151,7 @@ grammar_help.append(
 
 ### Writing Plugin Description
 
-Let's describe to the users what our plugin does, what the options are, and how it's supposed to be used, while using the [OpenAD styling syntax](/documentation/plugin-development/knowledge-base.md#printing-text) to create a clean and organized help screen.
+Let's describe to the users what our plugin does, what the options are, and how it's supposed to be used, while using the [OpenAD styling syntax](/docs/plugin-development/knowledge-base.md#printing-text) to create a clean and organized help screen.
 
 ```text
 Calculate different types of molecule fingerprints using RDKit. This will return the RDKit fingerprint object for further processing.
@@ -209,7 +209,7 @@ Earlier you duplicated `commands/hello_world` and renamed it to `commands/calcul
 
 ### Notes
 
-- The command definition is created using PyParsing. If you're new to PyParsing, check out our [PyParsing 101](/documentation/plugin-development/pyparsing-101.md) crash course to get up to speed in no time.
+- The command definition is created using PyParsing. If you're new to PyParsing, check out our [PyParsing 101](/docs/plugin-development/pyparsing-101.md) crash course to get up to speed in no time.
 - Each word in a command is represented by a "grammar definition". We'll store our grammar definitions in `plugin_grammar_def.py` so they can be reused across commands.
 - We have a number of readymade grammar definitions that can be imported as building blocks. You can check these out here: [openad_tools.grammar_def.py](https://github.com/acceleratedscience/openad-tools/blob/main/openad_tools/grammar_def.py)
 

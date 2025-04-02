@@ -408,6 +408,7 @@ code {
 	height: 1rem;
 	right: 0.5rem;
 	top: 0.5rem;
+	color: var(--carbon-gray-d);
 }
 .md-clipboard::after {
 	width: 1rem;
@@ -415,6 +416,9 @@ code {
 	mask-image: var(--carbon-icn-clipboard);
 }
 :hover > .md-clipboard {
+	color: white;
+}
+.md-clipboard:focus {
 	color: white;
 }
 
