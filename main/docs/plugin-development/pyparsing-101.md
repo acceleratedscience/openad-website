@@ -8,6 +8,7 @@ While PyParsing can get complex, you can probably get away with understanding ju
 !!! Documentation  
     - [PyParsing documentation](https://pyparsing-docs.readthedocs.io/en/latest/HowToUsePyparsing.html)  
     - [Available parsing methods](https://pyparsing-docs.readthedocs.io/en/latest/pyparsing.html)
+    - OpenAD readymade definition library: [openad_tools.grammar_def.py](https://github.com/acceleratedscience/openad-tools/blob/main/openad_tools/grammar_def.py)
 
 ### Defining a Word
 

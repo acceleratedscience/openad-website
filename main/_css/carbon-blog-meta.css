@@ -13,6 +13,11 @@
 	gap: 1rem;
 }
 
+/* Links */
+.carbon-blog-meta a:not(.icn-wrap) {
+	color: var(--carbon-blue);
+}
+
 /* Sections with icons */
 .carbon-blog-meta .icn-wrap {
 	display: flex;
@@ -39,6 +44,18 @@
 }
 .carbon-blog-meta .date .updated {
 	white-space: nowrap;
+}
+
+/* Reference links */
+.carbon-blog-meta .references {
+	margin-top: 1rem;
+}
+.carbon-blog-meta .references li a {
+	padding-left: 0;
+	color: var(--carbon-blue);
+}
+.carbon-blog-meta .references li::marker {
+	content: none;
 }
 
 /* RESPONSOVE < MEDIUM */
@@ -83,6 +100,14 @@
 	/* Authors */
 	.carbon-blog-meta .authors span {
 		white-space: nowrap;
+	}
+
+	/* Reference links */
+	.carbon-blog-meta .references {
+		margin-top: 0.5rem;
+	}
+	.carbon-blog-meta .references li a {
+		display: inline-block;
 	}
 }
 

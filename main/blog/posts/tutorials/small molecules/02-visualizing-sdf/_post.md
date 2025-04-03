@@ -2,6 +2,8 @@
 draft: false
 description: Learn how to use OpenAD to visualize the contents of SDF, MOL, CSV & SMI files in a convenient molecule grid.
 date: 2025-03-18
+authors:
+    - moenen
 categories:
     - Tutorials
     - Small Molecules

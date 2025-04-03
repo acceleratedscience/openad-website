@@ -10,22 +10,23 @@ nav:
     # - Style Reference: style-reference.md
     - Home: index.md
     - Documentation:
-          - Installation: documentation/installation.md
-          - Getting Started: documentation/getting-started.md
+          - Installation: docs/installation.md
+          - Getting Started: docs/getting-started.md
+          - Base Concepts: docs/base-concepts.md
           - Model Service:
-                - documentation/model-service/index.md
-                - Prepackaged Models: documentation/model-service/prepackaged-models.md
-                - Wrapping Models: documentation/model-service/wrapping.md
-                - IBM Hosted: documentation/model-service/ibm-hosted.md
-          - Commands: documentation/commands.md
-          - Plugins: documentation/plugins.md
+                - docs/model-service/index.md
+                - Prepackaged Models: docs/model-service/prepackaged-models.md
+                - Wrapping Models: docs/model-service/wrapping.md
+                - IBM Hosted: docs/model-service/ibm-hosted.md
+          - Commands: docs/commands.md
+          - Plugins: docs/plugins.md
           - Plugin Development:
-                - documentation/plugin-development/index.md
-                - Knowledge Base: documentation/plugin-development/knowledge-base.md
-                - PyParsing 101: documentation/plugin-development/pyparsing-101.md
-          - Tell Me: documentation/tell-me.md
-          - Developers: documentation/developers.md
-          - Troubleshooting: documentation/troubleshooting.md
+                - docs/plugin-development/index.md
+                - Knowledge Base: docs/plugin-development/knowledge-base.md
+                - PyParsing 101: docs/plugin-development/pyparsing-101.md
+          - Tell Me: docs/tell-me.md
+          - Developers: docs/developers.md
+          - Troubleshooting: docs/troubleshooting.md
     - Tutorials:
           - blog/index.md
     - About: about.md

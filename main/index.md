@@ -20,7 +20,7 @@ OpenAD is an intuitive toolkit that simplifies access to a variety of AI models 
 </p>
 
 [:carbon-icn-github: Install for free](https://github.com/acceleratedscience/openad-toolkit){ .md-button .md-button--primary target=\_blank .btn-large }
-[Documentation](documentation/installation.md){ .md-button .btn-large }
+[Documentation](docs/installation.md){ .md-button .btn-large }
 [Tutorials](blog/category/tutorials.md){ .md-button .md-button--tertiary .btn-large }
 
 </div>

@@ -2,6 +2,8 @@
 draft: false
 description: Learn how to use OpenAD to visualize a molecule in 2D and 3D from a SMILES, InChI, InChIKey, name or PubChem ID.
 date: 2025-03-17
+authors:
+    - moenen
 categories:
     - Tutorials
     - Small Molecules

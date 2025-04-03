@@ -81,7 +81,7 @@ jupyter lab ~/openad_notebooks/Table_of_Contents.ipynb
 
 The following commands only need to be run once after installation:
 
-<div class="padded-list-next"></div>
+<div class="padded-list" markdown>
 
 1.  **Activate your virtual environment**
 
@@ -106,27 +106,27 @@ The following commands only need to be run once after installation:
     init_magic
     ```
 
-    <details>
-    <summary><b>Alternative:</b> Manually add magic commands</summary>
-    <div markdown>
+<details>
+<summary><b>Alternative:</b> Manually add magic commands</summary>
+<div class="tight-list" markdown>
 
-    If you don't want to activate magic commands in all Notebooks, you can instead activate them for individual Notebooks.
+If you don't want to activate magic commands in all Notebooks, you can instead activate them for individual Notebooks.
 
-    <div class="tight-list-next"></div>
+-   Run `init_examples`
+-   Copy the file `~/openad_notebooks/openad.ipynb` to the same directory as the Notebook you wish to activate.
+-   In your Notebook, run this inside a code cell: `!run openad.ipynb`
 
-    -   Run `init_examples`
-    -   Copy the file `~/openad_notebooks/openad.ipynb` to the same directory as the Notebook you wish to activate.
-    -   In your Notebook, run this inside a code cell: `!run openad.ipynb`
+</div>
+</details>
 
-    </div>
-    </details>
-
-4.  **Install example Notebooks**<br>
+1.  **Install example Notebooks**<br>
     This installs our example Notebooks at `~/openad_notebooks`.
 
     ```shell
     init_examples
     ```
+
+</div>
 
 <br>
 

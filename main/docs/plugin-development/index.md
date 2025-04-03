@@ -1,24 +1,13 @@
-<!--
-TODO:
-When creating your own plugin documentation, make sure to follow the same desciption patterns as other OpenAD commands.
-- We have a number of readymade grammar definitions that can be imported as building blocks. You can check this out here:
--->
-
-# Plugin Developer Guide <!-- omit in toc -->
+# Plugin Developer Guide
 
 Creating your own plugins is easy if you have a basic understanding of Python. With only a few steps you can expose your own projects (or your favorite tools) to access OpenAD's powerful visualisation capabilities and more.
 
-## Tl;dr <!-- omit in toc -->
+!!! info
+	For a detailed start-to-finish example, check out our [How to Build a Plugin for OpenAD](/blog/posts/tutorials/plugins/01-create-plugin/_post.md) tutorial
 
-Clone the [Demo plugin](https://github.com/acceleratedscience/openad-plugin-demo), install with `-e` and figure it out based on the instructions in the file.
+## Tl;dr
 
-<!-- ### Table of Contents
-- [Step-by-Step Guide](#step-by-step-guide)
-	- [1. Download the Demo Plugin Scaffold](#1-download-the-demo-plugin-scaffold)
-	- [2. Set Plugin Parameters](#2-set-plugin-parameters)
-	- [3. Clean Up](#3-clean-up)
-	- [4. Create Your First Command](#4-create-your-first-command)
-	- [5. Test Your Code](#5-test-your-code) -->
+Clone the [Demo plugin](https://github.com/acceleratedscience/openad-plugin-demo), then `pip install -e .` and let the in-file instructions guid you.
   
 ## Step-by-Step Guide
 
@@ -74,8 +63,9 @@ Remove everything under `# --- Edit below this line --- #` and replace with any 
 - Duplicate the [commands/hello_world] directory as a scaffold for your first command.
 - Look for `# <-- UPDATE` and update the import statements to `openad_plugin_<plugin_name>`
 - Look for `# <-- EDIT` and edit, the comments will guide you.
-- Look for `# Command definition` and compose your command definition.  
-Get up to speed with our [PyParsing 101].
+- Look for `# Command definition` and compose your command definition. Some tips:
+    - Get up to speed with our [PyParsing 101]
+    - Save time with our readymade PyParsing definitions: [openad_tools.grammar_def.py](https://github.com/acceleratedscience/openad-tools/blob/main/openad_tools/grammar_def.py)
 - Put your command logic inside `def exec_command()`.  
 Check our [Knowledge Base](knowledge-base.md) to learn about how to return data, use our display tools and more.
 

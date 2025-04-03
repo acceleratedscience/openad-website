@@ -2,6 +2,8 @@
 draft: false
 description: Learn how to use OpenAD to visualize a batch of molecules in Jupyter Notebook from a list of SMILES or InChI strings.
 date: 2025-03-19
+authors:
+    - moenen
 categories:
     - Tutorials
     - Small Molecules

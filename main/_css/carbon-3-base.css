@@ -267,24 +267,18 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 
 /**
  * Padded Lists
- * - - -
- * We can't style lists directly but we can by prepending this:
- * <div class='padded-list-next'></div>
 */
-.padded-list-next ~ * > ol li:not(:first-child),
-.padded-list-next ~ * > ul li:not(:first-child),
-.padded-list-next ~ ol li:not(:first-child),
-.padded-list-next ~ ul li:not(:first-child) {
+.padded-list ol li:not(:first-child),
+.padded-list ul li:not(:first-child) {
 	margin-top: 2rem;
 }
+
 /**
  * Sometimes we have regular lists embedded in
  * a padded list, this lets us disable padding again.
 */
-.tight-list-next ~ * > ol li:not(:first-child),
-.tight-list-next ~ * > ul li:not(:first-child),
-.tight-list-next ~ ol li:not(:first-child),
-.tight-list-next ~ ul li:not(:first-child) {
+.tight-list > ol li:not(:first-child),
+.tight-list > ul li:not(:first-child) {
 	margin-top: 0;
 }
 
@@ -414,6 +408,7 @@ code {
 	height: 1rem;
 	right: 0.5rem;
 	top: 0.5rem;
+	color: var(--carbon-gray-d);
 }
 .md-clipboard::after {
 	width: 1rem;
@@ -421,6 +416,9 @@ code {
 	mask-image: var(--carbon-icn-clipboard);
 }
 :hover > .md-clipboard {
+	color: white;
+}
+.md-clipboard:focus {
 	color: white;
 }
 

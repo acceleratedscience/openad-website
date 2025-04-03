@@ -2,6 +2,8 @@
 draft: false
 description: Learn how to import PDB data into your OpenAD workspace.
 date: 2025-03-25
+authors:
+    - moenen
 categories:
     - Tutorials
     - Proteins

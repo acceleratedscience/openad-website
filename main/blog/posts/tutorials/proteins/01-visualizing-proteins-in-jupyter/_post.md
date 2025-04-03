@@ -2,6 +2,8 @@
 draft: false
 description: Learn how to use OpenAD to visualize proteins or other macromolecules, using PDB files, CIF files or FASTA strings.
 date: 2025-03-24
+authors:
+    - moenen
 categories:
     - Tutorials
     - Proteins

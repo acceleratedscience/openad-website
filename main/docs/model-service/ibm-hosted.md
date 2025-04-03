@@ -9,7 +9,7 @@ Before you continue, make sure you know who your group admin is.
 
 ## Step 1: Register at the OpenAD Portal
 
-<div class="padded-list-next"></div>
+<div class="padded-list" markdown>
 1.  **Log in to the OpenAD Portal**  
     Go to [open.accelerate.science](https://open.accelerate.science) and log in with your IBMid, create one if necessary.  
     You'll see: _"Your account is pending to be added to a group"_
@@ -23,10 +23,10 @@ Before you continue, make sure you know who your group admin is.
 3.  **Verify Account Setup**  
     Log in again after receiving confirmation.  
     Your _group_ and _role_ should be displayed.
+</div>
 
 ## Step 2: Generate Access Token
 
-<div class="tight-list-next"></div>
 1. Navigate to the **Access Token** tab
 2. Click **Generate Token**
 3. Click anywhere on the token to copy it, you'll need it later
