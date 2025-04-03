@@ -4,7 +4,7 @@ DO NOT EDIT
 -----------
 This file is auto-generated.
 To update it, consult instructions:
-https://github.com/acceleratedscience/open-ad-toolkit/tree/main/docs
+https://github.com/acceleratedscience/openad-toolkit/tree/main/docs
 
 -->
 

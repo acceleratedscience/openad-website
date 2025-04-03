@@ -12,6 +12,7 @@ nav:
     - Documentation:
           - Installation: docs/installation.md
           - Getting Started: docs/getting-started.md
+          - Base Concepts: docs/base-concepts.md
           - Model Service:
                 - docs/model-service/index.md
                 - Prepackaged Models: docs/model-service/prepackaged-models.md
