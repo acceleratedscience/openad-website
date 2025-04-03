@@ -108,12 +108,12 @@ theme:
     custom_dir: main/_overrides
 
 extra_css:
+    - _css/carbon-color-overrides.css
     - _css/carbon-1-colors.css
     - _css/carbon-2-vars.css
     - _css/carbon-3-base.css
-    - _css/carbon-page-header.css
-    - _css/carbon-nav.css
-    - _css/carbon-side-nav.css
+    - _css/carbon-nav-header.css
+    - _css/carbon-nav-side.css
     - _css/carbon-search.css
     - _css/carbon-layout.css
     - _css/carbon-blog.css
@@ -179,6 +179,7 @@ markdown_extensions:
 
     # Code formatting
     - pymdownx.highlight:
+          linenums: false # May want to enable later, but requires additional styling
           anchor_linenums: true
           line_spans: __span
           pygments_lang_class: true

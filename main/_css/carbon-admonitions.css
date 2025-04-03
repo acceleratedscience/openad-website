@@ -1,3 +1,16 @@
+/*
+
+Admonitions
+-----------
+
+Admonitions are specially styles blocks for info/warning/etc.
+
+See Style reference for implementation:
+	- /main/style-reference.md
+	- https://openad.accelerate.science/style-reference/#admonitions
+
+*/
+
 .md-typeset .admonition {
 	font-size: var(--font-size);
 	border: none;

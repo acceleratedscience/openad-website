@@ -1,11 +1,14 @@
-/**
- * Styles to sync mkdocs-material with the
- * Carbon implementation elsewhere.
- * - - -
- * - Set IBM Plex Sans as the default font
- * - Set root font size to 16px (1rem = 16px)
- * - Resize fonts and UI elements
- */
+/*
+
+Carbon Base Styles
+------------------
+
+Core style overrides to skin the mkdocs-material to look like Carbon.
+- Set IBM Plex Sans as the default font
+- Set root font size to 16px (1rem = 16px)
+- Resize fonts and UI elements
+
+*/
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
@@ -169,6 +172,7 @@ document.body.insertAdjacentHTML('beforeend', tooltip);
 /* Separator */
 .md-typeset hr {
 	margin: 4rem 0;
+	border-color: var(--carbon-soft);
 }
 
 /**
@@ -334,6 +338,12 @@ h3 strong.flag {
 	margin: 0;
 }
 
+/* Special dark theme adjustment */
+[data-md-color-scheme="carbon-dark"] .md-typeset code {
+	background: rgba(255, 255, 255, 0.08);
+	box-shadow: none;
+}
+
 /* Font */
 code {
 	font-family: "IBM Plex Mono", monospace;
@@ -354,10 +364,6 @@ code {
 }
 
 /* Block code */
-[data-md-color-scheme="carbon-dark"] .md-typeset code {
-	background: var(--carbon-dark);
-	color: var(--carbon-gray-l);
-}
 .md-typeset code {
 	font-size: var(--font-size);
 	line-height: var(--line-height);

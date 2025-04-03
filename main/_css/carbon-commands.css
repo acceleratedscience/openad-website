@@ -1,7 +1,12 @@
-/**
- * Styles specifically for the command documentation page.
- * https://openad.accelerate.science/docs/commands
- */
+/*
+
+Command Page
+------------
+
+Styles related to the auto-generated command documentation page:
+https://openad.accelerate.science/docs/commands
+
+*/
 
 /* Reset */
 .md-typeset pre {

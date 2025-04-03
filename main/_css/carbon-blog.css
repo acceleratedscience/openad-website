@@ -1,3 +1,12 @@
+/*
+
+Blog Styling
+------------
+
+All blog-related styling, mostly related to the excerpts.
+
+*/
+
 /* Excerpt inside blog post */
 h1 + .excerpt {
 	font-size: var(--font-size-xlarge);

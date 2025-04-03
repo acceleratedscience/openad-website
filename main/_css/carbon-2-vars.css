@@ -1,6 +1,12 @@
-/**
- * Single source of truth for all our variables.
- */
+/*
+
+Carbon Variables
+----------------
+
+Single source of truth for all our variables.
+
+*/
+
 body {
 	--font-size-xxlarge: 1.5rem; /* 24px */
 	--line-height-xxlarge: 2rem; /* 30px */

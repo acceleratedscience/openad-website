@@ -229,13 +229,31 @@ Here is some `hello world` inline code.
 Code block python:
 
 ```python
-print("hello world")
+abc = False
+def = 123456
+ghi = "string"
+jkl = { "a": 1, "b": 2 }
+mno = foo(100)
+
+# Comment
+def foo(bar=1):
+    """Docstring"""
+    print("hello world")
 ```
 
 Code block JS:
 
 ```javascript
-console.log('hello world')
+const abc = false
+let def = 123456
+var ghi = 'string'
+var jkl = { a: 1, g: 2 }
+var mno = foo(100)
+
+// Comment
+/* Comment */
+async function foo(bar=1):
+    console.log('hello world')
 ```
 
 Code block CLI
