@@ -15,9 +15,11 @@ This repo holds the public OpenAD website:
 
 <br>
 
-### Run local
+### Run Local
 
-> Note: you can publish blog posts directly from GitHub.
+> [!NOTE]
+> **No need to clone this repo**  
+> You can add or edit posts directly on GitHub and they will be published immediately unless `draft: true` is set.
 
 ```shell
 # Create & activate a virtual environment
@@ -34,7 +36,7 @@ mkdocs serve
 mkdocs serve -a localhost:9999
 ```
 
-### Build local
+### Build Local
 
 ```shell
 mkdocs build
@@ -58,11 +60,11 @@ We use the Material [blog plugin](https://squidfunk.github.io/mkdocs-material/pl
 
 ### Architecture
 
-- All content lives inside markdown files in the [/main](main) directory.
-- Navigation and all other site settings are controlled from [mkdocs.yml](mkdocs.yml).
-- The homepage as well as certain components use HTML overrides, more on which below.
-- The build is written to [/site](site).
-- A GitHub workflow called [ci.yml](.github/workflows/ci.yml) runs the build command and stores the build files into a branch called `gh-pages`, which is connected to our URL via GitHub Pages (see [Hosting & Domain Name](#hosting--domain-name) below).
+- All content lives inside markdown files in the [/main](main) directory
+- Navigation and all other site settings are controlled from [mkdocs.yml](mkdocs.yml)
+- The homepage as well as certain components use HTML overrides, more on which below
+- The build is written to [/site](site)
+- A GitHub workflow called [ci.yml](.github/workflows/ci.yml) runs the build command and stores the build files into a branch called `gh-pages`, which is connected to our URL via GitHub Pages (see [Hosting & Domain Name](#hosting--domain-name) below)
 
 <br>
 
@@ -94,6 +96,7 @@ In most cases we opted for cold hard CSS overrides (see [main/_css](main/_css)) 
 
 ## Hosting & Domain Name
 
-This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is regsitered with Google domains, with the [CNAME](main/CNAME) file connecting it.
+This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is registered with Google domains, with the [CNAME](main/CNAME) file connecting it.
 
-Note that setting the domain name in the GitHub pages settings is not enough, as the build process will rebuild the `gh-pages` branch every time, wiping out the custom domain. [More info](https://github.com/mkdocs/mkdocs/issues/1257).
+> [!WARNING]
+> The [CNAME](main/CNAME) file connecting the domain name to our GitHub pages website is hardcoded in the `/main` folder. Usually this file is automatically added by GitHub Pages, but because our build process will rebuild the `gh-pages` branch every time, the GitHub-provided file gets erased with every update. Hardcoding the file circumvents that. [More info](https://github.com/mkdocs/mkdocs/issues/1257).
