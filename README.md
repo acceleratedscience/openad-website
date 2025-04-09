@@ -23,7 +23,7 @@ Run the development server at [http://localhost:8000]
 
 > [!NOTE]
 > **No need to clone this repo**  
-> You can add or edit posts directly on GitHub and they will be published immediately.
+> You can add or edit blog posts directly on GitHub and they will be published immediately.
 
 ```shell
 # Create & activate a virtual environment
@@ -50,7 +50,7 @@ mkdocs build
 
 ## Deployment
 
-Deployment to GitHub pages happens automatically when changes are pushed to the `main` branch, via the [ci.yml build workflow](blob/main/.github/workflows/ci.yml). Build progress can be followed under the [GitHub Actions tab](actions).
+Deployment to GitHub pages happens automatically when changes are pushed to the `main` branch, via the [ci.yml build workflow](.github/workflows/ci.yml). Build progress can be followed under the [GitHub Actions tab](/acceleratedscience/openad-website/actions).
 
 <br>
 
