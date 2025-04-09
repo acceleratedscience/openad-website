@@ -19,7 +19,7 @@ This repo holds the OpenAD website:
 
 ### Development Server
 
-Run the development server at [http://localhost:8000]
+Run the development server at [localhost:8000](http://localhost:8000)
 
 > [!NOTE]
 > **No need to clone this repo**  
@@ -50,7 +50,7 @@ mkdocs build
 
 ## Deployment
 
-Deployment to GitHub pages happens automatically when changes are pushed to the `main` branch, via the [ci.yml build workflow](.github/workflows/ci.yml). Build progress can be followed under the [GitHub Actions tab](/acceleratedscience/openad-website/actions).
+Deployment to GitHub pages happens automatically when changes are pushed to the `main` branch, via the [ci.yml build workflow](.github/workflows/ci.yml). Build progress can be followed under the [GitHub Actions tab](https://github.com/acceleratedscience/openad-website/actions).
 
 <br>
 
@@ -58,7 +58,7 @@ Deployment to GitHub pages happens automatically when changes are pushed to the 
 
 <!-- Domain name is managed by IBM Webmaster Jerry Liao @jerryliao / jliao [at] ca.ibm.com  -->
 
-This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is registered with Google domains and managed by the IBM webmaster, with a [CNAME](main/CNAME) record pointing to `acceleratedscience.github.io` per [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain).
+This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is registered with Google domains and managed by the IBM webmaster, with a `CNAME` record pointing to `acceleratedscience.github.io` per [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain).
 
 > [!WARNING]
 > There is a local [CNAME](main/CNAME) file connecting the domain name to our GitHub pages website hardcoded in the `/main` folder. Usually this file is automatically added by GitHub Pages, but because our build process will rebuild the `gh-pages` branch every time, the GitHub-provided file gets erased with every update. Hardcoding the file circumvents that. [More info](https://github.com/mkdocs/mkdocs/issues/1257).
