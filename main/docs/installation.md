@@ -107,11 +107,17 @@ There's many ways to install or upgrade Python. We'll use `pyenv`.
     ```
 
 2.  **Set up your shell environment for Pyenv**  
-    Detailed instructions cam be found [here](https://github.com/pyenv/pyenv?tab=readme-ov-file#set-up-your-shell-environment-for-pyenv). If you're using Zsh, you can run the commands below:
+    Detailed instructions can be found [here](https://github.com/pyenv/pyenv?tab=readme-ov-file#set-up-your-shell-environment-for-pyenv). If you're using Zsh, you can run the commands below:
 
     ```shell
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+    ```
+
+    ```shell
     echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    ```
+
+    ```shell
     echo 'eval "$(pyenv init -)"' >> ~/.zshrc
     ```
 
