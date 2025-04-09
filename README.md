@@ -1,7 +1,7 @@
 # OpenAD Website
 <!-- Author: moenen.erbuer@ibm.com -->
 
-This repo holds the public OpenAD website:
+This repo holds the OpenAD website:
 
 [openad.accelerate.science](https://openad.accelerate.science)
 
@@ -15,11 +15,15 @@ This repo holds the public OpenAD website:
 
 <br>
 
-### Run Local
+## Development
+
+### Development Server
+
+Run the development server at [http://localhost:8000]
 
 > [!NOTE]
 > **No need to clone this repo**  
-> You can add or edit posts directly on GitHub and they will be published immediately unless `draft: true` is set.
+> You can add or edit posts directly on GitHub and they will be published immediately.
 
 ```shell
 # Create & activate a virtual environment
@@ -29,7 +33,7 @@ source .venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
-# Launch development server
+# Launch development server at :8000
 mkdocs serve
 
 # Optional: launch on custom port
@@ -42,9 +46,26 @@ mkdocs serve -a localhost:9999
 mkdocs build
 ```
 
-### Publish
+<br>
 
-Just push the `main` branch to GitHub, deployment is automated with GitHub actions.
+## Deployment
+
+Deployment to GitHub pages happens automatically when changes are pushed to the `main` branch, via the [ci.yml build workflow](blob/main/.github/workflows/ci.yml). Build progress can be followed under the [GitHub Actions tab](actions).
+
+<br>
+
+## Hosting & Domain Name
+
+<!-- Domain name is managed by IBM Webmaster Jerry Liao @jerryliao / jliao [at] ca.ibm.com  -->
+
+This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is registered with Google domains and managed by the IBM webmaster, with a [CNAME](main/CNAME) record pointing to `acceleratedscience.github.io` per [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain).
+
+> [!WARNING]
+> There is a local [CNAME](main/CNAME) file connecting the domain name to our GitHub pages website hardcoded in the `/main` folder. Usually this file is automatically added by GitHub Pages, but because our build process will rebuild the `gh-pages` branch every time, the GitHub-provided file gets erased with every update. Hardcoding the file circumvents that. [More info](https://github.com/mkdocs/mkdocs/issues/1257).
+
+<br>
+
+---
 
 <br>
 
@@ -91,12 +112,3 @@ In most cases we opted for cold hard CSS overrides (see [main/_css](main/_css)) 
 
 - [MkDocs documentation](https://www.mkdocs.org) - The base framework
 - [Material documentation](https://squidfunk.github.io/mkdocs-material/) - Material is a theme for MkDocs with a bunch of additional functionality built in.
-
-<br>
-
-## Hosting & Domain Name
-
-This website is hosted on GitHub Pages at [acceleratedscience.github.io/openad-website](https://acceleratedscience.github.io/openad-website). Our domain is registered with Google domains, with the [CNAME](main/CNAME) file connecting it.
-
-> [!WARNING]
-> The [CNAME](main/CNAME) file connecting the domain name to our GitHub pages website is hardcoded in the `/main` folder. Usually this file is automatically added by GitHub Pages, but because our build process will rebuild the `gh-pages` branch every time, the GitHub-provided file gets erased with every update. Hardcoding the file circumvents that. [More info](https://github.com/mkdocs/mkdocs/issues/1257).
