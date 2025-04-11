@@ -1,0 +1,136 @@
+/*
+
+Layout
+------
+
+Styles related to the page structure.
+
+/*
+
+
+/* Uncomment to see skeleton */
+/* .md-sidebar__scrollwrap {
+	border: solid lightgreen;
+}
+.md-content__inner {
+	border: solid 1px pink;
+}
+.md-main__inner {
+	border: solid 1px orange;
+} */
+
+/* Page grid */
+.md-grid {
+	max-width: 72rem;
+}
+
+/* Reset */
+.md-content__inner:before {
+	display: none;
+}
+.md-sidebar {
+	padding-top: 3rem;
+}
+.md-sidebar__scrollwrap {
+	margin: 0;
+}
+.md-sidebar--secondary .md-nav__list,
+.md-sidebar__inner > .md-nav--secondary > .md-nav__list {
+	padding-left: 0;
+}
+.md-sidebar--secondary .md-nav__title,
+.md-sidebar--secondary .md-nav__link {
+	padding-left: 0;
+}
+.md-sidebar--secondary .md-nav--secondary .md-nav__item {
+	padding: 0.25rem 0;
+}
+.md-sidebar--secondary .md-nav__link,
+[dir="ltr"]
+	.md-sidebar--secondary
+	.md-nav--secondary
+	.md-nav__item
+	> .md-nav__link {
+	margin: 0;
+}
+
+/* Content including side nav & TOC */
+.md-main__inner {
+	margin-top: 0;
+}
+
+/* Page content only */
+.md-content__inner {
+	padding-top: 0;
+	margin-top: 2.5rem;
+}
+[dir="ltr"]
+	.md-sidebar--secondary:not([hidden])
+	~ .md-content
+	> .md-content__inner {
+	margin-right: 2rem;
+}
+
+/* Table of contents */
+.md-nav__link {
+	margin: 0;
+}
+
+/* Gap between left side and content */
+[dir="ltr"] .md-content--post > .md-content__inner {
+	margin-left: 2rem;
+}
+
+/* Footer */
+.md-footer {
+	margin-top: 5rem;
+	margin-bottom: 1rem;
+}
+.md-footer .md-footer-meta__inner {
+	padding: 0 1rem;
+}
+.md-footer .md-copyright {
+	padding: 0;
+	margin: 0;
+}
+.md-footer .md-copyright,
+html .md-footer-meta.md-typeset a {
+	color: var(--carbon-text-soft);
+}
+
+/**
+ * Responsive
+ */
+
+/* RESPONSOVE < MEDIUM */
+@media screen and (max-width: 76.2344em) {
+	/* Page content only */
+	.md-content__inner {
+		margin: 3rem;
+	}
+
+	/* Footer */
+	.md-footer .md-footer-meta__inner {
+		padding: 0 3rem;
+	}
+}
+
+/* RESPONSOVE < SMALL */
+@media screen and (max-width: 60em) {
+	/* Layout */
+	.md-content__inner {
+		margin: 2rem;
+	}
+
+	/* Footer */
+	.md-footer .md-footer-meta__inner {
+		padding: 0 2rem;
+	}
+
+	/* Anchor links */
+	[dir="ltr"] .md-typeset .headerlink,
+	.md-typeset .headerlink {
+		position: static;
+		margin-left: 0.25rem;
+	}
+}

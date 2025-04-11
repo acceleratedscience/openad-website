@@ -1,0 +1,316 @@
+/*
+
+Side Navigation
+---------------
+
+*/
+
+/* Reset */
+[dir="ltr"] .md-nav--primary .md-nav__item > .md-nav__link {
+	margin: 0;
+}
+
+/* Font size */
+.md-nav {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+}
+
+/**
+ * Icons
+ */
+
+.md-nav--primary .md-nav__link .md-nav__icon {
+	/* background: pink; */
+	width: 1rem;
+	height: 1rem;
+	margin: 0.75rem;
+	margin-left: 0;
+}
+
+/**
+ * Regular item
+ */
+.md-nav--primary .md-nav__item {
+	/* background: brown; */
+	/* border-bottom: solid 1px black !important; */
+	font-size: var(--font-size);
+	border: none;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 1rem;
+	color: var(--md-default-fg-color);
+}
+
+/* Color */
+.md-nav__link[for]:hover,
+.md-nav__link[href]:hover {
+	color: var(--carbon-link);
+}
+
+/**
+ * Section item
+ */
+.md-nav__link.md-nav__container {
+	/* background: pink; */
+}
+
+/* Active section header */
+.md-nav--primary
+	.md-nav__item--active
+	> .md-nav__link:has(.md-nav__icon):has(.md-nav__link--active) {
+	background: var(--md-default-bg-color--light);
+	border-right: solid 3px var(--carbon-link);
+}
+
+/* Active section header icon */
+.md-nav--primary
+	.md-nav__item--active
+	> .md-nav__link:has(.md-nav__icon)
+	.md-nav__icon::after {
+	background: var(--carbon-link);
+}
+
+/* Passive section header link */
+.md-nav__container > .md-nav__link:first-child {
+	color: var(--carbon-black);
+	/* border: solid 1px red; */
+	padding: 0;
+}
+
+/* .md-nav__item .md-nav__link--active {
+	background: orange;
+} */
+/* md-nav__item--active */
+
+/* Expanded section */
+.md-nav__item.md-nav__item--nested:has(nav[aria-expanded="true"]) {
+	border-left: solid 1px var(--carbon-soft);
+}
+.md-nav--primary
+	> .md-nav__list
+	> .md-nav__item.md-nav__item--nested:has(nav[aria-expanded="true"]) {
+	border: none;
+}
+
+/**
+ * Current page item
+ */
+
+.md-nav--primary .md-nav__item--active > .md-nav__link,
+.md-nav--primary .md-nav__item--active > .md-nav__link:focus,
+.md-nav--primary .md-nav__item--active > .md-nav__link:hover {
+	color: var(--md-default-fg-color);
+	opacity: 1;
+}
+.md-nav--primary
+	.md-nav__item.md-nav__item--active:not(
+		.md-nav__item--section,
+		.md-nav__item--nested
+	) {
+	background: var(--md-default-bg-color--light);
+	border-right: solid 3px var(--carbon-blue);
+}
+
+/**
+ * Table of contents
+ */
+
+.md-nav--secondary {
+	padding-right: 1rem;
+}
+.md-nav--secondary .md-nav__title {
+	margin-right: -1rem;
+	margin-bottom: 0.5rem;
+}
+
+.md-nav--secondary .md-nav__item {
+	height: auto;
+	line-height: 1.25rem;
+	padding-left: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.125rem;
+	padding-right: 0;
+}
+[dir="ltr"] .md-nav--primary .md-nav--secondary .md-nav .md-nav__link {
+	padding-left: 0 !important;
+}
+
+/**
+ * Styles only applied to collapsable navigaton tray
+ */
+
+/* RESPONSOVE < MEDIUM */
+@media screen and (max-width: 76.2344em) {
+	/**
+	 * Expose close button
+	 * - - -
+	 * The template doesn't keep the close button
+	 * where the open button was, very bad UX.
+	 * We push the nav down when there's no sub-level enabled,
+	 * and overlay the close icon in the open state.
+	 */
+
+	[data-md-toggle="drawer"]:checked
+		~ .md-header
+		.md-icon.md-header__button[for="__drawer"] {
+		position: relative;
+	}
+	[data-md-toggle="drawer"]:checked
+		~ .md-header
+		.md-icon.md-header__button[for="__drawer"]::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--carbon-dark-d) var(--carbon-icn-close) center center
+			no-repeat;
+	}
+	.md-sidebar.md-sidebar--primary:not(:has(.md-nav__toggle:checked)) {
+		margin-top: 3rem;
+	}
+
+	/* Move overlay behind top nav */
+	.md-overlay {
+		z-index: 4;
+	}
+
+	/* Hide GitHub URL */
+	.md-nav__source {
+		display: none;
+	}
+
+	/**
+   	 * Nested Header
+   	 */
+	.md-sidebar.md-sidebar--primary .md-nav--primary .md-nav__title {
+		padding: 0;
+		padding-left: 2.5rem;
+		height: 3rem;
+		line-height: 3rem;
+		/* margin-top: -3rem; */
+		color: white;
+		background: var(--carbon-dark-d);
+	}
+	.md-sidebar.md-sidebar--primary .md-nav--primary .md-nav__title {
+		display: flex;
+		padding: 0;
+	}
+	.md-sidebar.md-sidebar--primary
+		.md-nav--primary
+		.md-nav__title
+		.md-nav__icon,
+	[dir="ltr"]
+		.md-sidebar.md-sidebar--primary
+		.md-nav--primary
+		.md-nav__title
+		.md-nav__icon {
+		/* background: pink; */
+		margin: 0;
+		width: 3rem;
+		height: 3rem;
+		padding: 1rem;
+		position: static;
+	}
+
+	/**
+   	 * Resets
+     */
+	.md-nav--primary .md-nav__title[for="__drawer"] {
+		background: transparent;
+	}
+	.md-nav--primary .md-nav__title ~ .md-nav__list {
+		box-shadow: none;
+	}
+	.md-nav--primary .md-nav__link {
+		padding: 0;
+	}
+}
+
+/**
+ * Styles only applied to integrated page navigaton
+ */
+
+/* RESPONSOVE > MEDIUM */
+@media screen and (min-width: 76.2344em) {
+	/* Reset */
+	.md-sidebar__scrollwrap {
+		margin: 0;
+	}
+
+	/* Hide page title above side nav */
+	.md-sidebar--primary
+		.md-nav--lifted
+		> .md-nav__list
+		> .md-nav__item--active
+		> .md-nav__link {
+		/* :not(.md-nav__container) */
+		display: none;
+	}
+
+	/* Remove padding chaos */
+	.md-sidebar--primary .md-nav {
+		margin: 0 !important;
+	}
+	.md-sidebar--primary .md-nav__item {
+		padding: 0 !important;
+	}
+	.md-nav__list,
+	[dir="ltr"] .md-nav--primary .md-nav__list {
+		/* border: solid 1px white; */
+		padding: 0;
+	}
+	.md-nav__link {
+		margin: 0;
+	}
+	.md-nav__link:not(.md-nav__container) {
+		padding-left: 1.5rem;
+		/* border: solid 1px red; */
+	}
+	label.md-nav__link:not(.md-nav__container) {
+		/* padding-left: 1.5rem; */
+		/* border: solid 1px blue; */
+	}
+
+	/* Indentation for second level */
+	.md-sidebar--primary
+		.md-nav__item
+		> .md-nav
+		> .md-nav__list
+		> .md-nav__item
+		> .md-nav
+		> .md-nav__list
+		> .md-nav__item
+		> .md-nav__link {
+		padding-left: 1.5rem;
+	}
+
+	/* Fully hide tray until it's expanded */
+	.md-nav__toggle:not(:checked) ~ .md-nav {
+		display: none;
+	}
+
+	/* Allow room for expandable tray */
+	.md-nav--primary .md-nav__item {
+		height: auto;
+		min-height: 2.5rem;
+	}
+
+	/* Expand icon */
+	.md-nav__link {
+		flex-direction: row-reverse;
+		gap: 0;
+	}
+	.md-nav__link .md-ellipsis {
+		flex: 1;
+	}
+	[dir="ltr"] .md-nav__link .md-icon:last-child {
+		margin-left: -1rem;
+		margin-right: 0.5rem;
+	}
+	.md-nav__icon::after {
+		display: block;
+	}
+}
