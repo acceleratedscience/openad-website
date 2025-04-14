@@ -1,4 +1,7 @@
 [Apple Silicon]: #apple-silicon
+[AWS Dashboard]: https://console.aws.amazon.com
+[IAM Dashboard]: https://console.aws.amazon.com/iam
+[Users]: https://console.aws.amazon.com/iam/home#/users
 
 # Prepackaged Models
 
@@ -6,109 +9,57 @@
     Documentation is under development and may be inacurate.
 
 !!! info
-    **Apple users:** Apple Silicon chips (aka M1, M2, M3 etc.) utilize the ARM64 instruction set architecture (ISA), which is incompatible with the x86-64 ISA our models are compiled for. Some models have can run via emulator, see the [Apple Silicon] section below for more information.
+    **Apple users:** Most models won't run on Apple Silicon processors. See the [Apple Silicon] section below for more information.
 
 ## Options
 
-There's different ways to running our models, depending on your needs.
+There's different ways to set up a model service.
 
-1. [Runninig a model locally](#running-a-model-locally)  
+2. [Deployment via container + compose.yml](#deployment-via-container-composeyml) (recommended when available)  
+   _Deploy your model locally or in the cloud, using Docker or Podman compose_
+3. [Deployment via container](#containerizing-a-model) (recommended)  
+   _Deploy your model locally or in the cloud, using Docker or Podman build_
+4. [Cloud deployment to SkyPilot on AWS](#deploying-to-skypilot-on-aws) (advanced)  
+   _Leverage cloud computing power_
+
+<!-- 1. [Runninig a model locally](#running-a-model-locally)  
    _Quick setup, low overhead, slow performance_
 2. [Containerize a model](#containerizing-a-model) (recommended)  
    _Deploy your model anywhere using Docker or Podman_
 3. [Deploy to SkyPilot on AWS](#deploying-to-skypilot-on-aws) (advanced)  
-   _Leverage cloud computing power_
+   _Leverage cloud computing power_ -->
 
-## Available Models
 
-!!! note
 
-    More models are available, documentation will be added soon.
 
-<details markdown><summary>GT4SD - Generation inference</summary>
-<div markdown="block">
+<!------------------------------------------------------------>
 
-```
-git@github.com:acceleratedscience/generation_inference_service.git
-```
+## Deployment via Container + compose.yml
 
-Documentation on [GitHub](https://github.com/acceleratedscience/generation_inference_service.git)
-
-<!-- Todo: paragraph about model -->
-
-</div>
-</details>
-
-<!--  -->
-
-<details markdown><summary>GT4SD - Property inference</summary>
-<div markdown>
-
-```
-git@github.com:acceleratedscience/property_inference_service.git
-```
-
-Documentation on [GitHub](https://github.com/acceleratedscience/property_inference_service.git)
-
-<!-- Todo: paragraph about model -->
-
-</div>
-</details>
-
-<!--  -->
-
-<details markdown><summary>GT4SD - MoleR inference</summary>
-<div markdown>
-
-```
-git@github.com:acceleratedscience/moler_inference_service.git
-```
-
-Documentation on [GitHub](https://github.com/acceleratedscience/moler_inference_service.git)
-
-<!-- Todo: paragraph about model -->
-
-</div>
-</details>
-
-<!--  -->
-
-<details markdown><summary>GT4SD - Molformer inference</summary>
-<div markdown>
-
-```
-git@github.com:acceleratedscience/molformer_inference_service.git
-```
-
-Documentation on [GitHub](https://github.com/acceleratedscience/molformer_inference_service.git)
-
-<!-- Todo: paragraph about model -->
-
-</div>
-</details>
-
-## Running a Model Locally
-
-!!! note
-
-    Apologies, we're still working on this part of the documentation. Come back in a few days.
-
-## Containerizing a Model
-
-Containerizing a model with [Docker](https://www.docker.com) or [Podman](https://podman.io) is the easiest way to spin up a model service.
+Containerizing a model with [Docker Compose](https://docs.docker.com/compose/) or [Podman Compose](https://docs.podman.io/en/latest/markdown/podman-compose.1.html) is the easiest way, and our recomended solution to spin up a model service. However, support is still limited.
 
 ### Support
 
-For a model to support containerization, it needs to have a `compose.yml` file in the root directory. We aim for all available models to come with containerization support, but this is a work in in progress.
+For a model to support containerization, it needs to have a `compose.yml` file in the root directory. We aim for all our models to come with containerization support, but this is a work in in progress.
 
-If you're running on a recent Apple computer, make sure to check the [Apple Silicon] section below.
+If you're running on an Apple computer, make sure to check the [Apple Silicon] section below.
+
+### Preparation
+
+Create the `.openad_models` folder in your home directory.
+
+```shell
+mkdir -p ~/.openad_models
+```
 
 ### Build and Start
 
 !!! note
-    Before you start, consider the port you want to run the service on. By default, `8080:8080` maps host port 8080 to container port 8080. If you will be running multiple service, you may want to change the host port, eg. `8081:8080`
+    **Chosing a port:** Before you start, consider the port you want to run the service on.  
+    By default, `8080:8080` maps host port 8080 to container port 8080.  
+    If you will be running multiple service, you may want to change the host port, eg. `8081:8080`
 
-First build your the container image:
+First build the container image:
 ```shell
 (podman or docker) compose create
 ```
@@ -134,6 +85,51 @@ Next, start the container:
     #         - capabilities: [gpu]
     ```
 
+
+
+
+<!------------------------------------------------------------>
+
+## Deployment via Container
+
+### Prerequisites
+
+Make sure you have [Docker](https://www.docker.com) and the [Docker Buildx plugin](https://docs.docker.com/reference/cli/docker/buildx/) installed.
+
+### Set up Container
+
+Clone the model's GitHub repository:
+```shell
+git clone https://github.com/acceleratedscience/<repository_name>
+```
+
+Set the file cursor to the downloaded repository and run the build:
+```shell
+cd <repository_name>
+```
+```shell
+docker build -t <model_name> .
+```
+
+!!! note
+    **Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture usinbg an emulator.
+
+    ```shell
+    docker build --platform linux/amd64 -t <model_name> .
+    ```
+
+After the build is complete, run the container and make the server available on port 8080:
+```shell
+docker run -p 8080:8080 <model_name>
+```
+
+
+
+
+<!------------------------------------------------------------>
+
+## Cataloging a Containerized Model
+
 Once the container is running, you can catalog the model in OpenAD:
 
 First, lauch the OpenAD shell:
@@ -141,10 +137,30 @@ First, lauch the OpenAD shell:
 openad
 ```
 
-Then catalog the service:
+Then catalog the service, and check the status.
 ```shell
 catalog model service from remote 'http://127.0.0.1:8080' as <service_name>
 ```
+```
+model service status
+```
+
+If all goes well, the status should say `Connected`
+```
+Service         Status       Endpoint                Host    API expires
+--------------  -----------  ----------------------  ------  -------------
+<service_name>  Connected    http://127.0.0.1:8080/  remote  No Info
+```
+
+As a reminder, to see all available model commands, run:
+```shell
+model ?
+```
+
+
+
+
+<!------------------------------------------------------------>
 
 ## Deploying to SkyPilot on AWS
 
@@ -283,6 +299,12 @@ catalog model service from remote 'http://127.0.0.1:8080' as <service_name>
     ?
     ```
 
-[AWS Dashboard]: https://console.aws.amazon.com
-[IAM Dashboard]: https://console.aws.amazon.com/iam
-[Users]: https://console.aws.amazon.com/iam/home#/users
+## Apple Silicon
+
+Apple Silicon chips (aka M1, M2, M3 etc.) utilize the ARM64 instruction set architecture (ISA), which is incompatible with the standard x86-64 ISA our models are compiled for.
+
+Some of the models have been prepped with alternative images that are able to run on Apple Silicon via emulator (with some impact on performance), however support is far from consistent.
+
+Also, because Apple Silicon is a [SoC](https://en.wikipedia.org/wiki/System_on_a_chip) processor without discrete GPU, there is no support for GPU deployment. When using Docker or Podman compose, make sure to disable this part in the yml file.
+
+If you will be using our models in a production environment, it's recommended to deploy the container to the cloud.
