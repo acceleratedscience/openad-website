@@ -1,46 +1,41 @@
 [Apple Silicon]: #apple-silicon
-[AWS Dashboard]: https://console.aws.amazon.com
-[IAM Dashboard]: https://console.aws.amazon.com/iam
-[Users]: https://console.aws.amazon.com/iam/home#/users
+[Cataloging a Containerized Model]: #cataloging-a-containerized-model
+[available services]: /docs/model-service/available-models.md
 
 # Prepackaged Models
 
-!!! warning
-    Documentation is under development and may be inacurate.
-
 !!! info
-    **Apple users:** Most models won't run on Apple Silicon processors. See the [Apple Silicon] section below for more information.
+    **Apple users:** Some models won't run on Apple Silicon processors.  
+    See the [Apple Silicon] section below for more information.
 
-## Options
+## Deployment Options
 
-There's different ways to set up a model service.
+There's different ways to deploy a service.
 
-2. [Deployment via container + compose.yml](#deployment-via-container-composeyml) (recommended when available)  
-   _Deploy your model locally or in the cloud, using Docker or Podman compose_
-3. [Deployment via container](#containerizing-a-model) (recommended)  
+<!-- no toc -->
+1. [Deploy via container + compose.yml](#deploy-locally-via-container-composeyml)  
+   _Deploy your model locally or in the cloud, using Docker or Podman compose_  
+   **Recommended**{ .flag .green } (when available)  
+2. [Deploy via container](#containerizing-a-model)  
    _Deploy your model locally or in the cloud, using Docker or Podman build_
-4. [Cloud deployment to SkyPilot on AWS](#deploying-to-skypilot-on-aws) (advanced)  
+3. [Deploy locally using a Python virtual environment](#deploy-locally-using-a-python-virtual-env)  
+   _Install requirements and manage your own environment_
+4. [Cloud deployment to Red Hat OpenShift](#deploying-to-red-hat-openshift)  
    _Leverage cloud computing power_
-
-<!-- 1. [Runninig a model locally](#running-a-model-locally)  
-   _Quick setup, low overhead, slow performance_
-2. [Containerize a model](#containerizing-a-model) (recommended)  
-   _Deploy your model anywhere using Docker or Podman_
-3. [Deploy to SkyPilot on AWS](#deploying-to-skypilot-on-aws) (advanced)  
-   _Leverage cloud computing power_ -->
+5. [Cloud deployment to SkyPilot on AWS](#deploying-to-skypilot-on-aws)  
+   _Leverage cloud computing power_
 
 
 
 
 <!------------------------------------------------------------>
+## Deployment via Container + compose.yml **Recommended**{ .flag .green }
 
-## Deployment via Container + compose.yml
-
-Containerizing a model with [Docker Compose](https://docs.docker.com/compose/) or [Podman Compose](https://docs.podman.io/en/latest/markdown/podman-compose.1.html) is the easiest way, and our recomended solution to spin up a model service. However, support is still limited.
+When available, containerizing a model using [Docker Compose](https://docs.docker.com/compose/) / [Podman Compose](https://docs.podman.io/en/latest/markdown/podman-compose.1.html) is the easiest (and our recommended) way to deploy a model service.
 
 ### Support
 
-For a model to support containerization, it needs to have a `compose.yml` file in the root directory. We aim for all our models to come with containerization support, but this is a work in in progress.
+To check if a service supports compose, check the service's details in our list [available services], or look in the service's GitHub repo if a `compose.yml` file is present.
 
 If you're running on an Apple computer, make sure to check the [Apple Silicon] section below.
 
@@ -85,11 +80,11 @@ Next, start the container:
     #         - capabilities: [gpu]
     ```
 
+Once the service is running, continue to [Cataloging a Containerized Model].
 
 
 
 <!------------------------------------------------------------>
-
 ## Deployment via Container
 
 ### Prerequisites
@@ -104,6 +99,9 @@ git clone https://github.com/acceleratedscience/<repository_name>
 ```
 
 Set the file cursor to the downloaded repository and run the build:
+
+> **Note:** The `<model_name>` you can choose yourself.
+
 ```shell
 cd <repository_name>
 ```
@@ -123,11 +121,10 @@ After the build is complete, run the container and make the server available on 
 docker run -p 8080:8080 <model_name>
 ```
 
-
+Once the service is running, continue to [Cataloging a Containerized Model].
 
 
 <!------------------------------------------------------------>
-
 ## Cataloging a Containerized Model
 
 Once the container is running, you can catalog the model in OpenAD:
@@ -157,12 +154,112 @@ As a reminder, to see all available model commands, run:
 model ?
 ```
 
+<!------------------------------------------------------------>
+## Deploy Locally using a Python Virtual Environment
 
+!!! info
+    If you are using an [Apple Silicon] device, deploy using Docker instead. See [Apple Silicon] for more info.
+
+<div class="padded-list" markdown>
+- Create a virtual environment running Python `3.11`. We'll use [pyenv](/docs/installation/#upgrading-python).
+
+    > **Note:** Python `3.10.10+` or `3.11` are supported, Python `3.12` is not.
+
+    ```shell
+    pyenv shell 3.11
+    ```
+    ```shell
+    python -m venv my-venv
+    ```
+    ```shell
+    source my-venv/bin/activate
+    ```
+
+- Install the model requirements as described in the model's repository (not to be confused with the OpenAD service wrapper). Models not listed below should deploy with Docker instead.
+    
+    | Model Name | GitHub |
+    | ---------- | ------ |
+    | **SMI-TED** | [github.com/IBM/materials](https://github.com/IBM/materials/) |
+    | **BMFM-SM** | [github.com/BiomedSciAI/biomed-multi-view](https://github.com/BiomedSciAI/biomed-multi-view) |
+    | **BMFM-PM** | [github.com/BiomedSciAI/biomed-multi-alignment](https://github.com/BiomedSciAI/biomed-multi-alignment) |
+    | **REINVENT** | [github.com/MolecularAI/REINVENT4](https://github.com/MolecularAI/REINVENT4) |
+
+- Install the OpenAD service utilities:
+  
+    ```shell
+    pip install git+https://github.com/acceleratedscience/openad_service_utils.git
+    ```
+
+    !!! note
+        Downloading of the models will be prompted by your first request and may take some time.  
+        You can pre-load the models using [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html).
+
+        ```shell
+        mkdir -p ~/.openad_models/properties/molecules && aws s3 sync s3://ad-prod-biomed/molecules/mammal/ /tmp/.openad_models/properties/molecules/mammal --no-sign-request --exact-timestamps
+        ```
+
+- Clone the service repo:
+
+    ```shell
+    git clone https://github.com/acceleratedscience/openad-service-<service-name>
+    ```
+
+- Move the file cursor into the cloned service repo:
+
+    ```shell
+    cd openad-service-<service-name>
+    ```
+
+- Start the service:
+
+    The start command differs per model:
+
+    ```shell
+    # SMI-TED / REINVENT
+    python app.py
+    ```
+
+    ```shell
+    # BMFM-SM
+    python ./bmfm_sm_api/sm_implementation.py
+    ```
+
+    ```shell
+    # BMFM-PM
+    python ./implementation.py
+    ```
+
+    
+
+    
+
+- Open a new terminal session and launch OpenAD:
+
+    ```shell
+    openad
+    ```
+
+- Within the OpenAD shell, catalog the service you just started:
+
+    ```shell
+    catalog model service from remote 'http://127.0.0.1:8080' as <service-name>
+    ```
+
+- To see the available service commands, run:
+
+    ```shell
+    <service-name> ?
+    ```
+
+</div>
 
 
 <!------------------------------------------------------------>
-
 ## Deploying to SkyPilot on AWS
+
+[AWS dashboard]: https://console.aws.amazon.com„
+[IAM dashboard]: https://console.aws.amazon.com/iam
+[Users]: https://console.aws.amazon.com/iam/home#/users
 
 ### Setting up SkyPilot
 
@@ -267,44 +364,55 @@ model ?
     </div>
     </details>
 
-### Spinning Up a Model
+### Spinning Up a Service
 
-1.  Install any service by its url (see [available models](#available-models) on top), for example the property inference service:
+1.  Install any service by its `git@github` url, which you can find in the service's GitHub repo under the `<> Code` button.
+    To spin up the Property inference service:
 
     ```shell
     catalog model service from 'git@github.com:acceleratedscience/property_inference_service.git' as prop
     ```
 
-1.  Start the service – this can take up to 10 minutes
+2.  Start the service – this can take up to 10 minutes
 
     ```shell
     model service up prop
     ```
 
-1.  Check if the service is ready
+3.  Check if the service is ready
 
     ```shell
     model service status
     ```
 
-1.  Shut down the service
+4.  Shut down the service
 
     ```shell
     model service down prop
     ```
 
-1.  To see all available model commands, pull up the general help and look towards the bottom of the command list.
+5.  To see all available model commands, pull up the general help and look towards the bottom of the command list.
 
     ```shell
     ?
     ```
 
+
+<!------------------------------------------------------------>
 ## Apple Silicon
 
 Apple Silicon chips (aka M1, M2, M3 etc.) utilize the ARM64 instruction set architecture (ISA), which is incompatible with the standard x86-64 ISA our models are compiled for.
 
 Some of the models have been prepped with alternative images that are able to run on Apple Silicon via emulator (with some impact on performance), however support is far from consistent.
 
-Also, because Apple Silicon is a [SoC](https://en.wikipedia.org/wiki/System_on_a_chip) processor without discrete GPU, there is no support for GPU deployment. When using Docker or Podman compose, make sure to disable this part in the yml file.
+Also, because Apple Silicon is a [SoC](https://en.wikipedia.org/wiki/System_on_a_chip) processor without discrete GPU, there is no support for GPU deployment. When using Docker or Podman compose, make sure to disable this part in the `compose.yml` file:
+
+```
+# deploy:
+#   resources:
+#     reservations:
+#       devices:
+#         - capabilities: [gpu]
+```
 
 If you will be using our models in a production environment, it's recommended to deploy the container to the cloud.

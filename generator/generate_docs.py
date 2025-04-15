@@ -20,32 +20,32 @@ from methods.copy_docs import update_docs, update_openad
 
 
 if __name__ == "__main__":
-    update_gh_readme()
-    update_plugins_md()
-    update_base_concepts_md()
-    generate_commands_md()
-    generate_commands_csv()
+    # update_gh_readme()
+    # update_plugins_md()
+    # update_base_concepts_md()
+    # generate_commands_md()
+    # generate_commands_csv()
     generate_model_docs()
     print("\n")
 
     # fmt: off
 
     # Update website docs
-    output_warning("<yellow>Do you want to update the docs with the generated markdown files?</yellow>", pad_top=2)
+    output_warning("<yellow>Do you want to update the docs with the generated markdown files?</yellow>")
     ok = confirm_prompt("Continue?")
     if ok:
         update_docs()
     else:
-        output_warning([ "No files were moved", "You can still find them in the /output/docs directory"])
+        output_warning([ "No files were moved", "You can still find them in the /output/docs directory"], pad_btm=1)
     
 
     # Update openad README
     output_warning((
-        "Do you want to copy the generated <reset>README.md</reset> to the <reset>openad-toolkit</reset> repo?"
+        "Do you want to copy the generated <reset>README.md</reset> to the <reset>openad-toolkit</reset> repo?\n"
         "<on_yellow>WARNING: THIS WILL MODIFY FILES OUTSIDE THIS REPOSITORY</on_yellow>"
-    ), pad_top=2)
+    ))
     ok = confirm_prompt("Continue?")
     if ok:
         update_openad()
     else:
-        output_warning([ "No files were moved", "You can still find them in the /output/docs directory"])
+        output_warning([ "No files were moved", "You can still find them in the /output/openad-toolkit directory"], pad_btm=1)

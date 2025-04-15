@@ -58,6 +58,8 @@ Jump to the [plugin developer guide](plugin-development/index.md) for detailed i
 
     ```shell
     python -m venv ~/ad-venv
+    ```
+    ```shell
     source ~/ad-venv/bin/activate
     ```
 

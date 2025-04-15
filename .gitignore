@@ -5,3 +5,8 @@ site/
 .venv/
 Test.*
 test.*
+
+# Generator output
+generator/output/docs/*
+generator/output/openad-toolkit/*
+generator/output/other/*

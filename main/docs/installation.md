@@ -149,6 +149,28 @@ There's many ways to install or upgrade Python. We'll use `pyenv`.
     pyenv shell 3.11
     ```
 
+6. **Good to know:**  
+    If you're setting up a virtual environment, you need to set the python version _before_ creating the venv.
+
+    ```shell
+    pyenv shell 3.11
+    ```
+    ```shell
+    python -m venv my_venv
+    ```
+
+    You can see the list of installed versions by running:
+    
+    ```shell
+    pyenv versions
+    ```
+    
+    You can see the currently installed version by running:
+    
+    ```shell
+    pyenv version
+    ```
+
 </div>
 
 ### Linux Notes

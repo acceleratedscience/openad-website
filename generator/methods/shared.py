@@ -8,6 +8,7 @@ docs_dir = os.path.normpath(os.path.join(this_dir, "../../main/docs"))
 source_dir = os.path.normpath(os.path.join(this_dir, "../source"))
 input_dir = os.path.normpath(os.path.join(this_dir, "../input"))
 output_dir = os.path.normpath(os.path.join(this_dir, "../output"))
+openad_toolkit_dir = os.path.normpath(os.path.join(this_dir, "../../../openad-toolkit"))
 
 
 FLAG_SUCCESS = f"<on_green> SUCCESS </on_green>"
@@ -26,7 +27,7 @@ AUTOGENERATE_NOTICE = (
     "Attention\n"
     "---------\n"
     "One or more descriptions in this file have been auto-generated\n"
-    "by the generate_docs() script in the /generator directory.\n\n"
+    "by the generate_docs() script in @openad-website/generator.\n\n"
     "For more info:\n"
     "https://github.com/acceleratedscience/openad-website/tree/generator\n\n"
     "-->"
@@ -138,7 +139,7 @@ def _read_file_content(path):
             content = f.read()
     except Exception as e:
         output_text(FLAG_ERROR, pad_top=1)
-        output_error(str(e))
+        output_error([str(e), path])
         return
 
     return content

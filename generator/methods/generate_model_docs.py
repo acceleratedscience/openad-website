@@ -4,9 +4,17 @@ import os
 import re
 import pandas as pd
 import requests
-from .shared import FLAG_ERROR, source_dir, read_input_file, write_output_file
+from .shared import (
+    DO_NOT_EDIT,
+    FLAG_ERROR,
+    source_dir,
+    read_input_file,
+    write_output_file,
+)
 
 from openad.helpers.output import output_error, output_text, output_success
+
+branch = "readme_update_moe"
 
 
 def generate_model_docs(filename="available-models.md"):
@@ -23,7 +31,7 @@ def generate_model_docs(filename="available-models.md"):
         return
     # print(model_data)
     markdown = generate_md(model_data)
-    markdown = "# Available Models\n\n" + markdown
+    markdown = DO_NOT_EDIT + "\n\n# Available Models\n\n" + markdown
     write_output_file("docs/" + filename, markdown)
 
     # for model in model_data:
@@ -49,7 +57,7 @@ def scrape_repos():
         name = row["Name"]
         try:
             # Scrape the README.md file
-            readme_url = f"{repo_url}/raw/main/README.md"
+            readme_url = f"{repo_url}/raw/refs/heads/{branch}/README.md"
             repo_name = readme_url.replace(
                 "https://github.com/acceleratedscience/", ""
             ).split("/", maxsplit=1)[0]
@@ -62,7 +70,7 @@ def scrape_repos():
             title = title.replace("<!-- omit from toc -->", "")
             title = re.sub(r"^# ", "", title)
             title = title.strip()
-            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam est risus, euismod vitae dapibus id, aliquam et velit. Nam rutrum gravida euismod. Donec posuere dui sodales massa blandit, et laoreet sapien varius. Fusce ut molestie leo. Nullam facilisis posuere quam, vel pellentesque dui. Donec elementum tincidunt quam vitae eleifend. Curabitur sed eleifend ligula."
+            description = parse_description(readme_text, repo_name)
 
             # Check for compose.yml or compose.yaml
             compose_yml_url = f"{repo_url}/raw/main/compose.yml"
@@ -92,6 +100,21 @@ def scrape_repos():
             return None
 
     return results
+
+
+def parse_description(readme_text, repo_name):
+    description = readme_text.split("<!-- description -->")
+    if len(description) > 1:
+        description = description[1].split("<!-- /description -->")[0]
+    else:
+        output_error(f"{repo_name}<soft> - <!-- description --> tag missing</soft>")
+        description = ""
+
+    description = description.strip()
+    if not description:
+        description = "_No description available._"
+
+    return description
 
 
 def _scrape_repos():

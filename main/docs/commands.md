@@ -4,7 +4,7 @@ DO NOT EDIT
 -----------
 This file is auto-generated.
 To update it, consult instructions:
-https://github.com/acceleratedscience/openad-toolkit/tree/main/docs
+https://github.com/acceleratedscience/openad-website/tree/generator
 
 -->
 
@@ -394,22 +394,23 @@ Single quotes are required for your `<auth_token>` but optional for `<auth_group
 
 Authorization is required to connect to IBM-hosted models (IBM partners only). Using an auth group allows you to authorize multiple models at once, and is the recommended authorization method.
 
-**Examples**{ .fake-h4 }
+## Example
 
-1. Copy your authentication token from [http://open.accelerate.science](http://open.accelerate.science) (or your custom URL if your company us running its own instance).
+<span style="background: #dc0; color: #fff"> ATTENTION </span>
+<yellow>The proxy URL used in the examples may be different for you:
+- open.accelerate.science/proxy --> for most users
+- <soft>xxxx</soft>.accelerate.science/proxy --> custom subdomain if your company runs its own instance</yellow>
+
+1. Copy your authentication token from the OpenAD portal:
+   - [open.accelerate.science](open.accelerate.science) for most users
+   - [<soft>xxxx</soft>.accelerate.science](<soft>xxxx</soft>.accelerate.science) custom subdomain if your company runs its own instance
 2. Create an auth group, e.g. 'default':
-```shell
-model auth add group default with '<auth_token>'
-```
+   `model auth add group default with '<auth_token>'`
 3. Catalog your services with the auth_group provided:
-```shell
-model service catalog from remote 'https://open.accelerate.science/proxy' as gen using (inference-service=generation auth_group=default)
-```
+   `model service catalog from remote 'https://open.accelerate.science/proxy' as gen using (inference-service=generation auth_group=default)`
 
 You can also add a cataloged model to a group after you've created it:
-```shell
-model auth add service gen to group default
-```
+`model auth add service gen to group default`
 </details>
 
 <details markdown code>
@@ -559,6 +560,11 @@ Authorization:
 
 **Examples**{ .fake-h4 }
 
+
+&lt;span style="background: #dc0; color: #fff"&gt; ATTENTION &lt;/span&gt;
+&lt;yellow&gt;The proxy URL used in the examples may be different for you:
+open.accelerate.science/proxy --&gt; for most users
+&lt;soft&gt;xxxx&lt;/soft&gt;.accelerate.science/proxy --&gt; custom subdomain if your company runs its own instance&lt;/yellow&gt;
 
 Catalog a model using SkyPilot deployment
 ```shell
