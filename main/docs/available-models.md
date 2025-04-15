@@ -20,8 +20,8 @@ https://github.com/acceleratedscience/openad-website/tree/generator
 This OpenAD service provides access to the **SMILES-based Transformer Encoder-Decoder** (SMILES-TED), which is an encoder-decoder model pre-trained on a curated dataset of 91 million SMILES samples sourced from PubChem, equivalent to 4 billion molecular tokens. SMI-TED supports various complex tasks, including quantum property prediction, with two main variants ( 289 M and 8 × 289 M ).
 
 More information:  
-[huggingface.co/ibm/materials.smi-ted](https://huggingface.co/ibm/materials.smi-ted)  
 [github.com/IBM/materials](https://github.com/IBM/materials)  
+[huggingface.co/ibm/materials.smi-ted](https://huggingface.co/ibm/materials.smi-ted)  
 [arxiv.org/abs/2407.20267](https://arxiv.org/abs/2407.20267)
 
 </div>
