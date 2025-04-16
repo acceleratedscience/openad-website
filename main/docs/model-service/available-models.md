@@ -139,7 +139,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as bmfm_pm
 </div>
 </details>
 
-<details markdown><summary><h3>REINVENT &nbsp;/&nbsp; Inference for SMILES</h3></summary>
+<details markdown><summary><h3>REINVENT 4 &nbsp;/&nbsp; Inference for SMILES</h3></summary>
 <div markdown>
 
 [:carbon-icn-github: openad-service-reinvent4](https://github.com/acceleratedscience/openad-service-reinvent4){ .md-button }
