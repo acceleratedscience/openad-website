@@ -535,6 +535,12 @@ html .md-typeset summary:last-child,
 	line-height: var(--line-height-large);
 	margin: 0;
 }
+.md-typeset h2 .headerlink,
+.md-typeset h3 .headerlink,
+.md-typeset h4 .headerlink,
+.md-typeset h5 .headerlink {
+	display: none;
+}
 
 /**
  * Tables
