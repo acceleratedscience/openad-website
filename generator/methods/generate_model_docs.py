@@ -17,10 +17,11 @@ from openad.helpers.output import output_error, output_text, output_success
 branch = "readme_update_moe"
 
 
-def generate_model_docs(filename="available-models.md"):
+def generate_model_docs(filename="model-service~available-models.md"):
     """
     Generate output/available-models.md page for documentation website.
     """
+
     output_text(
         f"<h1>Generating <yellow>{filename}</yellow> from input/models.csv</h1>",
         pad_top=2,
@@ -31,7 +32,7 @@ def generate_model_docs(filename="available-models.md"):
         return
     # print(model_data)
     markdown = generate_md(model_data)
-    markdown = DO_NOT_EDIT + "\n\n# Available Models\n\n" + markdown
+    markdown = DO_NOT_EDIT + "\n\n# Publicly Available Models\n\n" + markdown
     write_output_file("docs/" + filename, markdown)
 
     # for model in model_data:
@@ -72,16 +73,28 @@ def scrape_repos():
             title = title.strip()
             description = parse_description(readme_text, repo_name)
 
-            # Check for compose.yml or compose.yaml
-            compose_yml_url = f"{repo_url}/raw/main/compose.yml"
-            compose_yaml_url = f"{repo_url}/raw/main/compose.yaml"
-            compose_yml_exists = (
+            # Check support for Docker (Dockerfile)
+            dockerfile_url = f"{repo_url}/raw/main/Dockerfile"
+            dockerfile_exists = (
+                requests.get(dockerfile_url, timeout=10).status_code == 200
+            )
+
+            # Check support for Docker compose (compose.yaml)
+            compose_yml_url = f"{repo_url}/raw/main/compose.yaml"
+            compose_exists = (
                 requests.get(compose_yml_url, timeout=10).status_code == 200
             )
-            compose_yaml_exists = (
-                requests.get(compose_yaml_url, timeout=10).status_code == 200
+
+            # Check for Apple Silicon support (<!-- support:apple_silicon:true -->)
+            apple_silicon_supported = (
+                True  # Supported
+                if "<!-- support:apple_silicon:true -->" in readme_text
+                else (
+                    False  # Not supported
+                    if "<!-- support:apple_silicon:false -->" in readme_text
+                    else None  # Unknown
+                )
             )
-            compose_exists = compose_yml_exists or compose_yaml_exists
 
             # Append results
             results.append(
@@ -90,8 +103,10 @@ def scrape_repos():
                     "title": title,
                     "repo_name": repo_name,
                     "url": repo_url,
-                    "compose": compose_exists,
                     "description": description,
+                    "support:docker": dockerfile_exists,
+                    "support:compose": compose_exists,
+                    "support:apple-silicon": apple_silicon_supported,
                 }
             )
         except Exception as e:
@@ -186,43 +201,99 @@ def generate_md(model_data):
     output = []
     for model in model_data:
         # Parse
+        # fmt:off
         title = model["title"]
         description = model["description"]
         repo_name = model["repo_name"]
+        service_name = repo_name.replace("openad-service-", "").replace("-", "_")
         url = model["url"]
-        btn_github = f"[:carbon-icn-github: {repo_name}](#{url}){{ .md-button }}"
+        btn_github = f"[:carbon-icn-github: {repo_name}]({url}){{ .md-button }}"
         btn_compose = (
             f"[compose.yml]({url}/raw/main/compose.yaml){{ .md-button .md-button--primary download='compose.yml' }}"
-            if model["compose"]
+            if model["support:compose"]
             else "--REMOVE-LINE--"
         )
-        instructions_url_container = (
-            "/docs/model-service/prepackaged-models-beta/#deployment-via-container"
+        instructions_url_container = "/docs/model-service/prepackaged-models/#deployment-via-container"
+        instructions_url_compose = "/docs/model-service/prepackaged-models/#deployment-via-container-composeyml"
+        instructions_url = instructions_url_compose if model["support:compose"] else instructions_url_container
+        btn_instructions = f"[Instructions]({instructions_url}){{ .md-button .md-button--tertiary }}  "
+        support_overview = (
+            f"\n"
+            "Support for:  \n"
+            f"{'❌' if not model['support:compose'] else '✅'} Docker / Podman Compose  \n"
+            f"{'❌' if not model['support:docker'] else '✅'} Docker / Podman  \n"
+            f"{'❌' if model['support:apple-silicon'] is False else '❓' if model['support:apple-silicon'] is None else '✅'} Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  \n"
+            f"\n"
         )
-        instructions_url_compose = "/docs/model-service/prepackaged-models-beta/#deployment-via-container-composeyml"
-        instructions_url = (
-            instructions_url_compose if model["compose"] else instructions_url_container
+        # fmt:on
+        docker_compose_instructions = (
+            "Quick start with Docker Compose:\n"
+            "```\n"
+            f"curl -O {url}/raw/main/compose.yaml\n"
+            "```\n"
+            "```\n"
+            f"docker compose create\n"
+            "```\n"
+            "```\n"
+            f"docker compose start\n"
+            "```\n"
+            "```\n"
+            "openad\n"
+            "```\n"
+            "```\n"
+            f"catalog model service from remote 'http://127.0.0.1:8080' as {service_name}\n"
+            "```\n"
         )
-        btn_instructions = (
-            f"[Instructions]({instructions_url}){{ .md-button .md-button--tertiary }}  "
+        docker_build_instructions = (
+            "Quick start with Docker:\n"
+            "```\n"
+            f"git clone {url}\n"
+            "```\n"
+            "```\n"
+            f"cd {repo_name}\n"
+            "```\n"
+            "```\n"
+            f"docker build -t {service_name} .\n"
+            "```\n"
+            "```\n"
+            f"docker run -p 8080:8080 {service_name}\n"
+            "```\n"
+            "```\n"
+            "openad\n"
+            "```\n"
+            "```\n"
+            f"catalog model service from remote 'http://127.0.0.1:8080' as {service_name}\n"
+            "```\n"
+        )
+        quickstart_instructions = (
+            docker_compose_instructions
+            if model["support:compose"]
+            else (
+                docker_build_instructions
+                if model["support:docker"]
+                else "--REMOVE-LINE--"
+            )
         )
 
         # Compile
         html_block = [
-            f"<details markdown><summary>{title}</summary>",
+            f"<details markdown><summary><h3>{title}</h3></summary>",
             "<div markdown>",
             "",
+            # Buttons
             btn_github,
             btn_compose,
             btn_instructions,
             "",
             description,
             "",
+            support_overview,
+            quickstart_instructions,
             "</div>",
             "</details>",
             "",
         ]
-        if "--REMOVE-LINE--" in html_block:
+        while "--REMOVE-LINE--" in html_block:
             html_block.remove("--REMOVE-LINE--")
 
         # Join

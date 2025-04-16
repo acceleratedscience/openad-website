@@ -12,9 +12,7 @@ import os
 import shutil
 from openad.helpers.output import (
     output_error,
-    output_warning,
     output_text,
-    output_success,
 )
 from .shared import FLAG_ERROR, openad_toolkit_dir, output_dir, docs_dir
 
@@ -43,7 +41,6 @@ def update_docs():
 def update_openad():
     src_dir = os.path.join(output_dir, "openad-toolkit")
     dest_dir = openad_toolkit_dir
-    # os.path.normpath("../openad-toolkit")
     success = _move_files(src_dir, dest_dir)
 
     if not success:
@@ -77,12 +74,28 @@ def _move_files(src_dir, dest_dir):
 
     # Assemble list of files to copy
     for filename in os.listdir(src_dir):
+        # Slice off any path information from the filename
+        # and add it to the destination directory's path.
+        # We can't use / in a filename, so we use ~ instead.
+        # Example:
+        #   dest_dir = "/main/docs"
+        #   og_filename = "model-service~available-models.md"
+        #   dest_path = "model-service"
+        #   filename = "available-models.md"
+        #   --> File is written to: /main/docs/model-service/available-models.md
+        og_filename = filename
+        dest_path = ''
+        if "~" in filename:
+            filename = filename.replace("~", "/")
+            dest_path = os.path.dirname(filename)
+            filename = os.path.basename(filename)
+        
         # Construct full file path
-        source_file = os.path.join(src_dir, filename)
-        dest_file = os.path.join(dest_dir, filename)
+        source_file = os.path.join(src_dir, og_filename)
+        dest_file = os.path.join(dest_dir, dest_path, filename)
 
         if not os.path.exists(source_file):
-            output_text(FLAG_ERROR + f" <red>{filename}</red> could not be found at <yellow>{source_file}</yellow>.", pad_btm=1)
+            output_text(FLAG_ERROR + f" <red>{og_filename}</red> could not be found at <yellow>{source_file}</yellow>", pad_btm=1)
             return False
 
         # Copy the file

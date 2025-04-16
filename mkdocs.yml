@@ -15,8 +15,9 @@ nav:
           - Base Concepts: docs/base-concepts.md
           - Model Service:
                 - docs/model-service/index.md
-                - Prepackaged Models: docs/model-service/prepackaged-models.md
-                - Wrapping Models: docs/model-service/wrapping.md
+                - Available Models: docs/model-service/available-models.md
+                - Deploying Models: docs/model-service/deploying-models.md
+                - Wrapping New Models: docs/model-service/wrapping.md
                 - IBM Hosted: docs/model-service/ibm-hosted.md
           - Commands: docs/commands.md
           - Plugins: docs/plugins.md

@@ -533,6 +533,7 @@ html .md-typeset summary:last-child,
 .md-typeset details h4,
 .md-typeset details h5 {
 	line-height: var(--line-height-large);
+	margin: 0;
 }
 
 /**

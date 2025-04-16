@@ -2,7 +2,7 @@
 [Cataloging a Containerized Model]: #cataloging-a-containerized-model
 [available services]: /docs/model-service/available-models.md
 
-# Prepackaged Models
+# Deploying Models
 
 !!! info
     **Apple users:** Some models won't run on Apple Silicon processors.  
@@ -13,29 +13,29 @@
 There's different ways to deploy a service.
 
 <!-- no toc -->
-1. [Deploy via container + compose.yml](#deploy-locally-via-container-composeyml)  
+1. [Deployment via container + compose.yaml](#deployment-via-container-composeyaml-recommended)  
    _Deploy your model locally or in the cloud, using Docker or Podman compose_  
    **Recommended**{ .flag .green } (when available)  
-2. [Deploy via container](#containerizing-a-model)  
+2. [Deployment via container](#deployment-via-container)  
    _Deploy your model locally or in the cloud, using Docker or Podman build_
-3. [Deploy locally using a Python virtual environment](#deploy-locally-using-a-python-virtual-env)  
+3. [Local deployment using a Python virtual environment](#local-deployment-using-a-python-virtual-environment)  
    _Install requirements and manage your own environment_
-4. [Cloud deployment to Red Hat OpenShift](#deploying-to-red-hat-openshift)  
+4. [Cloud deployment to Red Hat OpenShift](#cloud-deployment-to-red-hat-openshift)  
    _Leverage cloud computing power_
-5. [Cloud deployment to SkyPilot on AWS](#deploying-to-skypilot-on-aws)  
+5. [Cloud deployment to SkyPilot on AWS](#cloud-deployment-to-skypilot-on-aws)  
    _Leverage cloud computing power_
 
 
 
 
 <!------------------------------------------------------------>
-## Deployment via Container + compose.yml **Recommended**{ .flag .green }
+## Deployment via Container + compose.yaml **Recommended**{ .flag .green }
 
-When available, containerizing a model using [Docker Compose](https://docs.docker.com/compose/) / [Podman Compose](https://docs.podman.io/en/latest/markdown/podman-compose.1.html) is the easiest (and our recommended) way to deploy a model service.
+When available, containerizing a model using [Docker Compose](https://docs.docker.com/compose/){ target='_blank' } / [Podman Compose](https://docs.podman.io/en/latest/markdown/podman-compose.1.html){ target='_blank' } is the easiest (and our recommended) way to deploy a model service.
 
 ### Support
 
-To check if a service supports compose, check the service's details in our list [available services], or look in the service's GitHub repo if a `compose.yml` file is present.
+To check if a service supports compose, check the service's details in our list [available services], or look in the service's GitHub repo if a `compose.yaml` file is present.
 
 If you're running on an Apple computer, make sure to check the [Apple Silicon] section below.
 
@@ -52,16 +52,16 @@ mkdir -p ~/.openad_models
 !!! note
     **Chosing a port:** Before you start, consider the port you want to run the service on.  
     By default, `8080:8080` maps host port 8080 to container port 8080.  
-    If you will be running multiple service, you may want to change the host port, eg. `8081:8080`
+    If you will be running multiple service, you may want to change the host port in the `compose.yaml`, eg. `8081:8080`
 
 First build the container image:
 ```shell
-(podman or docker) compose create
+[ docker/podman ] compose create
 ```
 
 Next, start the container:
 ```shell
-(podman or docker) compose start
+[ docker/podman ] compose start
 ```
 
 !!! note
@@ -71,7 +71,8 @@ Next, start the container:
     Error response from daemon: could not select device driver "" with capabilities: [[gpu]]
     ```
 
-    In this case, you can simply disable this part of the `compose.yml` instructions:
+    In this case, you can simply disable this part of the `compose.yaml` instructions:
+
     ```shell
     # deploy:
     #   resources:
@@ -79,6 +80,8 @@ Next, start the container:
     #       devices:
     #         - capabilities: [gpu]
     ```
+
+    Then run the `create` and `start` commands again.
 
 Once the service is running, continue to [Cataloging a Containerized Model].
 
@@ -90,6 +93,15 @@ Once the service is running, continue to [Cataloging a Containerized Model].
 ### Prerequisites
 
 Make sure you have [Docker](https://www.docker.com) and the [Docker Buildx plugin](https://docs.docker.com/reference/cli/docker/buildx/) installed.
+
+Then create the `.openad_models` folder in your home directory.
+
+```shell
+mkdir -p ~/.openad_models
+```
+
+<!-- Repeat note about 'Downloading of the models will...' ?? -->
+<!-- See https://github.com/acceleratedscience/openad-service-smi-ted/tree/main?tab=readme-ov-file#deployment-locally-via-compose -->
 
 ### Set up Container
 
@@ -110,7 +122,7 @@ docker build -t <model_name> .
 ```
 
 !!! note
-    **Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture usinbg an emulator.
+    **Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture using an emulator.
 
     ```shell
     docker build --platform linux/amd64 -t <model_name> .
@@ -136,7 +148,7 @@ openad
 
 Then catalog the service, and check the status.
 ```shell
-catalog model service from remote 'http://127.0.0.1:8080' as <service_name>
+catalog model service from remote 'http://127.0.0.1:8080' as <service-name>
 ```
 ```
 model service status
@@ -146,7 +158,7 @@ If all goes well, the status should say `Connected`
 ```
 Service         Status       Endpoint                Host    API expires
 --------------  -----------  ----------------------  ------  -------------
-<service_name>  Connected    http://127.0.0.1:8080/  remote  No Info
+<service-name>  Connected    http://127.0.0.1:8080/  remote  No Info
 ```
 
 As a reminder, to see all available model commands, run:
@@ -155,7 +167,7 @@ model ?
 ```
 
 <!------------------------------------------------------------>
-## Deploy Locally using a Python Virtual Environment
+## Local deployment using a Python virtual environment
 
 !!! info
     If you are using an [Apple Silicon] device, deploy using Docker instead. See [Apple Silicon] for more info.
@@ -253,9 +265,58 @@ model ?
 
 </div>
 
+<!------------------------------------------------------------>
+## Cloud deployment to Red Hat OpenShift
+
+If the service you're trying to deploy has a `/helm-chart` folder, it's been prepared for deployment on OpenShift.
+
+> **Note:** The `<service-name>` and `<build-name>` you can choose yourself. We'll show an example for SMI-TED.
+
+1. Install the helm chart
+
+    ```shell
+    helm install <service-name> ./helm-chart
+    ```
+    ```shell
+    # Example for SMI-TED
+    helm install smi-ted ./helm-chart
+    ```
+
+2. Start a new build
+   
+    ```shell
+    oc start-build <build-name>
+    ```
+    ```shell
+    # Example for SMI-TED
+    oc start-build smi-ted-build
+    ```
+
+3. Wait for the build to complete
+
+    ```shell
+    LATEST_BUILD=$(oc get builds | grep '<build-name>-' | awk '{print $1}' | sort -V | tail -n 1)
+    ```
+    ```shell
+    # Example for SMI-TED
+    LATEST_BUILD=$(oc get builds | grep 'smi-ted-build-' | awk '{print $1}' | sort -V | tail -n 1)
+    ```
+    ```shell
+    oc wait --for=condition=Complete build/$LATEST_BUILD --timeout=15m
+    ```
+
+4. Run a request test
+
+    ```shell
+    curl "http://$(oc get route <service-name>-openad-model -o jsonpath='{.spec.host}')/health"
+    ```
+    ```shell
+    # Example for SMI-TED
+    curl "http://$(oc get route smi-ted-openad-model -o jsonpath='{.spec.host}')/health"
+    ```
 
 <!------------------------------------------------------------>
-## Deploying to SkyPilot on AWS
+## Cloud deployment to SkyPilot on AWS
 
 [AWS dashboard]: https://console.aws.amazon.com„
 [IAM dashboard]: https://console.aws.amazon.com/iam
@@ -366,17 +427,17 @@ model ?
 
 ### Spinning Up a Service
 
-1.  Install any service by its `git@github` url, which you can find in the service's GitHub repo under the `<> Code` button.
-    To spin up the Property inference service:
+1.  Install any service by its `git@github` url, which you can find in the [service's GitHub repo](/docs/model-service/available-models.md) under the `<> Code` button.  
+    To spin up the SMI-TED service for example:
 
     ```shell
-    catalog model service from 'git@github.com:acceleratedscience/property_inference_service.git' as prop
+    catalog model service from 'git@github.com:acceleratedscience/openad-service-smi-ted.git' as smi_ted
     ```
 
 2.  Start the service – this can take up to 10 minutes
 
     ```shell
-    model service up prop
+    model service up smi_ted
     ```
 
 3.  Check if the service is ready
@@ -388,7 +449,7 @@ model ?
 4.  Shut down the service
 
     ```shell
-    model service down prop
+    model service down smi_ted
     ```
 
 5.  To see all available model commands, pull up the general help and look towards the bottom of the command list.
@@ -405,7 +466,7 @@ Apple Silicon chips (aka M1, M2, M3 etc.) utilize the ARM64 instruction set arch
 
 Some of the models have been prepped with alternative images that are able to run on Apple Silicon via emulator (with some impact on performance), however support is far from consistent.
 
-Also, because Apple Silicon is a [SoC](https://en.wikipedia.org/wiki/System_on_a_chip) processor without discrete GPU, there is no support for GPU deployment. When using Docker or Podman compose, make sure to disable this part in the `compose.yml` file:
+Also, because Apple Silicon is a [SoC](https://en.wikipedia.org/wiki/System_on_a_chip) processor without discrete GPU, there is no support for GPU deployment. When using Docker or Podman compose, make sure to disable this part in the `compose.yaml` file:
 
 ```
 # deploy:

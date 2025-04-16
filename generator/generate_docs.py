@@ -20,13 +20,12 @@ from methods.copy_docs import update_docs, update_openad
 
 
 if __name__ == "__main__":
-    # update_gh_readme()
-    # update_plugins_md()
-    # update_base_concepts_md()
-    # generate_commands_md()
-    # generate_commands_csv()
+    update_gh_readme()
+    update_plugins_md()
+    update_base_concepts_md()
+    generate_commands_md()
+    generate_commands_csv()
     generate_model_docs()
-    print("\n")
 
     # fmt: off
 

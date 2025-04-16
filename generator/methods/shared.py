@@ -5,9 +5,9 @@ from openad.helpers.output import output_error, output_warning, output_text
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 docs_dir = os.path.normpath(os.path.join(this_dir, "../../main/docs"))
-source_dir = os.path.normpath(os.path.join(this_dir, "../source"))
-input_dir = os.path.normpath(os.path.join(this_dir, "../input"))
-output_dir = os.path.normpath(os.path.join(this_dir, "../output"))
+source_dir = os.path.normpath(os.path.join(this_dir, "../_source"))
+input_dir = os.path.normpath(os.path.join(this_dir, "../_input"))
+output_dir = os.path.normpath(os.path.join(this_dir, "../_output"))
 openad_toolkit_dir = os.path.normpath(os.path.join(this_dir, "../../../openad-toolkit"))
 
 
