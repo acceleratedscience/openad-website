@@ -8,14 +8,14 @@ https://github.com/acceleratedscience/openad-website/tree/generator
 
 -->
 
-# Available Models
+# Publicly Available Models
 
 <details markdown><summary><h3>SMI-TED &nbsp;/&nbsp; Inference for SMILES</h3></summary>
 <div markdown>
 
 [:carbon-icn-github: openad-service-smi-ted](https://github.com/acceleratedscience/openad-service-smi-ted){ .md-button }
 [compose.yml](https://github.com/acceleratedscience/openad-service-smi-ted/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **SMILES-based Transformer Encoder-Decoder** (SMILES-TED), which is an encoder-decoder model pre-trained on a curated dataset of 91 million SMILES samples sourced from PubChem, equivalent to 4 billion molecular tokens. SMI-TED supports various complex tasks, including quantum property prediction, with two main variants ( 289 M and 8 × 289 M ).
 
@@ -28,7 +28,7 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
-✅ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+✅ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker Compose:
@@ -56,7 +56,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as smi_ted
 
 [:carbon-icn-github: openad-service-bmfm-sm](https://github.com/acceleratedscience/openad-service-bmfm-sm){ .md-button }
 [compose.yml](https://github.com/acceleratedscience/openad-service-bmfm-sm/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **Biomedmultiview** foundation model with checkpoints for the following properties:
 
@@ -74,7 +74,7 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
-✅ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+✅ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker Compose:
@@ -102,7 +102,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as bmfm_sm
 
 [:carbon-icn-github: openad-service-bmfm-pm](https://github.com/acceleratedscience/openad-service-bmfm-pm){ .md-button }
 [compose.yml](https://github.com/acceleratedscience/openad-service-bmfm-pm/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **Biomedmultialignment** foundation model with checkpoints for the following properties:
 
@@ -116,7 +116,7 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+❌ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker Compose:
@@ -144,7 +144,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as bmfm_pm
 
 [:carbon-icn-github: openad-service-reinvent](https://github.com/acceleratedscience/openad-service-reinvent){ .md-button }
 [compose.yml](https://github.com/acceleratedscience/openad-service-reinvent/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **REINVENT 4** molecular design tool, which is used for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user-defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules. 
 
@@ -156,7 +156,7 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+❌ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker Compose:
@@ -183,7 +183,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as reinvent
 <div markdown>
 
 [:carbon-icn-github: openad-service-gen](https://github.com/acceleratedscience/openad-service-gen){ .md-button }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container){ .md-button .md-button--tertiary }  
 
 _No description available._
 
@@ -191,7 +191,7 @@ _No description available._
 Support for:  
 ❌ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+❌ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker:
@@ -221,7 +221,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as gen
 <div markdown>
 
 [:carbon-icn-github: openad-service-prop](https://github.com/acceleratedscience/openad-service-prop){ .md-button }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container){ .md-button .md-button--tertiary }  
 
 _No description available._
 
@@ -229,7 +229,7 @@ _No description available._
 Support for:  
 ❌ Docker / Podman Compose  
 ✅ Docker / Podman  
-❓ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+❌ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker:
@@ -259,7 +259,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as prop
 <div markdown>
 
 [:carbon-icn-github: openad-service-moler](https://github.com/acceleratedscience/openad-service-moler){ .md-button }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container){ .md-button .md-button--tertiary }  
 
 _No description available._
 
@@ -267,7 +267,7 @@ _No description available._
 Support for:  
 ❌ Docker / Podman Compose  
 ✅ Docker / Podman  
-❓ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+❌ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker:
@@ -297,7 +297,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as moler
 <div markdown>
 
 [:carbon-icn-github: openad-service-molf](https://github.com/acceleratedscience/openad-service-molf){ .md-button }
-[Instructions](/docs/model-service/prepackaged-models-beta/#deployment-via-container){ .md-button .md-button--tertiary }  
+[Instructions](/docs/model-service/prepackaged-models/#deployment-via-container){ .md-button .md-button--tertiary }  
 
 _No description available._
 
@@ -305,7 +305,7 @@ _No description available._
 Support for:  
 ❌ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon ([info](/docs/model-service/prepackaged-models/#apple-silicon))  
+❌ Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  
 
 
 Quick start with Docker:
