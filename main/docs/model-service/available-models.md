@@ -142,8 +142,8 @@ catalog model service from remote 'http://127.0.0.1:8080' as bmfm_pm
 <details markdown><summary><h3>REINVENT &nbsp;/&nbsp; Inference for SMILES</h3></summary>
 <div markdown>
 
-[:carbon-icn-github: openad-service-reinvent](https://github.com/acceleratedscience/openad-service-reinvent){ .md-button }
-[compose.yml](https://github.com/acceleratedscience/openad-service-reinvent/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
+[:carbon-icn-github: openad-service-reinvent4](https://github.com/acceleratedscience/openad-service-reinvent4){ .md-button }
+[compose.yml](https://github.com/acceleratedscience/openad-service-reinvent4/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/prepackaged-models/#deployment-via-container-composeyml){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **REINVENT 4** molecular design tool, which is used for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user-defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules. 
@@ -161,7 +161,7 @@ Support for:
 
 Quick start with Docker Compose:
 ```
-curl -O https://github.com/acceleratedscience/openad-service-reinvent/raw/main/compose.yaml
+curl -O https://github.com/acceleratedscience/openad-service-reinvent4/raw/main/compose.yaml
 ```
 ```
 docker compose create
@@ -173,7 +173,7 @@ docker compose start
 openad
 ```
 ```
-catalog model service from remote 'http://127.0.0.1:8080' as reinvent
+catalog model service from remote 'http://127.0.0.1:8080' as reinvent4
 ```
 
 </div>
