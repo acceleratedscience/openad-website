@@ -19,7 +19,16 @@ branch = "readme_update_moe"
 
 def generate_model_docs(filename="model-service~available-models.md"):
     """
-    Generate output/available-models.md page for documentation website.
+    Generate the available-models.md page for the documentation.
+
+    - Start from the _input/model-service~available-models.md template
+    - Load the models.csv file from _input/models.csv
+    - Scrape the README.md files from the GitHub repositories listed in models.csv
+    - Generate overview markdown for each model
+    - Store result in _output/docs/model-service~available-models.md
+
+    Note: The copy_docs script will interpret the ~ in the filename to know
+    the path in the /docs directory where to copy the file to.
     """
 
     output_text(
@@ -27,13 +36,25 @@ def generate_model_docs(filename="model-service~available-models.md"):
         pad_top=2,
     )
 
+    # Read commands.md input content
+    available_models_md = read_input_file(filename)
+
+    # Insert DO NOT EDIT comment
+    available_models_md = re.sub(
+        r"{{DO_NOT_EDIT}}", DO_NOT_EDIT, available_models_md, flags=re.DOTALL
+    )
+
+    # Scrape README.md files from GitHub
     model_data = scrape_repos()
     if not model_data:
         return
-    # print(model_data)
+
+    # Generate markdown
     markdown = generate_md(model_data)
-    markdown = DO_NOT_EDIT + "\n\n# Publicly Available Models\n\n" + markdown
-    write_output_file("docs/" + filename, markdown)
+
+    # Insert in template and save
+    available_models_md = available_models_md + "\n\n" + markdown
+    write_output_file("docs/" + filename, available_models_md)
 
     # for model in model_data:
     #     output_text(f"<yellow>Name:</yellow> {model['name']}", pad_top=1)
@@ -213,8 +234,8 @@ def generate_md(model_data):
             if model["support:compose"]
             else "--REMOVE-LINE--"
         )
-        instructions_url_container = "/docs/model-service/prepackaged-models/#deployment-via-container"
-        instructions_url_compose = "/docs/model-service/prepackaged-models/#deployment-via-container-composeyml"
+        instructions_url_container = "/docs/model-service/deploying-models/#deployment-via-container"
+        instructions_url_compose = "/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended"
         instructions_url = instructions_url_compose if model["support:compose"] else instructions_url_container
         btn_instructions = f"[Instructions]({instructions_url}){{ .md-button .md-button--tertiary }}  "
         support_overview = (
@@ -222,7 +243,7 @@ def generate_md(model_data):
             "Support for:  \n"
             f"{'❌' if not model['support:compose'] else '✅'} Docker / Podman Compose  \n"
             f"{'❌' if not model['support:docker'] else '✅'} Docker / Podman  \n"
-            f"{'❌' if model['support:apple-silicon'] is False else '❓' if model['support:apple-silicon'] is None else '✅'} Apple Silicon - [more info](/docs/model-service/prepackaged-models/#apple-silicon)  \n"
+            f"{'❌' if model['support:apple-silicon'] is False else '❓' if model['support:apple-silicon'] is None else '✅'} Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  \n"
             f"\n"
         )
         # fmt:on
@@ -277,7 +298,7 @@ def generate_md(model_data):
 
         # Compile
         html_block = [
-            f"<details markdown><summary><h3>{title}</h3></summary>",
+            f"<details markdown><summary><h4>{title}</h4></summary>",
             "<div markdown>",
             "",
             # Buttons

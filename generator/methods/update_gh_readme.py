@@ -7,8 +7,18 @@ from .shared import (
 from openad.helpers.output import output_text
 
 
-# Update the main README.md for the openad-toolkit repo with OpenAD description
 def update_gh_readme(filename="README.md"):
+    """
+    Update the main README.md for the openad-toolkit repo with the latest OpenAD description.
+
+    WARNING: this will fetch the README.md from the current main branch of the
+    openad-toolkit repo. If you have local changes, they will be overwritten.
+
+    - Copy the content of the current README.md on the main branch of the openad-toolkit repo.
+    - Update the page with the latest OpenAD description from the _source/description.txt file.
+    - Store result in _output/openad-toolkit/README.md
+    """
+
     output_text(
         f"<h1>Updating <yellow>{filename}</yellow> with OpenAD description</h1>",
         pad_top=2,

@@ -10,10 +10,17 @@ from openad.helpers.output_msgs import msg
 from .shared import write_output_file
 
 
-# Loop through all commands and export them to a CSV file.
-# This is not used for anything in particular, other than
-# to have a list of all commands in a file which can be annotated.
 def generate_commands_csv(filename="commands.csv", delimiter=";"):
+    """
+    Create a CSV with all OpenAD commands.
+
+    This is not used for anything in particular, other than
+    to have a list of all commands in a file which can be annotated.
+
+    - Loop through all toolkit commands and compile CSV
+    - Store CSV in _output/other/commands.csv
+    """
+
     output_text(
         "<h1>Generating <yellow>commands.csv</yellow> from help</h1>", pad_top=2
     )

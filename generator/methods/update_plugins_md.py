@@ -9,6 +9,14 @@ from openad.helpers.output import output_text
 
 # Update the docs/plugins.md file with the about_plugins description
 def update_plugins_md(filename="plugins.md"):
+    """
+    Update the plugins.md file with the latest plugin description for the documentation.
+
+    - Copy the content of the current version of the page in /docs
+    - Update the page with the latest plugin description from the _source/about_plugins.txt file
+    - Store result in _output/docs/plugins.md
+    """
+
     output_text(
         f"<h1>Updating <yellow>{filename}</yellow> with about_plugins description</h1>",
         pad_top=2,

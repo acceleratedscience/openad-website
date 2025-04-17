@@ -5,8 +5,8 @@
 # Deploying Models
 
 !!! info
-    **Apple users:** Some models won't run on Apple Silicon processors.  
-    See the [Apple Silicon] section below for more information.
+    **Apple users:** Most models won't run on Apple Silicon (ARM64) processors, more information [below](#apple-silicon).  
+    Check the list of [available services] to see which ones are compatible.
 
 ## Deployment Options
 
@@ -462,11 +462,11 @@ If the service you're trying to deploy has a `/helm-chart` folder, it's been pre
 <!------------------------------------------------------------>
 ## Apple Silicon
 
-Apple Silicon chips (aka M1, M2, M3 etc.) utilize the ARM64 instruction set architecture (ISA), which is incompatible with the standard x86-64 ISA our models are compiled for.
+Apple Silicon chips (aka M1, M2, M3 etc.) utilize the ARM64 instruction set architecture (ISA), which is incompatible with the standard x86-64 ISA the models are compiled for.
 
-Some of the models have been prepped with alternative images that are able to run on Apple Silicon via emulator (with some impact on performance), however support is far from consistent.
+Some are able to run on Apple Silicon via emulator (with some impact on performance), however support is not consistent.
 
-Also, because Apple Silicon is a [SoC](https://en.wikipedia.org/wiki/System_on_a_chip) processor without discrete GPU, there is no support for GPU deployment. When using Docker or Podman compose, make sure to disable this part in the `compose.yaml` file:
+Also, because Apple M processors are a [SoC](https://en.wikipedia.org/wiki/System_on_a_chip) without discrete GPU, there is no support for GPU deployment. When using Docker or Podman compose, make sure to disable this part in the `compose.yaml` file:
 
 ```
 # deploy:

@@ -7,8 +7,15 @@ from .shared import (
 from openad.helpers.output import output_text
 
 
-# Generate the docs/base-concepts.md file with the concept descriptions
 def update_base_concepts_md(filename="base-concepts.md"):
+    """
+    Update the base-concepts.md page for the documentation.
+
+    - Copy the content of the current version of the page in /docs
+    - Update the page with the latest concept descriptions from the _source description files
+    - Store result in _output/docs/base-concepts.md
+    """
+
     output_text(f"<h1>Generating <yellow>{filename}</yellow></h1>", pad_top=2)
 
     # Read base file content

@@ -6,8 +6,15 @@ from openad.core.help import organize_commands
 from .shared import DO_NOT_EDIT, read_input_file, write_output_file
 
 
-# Loop through all commands and export them to docs/commands.md
 def generate_commands_md(filename="commands.md"):
+    """
+    Generate the commands.md page for the documentation.
+
+    - Start from the _input/commands.md template
+    - Loop through all OpenAD commands & generate markdown
+    - Store result in _output/docs/commands.md
+    """
+
     output_text(f"<h1>Generating <yellow>{filename}</yellow> from help</h1>", pad_top=2)
 
     toc = []  # Table of content
