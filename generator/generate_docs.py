@@ -6,6 +6,8 @@ Usage:
 
 """
 
+import sys
+
 from openad.helpers.output import output_text, output_warning
 from openad.helpers.general import confirm_prompt
 
@@ -17,15 +19,10 @@ from methods.update_base_concepts_md import update_base_concepts_md
 from methods.generate_commands_md import generate_commands_md
 from methods.generate_commands_csv import generate_commands_csv
 from methods.generate_model_docs import generate_model_docs
-from generator.methods.distribute_output import update_docs, update_openad
+from update_docs import distribute
 
 
 if __name__ == "__main__":
-    oad_generate_concepts()
-
-    # # STEP 1
-    # # ------------------------
-    # # Generate/update files, store to _output
 
     # # For openad-toolkit repo
     # oad_update_readme()
@@ -40,6 +37,6 @@ if __name__ == "__main__":
     # # Other files
     # generate_commands_csv()
 
-    # Step 2
-    # ------------------------
-    # Copy files to final destination
+    args = sys.argv[1:]
+    if "--update" in args:
+        distribute()

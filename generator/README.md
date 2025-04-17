@@ -16,6 +16,12 @@ Distribute files to final destination (with confirmation step):
 python3 generator/update_docs.py
 ```
 
+All at once:
+
+```
+python3 generator/generate_docs.py --update
+```
+
 <br>
 
 ### Script Output
