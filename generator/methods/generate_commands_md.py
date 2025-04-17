@@ -15,7 +15,7 @@ def generate_commands_md(filename="commands.md"):
     - Store result in _output/docs/commands.md
     """
 
-    output_text(f"<h1>Generating <yellow>{filename}</yellow> from help</h1>", pad_top=2)
+    output_text(f"<h1>Generating <yellow>{filename}</yellow></h1>", pad_top=2)
 
     toc = []  # Table of content
     md_output = []  # Markdown

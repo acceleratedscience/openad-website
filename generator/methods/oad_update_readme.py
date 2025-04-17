@@ -7,7 +7,7 @@ from .shared import (
 from openad.helpers.output import output_text
 
 
-def update_gh_readme(filename="README.md"):
+def oad_update_readme(filename="README.md"):
     """
     Update the main README.md for the openad-toolkit repo with the latest OpenAD description.
 

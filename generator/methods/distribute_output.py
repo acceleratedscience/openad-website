@@ -1,10 +1,11 @@
 """
-Script to copy generated markdown files to the website repository.
+Copy generated files to their final destinartion.
 
-The two repositories should be placed in the same parent folder for this to work:
+For files to be copied over to the openad-toolkit repo,
+the two repositories should be placed in the same parent folder:
 /my-repos
-    /openad-toolkit # <-- this repository
-    /openad-website # <-- website repository
+    /openad-toolkit
+    /openad-website
 
 """
 
@@ -22,7 +23,7 @@ DIR_STRUCTURE = [
     "/my-repos",
     "  /openad-website",
     "    /generator",
-    "      /output",
+    "      /_output",
     "        /openad-toolkit  <-- Source",
     "  /openad-toolkit        <-- Destination",
 ]
@@ -57,7 +58,6 @@ def update_openad():
 #
 
 # fmt: off
-
 def _move_files(src_dir, dest_dir):
     # Title
     output_text("\n<h1>Overwriting website files with new markdown files</h1>")
