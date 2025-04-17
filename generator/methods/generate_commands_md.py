@@ -3,14 +3,14 @@ import re
 from openad.helpers.output import output_text
 from openad.app.main import RUNCMD as cmd_pointer
 from openad.core.help import organize_commands
-from .shared import DO_NOT_EDIT, read_input_file, write_output_file
+from .shared import DO_NOT_EDIT, read_template_file, write_output_file
 
 
 def generate_commands_md(filename="commands.md"):
     """
     Generate the commands.md page for the documentation.
 
-    - Start from the _input/commands.md template
+    - Start from the _templates/commands.md template
     - Loop through all OpenAD commands & generate markdown
     - Store result in _output/docs/commands.md
     """
@@ -43,7 +43,7 @@ def generate_commands_md(filename="commands.md"):
     #
 
     # Read commands.md input content
-    commands_md = read_input_file(filename)
+    commands_md = read_template_file(filename)
 
     # Insert sections
     # fmt: off

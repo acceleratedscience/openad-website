@@ -1,12 +1,12 @@
 from openad.helpers.output import output_text
-from .shared import read_input_file, read_source_file, write_output_file
+from .shared import read_template_file, read_source_file, write_output_file
 
 
 def oad_generate_concepts(filename="openad~helpers~concepts.py"):
     """
     Generate the concept.py file for the openad-toolkit repo.
 
-    - Start from the _input/openad~helpers~concepts.py template
+    - Start from the _templates/openad~helpers~concepts.py template
     - Fill in all descriptions from the _source directory
     - Store result in _output/openad-toolkit/openad~helpers~concepts.py
 
@@ -17,7 +17,7 @@ def oad_generate_concepts(filename="openad~helpers~concepts.py"):
     output_text(f"<h1>Generating <yellow>{filename}</yellow></h1>", pad_top=2)
 
     # Read concepts.py template content
-    concepts_py = read_input_file(filename)
+    concepts_py = read_template_file(filename)
 
     # Read source file content
     description_txt = read_source_file("description.txt")

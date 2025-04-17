@@ -1,4 +1,5 @@
 # -- NO LONGER IN USE --
+# Kept here for reference only
 # Todo: strategy on how to integrate LLM training for plugins
 
 import os

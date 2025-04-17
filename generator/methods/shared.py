@@ -6,7 +6,7 @@ from openad.helpers.output import output_error, output_warning, output_text
 this_dir = os.path.dirname(os.path.abspath(__file__))
 docs_dir = os.path.normpath(os.path.join(this_dir, "../../main/docs"))
 source_dir = os.path.normpath(os.path.join(this_dir, "../_source"))
-input_dir = os.path.normpath(os.path.join(this_dir, "../_input"))
+template_dir = os.path.normpath(os.path.join(this_dir, "../_templates"))
 output_dir = os.path.normpath(os.path.join(this_dir, "../_output"))
 openad_toolkit_dir = os.path.normpath(os.path.join(this_dir, "../../../openad-toolkit"))
 
@@ -63,9 +63,9 @@ def read_source_file(filename):
     return _read_file_content(path)
 
 
-def read_input_file(filename):
+def read_template_file(filename):
     """Return the content of a file from the input dir."""
-    path = os.path.join(input_dir, filename)
+    path = os.path.join(template_dir, filename)
     return _read_file_content(path)
 
 

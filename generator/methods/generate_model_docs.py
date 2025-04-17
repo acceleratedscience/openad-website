@@ -8,7 +8,7 @@ from .shared import (
     DO_NOT_EDIT,
     FLAG_ERROR,
     source_dir,
-    read_input_file,
+    read_template_file,
     write_output_file,
 )
 
@@ -21,8 +21,8 @@ def generate_model_docs(filename="model-service~available-models.md"):
     """
     Generate the available-models.md page for the documentation.
 
-    - Start from the _input/model-service~available-models.md template
-    - Load the models.csv file from _input/models.csv
+    - Start from the _templates/model-service~available-models.md template
+    - Load the models.csv file from _templates/models.csv
     - Scrape the README.md files from the GitHub repositories listed in models.csv
     - Generate overview markdown for each model
     - Store result in _output/docs/model-service~available-models.md
@@ -37,7 +37,7 @@ def generate_model_docs(filename="model-service~available-models.md"):
     )
 
     # Read commands.md input content
-    available_models_md = read_input_file(filename)
+    available_models_md = read_template_file(filename)
 
     # Insert DO NOT EDIT comment
     available_models_md = re.sub(
