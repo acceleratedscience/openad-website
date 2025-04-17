@@ -8,9 +8,6 @@ Usage:
 
 import sys
 
-from openad.helpers.output import output_text, output_warning
-from openad.helpers.general import confirm_prompt
-
 # Scripts
 from methods.oad_update_readme import oad_update_readme
 from methods.oad_generate_concepts import oad_generate_concepts
@@ -24,19 +21,20 @@ from update_docs import distribute
 
 if __name__ == "__main__":
 
-    # # For openad-toolkit repo
-    # oad_update_readme()
-    # oad_generate_concepts()
+    # For openad-toolkit repo
+    oad_update_readme()
+    oad_generate_concepts()
 
-    # # Documentation files
-    # update_plugins_md()
-    # update_base_concepts_md()
-    # generate_commands_md()
-    # generate_model_docs()
+    # Documentation files
+    update_plugins_md()
+    update_base_concepts_md()
+    generate_commands_md()
+    generate_model_docs()
 
-    # # Other files
-    # generate_commands_csv()
+    # Other files
+    generate_commands_csv()
 
     args = sys.argv[1:]
     if "--update" in args:
+        print("\n\n\n\n")
         distribute()

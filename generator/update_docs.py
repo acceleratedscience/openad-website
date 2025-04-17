@@ -9,7 +9,9 @@ def distribute():
     if ok:
         update_docs()
     else:
-        output_error([ "No files were moved", "You can still find them in the /_output/docs directory"], pad_btm=1)
+        output_error([ "No docs files were updated", "You can still find them in the /_output/docs directory"], pad_btm=1)
+
+    print("\n\n\n\n")
 
     # Update openad-toolkit repo
     ok = confirm_prompt((
@@ -23,7 +25,7 @@ def distribute():
     if ok:
         update_openad()
     else:
-        output_error([ "No files were moved", "You can still find them in the /output/openad-toolkit directory"], pad_btm=1)
+        output_error([ "No openad-toolkit files were updated", "You can still find them in the /output/openad-toolkit directory"], pad_btm=1)
 
 
 

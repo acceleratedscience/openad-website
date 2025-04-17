@@ -11,10 +11,7 @@ the two repositories should be placed in the same parent folder:
 
 import os
 import shutil
-from openad.helpers.output import (
-    output_error,
-    output_text,
-)
+from openad.helpers.output import output_error, output_text
 from .shared import FLAG_ERROR, openad_toolkit_dir, output_dir, docs_dir
 
 
@@ -22,10 +19,7 @@ FLAG_COPIED = f"<on_green> COPIED </on_green>"
 DIR_STRUCTURE = [
     "/my-repos",
     "  /openad-website",
-    "    /generator",
-    "      /_output",
-    "        /openad-toolkit  <-- Source",
-    "  /openad-toolkit        <-- Destination",
+    "  /openad-toolkit",
 ]
 
 
@@ -47,7 +41,7 @@ def update_openad():
     if not success:
         output_text(
             [
-                "<reset>To have the output files copied automatically, make sure to place the openad-docs repo adjacent to this repo:</reset>",
+                "<reset>To have the output files copied automatically, make sure to place the openad-toolkit repo adjacent to this repo:</reset>",
                 "\n".join(DIR_STRUCTURE),
             ],
             pad_btm=1,
