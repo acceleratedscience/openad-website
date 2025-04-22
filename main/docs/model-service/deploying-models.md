@@ -275,7 +275,7 @@ If the service you're trying to deploy has a `/helm-chart` folder, it's been pre
 1. Install the helm chart
 
     ```shell
-    helm install <service-name> ./helm-chart
+    helm install <service-name> <path-to-helm-chart-dir>
     ```
     ```shell
     # Example for SMI-TED
