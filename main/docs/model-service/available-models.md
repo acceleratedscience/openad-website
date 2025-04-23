@@ -19,7 +19,7 @@ Go to [Deploying Models](deploying-models.md) for more detailed deployment optio
 <div markdown>
 
 [:carbon-icn-github: openad-service-smi-ted](https://github.com/acceleratedscience/openad-service-smi-ted){ .md-button }
-[compose.yml](https://github.com/acceleratedscience/openad-service-smi-ted/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
+[compose.yml](https://raw.githubusercontent.com/acceleratedscience/openad-service-smi-ted/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **SMILES-based Transformer Encoder-Decoder** (SMILES-TED), which is an encoder-decoder model pre-trained on a curated dataset of 91 million SMILES samples sourced from PubChem, equivalent to 4 billion molecular tokens. SMI-TED supports various complex tasks, including quantum property prediction, with two main variants ( 289 M and 8 × 289 M ).
@@ -38,7 +38,7 @@ Support for:
 
 Quick start with Docker Compose:
 ```
-curl -O https://github.com/acceleratedscience/openad-service-smi-ted/raw/main/compose.yaml
+curl -O https://raw.githubusercontent.com/acceleratedscience/openad-service-smi-ted/main/compose.yaml
 ```
 ```
 docker compose create
@@ -60,7 +60,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as smi_ted
 <div markdown>
 
 [:carbon-icn-github: openad-service-bmfm-sm](https://github.com/acceleratedscience/openad-service-bmfm-sm){ .md-button }
-[compose.yml](https://github.com/acceleratedscience/openad-service-bmfm-sm/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
+[compose.yml](https://raw.githubusercontent.com/acceleratedscience/openad-service-bmfm-sm/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **Biomedmultiview** foundation model with checkpoints for the following properties:
@@ -84,7 +84,7 @@ Support for:
 
 Quick start with Docker Compose:
 ```
-curl -O https://github.com/acceleratedscience/openad-service-bmfm-sm/raw/main/compose.yaml
+curl -O https://raw.githubusercontent.com/acceleratedscience/openad-service-bmfm-sm/main/compose.yaml
 ```
 ```
 docker compose create
@@ -106,7 +106,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as bmfm_sm
 <div markdown>
 
 [:carbon-icn-github: openad-service-bmfm-pm](https://github.com/acceleratedscience/openad-service-bmfm-pm){ .md-button }
-[compose.yml](https://github.com/acceleratedscience/openad-service-bmfm-pm/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
+[compose.yml](https://raw.githubusercontent.com/acceleratedscience/openad-service-bmfm-pm/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **Biomedmultialignment** foundation model with checkpoints for the following properties:
@@ -126,7 +126,7 @@ Support for:
 
 Quick start with Docker Compose:
 ```
-curl -O https://github.com/acceleratedscience/openad-service-bmfm-pm/raw/main/compose.yaml
+curl -O https://raw.githubusercontent.com/acceleratedscience/openad-service-bmfm-pm/main/compose.yaml
 ```
 ```
 docker compose create
@@ -148,7 +148,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as bmfm_pm
 <div markdown>
 
 [:carbon-icn-github: openad-service-reinvent4](https://github.com/acceleratedscience/openad-service-reinvent4){ .md-button }
-[compose.yml](https://github.com/acceleratedscience/openad-service-reinvent4/raw/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
+[compose.yml](https://raw.githubusercontent.com/acceleratedscience/openad-service-reinvent4/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended){ .md-button .md-button--tertiary }  
 
 This OpenAD service provides access to the **REINVENT 4** molecular design tool, which is used for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user-defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules. 
@@ -166,7 +166,7 @@ Support for:
 
 Quick start with Docker Compose:
 ```
-curl -O https://github.com/acceleratedscience/openad-service-reinvent4/raw/main/compose.yaml
+curl -O https://raw.githubusercontent.com/acceleratedscience/openad-service-reinvent4/main/compose.yaml
 ```
 ```
 docker compose create

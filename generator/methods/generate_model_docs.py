@@ -1,5 +1,3 @@
-# python3 docs/generate_model_docs.py
-
 import os
 import re
 import pandas as pd
@@ -76,6 +74,10 @@ def scrape_repos():
     results = []
     for _, row in df.iterrows():
         repo_url = row["Repository"]
+        # Raw URL:                    https://github.com/acceleratedscience/<repo_name>/raw/main/<filename>
+        # Forwards to: https://raw.githubusercontent.com/acceleratedscience/<repo_name>/main/<filename>
+        # The first URL can't be downloaded using curl, so we need to use the second one
+        repo_url_raw = repo_url.replace("github.com", "raw.githubusercontent.com")
         name = row["Name"]
         try:
             # Scrape the README.md file
@@ -95,13 +97,13 @@ def scrape_repos():
             description = parse_description(readme_text, repo_name)
 
             # Check support for Docker (Dockerfile)
-            dockerfile_url = f"{repo_url}/raw/main/Dockerfile"
+            dockerfile_url = f"{repo_url_raw}/main/Dockerfile"
             dockerfile_exists = (
                 requests.get(dockerfile_url, timeout=10).status_code == 200
             )
 
             # Check support for Docker compose (compose.yaml)
-            compose_yml_url = f"{repo_url}/raw/main/compose.yaml"
+            compose_yml_url = f"{repo_url_raw}/main/compose.yaml"
             compose_exists = (
                 requests.get(compose_yml_url, timeout=10).status_code == 200
             )
@@ -124,6 +126,7 @@ def scrape_repos():
                     "title": title,
                     "repo_name": repo_name,
                     "url": repo_url,
+                    "compose_yml_url": compose_yml_url,
                     "description": description,
                     "support:docker": dockerfile_exists,
                     "support:compose": compose_exists,
@@ -228,9 +231,10 @@ def generate_md(model_data):
         repo_name = model["repo_name"]
         service_name = repo_name.replace("openad-service-", "").replace("-", "_")
         url = model["url"]
+        compose_yml_url = model["compose_yml_url"]
         btn_github = f"[:carbon-icn-github: {repo_name}]({url}){{ .md-button }}"
         btn_compose = (
-            f"[compose.yml]({url}/raw/main/compose.yaml){{ .md-button .md-button--primary download='compose.yml' }}"
+            f"[compose.yml]({compose_yml_url}){{ .md-button .md-button--primary download='compose.yml' }}"
             if model["support:compose"]
             else "--REMOVE-LINE--"
         )
@@ -250,7 +254,7 @@ def generate_md(model_data):
         docker_compose_instructions = (
             "Quick start with Docker Compose:\n"
             "```\n"
-            f"curl -O {url}/raw/main/compose.yaml\n"
+            f"curl -O {compose_yml_url}\n"
             "```\n"
             "```\n"
             f"docker compose create\n"

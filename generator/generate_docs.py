@@ -3,6 +3,8 @@ Generate/update documentation markdown files based on source files.
 
 Usage:
     python3 generator/generate_docs.py
+    python3 generator/generate_docs.py --update
+    python3 generator/generate_docs.py --update-after
 
 """
 
@@ -20,6 +22,10 @@ from update_docs import distribute
 
 
 if __name__ == "__main__":
+    args = sys.argv[1:]
+    if "--update" in args:
+        distribute()
+        sys.exit()
 
     # For openad-toolkit repo
     oad_update_readme()
@@ -34,7 +40,6 @@ if __name__ == "__main__":
     # Other files
     generate_commands_csv()
 
-    args = sys.argv[1:]
-    if "--update" in args:
+    if "--update-after" in args:
         print("\n\n\n\n")
         distribute()
