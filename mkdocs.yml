@@ -10,6 +10,7 @@ nav:
     # - Style Reference: style-reference.md
     - Home: index.md
     - Documentation:
+          - docs/index.md
           - Installation: docs/installation.md
           - Getting Started: docs/getting-started.md
           - Base Concepts: docs/base-concepts.md
