@@ -22,7 +22,7 @@ Go to [Deploying Models](deploying-models.md) for more detailed deployment optio
 [compose.yml](https://raw.githubusercontent.com/acceleratedscience/openad-service-smi-ted/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended){ .md-button .md-button--tertiary }  
 
-This OpenAD service provides access to the **SMILES-based Transformer Encoder-Decoder** (SMILES-TED), which is an encoder-decoder model pre-trained on a curated dataset of 91 million SMILES samples sourced from PubChem, equivalent to 4 billion molecular tokens. SMI-TED supports various complex tasks, including quantum property prediction, with two main variants ( 289 M and 8 × 289 M ).
+This OpenAD service provides access to **SMILES-based Transformer Encoder-Decoder** (SMI-TED), a foundation model for materials science and chemistry. SMI-TED is an encoder-decoder model pre-trained on a curated dataset of 91 million SMILES samples sourced from PubChem, equivalent to 4 billion molecular tokens. SMI-TED supports various complex tasks, including quantum property prediction, with two main variants ( 289 M and 8 × 289 M ).
 
 More information:  
 [github.com/IBM/materials](https://github.com/IBM/materials)  
@@ -33,6 +33,7 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
+✅ Google Cloud Run  
 ✅ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
@@ -63,7 +64,7 @@ catalog model service from remote 'http://127.0.0.1:8080' as smi_ted
 [compose.yml](https://raw.githubusercontent.com/acceleratedscience/openad-service-bmfm-sm/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended){ .md-button .md-button--tertiary }  
 
-This OpenAD service provides access to the **Biomedmultiview** foundation model with checkpoints for the following properties:
+This OpenAD service provides access to BioMedical Foundation Models: Small Molecules (BMFM-SM), namely the **Biomed-multi-view** foundation model with checkpoints for inference on the following small-molecule properties, a subset of the MoleculeNet benchmarks:
 
 | BACE | BBBP | CLINTOX | ESOL | FREESOLV | HIV |
 | ---- | ---- | ------- | ---- | -------- | --- |
@@ -79,6 +80,7 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
+☹️ Google Cloud Run  
 ✅ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
@@ -109,10 +111,10 @@ catalog model service from remote 'http://127.0.0.1:8080' as bmfm_sm
 [compose.yml](https://raw.githubusercontent.com/acceleratedscience/openad-service-bmfm-pm/main/compose.yaml){ .md-button .md-button--primary download='compose.yml' }
 [Instructions](/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended){ .md-button .md-button--tertiary }  
 
-This OpenAD service provides access to the **Biomedmultialignment** foundation model with checkpoints for the following properties:
+This OpenAD service provides access to the **Biomed-multi-alignment** foundation model, with checkpoints for two protein properties that work on FASTA string input: **protein solubility** (Sol) and **drug-target interaction** (DTI).
 
-| Sol | DTI |
-| --- | --- |
+- **Sol** task is from benchmark data defined here: https://academic.oup.com/bioinformatics/article/34/15/2605/4938490
+- **DTI** task is from benchmark data from TD Commons: https://tdcommons.ai/multi_pred_tasks/dti/
 
 More information:  
 [github.com/BiomedSciAI/biomed-multi-alignment](https://github.com/BiomedSciAI/biomed-multi-alignment)
@@ -121,7 +123,8 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
+☹️ Google Cloud Run  
+☹️ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
 Quick start with Docker Compose:
@@ -161,7 +164,8 @@ More information:
 Support for:  
 ✅ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
+✅ Google Cloud Run  
+☹️ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
 Quick start with Docker Compose:
@@ -194,9 +198,10 @@ _No description available._
 
 
 Support for:  
-❌ Docker / Podman Compose  
+☹️ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
+✅ Google Cloud Run  
+☹️ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
 Quick start with Docker:
@@ -232,9 +237,10 @@ _No description available._
 
 
 Support for:  
-❌ Docker / Podman Compose  
+☹️ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
+☹️ Google Cloud Run  
+☹️ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
 Quick start with Docker:
@@ -270,9 +276,10 @@ _No description available._
 
 
 Support for:  
-❌ Docker / Podman Compose  
+☹️ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
+☹️ Google Cloud Run  
+☹️ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
 Quick start with Docker:
@@ -308,9 +315,10 @@ _No description available._
 
 
 Support for:  
-❌ Docker / Podman Compose  
+☹️ Docker / Podman Compose  
 ✅ Docker / Podman  
-❌ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
+☹️ Google Cloud Run  
+☹️ Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  
 
 
 Quick start with Docker:

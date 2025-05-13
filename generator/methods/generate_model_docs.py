@@ -12,7 +12,7 @@ from .shared import (
 
 from openad.helpers.output import output_error, output_text, output_success
 
-branch = "readme_update_moe"
+branch = "main"
 
 
 def generate_model_docs(filename="model-service~available-models.md"):
@@ -119,6 +119,18 @@ def scrape_repos():
                 )
             )
 
+            # Check for Google Cloud Run support (<!-- support:gcloud:true -->)
+            gcloud_supported = (
+                True  # Supported
+                if "<!-- support:gcloud:true -->" in readme_text
+                else (
+                    False  # Not supported
+                    if "<!-- support:gcloud:false -->" in readme_text
+                    else None  # Unknown
+                )
+            )
+            print(name, gcloud_supported)
+
             # Append results
             results.append(
                 {
@@ -131,6 +143,7 @@ def scrape_repos():
                     "support:docker": dockerfile_exists,
                     "support:compose": compose_exists,
                     "support:apple-silicon": apple_silicon_supported,
+                    "support:gcloud": gcloud_supported,
                 }
             )
         except Exception as e:
@@ -245,9 +258,10 @@ def generate_md(model_data):
         support_overview = (
             f"\n"
             "Support for:  \n"
-            f"{'❌' if not model['support:compose'] else '✅'} Docker / Podman Compose  \n"
-            f"{'❌' if not model['support:docker'] else '✅'} Docker / Podman  \n"
-            f"{'❌' if model['support:apple-silicon'] is False else '❓' if model['support:apple-silicon'] is None else '✅'} Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  \n"
+            f"{'☹️' if not model['support:compose'] else '✅'} Docker / Podman Compose  \n"
+            f"{'☹️' if not model['support:docker'] else '✅'} Docker / Podman  \n"
+            f"{'☹️' if model['support:gcloud'] is False else '❓' if model['support:gcloud'] is None else '✅'} Google Cloud Run  \n"
+            f"{'☹️' if model['support:apple-silicon'] is False else '❓' if model['support:apple-silicon'] is None else '✅'} Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  \n"
             f"\n"
         )
         # fmt:on

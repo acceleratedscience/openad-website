@@ -31,11 +31,12 @@ tell me <how to do xyz>;LLM
 set llm  <language_model_name>;LLM
 clear llm auth;LLM
 list files [ path ];File System
-import from '<external_source_file>' to '<workspace_file>';File System
-export from '<workspace_file>' to '<external_file>';File System
-copy file '<workspace_file>' to '<other_workspace_name>';File System
+import '<file_path>';File System
+move '<source_file>' to '<destination_path>' [ force ];File System
+copy '<source_file>' to '<destination_path>' [ force ];File System
 remove '<filename>';File System
 open '<filename>';File System
+show '<filename>';File System
 intro;Help
 docs;Help
 ?;Help

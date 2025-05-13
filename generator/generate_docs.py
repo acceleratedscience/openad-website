@@ -2,9 +2,18 @@
 Generate/update documentation markdown files based on source files.
 
 Usage:
+
+    # Activate your openad virtual environment, unless you have openad installed globally
+    source ../openad/.venv/bin/activate
+
+    # Generate the docs
     python3 generator/generate_docs.py
-    python3 generator/generate_docs.py --update
-    python3 generator/generate_docs.py --update-after
+
+    # Dispatch the newly generated docs to the correct locations
+    python3 generator/generate_docs.py --dispatch
+
+    # Generate the docs and dispatch them all at once
+    python3 generator/generate_docs.py --dispatch-after
 
 """
 
@@ -23,7 +32,7 @@ from update_docs import distribute
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    if "--update" in args:
+    if "--dispatch" in args:
         distribute()
         sys.exit()
 
@@ -40,6 +49,6 @@ if __name__ == "__main__":
     # Other files
     generate_commands_csv()
 
-    if "--update-after" in args:
+    if "--dispatch-after" in args:
         print("\n\n\n\n")
         distribute()

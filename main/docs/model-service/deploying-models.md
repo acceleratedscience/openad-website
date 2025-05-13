@@ -20,6 +20,9 @@ There's different ways to deploy a service.
    _Deploy your model locally or in the cloud, using Docker or Podman build_
 3. [Local deployment using a Python virtual environment](#local-deployment-using-a-python-virtual-environment)  
    _Install requirements and manage your own environment_
+4. [Cloud deployment to Google Cloud Run](#cloud-deployment-to-google-cloud-run)  
+   _Leverage cloud computing power, using a no-code deployment_  
+   **Easy setup**{ .flag .yellow }
 4. [Cloud deployment to Red Hat OpenShift](#cloud-deployment-to-red-hat-openshift)  
    _Leverage cloud computing power_
 5. [Cloud deployment to SkyPilot on AWS](#cloud-deployment-to-skypilot-on-aws)  
@@ -262,6 +265,99 @@ model ?
     ```shell
     <service-name> ?
     ```
+
+</div>
+
+<!------------------------------------------------------------>
+## Cloud deployment to Google Cloud Run
+
+Deploying a model to Google Cloud Run is the easiest way to deploy a model to the cloud, as Google Cloud can spin up the service directly from the GitHub repository using only the Dockerfile.
+
+### Step 1: Preparation
+
+- Install [Google Cloud CLI](https://cloud.google.com/sdk/docs/install)
+- Go to [Available Models](available-models) to verify if the model you want to deploy supports Google Cloud
+- Fork the GitHub repo of the model you want to deploy.
+
+### Step 2: Google Cloud Run
+
+- Go to [console.cloud.google.com/run](https://console.cloud.google.com/run)
+- Create a project
+- Start your free trial if you need to (credit card required)
+- Click the _"Create service"_ button in an empty project  
+	(or click _"Deploy container"_ and select _"Service"_)
+- Select second option: _"Continuously deploy from a repository"_
+	- Click _"Setup with Cloud Build"_
+	- Connect GitHub & install Cloud Build for your fork
+	- Under _"Build Type"_ select _"Dockerfile"_ (keep default location)
+- Choose _"Require authentication"_
+- Click _"Container(s), Volumes, Networking, Security"_ at the bottom
+	- Under Resources, set Memory & CPU to 8GB & 4CPU or higher
+	- Under Requests, set the Request timeout to the maximum of 3600 sec
+- Click _"Create"_
+- Copy the service URL on top (we'll refer to it as `<service_url>`)  
+  It should look something like this:
+	```
+	https://openad-service-reinvent4-012345678999.us-central1.run.app
+	```
+
+    > **Note:** Your service will have a green checkmark next to its name, but it won't be available until _"Building and deploying from repository"_ is done and also displays the green checkmark.
+
+### Step 3: Terminal
+
+<div class="padded-list" markdown>
+
+- Login to Google Cloud
+	
+	> **Note:** The `application-default` clause stores your credentials on disk and is required to auto-refresh your auth tokens.
+    
+    ```
+	gcloud auth application-default login
+	```
+
+- If you haven't done so yet, you may have to set your project.
+	
+	> **Note:** To find your project's ID, go to the [Google Cloud Console](https://console.cloud.google.com) and click the button with your project's name (probably 'My FIrst Project') next to the Google Cloud logo.
+	
+    ```
+	gcloud config set project <project_id>`
+	```
+
+
+- Fetch your auth token
+    
+    ```
+	gcloud auth print-identity-token
+	```
+
+- Copy the token
+
+</div>
+
+### Step 4: OpenAD
+
+<div class="padded-list" markdown>
+
+- Create auth group for Google Cloud  
+    
+    > **Note:** You can call this group anything, we'll call it gcloud
+	
+    ```
+	model auth add group gcloud with '<auth_token>'
+	```
+
+- Catalog the service
+	
+    ```
+	catalog model service from remote '<service_url>' as <service_name>
+	```
+
+- Service will be listed as "Not ready" until the build is done  
+    (~15-20 min depending on the model)
+
+    ```
+	model service status
+	```
 
 </div>
 

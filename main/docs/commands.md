@@ -229,7 +229,7 @@ If you append `-d` to the end of the command `result open -d` display will resul
 <summary markdown>
 result as dataframe
 </summary>
-Return the result as dataframe (only for Jupyter Notebook)
+Return the result as dataframe (only for Jupyter Notebook).
 </details>
 
 <details markdown code>
@@ -296,23 +296,79 @@ List al directories and files in your current workspace.
 
 <details markdown code>
 <summary markdown>
-import from '&lt;external_source_file&gt;' to '&lt;workspace_file&gt;'
+import '&lt;file_path&gt;'
 </summary>
-Import a file from outside OpenAD into your current workspace.
+Import a file into your current workspace.
 </details>
 
 <details markdown code>
 <summary markdown>
-export from '&lt;workspace_file&gt;' to '&lt;external_file&gt;'
+move '&lt;source_file&gt;' to '&lt;destination_path&gt;' [ force ]
 </summary>
-Export a file from your current workspace to anywhere on your hard drive.
+Copy or move a file from one location to another.
+
+When the destination path includes a filename, you will be prompted to rename it.
+Use the `force` option to overwrite the file without prompting.
+
+
+**Working with paths**{.fake-h4}
+`foobar.csv`              A file in your current workspace
+`/Users/John/foobar.csv`  An absolute file path
+`./foobar.csv`            A file on your current working directory
+`~/Documents/foobar.csv`  A file in your home directory
+
+
+**Examples**{ .fake-h4 }
+
+Copy a file from your workspace to your home directory:
+```shell
+copy 'my_molecules.sdf' to '~/'
+```
+
+Move and rename a file within your workspace:
+```shell
+move 'my_data/dataset.csv' to 'other_data/dataset-new.csv'
+```
+
+Copy a file from the filesystem to your workspace while renaming the file:
+```shell
+move '/Users/John/Documents/dataset.csv' to 'dataset-new.csv'
+```
 </details>
 
 <details markdown code>
 <summary markdown>
-copy file '&lt;workspace_file&gt;' to '&lt;other_workspace_name&gt;'
+copy '&lt;source_file&gt;' to '&lt;destination_path&gt;' [ force ]
 </summary>
-Export a file from your current workspace to another workspace.
+Copy or move a file from one location to another.
+
+When the destination path includes a filename, you will be prompted to rename it.
+Use the `force` option to overwrite the file without prompting.
+
+
+**Working with paths**{.fake-h4}
+`foobar.csv`              A file in your current workspace
+`/Users/John/foobar.csv`  An absolute file path
+`./foobar.csv`            A file on your current working directory
+`~/Documents/foobar.csv`  A file in your home directory
+
+
+**Examples**{ .fake-h4 }
+
+Copy a file from your workspace to your home directory:
+```shell
+copy 'my_molecules.sdf' to '~/'
+```
+
+Move and rename a file within your workspace:
+```shell
+move 'my_data/dataset.csv' to 'other_data/dataset-new.csv'
+```
+
+Copy a file from the filesystem to your workspace while renaming the file:
+```shell
+move '/Users/John/Documents/dataset.csv' to 'dataset-new.csv'
+```
 </details>
 
 <details markdown code>
@@ -326,7 +382,7 @@ Remove a file from your current workspace.
 <summary markdown>
 open '&lt;filename&gt;'
 </summary>
-Open a file or dataframe in the graphical user interface.
+Open a file in its designated OS application.
 
 **Examples**{ .fake-h4 }
 
@@ -335,6 +391,25 @@ open 'base_molecules.sdf'
 ```
 ```shell
 open my_dataframe
+```
+</details>
+
+<details markdown code>
+<summary markdown>
+show '&lt;filename&gt;'
+</summary>
+Open a file in the graphical user interface.
+
+**Examples**{ .fake-h4 }
+
+```shell
+show 'my_molecules.molset.json'
+```
+```shell
+show 'my_molecules.sdf'
+```
+```shell
+show 'my_data.csv'
 ```
 </details>
 
