@@ -276,7 +276,7 @@ Deploying a model to Google Cloud Run is the easiest way to deploy a model to th
 ### Step 1: Preparation
 
 - Install [Google Cloud CLI](https://cloud.google.com/sdk/docs/install)
-- Go to [Available Models](available-models) to verify if the model you want to deploy supports Google Cloud
+- Go to [Available Models](available-models.md) to verify if the model you want to deploy supports Google Cloud
 - Fork the GitHub repo of the model you want to deploy.
 
 ### Step 2: Google Cloud Run
@@ -317,7 +317,7 @@ Deploying a model to Google Cloud Run is the easiest way to deploy a model to th
 
 - If you haven't done so yet, you may have to set your project.
 	
-	> **Note:** To find your project's ID, go to the [Google Cloud Console](https://console.cloud.google.com) and click the button with your project's name (probably 'My FIrst Project') next to the Google Cloud logo.
+	> **Note:** To find your project's ID, go to the [Google Cloud Console](https://console.cloud.google.com/run) and click the button with your project's name (probably 'My FIrst Project') next to the Google Cloud logo.
 	
     ```
 	gcloud config set project <project_id>`
