@@ -176,7 +176,7 @@ model ?
     If you are using an [Apple Silicon] device, deploy using Docker instead. See [Apple Silicon] for more info.
 
 <div class="padded-list" markdown>
-- Create a virtual environment running Python `3.11`. We'll use [pyenv](/docs/installation/#upgrading-python).
+- Create a virtual environment running Python `3.11`. We'll use [pyenv](/docs/installation.md#upgrading-python).
 
     > **Note:** Python `3.10.10+` or `3.11` are supported, Python `3.12` is not.
 

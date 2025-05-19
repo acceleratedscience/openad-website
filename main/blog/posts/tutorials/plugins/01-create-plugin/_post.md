@@ -8,7 +8,7 @@ categories:
     - Tutorials
     - Plugins
 links:
-    - Plugin Developer Guide: docs/plugin-development
+    - Plugin Developer Guide: docs/plugin-development/index.md
 ---
 
 # How to Build a Plugin for OpenAD

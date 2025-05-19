@@ -551,6 +551,13 @@ Get the status of your currently cataloged services.
 
 <details markdown code>
 <summary markdown>
+model service refresh
+</summary>
+Refresh the grammar definitions. Use this when the grammar for a service is missing.
+</details>
+
+<details markdown code>
+<summary markdown>
 model service describe &lt;service_name&gt;
 </summary>
 Get a service's configuration details.
@@ -607,7 +614,7 @@ Use the `remote` clause when cataloging from a hosted service URL.
     The location of the model service, to be provided in single quotes.
     This can be a local path, a GitHub SSH URI, or a URL for an existing remote service:
     `<soft>...</soft>from '/path/to/service'`
-    `<soft>...</soft>from 'git@github.com:acceleratedscience/generation_inference_service.git'`
+    `<soft>...</soft>from 'git@github.com:acceleratedscience/openad-service-gen.git'`
     `<soft>...</soft>from remote '0.0.0.0:8080'` <soft>// Note: 'remote' is required for cataloging a remote service</soft>
 
 `<service_name>`
@@ -643,7 +650,7 @@ open.accelerate.science/proxy --&gt; for most users
 
 Catalog a model using SkyPilot deployment
 ```shell
-catalog model service from 'git@github.com:acceleratedscience/generation_inference_service.git' as gen
+catalog model service from 'git@github.com:acceleratedscience/openad-service-gen.git' as gen
 ```
 
 Catalog a model using a authentication group

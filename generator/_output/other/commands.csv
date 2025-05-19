@@ -48,6 +48,7 @@ model auth remove group <auth_group>;Model
 model auth add service <service_name> to group <auth_group>;Model
 model auth remove service <service_name>;Model
 model service status;Model
+model service refresh;Model
 model service describe <service_name>;Model
 model catalog list;Model
 uncatalog model service <service_name>;Model

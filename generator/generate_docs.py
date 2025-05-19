@@ -3,8 +3,8 @@ Generate/update documentation markdown files based on source files.
 
 Usage:
 
-    # Activate your openad virtual environment, unless you have openad installed globally
-    source ../openad/.venv/bin/activate
+    # Activate your openad virtual environment, unless you have openad installed globally, eg:
+    source ../openad-toolkit/.venv/bin/activate
 
     # Generate the docs
     python3 generator/generate_docs.py

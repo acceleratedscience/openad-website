@@ -129,7 +129,6 @@ def scrape_repos():
                     else None  # Unknown
                 )
             )
-            print(name, gcloud_supported)
 
             # Append results
             results.append(
@@ -251,8 +250,8 @@ def generate_md(model_data):
             if model["support:compose"]
             else "--REMOVE-LINE--"
         )
-        instructions_url_container = "/docs/model-service/deploying-models/#deployment-via-container"
-        instructions_url_compose = "/docs/model-service/deploying-models/#deployment-via-container-composeyaml-recommended"
+        instructions_url_container = "/docs/model-service/deploying-models.md#deployment-via-container"
+        instructions_url_compose = "/docs/model-service/deploying-models.md#deployment-via-container-composeyaml-recommended"
         instructions_url = instructions_url_compose if model["support:compose"] else instructions_url_container
         btn_instructions = f"[Instructions]({instructions_url}){{ .md-button .md-button--tertiary }}  "
         support_overview = (
@@ -261,7 +260,7 @@ def generate_md(model_data):
             f"{'☹️' if not model['support:compose'] else '✅'} Docker / Podman Compose  \n"
             f"{'☹️' if not model['support:docker'] else '✅'} Docker / Podman  \n"
             f"{'☹️' if model['support:gcloud'] is False else '❓' if model['support:gcloud'] is None else '✅'} Google Cloud Run  \n"
-            f"{'☹️' if model['support:apple-silicon'] is False else '❓' if model['support:apple-silicon'] is None else '✅'} Apple Silicon - [more info](/docs/model-service/deploying-models#apple-silicon)  \n"
+            f"{'☹️' if model['support:apple-silicon'] is False else '❓' if model['support:apple-silicon'] is None else '✅'} Apple Silicon - [more info](/docs/model-service/deploying-models.md#apple-silicon)  \n"
             f"\n"
         )
         # fmt:on
