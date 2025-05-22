@@ -1,0 +1,127 @@
+/*
+
+Blog Meta Information
+---------------------
+
+We use a custom template override for the blog meta information (author, date, tags, etc.):
+/main/_overrides/blog-post.html
+
+This is the styling that goes along with it.
+
+*/
+
+/* Layout */
+.carbon-blog-meta {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	margin-bottom: 0;
+	padding-bottom: 1rem;
+	border-bottom: solid 1px var(--carbon-soft);
+}
+.carbon-blog-meta > nav {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+/* Links */
+.carbon-blog-meta a:not(.icn-wrap) {
+	color: var(--carbon-link);
+}
+
+/* Sections with icons */
+.carbon-blog-meta .icn-wrap {
+	display: flex;
+	flex-direction: row;
+	gap: 0.25rem;
+	align-items: center;
+	white-space: nowrap;
+}
+
+/* Back button */
+.carbon-blog-meta .go-back {
+	width: 100%;
+	padding-bottom: 1rem;
+	margin-bottom: 0;
+	border-bottom: solid 1px var(--carbon-soft);
+}
+
+/* Date */
+.carbon-blog-meta .date {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+.carbon-blog-meta .date .updated {
+	white-space: nowrap;
+}
+
+/* Reference links */
+.carbon-blog-meta .references {
+	margin-top: 1rem;
+}
+.carbon-blog-meta .references li a {
+	padding-left: 0;
+}
+.carbon-blog-meta .references li::marker {
+	content: none;
+}
+
+/* RESPONSOVE < MEDIUM */
+@media screen and (max-width: 76.2344em) {
+	/* Layout */
+	.carbon-blog-meta {
+		margin: 3rem;
+		margin-bottom: 0;
+	}
+
+	/* Flip the order so meta is on top */
+	.md-content--post {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Everything on one line */
+	.carbon-blog-meta > nav {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+	}
+
+	/* Back button */
+	.carbon-blog-meta .go-back {
+		width: auto;
+		border: none;
+		padding: 0;
+	}
+	.carbon-blog-meta .go-back a::after {
+		content: "/";
+		margin-left: 0.5rem;
+		margin-right: -0.5rem;
+	}
+
+	/* Date */
+	.carbon-blog-meta .date {
+		width: auto;
+		flex-direction: row;
+	}
+
+	/* Authors */
+	.carbon-blog-meta .authors span {
+		white-space: nowrap;
+	}
+
+	/* Reference links */
+	.carbon-blog-meta .references {
+		margin-top: 0.5rem;
+	}
+	.carbon-blog-meta .references li a {
+		display: inline-block;
+	}
+}
+
+/* RESPONSOVE < SMALL */
+@media screen and (max-width: 60em) {
+}
