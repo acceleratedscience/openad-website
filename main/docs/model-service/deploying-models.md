@@ -5,17 +5,18 @@
 # Deploying Models
 
 !!! info
-    **Apple users:** Most models won't run on Apple Silicon (ARM64) processors, more information [below](#apple-silicon).  
-    Check the list of [available services] to see which ones are compatible.
+**Apple users:** Most models won't run on Apple Silicon (ARM64) processors, more information [below](#apple-silicon).  
+ Check the list of [available services] to see which ones are compatible.
 
 ## Deployment Options
 
 There's different ways to deploy a service.
 
 <!-- no toc -->
+
 1. [Deployment via container + compose.yaml](#deployment-via-container-composeyaml-recommended)  
    _Deploy your model locally or in the cloud, using Docker or Podman compose_  
-   **Recommended**{ .flag .green } (when available)  
+   **Recommended**{ .flag .green } (when available)
 2. [Deployment via container](#deployment-via-container)  
    _Deploy your model locally or in the cloud, using Docker or Podman build_
 3. [Local deployment using a Python virtual environment](#local-deployment-using-a-python-virtual-environment)  
@@ -23,18 +24,16 @@ There's different ways to deploy a service.
 4. [Cloud deployment to Google Cloud Run](#cloud-deployment-to-google-cloud-run)  
    _Leverage cloud computing power, using a no-code deployment_  
    **Easy setup**{ .flag .yellow }
-4. [Cloud deployment to Red Hat OpenShift](#cloud-deployment-to-red-hat-openshift)  
+5. [Cloud deployment to Red Hat OpenShift](#cloud-deployment-to-red-hat-openshift)  
    _Leverage cloud computing power_
-5. [Cloud deployment to SkyPilot on AWS](#cloud-deployment-to-skypilot-on-aws)  
+6. [Cloud deployment to SkyPilot on AWS](#cloud-deployment-to-skypilot-on-aws)  
    _Leverage cloud computing power_
-
-
-
 
 <!------------------------------------------------------------>
+
 ## Deployment via Container + compose.yaml **Recommended**{ .flag .green }
 
-When available, containerizing a model using [Docker Compose](https://docs.docker.com/compose/){ target='_blank' } / [Podman Compose](https://docs.podman.io/en/latest/markdown/podman-compose.1.html){ target='_blank' } is the easiest (and our recommended) way to deploy a model service.
+When available, containerizing a model using [Docker Compose](https://docs.docker.com/compose/){ target='\_blank' } / [Podman Compose](https://docs.podman.io/en/latest/markdown/podman-compose.1.html){ target='\_blank' } is the easiest (and our recommended) way to deploy a model service.
 
 ### Support
 
@@ -53,22 +52,24 @@ mkdir -p ~/.openad_models
 ### Build and Start
 
 !!! note
-    **Chosing a port:** Before you start, consider the port you want to run the service on.  
-    By default, `8080:8080` maps host port 8080 to container port 8080.  
-    If you will be running multiple service, you may want to change the host port in the `compose.yaml`, eg. `8081:8080`
+**Chosing a port:** Before you start, consider the port you want to run the service on.  
+ By default, `8080:8080` maps host port 8080 to container port 8080.  
+ If you will be running multiple service, you may want to change the host port in the `compose.yaml`, eg. `8081:8080`
 
 First build the container image:
+
 ```shell
 [ docker/podman ] compose create
 ```
 
 Next, start the container:
+
 ```shell
 [ docker/podman ] compose start
 ```
 
 !!! note
-    If your device does not have a descrete GPU (as is the case for [Apple Silicon] devices), the `start` command will fail with the following error:
+If your device does not have a descrete GPU (as is the case for [Apple Silicon] devices), the `start` command will fail with the following error:
 
     ```shell
     Error response from daemon: could not select device driver "" with capabilities: [[gpu]]
@@ -88,9 +89,8 @@ Next, start the container:
 
 Once the service is running, continue to [Cataloging a Containerized Model].
 
-
-
 <!------------------------------------------------------------>
+
 ## Deployment via Container
 
 ### Prerequisites
@@ -109,55 +109,62 @@ mkdir -p ~/.openad_models
 ### Set up Container
 
 Clone the model's GitHub repository:
+
 ```shell
 git clone https://github.com/acceleratedscience/<repository_name>
 ```
 
-Set the file cursor to the downloaded repository and run the build:
+Set the working directory to the downloaded repository and run the build:
 
 > **Note:** The `<model_name>` you can choose yourself.
 
 ```shell
 cd <repository_name>
 ```
+
 ```shell
 docker build -t <model_name> .
 ```
 
 !!! note
-    **Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture using an emulator.
+**Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture using an emulator.
 
     ```shell
     docker build --platform linux/amd64 -t <model_name> .
     ```
 
 After the build is complete, run the container and make the server available on port 8080:
+
 ```shell
 docker run -p 8080:8080 <model_name>
 ```
 
 Once the service is running, continue to [Cataloging a Containerized Model].
 
-
 <!------------------------------------------------------------>
+
 ## Cataloging a Containerized Model
 
 Once the container is running, you can catalog the model in OpenAD:
 
 First, lauch the OpenAD shell:
+
 ```shell
 openad
 ```
 
 Then catalog the service, and check the status.
+
 ```shell
 catalog model service from remote 'http://127.0.0.1:8080' as <service-name>
 ```
+
 ```
 model service status
 ```
 
 If all goes well, the status should say `Connected`
+
 ```
 Service         Status       Endpoint                Host    API expires
 --------------  -----------  ----------------------  ------  -------------
@@ -165,15 +172,17 @@ Service         Status       Endpoint                Host    API expires
 ```
 
 As a reminder, to see all available model commands, run:
+
 ```shell
 model ?
 ```
 
 <!------------------------------------------------------------>
+
 ## Local deployment using a Python virtual environment
 
 !!! info
-    If you are using an [Apple Silicon] device, deploy using Docker instead. See [Apple Silicon] for more info.
+If you are using an [Apple Silicon] device, deploy using Docker instead. See [Apple Silicon] for more info.
 
 <div class="padded-list" markdown>
 - Create a virtual environment running Python `3.11`. We'll use [pyenv](/docs/installation.md#upgrading-python).
@@ -190,42 +199,42 @@ model ?
     source my-venv/bin/activate
     ```
 
-- Install the model requirements as described in the model's repository (not to be confused with the OpenAD service wrapper). Models not listed below should deploy with Docker instead.
-    
-    | Model Name | GitHub |
-    | ---------- | ------ |
-    | **SMI-TED** | [github.com/IBM/materials](https://github.com/IBM/materials/) |
-    | **BMFM-SM** | [github.com/BiomedSciAI/biomed-multi-view](https://github.com/BiomedSciAI/biomed-multi-view) |
-    | **BMFM-PM** | [github.com/BiomedSciAI/biomed-multi-alignment](https://github.com/BiomedSciAI/biomed-multi-alignment) |
-    | **REINVENT** | [github.com/MolecularAI/REINVENT4](https://github.com/MolecularAI/REINVENT4) |
+-   Install the model requirements as described in the model's repository (not to be confused with the OpenAD service wrapper). Models not listed below should deploy with Docker instead.
 
-- Install the OpenAD service utilities:
-  
+    | Model Name   | GitHub                                                                                                 |
+    | ------------ | ------------------------------------------------------------------------------------------------------ |
+    | **SMI-TED**  | [github.com/IBM/materials](https://github.com/IBM/materials/)                                          |
+    | **BMFM-SM**  | [github.com/BiomedSciAI/biomed-multi-view](https://github.com/BiomedSciAI/biomed-multi-view)           |
+    | **BMFM-PM**  | [github.com/BiomedSciAI/biomed-multi-alignment](https://github.com/BiomedSciAI/biomed-multi-alignment) |
+    | **REINVENT** | [github.com/MolecularAI/REINVENT4](https://github.com/MolecularAI/REINVENT4)                           |
+
+-   Install the OpenAD service utilities:
+
     ```shell
     pip install git+https://github.com/acceleratedscience/openad_service_utils.git
     ```
 
     !!! note
-        Downloading of the models will be prompted by your first request and may take some time.  
-        You can pre-load the models using [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html).
+    Downloading of the models will be prompted by your first request and may take some time.  
+     You can pre-load the models using [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html).
 
-        ```shell
-        mkdir -p ~/.openad_models/properties/molecules && aws s3 sync s3://ad-prod-biomed/molecules/mammal/ /tmp/.openad_models/properties/molecules/mammal --no-sign-request --exact-timestamps
-        ```
+          ```shell
+          mkdir -p ~/.openad_models/properties/molecules && aws s3 sync s3://ad-prod-biomed/molecules/mammal/ /tmp/.openad_models/properties/molecules/mammal --no-sign-request --exact-timestamps
+          ```
 
-- Clone the service repo:
+-   Clone the service repo:
 
     ```shell
     git clone https://github.com/acceleratedscience/openad-service-<service-name>
     ```
 
-- Move the file cursor into the cloned service repo:
+-   Move the working directory into the cloned service repo:
 
     ```shell
     cd openad-service-<service-name>
     ```
 
-- Start the service:
+-   Start the service:
 
     The start command differs per model:
 
@@ -244,23 +253,19 @@ model ?
     python ./implementation.py
     ```
 
-    
-
-    
-
-- Open a new terminal session and launch OpenAD:
+-   Open a new terminal session and launch OpenAD:
 
     ```shell
     openad
     ```
 
-- Within the OpenAD shell, catalog the service you just started:
+-   Within the OpenAD shell, catalog the service you just started:
 
     ```shell
     catalog model service from remote 'http://127.0.0.1:8080' as <service-name>
     ```
 
-- To see the available service commands, run:
+-   To see the available service commands, run:
 
     ```shell
     <service-name> ?
@@ -269,37 +274,39 @@ model ?
 </div>
 
 <!------------------------------------------------------------>
+
 ## Cloud deployment to Google Cloud Run
 
 Deploying a model to Google Cloud Run is the easiest way to deploy a model to the cloud, as Google Cloud can spin up the service directly from the GitHub repository using only the Dockerfile.
 
 ### Step 1: Preparation
 
-- Install [Google Cloud CLI](https://cloud.google.com/sdk/docs/install)
-- Go to [Available Models](available-models.md) to verify if the model you want to deploy supports Google Cloud
-- Fork the GitHub repo of the model you want to deploy.
+-   Install [Google Cloud CLI](https://cloud.google.com/sdk/docs/install)
+-   Go to [Available Models](available-models.md) to verify if the model you want to deploy supports Google Cloud
+-   Fork the GitHub repo of the model you want to deploy.
 
 ### Step 2: Google Cloud Run
 
-- Go to [console.cloud.google.com/run](https://console.cloud.google.com/run)
-- Create a project
-- Start your free trial if you need to (credit card required)
-- Click the _"Create service"_ button in an empty project  
-	(or click _"Deploy container"_ and select _"Service"_)
-- Select second option: _"Continuously deploy from a repository"_
-	- Click _"Setup with Cloud Build"_
-	- Connect GitHub & install Cloud Build for your fork
-	- Under _"Build Type"_ select _"Dockerfile"_ (keep default location)
-- Choose _"Require authentication"_
-- Click _"Container(s), Volumes, Networking, Security"_ at the bottom
-	- Under Resources, set Memory & CPU to 8GB & 4CPU or higher
-	- Under Requests, set the Request timeout to the maximum of 3600 sec
-- Click _"Create"_
-- Copy the service URL on top (we'll refer to it as `<service_url>`)  
-  It should look something like this:
-	```
-	https://openad-service-reinvent4-012345678999.us-central1.run.app
-	```
+-   Go to [console.cloud.google.com/run](https://console.cloud.google.com/run)
+-   Create a project
+-   Start your free trial if you need to (credit card required)
+-   Click the _"Create service"_ button in an empty project  
+    (or click _"Deploy container"_ and select _"Service"_)
+-   Select second option: _"Continuously deploy from a repository"_
+    -   Click _"Setup with Cloud Build"_
+    -   Connect GitHub & install Cloud Build for your fork
+    -   Under _"Build Type"_ select _"Dockerfile"_ (keep default location)
+-   Choose _"Require authentication"_
+-   Click _"Container(s), Volumes, Networking, Security"_ at the bottom
+    -   Under Resources, set Memory & CPU to 8GB & 4CPU or higher
+    -   Under Requests, set the Request timeout to the maximum of 3600 sec
+-   Click _"Create"_
+-   Copy the service URL on top (we'll refer to it as `<service_url>`)  
+    It should look something like this:
+
+    ```
+    https://openad-service-reinvent4-012345678999.us-central1.run.app
+    ```
 
     > **Note:** Your service will have a green checkmark next to its name, but it won't be available until _"Building and deploying from repository"_ is done and also displays the green checkmark.
 
@@ -307,30 +314,29 @@ Deploying a model to Google Cloud Run is the easiest way to deploy a model to th
 
 <div class="padded-list" markdown>
 
-- Login to Google Cloud
-	
-	> **Note:** The `application-default` clause stores your credentials on disk and is required to auto-refresh your auth tokens.
-    
+-   Login to Google Cloud
+
+    > **Note:** The `application-default` clause stores your credentials on disk and is required to auto-refresh your auth tokens.
+
     ```
-	gcloud auth application-default login
-	```
-
-- If you haven't done so yet, you may have to set your project.
-	
-	> **Note:** To find your project's ID, go to the [Google Cloud Console](https://console.cloud.google.com/run) and click the button with your project's name (probably 'My FIrst Project') next to the Google Cloud logo.
-	
+    gcloud auth application-default login
     ```
-	gcloud config set project <project_id>`
-	```
 
+-   If you haven't done so yet, you may have to set your project.
 
-- Fetch your auth token
-    
+    > **Note:** To find your project's ID, go to the [Google Cloud Console](https://console.cloud.google.com/run) and click the button with your project's name (probably 'My FIrst Project') next to the Google Cloud logo.
+
     ```
-	gcloud auth print-identity-token
-	```
+    gcloud config set project <project_id>`
+    ```
 
-- Copy the token
+-   Fetch your auth token
+
+    ```
+    gcloud auth print-identity-token
+    ```
+
+-   Copy the token
 
 </div>
 
@@ -338,30 +344,31 @@ Deploying a model to Google Cloud Run is the easiest way to deploy a model to th
 
 <div class="padded-list" markdown>
 
-- Create auth group for Google Cloud  
-    
+-   Create auth group for Google Cloud
+
     > **Note:** You can call this group anything, we'll call it gcloud
-	
-    ```
-	model auth add group gcloud with '<auth_token>'
-	```
-
-- Catalog the service
-	
-    ```
-	catalog model service from remote '<service_url>' as <service_name>
-	```
-
-- Service will be listed as "Not ready" until the build is done  
-    (~15-20 min depending on the model)
 
     ```
-	model service status
-	```
+    model auth add group gcloud with '<auth_token>'
+    ```
+
+-   Catalog the service
+
+    ```
+    catalog model service from remote '<service_url>' as <service_name>
+    ```
+
+-   Service will be listed as "Not ready" until the build is done  
+     (~15-20 min depending on the model)
+
+    ```
+    model service status
+    ```
 
 </div>
 
 <!------------------------------------------------------------>
+
 ## Cloud deployment to Red Hat OpenShift
 
 If the service you're trying to deploy has a `/helm-chart` folder, it's been prepared for deployment on OpenShift.
@@ -373,16 +380,18 @@ If the service you're trying to deploy has a `/helm-chart` folder, it's been pre
     ```shell
     helm install <service-name> <path-to-helm-chart-dir>
     ```
+
     ```shell
     # Example for SMI-TED
     helm install smi-ted ./helm-chart
     ```
 
 2. Start a new build
-   
+
     ```shell
     oc start-build <build-name>
     ```
+
     ```shell
     # Example for SMI-TED
     oc start-build smi-ted-build
@@ -393,10 +402,12 @@ If the service you're trying to deploy has a `/helm-chart` folder, it's been pre
     ```shell
     LATEST_BUILD=$(oc get builds | grep '<build-name>-' | awk '{print $1}' | sort -V | tail -n 1)
     ```
+
     ```shell
     # Example for SMI-TED
     LATEST_BUILD=$(oc get builds | grep 'smi-ted-build-' | awk '{print $1}' | sort -V | tail -n 1)
     ```
+
     ```shell
     oc wait --for=condition=Complete build/$LATEST_BUILD --timeout=15m
     ```
@@ -406,12 +417,14 @@ If the service you're trying to deploy has a `/helm-chart` folder, it's been pre
     ```shell
     curl "http://$(oc get route <service-name>-openad-model -o jsonpath='{.spec.host}')/health"
     ```
+
     ```shell
     # Example for SMI-TED
     curl "http://$(oc get route smi-ted-openad-model -o jsonpath='{.spec.host}')/health"
     ```
 
 <!------------------------------------------------------------>
+
 ## Cloud deployment to SkyPilot on AWS
 
 [AWS dashboard]: https://console.aws.amazon.com„
@@ -521,41 +534,8 @@ If the service you're trying to deploy has a `/helm-chart` folder, it's been pre
     </div>
     </details>
 
-### Spinning Up a Service
-
-1.  Install any service by its `git@github` url, which you can find in the [service's GitHub repo](/docs/model-service/available-models.md) under the `<> Code` button.  
-    To spin up the SMI-TED service for example:
-
-    ```shell
-    catalog model service from 'git@github.com:acceleratedscience/openad-service-smi-ted.git' as smi_ted
-    ```
-
-2.  Start the service – this can take up to 10 minutes
-
-    ```shell
-    model service up smi_ted
-    ```
-
-3.  Check if the service is ready
-
-    ```shell
-    model service status
-    ```
-
-4.  Shut down the service
-
-    ```shell
-    model service down smi_ted
-    ```
-
-5.  To see all available model commands, pull up the general help and look towards the bottom of the command list.
-
-    ```shell
-    ?
-    ```
-
-
 <!------------------------------------------------------------>
+
 ## Apple Silicon
 
 Apple Silicon chips (aka M1, M2, M3 etc.) utilize the ARM64 instruction set architecture (ISA), which is incompatible with the standard x86-64 ISA the models are compiled for.

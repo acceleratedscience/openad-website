@@ -18,6 +18,7 @@ nav:
                 - docs/model-service/index.md
                 - Available Models: docs/model-service/available-models.md
                 - Deploying Models: docs/model-service/deploying-models.md
+                - Using Models: docs/model-service/using-models.md
                 - Wrapping New Models: docs/model-service/wrapping.md
                 - IBM Hosted: docs/model-service/ibm-hosted.md
           - Commands: docs/commands.md

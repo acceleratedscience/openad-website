@@ -19,7 +19,7 @@ IBM Research
 OpenAD is an intuitive toolkit that simplifies access to a variety of AI models and services for scientific discovery. Together with its convenient visualisation capabilities, OpenAD empowers scientists across industries to enhance their discovery process.
 </p>
 
-[:carbon-icn-github: Install for free](https://github.com/acceleratedscience/openad-toolkit){ .md-button .md-button--primary target=\_blank .btn-large }
+[:carbon-icn-colab: Colab Demo](https://colab.research.google.com/drive/13r9LojtJTLZ8MEO1KNqJAKTieWmEUJQM){ .md-button .md-button--primary target=\_blank .btn-large }
 [Documentation](docs/installation.md){ .md-button .btn-large }
 [Tutorials](blog/category/tutorials.md){ .md-button .md-button--tertiary .btn-large }
 
