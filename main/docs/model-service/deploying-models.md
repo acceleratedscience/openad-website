@@ -298,7 +298,7 @@ Deploying a model to Google Cloud Run is the easiest way to deploy a model to th
     -   Under _"Build Type"_ select _"Dockerfile"_ (keep default location)
 -   Choose _"Require authentication"_
 -   Click _"Container(s), Volumes, Networking, Security"_ at the bottom
-    -   Under Resources, set Memory & CPU to 8GB & 4CPU or higher
+    -   Under Resources, set Memory & CPU to 32GB & 8CPU or higher
     -   Under Requests, set the Request timeout to the maximum of 3600 sec
 -   Click _"Create"_
 -   Copy the service URL on top (we'll refer to it as `<service_url>`)  
