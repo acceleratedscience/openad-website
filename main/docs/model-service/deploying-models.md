@@ -52,9 +52,10 @@ mkdir -p ~/.openad_models
 ### Build and Start
 
 !!! note
-**Chosing a port:** Before you start, consider the port you want to run the service on.  
- By default, `8080:8080` maps host port 8080 to container port 8080.  
- If you will be running multiple service, you may want to change the host port in the `compose.yaml`, eg. `8081:8080`
+
+    **Chosing a port:** Before you start, consider the port you want to run the service on.
+    By default, `8080:8080` maps host port 8080 to container port 8080.
+    If you will be running multiple service, you may want to change the host port in the `compose.yaml`, eg. `8081:8080`
 
 First build the container image:
 
@@ -69,7 +70,8 @@ Next, start the container:
 ```
 
 !!! note
-If your device does not have a descrete GPU (as is the case for [Apple Silicon] devices), the `start` command will fail with the following error:
+
+    If your device does not have a descrete GPU (as is the case for [Apple Silicon] devices), the `start` command will fail with the following error:
 
     ```shell
     Error response from daemon: could not select device driver "" with capabilities: [[gpu]]
@@ -127,11 +129,12 @@ docker build -t <model_name> .
 ```
 
 !!! note
-**Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture using an emulator.
 
-```shell
-docker build --platform linux/amd64 -t <model_name> .
-```
+    **Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture using an emulator.
+
+    ```shell
+    docker build --platform linux/amd64 -t <model_name> .
+    ```
 
 After the build is complete, run the container and make the server available on port 8080:
 
@@ -215,8 +218,10 @@ If you are using an [Apple Silicon] device, deploy using Docker instead. See [Ap
     ```
 
     !!! note
-    Downloading of the models will be prompted by your first request and may take some time.  
-     You can pre-load the models using [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html).
+
+        Downloading of the models will be prompted by your first request and may take some time.
+
+        You can pre-load the models using [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html).
 
           ```shell
           mkdir -p ~/.openad_models/properties/molecules && aws s3 sync s3://ad-prod-biomed/molecules/mammal/ /tmp/.openad_models/properties/molecules/mammal --no-sign-request --exact-timestamps
