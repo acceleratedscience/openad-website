@@ -129,9 +129,9 @@ docker build -t <model_name> .
 !!! note
 **Apple users:** If you're running on [Apple Silicon], you'l need to add `--platform linux/amd64` to the build command, to force the AMD64 architecture using an emulator.
 
-    ```shell
-    docker build --platform linux/amd64 -t <model_name> .
-    ```
+```shell
+docker build --platform linux/amd64 -t <model_name> .
+```
 
 After the build is complete, run the container and make the server available on port 8080:
 
