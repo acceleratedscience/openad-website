@@ -539,7 +539,7 @@ html .md-typeset summary:last-child,
 .md-typeset h3 .headerlink,
 .md-typeset h4 .headerlink,
 .md-typeset h5 .headerlink {
-	display: none;
+	/* display: none; */
 }
 
 /**
