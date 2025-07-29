@@ -1,0 +1,63 @@
+/*
+
+Carbon Colors
+-------------
+
+Guide:
+1. Refer to relative carbon colors so colors adjust to the color theme
+2. Refer to absolute carbon colors when context does not change with the theme (eg. homepage, code blocks)
+3. Never refer to the MkDocs colors.
+
+*/
+
+/* Absolute carbon colors */
+body {
+	--carbon-light-l: #f4f4f4;
+	--carbon-light: #e5e5e5;
+	--carbon-light-d: #cacaca;
+	--carbon-gray-l: #cacaca;
+	--carbon-gray: #a8a8a8;
+	--carbon-gray-d: #828282;
+	--carbon-dark-l: #525252;
+	--carbon-dark: #393939;
+	--carbon-dark-d: #222; /* Note: should be #161616 but it's too dark */
+	--carbon-blue-l: #78a9ff;
+	--carbon-blue: #0f62fe;
+	--carbon-blue-d: #0353e9;
+
+	--carbon-success: #198038;
+	--carbon-warning: #f1c21b;
+	--carbon-caution: #ff832b;
+	--carbon-error: #da1e28;
+	--carbon-success-soft: #87b454;
+}
+
+/* Relative carbon colors */
+[data-md-color-scheme="carbon"] {
+	--carbon-bg: #fff;
+	--carbon-text: var(--carbon-dark);
+	--carbon-text-softer: var(--carbon-dark-l);
+	--carbon-text-soft: var(--carbon-gray);
+	--carbon-link: var(--carbon-blue);
+	--carbon-link-hover: var(--carbon-blue-d);
+	--carbon-soft-soft: rgba(0, 0, 0, 0.02);
+	--carbon-soft: var(--carbon-light); /* borders + inline code */
+	--carbon-soft-hard: var(--carbon-light); /* inline code borders */
+
+	/* --carbon-soft: yellow;
+	--carbon-soft-hard: red; */
+}
+[data-md-color-scheme="carbon-dark"] {
+	--carbon-bg: var(--carbon-dark-d);
+	/* --carbon-bg: #222; */
+	--carbon-text: var(--carbon-gray-l);
+	--carbon-text-soft: var(--carbon-gray);
+	--carbon-link: var(--carbon-blue-l);
+	--carbon-link-hover: #a6c8ff;
+	--carbon-soft-soft: rgba(255, 255, 255, 0.1);
+	--carbon-soft: var(--carbon-dark); /* borders + inline code */
+	--carbon-soft-hard: var(--carbon-dark-l);
+
+	/* --carbon-soft: yellow; */
+	/* --carbon-soft-hard: red; */
+}
