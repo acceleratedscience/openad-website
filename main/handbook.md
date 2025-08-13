@@ -36,7 +36,6 @@ This is an unlisted page with instructions for IBM consultants on how to:
     -   [Wrapping your Own Models](#wrapping-your-own-models)
 -   [Deployment](#deployment)
 -   [OpenBridge Proxy Service](#openbridge-proxy-service)
--   [Monitoring and Troubleshooting](#monitoring-and-troubleshooting)
 
 ---
 
@@ -124,10 +123,4 @@ OpenBridge is a proxy server and user authentication and management service. Wha
 2. Provide an interface for user and user group management, giving you fine grained controls for who gets to access which model
 
 &rarr; [Deploy OpenBridge](https://github.com/acceleratedscience/bridge/blob/main/doc/deployment.md)  
-&rarr; [Publish models under OpenBridge](#) - MISSING
-
-## Monitoring and Troubleshooting
-
-> ??????????????  
-> ??????????????  
-> ??????????????
+&rarr; Publish models under OpenBridge - COMING SOON
