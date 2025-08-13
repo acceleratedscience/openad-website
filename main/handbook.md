@@ -92,11 +92,7 @@ We've wrapped a number of IBM Research's own open source models, which are ready
 
 #### Wrapping your Own Models
 
-Wrapping your own models is relevant for:
-
-1. Companies who want to provide drastically simplified access to their models for their employees
-2. Model authors who want to make their models more accessible to their audience
-3. Opensource model consumers who want to have an easier way to work with their preferred models
+By wrapping your own models, you can simplify access for yourself and others.
 
 &rarr; [Learn how to wrap a model](https://github.com/acceleratedscience/openad_service_utils)
 
