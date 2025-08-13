@@ -22,6 +22,8 @@ nav:
                 - Wrapping New Models: docs/model-service/wrapping.md
                 - IBM Hosted: docs/model-service/ibm-hosted.md
           - Commands: docs/commands.md
+          - GUI: docs/gui.md
+          - API: docs/api.md
           - Plugins: docs/plugins.md
           - Plugin Development:
                 - docs/plugin-development/index.md

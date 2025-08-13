@@ -7,14 +7,18 @@ hide:
 
 <!--
 This is an unlisted page with instructions for IBM consultants on how to:
-- set up OpenAD
-- wrap a ML model
-- deploy it on a Kubernetes cluster
-- make it available via OpenBridge
+- Set up OpenAD
+- Wrap a ML model
+- Deploy it on cloud platform of choice
+- Make it available via OpenBridge
 - Monitor & troubleshoot
 -->
 
 # OpenAD Handbook <!-- omit in toc -->
+
+!!! warning
+
+    Work in progress, this document is incomplete
 
 !!! Info
 
@@ -30,7 +34,7 @@ This is an unlisted page with instructions for IBM consultants on how to:
 -   [Wrapping Models for OpenAD](#wrapping-models-for-openad)
     -   [Available Models](#available-models)
     -   [Wrapping your Own Models](#wrapping-your-own-models)
--   [Deployment on Kubernetes](#deployment-on-kubernetes)
+-   [Deployment](#deployment)
 -   [OpenBridge Proxy Service](#openbridge-proxy-service)
 -   [Monitoring and Troubleshooting](#monitoring-and-troubleshooting)
 
@@ -46,7 +50,7 @@ It is meant to be integrated into larger workflows, rather than being standalone
 #### Core Functionality
 
 1.  A [**model service**](/docs/model-service/) that provides simplified & homogenized access to [various ML models](/docs/model-service/available-models/)
-1.  A **molecule viewer** that lets you visualize and see details for:
+1.  A [**molecule viewer**](/docs/gui#molecule-viewer) that lets you visualize and see details for:
 
     -   Sets of small molecules in 2D - [Tutorial](/blog/2025/03/19/visualizing-molecules-in-jupyter-notebook-from-a-list-or-dataframe/)  
         _Input: list of identifiers, SDF or CSV files_
@@ -73,7 +77,7 @@ But it can be accessed in different ways:
 -   Via [**Google Colab**](https://colab.research.google.com/drive/13r9LojtJTLZ8MEO1KNqJAKTieWmEUJQM), by using "magic commands"
     -   Ideal for no-setup access and popular amongst students
     -   GUI opens in an iframe when requested
--   Via **API**
+-   Via [**API**](/docs/api)
     -   Ideal for batching large datasets
     -   GUI not available
 
@@ -101,28 +105,26 @@ Wrapping your own models is relevant for:
 
 &rarr; [Learn how to wrap a model](https://github.com/acceleratedscience/openad_service_utils)
 
-## Deployment on Kubernetes
+## Deployment
 
 Once a model is wrapped, it can be hosted on your local machine (if hardware allows) or deployed on your cloud platform of choice.
 
-> ??????????????  
-> ??????????????  
-> ??????????????
-
-&rarr; [learn how to deploy a model](/docs/model-service/deploying-models/)
+&rarr; [Learn how to deploy a model](/docs/model-service/deploying-models/)  
+&rarr; [Helm charts template for Kubernetes](https://github.com/acceleratedscience/openad-model-helm-template)
 
 ## OpenBridge Proxy Service
 
-!!! Warning
+!!! info
 
-    Still missing from docs @Daniel:
+    Using the OpenBridge proxy server is optional but recommended if you're dealing with propriatary models and security is a concern.
 
-    -   Description paragraph in the GitHub README explaining what bridge does
-    -   How to make your hosted models available under OpenBridge
+OpenBridge is a proxy server and user authentication and management service. What it does:
 
-[OpenBridge](https://github.com/acceleratedscience/bridge) is a proxy server that can handle user authentication and management. It is optional but the recommended approach if you're dealing with propriatary models and security is a concern.
+1. Proxy traffic from the Bridge URL to your hosted models while keeping their actual location securely hidden
+2. Provide an interface for user and user group management, giving you fine grained controls for who gets to access which model
 
-Check the [OpenBridge documentation](https://github.com/acceleratedscience/bridge/blob/main/doc/deployment.md) for instructions on how to deploy OpenBridge and make your deployed models available under the proxy.
+&rarr; [Deploy OpenBridge](https://github.com/acceleratedscience/bridge/blob/main/doc/deployment.md)  
+&rarr; [Publish models under OpenBridge](#) - MISSING
 
 ## Monitoring and Troubleshooting
 

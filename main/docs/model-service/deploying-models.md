@@ -5,8 +5,9 @@
 # Deploying Models
 
 !!! info
-**Apple users:** Most models won't run on Apple Silicon (ARM64) processors, more information [below](#apple-silicon).  
- Check the list of [available services] to see which ones are compatible.
+
+    **Apple users:** Most models won't run on Apple Silicon (ARM64) processors, more information [below](#apple-silicon).
+    Check the list of [available services] to see which ones are compatible.
 
 ## Deployment Options
 
@@ -21,12 +22,14 @@ There's different ways to deploy a service.
    _Deploy your model locally or in the cloud, using Docker or Podman build_
 3. [Local deployment using a Python virtual environment](#local-deployment-using-a-python-virtual-environment)  
    _Install requirements and manage your own environment_
-4. [Cloud deployment to Google Cloud Run](#cloud-deployment-to-google-cloud-run)  
+4. [Kubernetes deployment with Helm Charts](#kubernetes-deployment-with-helm-charts)  
+   _Use our helm chart template_
+5. [Cloud deployment to Google Cloud Run](#cloud-deployment-to-google-cloud-run)  
    _Leverage cloud computing power, using a no-code deployment_  
    **Easy setup**{ .flag .yellow }
-5. [Cloud deployment to Red Hat OpenShift](#cloud-deployment-to-red-hat-openshift)  
+6. [Cloud deployment to Red Hat OpenShift](#cloud-deployment-to-red-hat-openshift)  
    _Leverage cloud computing power_
-6. [Cloud deployment to SkyPilot on AWS](#cloud-deployment-to-skypilot-on-aws)  
+7. [Cloud deployment to SkyPilot on AWS](#cloud-deployment-to-skypilot-on-aws)  
    _Leverage cloud computing power_
 
 <!------------------------------------------------------------>
@@ -277,6 +280,14 @@ If you are using an [Apple Silicon] device, deploy using Docker instead. See [Ap
     ```
 
 </div>
+
+<!------------------------------------------------------------>
+
+## Kubernetes deployment with Helm Charts
+
+To deploy to Kubernetes, use our [Helm chart template for OpenAD models](https://github.com/acceleratedscience/openad-model-helm-template).
+
+Further documentation in the template's GitHub README.
 
 <!------------------------------------------------------------>
 
