@@ -16,10 +16,6 @@ This is an unlisted page with instructions for IBM consultants on how to:
 
 # OpenAD Handbook <!-- omit in toc -->
 
-!!! warning
-
-    Work in progress, this document is incomplete
-
 !!! Info
 
     This guide is meant for IBM consultants. General documentation can be [found here](/docs).
