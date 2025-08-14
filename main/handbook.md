@@ -24,14 +24,14 @@ This is an unlisted page with instructions for IBM consultants on how to:
 
 #### Table of Contents <!-- omit in toc -->
 
--   [What is OpenAD](#what-is-openad)
-    -   [Core Functionality](#core-functionality)
-    -   [Accessing OpenAD](#accessing-openad)
--   [Wrapping Models for OpenAD](#wrapping-models-for-openad)
-    -   [Available Models](#available-models)
-    -   [Wrapping your Own Models](#wrapping-your-own-models)
--   [Deployment](#deployment)
--   [OpenBridge Proxy Service](#openbridge-proxy-service)
+- [What is OpenAD](#what-is-openad)
+    - [Core Functionality](#core-functionality)
+    - [Accessing OpenAD](#accessing-openad)
+- [Wrapping Models for OpenAD](#wrapping-models-for-openad)
+    - [Available Models](#available-models)
+    - [Wrapping your Own Models](#wrapping-your-own-models)
+- [Deployment](#deployment)
+- [OpenBridge Proxy Service](#openbridge-proxy-service)
 
 ---
 
@@ -109,10 +109,14 @@ Once a model is wrapped, it can be hosted on your local machine (if hardware all
 
     Using the OpenBridge proxy server is optional but recommended if you're dealing with propriatary models and security is a concern.
 
-OpenBridge is a proxy server and user authentication and management service. What it does:
+OpenBridge is a fully customizable proxy server and user authentication and management service. What it does:
 
-1. Proxy traffic from the Bridge URL to your hosted models while keeping their actual location securely hidden
-2. Provide an interface for user and user group management, giving you fine grained controls for who gets to access which model
+1. **Group-based access control** to safeguard your downstream services and resources
+2. **Proxy**:
+    - API endpoints through JWT
+    - Web pages through cookies
+    - Data science tools like Jupyter Notebook
+3. **User and Admin portal**
 
 &rarr; [Deploy OpenBridge](https://github.com/acceleratedscience/bridge/blob/main/doc/deployment.md)  
 &rarr; Publish models under OpenBridge - COMING SOON
