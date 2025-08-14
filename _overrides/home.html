@@ -1,0 +1,141 @@
+{#-
+	This file is a custom template used for the homepage.
+-#}
+
+{% extends "base.html" %}
+
+{# Main content #}
+{% block content %}
+<div id="home-wrap" data-md-color-scheme="carbon-dark">
+
+{{ page.content }}
+
+{% set features = [
+	{
+		"title": "CLI + GUI",
+		"icon": "pictograms/pict-cli-gui.svg",
+		"description": "A powerful hybrid combining the command line with a graphical user interface."
+	},
+	{
+		"title": "Jupyter Notebook",
+		"icon": "pictograms/pict-jupyter.svg",
+		"description": "Fully integrated with Jupyter Lab through magic commands."
+	},
+	{
+		"title": "Workspace",
+		"icon": "pictograms/pict-workspace.svg",
+		"description": "Store, organize & visualize your molecules in SFD, CSV, MOL, PDB or CIF format."
+	},
+	{
+		"title": "Model Service",
+		"icon": "pictograms/pict-model.svg",
+		"description": "Run machine learning models without the technical overhead."
+	},
+	{
+		"title": "Workflow Integration",
+		"icon": "pictograms/pict-integration.svg",
+		"description": "Easily integrate into your existing research workflows and data pipelines."
+	},
+	{
+		"title": "Visualization",
+		"icon": "pictograms/pict-visualization.svg",
+		"description": "Interactive 2D and 3D visualizations of molecular structures."
+	},
+	{
+		"title": "Extendable",
+		"icon": "pictograms/pict-extendable.svg",
+		"description": "Extend functionality by building your own plugins and model wrappers."
+	},
+	{
+		"title": "Cutting Edge",
+		"icon": "pictograms/pict-pharma.svg",
+		"description": "Used & trusted by Fortune 500 IBM partners across the globe."
+	},
+	{
+		"title": "Open Source",
+		"icon": "pictograms/pict-open-source.svg",
+		"description": "Built fully open source and available under the MIT license."
+	}
+] %}
+
+
+<div id="block-about" class="page-block">
+	<h2>About</h2>
+	<p class="large">OpenAD is designed to integrate into your existing workflows via Jupyter Notebook, CLI or API, using a low-code approach to accelerate your research.</p>
+	{% include 'partials/custom-screens.html' %}
+</div>
+
+<div id="block-features" class="page-block">
+	<h2>Features</h2>
+	<div class="features-wrap">
+		{% for feature in features %}
+		<div class="feature">
+			{% include feature.icon | safe %}
+			<div>
+				<h3>{{ feature.title }}</h3>
+				{{ feature.description }}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<!-- Students -->
+<div id="block-students" class="page-block">
+	<div class="lottie-wrap">
+		<lottie-player autoplay loop mode="normal" speed="1" src="_assets/home/lotties/lottie-4.json"></lottie-player>
+	</div>
+	<div>
+		<h2>Accessible to Students</h2>
+		<div class="text-narrow">
+			<p>OpenAD is fully open source, providing a stepping stone for students to get familiar with the world of computational chemistry.</p>
+			<p>We're working hard to make resources more accesible for scientists who do not have a background in computer science.</p>
+			<a href="blog/category/tutorials" class="md-button md-button--primary">Start learning</a>
+		</div>
+	</div>
+</div>
+
+<!-- Enterprise -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<div id="block-enterprise" class="page-block">
+	<div class="lottie-wrap">
+		<lottie-player autoplay loop mode="normal" speed="0.05" src="_assets/home/lotties/network_vis.json"></lottie-player>
+	</div>
+	<div>
+		<h2>For Organizations</h2>
+		<p>Learn more about how IBM can provide bespoke solutions for your company.</p>
+		<a target="_blank" href="https://airtable.com/appfnZTaijGi51vSZ/pagFOvB3eMZZtXIhp/form" class="md-button md-button--primary">Request a meeting</a>
+	</div>
+</div>
+
+{# Spinning molecule #}
+<script src="_modules/lodash.min.js"></script>
+<script src="_modules/three.min.js"></script>
+<script src="_modules/Miew.min.js"></script>
+<link rel="stylesheet" href="_modules/Miew.min.css" />
+<link rel="stylesheet" href="_css/home.css" />
+<div id="miew-container"></div>
+<script src="_js/molecules-data.js"></script>
+<script src="_js/spinning-molecule.js"></script>
+
+{# Background images #}
+<div id="bg-features" class="bg-image"></div>
+<div id="bg-students" class="bg-image">
+	<!-- <div class="ripples-wrap">
+		{# include 'custom-ripples--unused.html' #}
+	</div> -->
+</div>
+<div id="bg-enterprise" class="bg-image"></div>
+
+</div>
+
+{# Scroll behavior #}
+<script src="_js/scroll-behavior.js"></script>
+
+{% endblock %}
+
+
+
+{# Hide footer #}
+{% block footer %}
+{% endblock %}

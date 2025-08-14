@@ -1,0 +1,574 @@
+/*
+
+Carbon Base Styles
+------------------
+
+Core style overrides to skin the mkdocs-material to look like Carbon.
+- Set IBM Plex Sans as the default font
+- Set root font size to 16px (1rem = 16px)
+- Resize fonts and UI elements
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
+html {
+	font-size: 16px;
+}
+aside,
+body,
+input {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-optical-sizing: auto;
+}
+
+/* Font size */
+.md-nav,
+.md-typeset {
+	font-size: var(--font-size);
+}
+
+/* Tooltip */
+/* Currently disabled due to lack of control
+Note: testing tooltip can be a pain. Use code below to insert an artificial tooltip:
+const tooltip = `<div class="md-tooltip2" role="tooltip" style="position:absolute;top:300px;opacity:1;z-index:100">
+  <div class="md-tooltip2__inner md-typeset">I'm a tooltip</div>
+</div>`
+document.body.insertAdjacentHTML('beforeend', tooltip);
+*/
+.md-tooltip2 {
+	font-size: var(--font-size);
+	transform: none;
+}
+.md-tooltip2__inner {
+	background-color: var(--md-primary-fg-color);
+	box-shadow: none;
+	color: var(--md-default-fg-color--light);
+	border-radius: 2px;
+}
+[role="tooltip"] > .md-tooltip2__inner {
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-small);
+	font-weight: 400;
+}
+
+/**
+ * Header styles
+ */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+	color: var(--md-default-fg-color);
+	position: relative;
+	margin-bottom: 1rem;
+}
+.md-typeset h1 {
+	font-size: 2.5rem; /* 40px */
+	font-weight: 200;
+	margin-bottom: 3rem;
+}
+.md-typeset h1.short {
+	margin-bottom: 1rem;
+}
+.md-typeset h2 {
+	font-size: 1.75rem; /* 28px */
+	line-height: 2rem;
+	font-weight: 300;
+	margin-top: 4rem;
+}
+.md-typeset #hero strong.fake-h2 {
+	font-size: 1.75rem;
+	line-height: 2rem;
+	font-weight: 300;
+	color: var(--md-default-fg-color);
+	margin-bottom: 1rem;
+}
+.md-typeset h2.short {
+	margin-top: 3rem;
+}
+.md-typeset h1 + h2 {
+	margin-top: 0;
+}
+.md-typeset h3.short {
+	margin-top: 1rem;
+}
+.md-typeset h3 {
+	font-size: 1.25rem; /* 20px */
+	font-weight: 400;
+	margin-top: 4rem;
+}
+.md-typeset h4 {
+	font-size: 1.0625rem; /* 17px */
+	font-weight: 600;
+}
+.md-typeset #hero strong.fake-h4 {
+	font-size: 1.0625rem; /* 17px */
+	font-weight: 600;
+	color: var(--md-default-fg-color);
+	margin-bottom: 1rem;
+}
+
+/* Anchor links */
+[dir="ltr"] .md-typeset .headerlink,
+.md-typeset .headerlink {
+	margin: 0;
+	padding-right: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	width: 2rem;
+	text-align: right;
+}
+.md-typeset :target > .headerlink {
+	/* color: var(--md-typeset-color); */
+	color: var(--md-typeset-a-color);
+}
+
+.sub-title {
+	margin-top: -2rem;
+}
+
+/**
+ * Text styles
+ */
+
+/* Body text */
+.md-typeset {
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-large);
+}
+
+/* Lareg text */
+.md-typeset .large {
+	font-size: var(--font-size-xlarge);
+	line-height: var(--line-height-xlarge);
+	font-weight: 300;
+}
+
+/* Small text */
+.md-typeset small,
+.md-typeset .small {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	opacity: 1;
+}
+
+/* Tiny text */
+.md-typeset .xsmall {
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-small);
+}
+
+/* Soft text */
+.soft {
+	color: var(--carbon-text-soft);
+}
+
+/* Separator */
+.md-typeset hr {
+	margin: 4rem 0;
+	border-color: var(--carbon-soft);
+}
+
+/**
+ * Buttons
+ */
+
+/* Base / secondary */
+.md-typeset .md-button {
+	font-weight: 400;
+	border: none;
+	font-size: var(--font-size);
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 2rem 0 1rem;
+	border-radius: 0;
+	box-sizing: border-box;
+	border: solid 1px transparent;
+
+	color: white;
+	background: var(--md-default-bg-color--lightest);
+}
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+	color: white;
+	background: var(--md-default-bg-color--lighter);
+	border-color: transparent;
+}
+
+/* Primary */
+.md-typeset .md-button--primary {
+	background: var(--md-accent-bg-color);
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+	background: var(--md-accent-bg-color--light);
+	border-color: transparent;
+}
+
+/* Tertiary */
+.md-typeset .md-button--tertiary {
+	color: var(--md-default-fg-color);
+	background: transparent;
+	/* border: solid 1px var(--md-default-fg-color); */ /* Carbon official border, but too harsh */
+	border: solid 1px var(--md-default-bg-color--lightest);
+}
+.md-typeset .md-button--tertiary:hover,
+.md-typeset .md-button--tertiary:focus {
+	color: var(--md-default-bg-color);
+	background: var(--md-primary-bg-color);
+	border-color: transparent;
+}
+
+/* Large */
+.md-typeset .md-button.btn-large {
+	height: 3.5rem;
+	line-height: 4.5rem;
+	padding-right: 3rem;
+}
+
+/* Button icons */
+.md-typeset .md-button .emojione,
+.md-typeset .md-button .gemoji,
+.md-typeset .md-button .twemoji {
+	margin-left: -0.25rem;
+	margin-right: 0.25rem;
+}
+
+/* Icons */
+/* .md-typeset .emojione,
+.md-typeset .gemoji, */
+.md-typeset .twemoji,
+/* .md-typeset .emojione svg,
+.md-typeset .gemoji svg, */
+.md-typeset .twemoji svg {
+	width: 1rem;
+	height: 1rem;
+}
+.md-typeset .twemoji svg {
+	display: block;
+}
+.md-typeset .twemoji.inline {
+	/* background: pink; */
+	display: inline-block;
+	margin: 0.1875rem 0.125rem;
+	float: none;
+}
+.md-typeset small .twemoji.inline,
+.md-typeset .small .twemoji.inline {
+	margin: 0.125rem 0.125rem;
+}
+
+/* Note blocks */
+[dir="ltr"] .md-typeset blockquote {
+	border-left: 3px solid var(--carbon-blue-l);
+}
+
+/**
+ * Padded Lists
+*/
+.padded-list ol li:not(:first-child),
+.padded-list ul li:not(:first-child) {
+	margin-top: 2rem;
+}
+
+/**
+ * Sometimes we have regular lists embedded in
+ * a padded list, this lets us disable padding again.
+*/
+.tight-list > ol li:not(:first-child),
+.tight-list > ul li:not(:first-child) {
+	margin-top: 0;
+}
+
+/**
+ * Flags
+ * - - -
+ * Implementation:
+ * **Some Text**{ .flag .green }
+*/
+strong.flag {
+	display: inline-block;
+	vertical-align: middle;
+	background: var(--carbon-text);
+	color: var(--carbon-bg);
+	text-transform: uppercase;
+	font-size: var(--font-size-small);
+	line-height: var(--font-size-small);
+	padding: 0.25rem 0.4rem;
+	border-radius: 1.5px;
+}
+strong.flag.green {
+	background: var(--carbon-success);
+	color: white;
+}
+strong.flag.yellow {
+	background: var(--carbon-warning);
+	color: var(--carbon-dark);
+}
+strong.flag.orange {
+	background: var(--carbon-caution);
+	color: white;
+}
+strong.flag.red {
+	background: var(--carbon-error);
+	color: white;
+}
+strong.flag.blue {
+	background: var(--carbon-blue);
+	color: white;
+}
+h1 strong.flag,
+h2 strong.flag,
+h3 strong.flag {
+	margin: 0 0.25rem;
+}
+
+/**
+ * Code
+ */
+
+/* Reset */
+.md-typeset pre {
+	margin: 0;
+}
+
+/* Special dark theme adjustment */
+[data-md-color-scheme="carbon-dark"] .md-typeset code {
+	background: rgba(255, 255, 255, 0.08);
+	box-shadow: none;
+}
+
+/* Font */
+code {
+	font-family: "IBM Plex Mono", monospace;
+}
+
+/* Inline code */
+.md-typeset code:not(.md-code__content) {
+	display: inline-block;
+	vertical-align: middle;
+	background: var(--carbon-soft);
+	color: var(--carbon-text-softer);
+	box-shadow: inset 0 0 0 1px var(--carbon-soft-hard);
+	font-size: inherit;
+	font-size: var(--font-size);
+	line-height: var(--font-size-small);
+	padding: 0.25rem 0.4rem;
+	box-sizing: border-box;
+}
+
+/* Block code */
+.md-typeset code {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+}
+.md-typeset code.md-code__content,
+.highlight span.filename + pre > code.md-code__content {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+/* Consecutive blocks */
+.highlight + .highlight {
+	margin-top: 0.25rem;
+}
+.highlight + .highlight .filename {
+	display: none;
+}
+
+/* Code language */
+.highlight {
+	position: relative;
+}
+.highlight span.filename {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-weight: 400;
+	font-size: var(--font-size-small);
+	color: var(--md-default-fg-color--lightest);
+	background: transparent;
+	line-height: 1rem;
+	height: 1rem;
+	position: absolute;
+	width: 5rem;
+	right: -1.25rem;
+	top: 5rem;
+	transform: rotate(90deg);
+	transform-origin: 100% 0;
+}
+.language-text.highlight span.filename {
+	display: none;
+}
+
+/* Clipboard icon */
+.md-clipboard {
+	width: 1rem;
+	height: 1rem;
+	right: 0.5rem;
+	top: 0.5rem;
+	color: var(--carbon-gray-d);
+}
+.md-clipboard::after {
+	width: 1rem;
+	height: 1rem;
+	mask-image: var(--carbon-icn-clipboard);
+}
+:hover > .md-clipboard {
+	color: white;
+}
+.md-clipboard:focus {
+	color: white;
+}
+
+/**
+ * Expandable sections
+ */
+
+/* Reset */
+html .md-typeset details > :last-child {
+	margin-bottom: 0;
+}
+.md-typeset details p:last-child {
+	margin-bottom: 0;
+}
+[dir="ltr"] .md-typeset summary {
+	border-radius: 0;
+}
+
+/* Block */
+.md-typeset details {
+	box-shadow: none;
+	border: none;
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-large);
+	color: var(--md-typeset-color);
+	margin: 0.5rem 0;
+	padding: 1.5rem;
+	padding-top: 0.5rem;
+	border: solid 1px transparent;
+	border: dashed 1px var(--carbon-soft-hard);
+	border-radius: 0;
+}
+.md-typeset details:focus-visible,
+.md-typeset details:focus-within {
+	outline: none;
+	box-shadow: none;
+}
+html .md-typeset summary:last-child,
+[dir="ltr"] .md-typeset summary,
+.md-typeset summary {
+	background: transparent;
+	padding: 0;
+	overflow: visible;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+	display: block;
+	line-height: inherit;
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-large);
+}
+
+/* Icon */
+.md-typeset summary,
+[dir="ltr"] .md-typeset summary {
+	padding-left: 0.75rem;
+}
+.md-typeset summary::before,
+[dir="ltr"] .md-typeset summary::before {
+	background: var(--md-typeset-color);
+	mask-image: var(--carbon-icn-caret-right);
+	width: 1rem;
+	height: 1rem;
+	box-sizing: content-box;
+	position: absolute;
+	left: -0.5rem;
+	top: 0.1875rem; /* --line-height-large / 2 */
+	transition: transform 0.2s ease-in-out;
+	float: left;
+	z-index: 1;
+}
+.md-typeset summary::after {
+	/* Disabled, but can be used to create
+	background behind expand icons */
+	background: var(--carbon-bg);
+	mask-image: none;
+	position: absolute;
+	left: -0.5rem;
+	top: 0.1875rem;
+	margin: 0;
+	opacity: 1;
+	border-radius: 50%;
+	display: none;
+}
+
+/* Hover state */
+.md-typeset details:hover {
+	border: solid 1px var(--carbon-soft-hard);
+	background: var(--carbon-soft-soft);
+}
+
+/* Open state */
+.md-typeset details[open] {
+	border: solid 1px var(--carbon-soft-hard);
+	background: var(--carbon-soft-soft);
+}
+.md-typeset details[open] summary::after {
+	transform: rotate(90deg);
+}
+.md-typeset details[open] summary::before {
+	transform: rotate(90deg);
+}
+
+/* Headers */
+.md-typeset details h2,
+.md-typeset details h3,
+.md-typeset details h4,
+.md-typeset details h5 {
+	line-height: var(--line-height-large);
+	margin: 0;
+}
+.md-typeset h2 .headerlink,
+.md-typeset h3 .headerlink,
+.md-typeset h4 .headerlink,
+.md-typeset h5 .headerlink {
+	/* display: none; */
+}
+
+/**
+ * Tables
+ */
+
+/* prettier-ignore */
+.table-full-width-next + .md-typeset__scrollwrap .md-typeset__table,
+.table-full-width-next + .md-typeset__scrollwrap .md-typeset__table table,
+.table-full-width-next + .md-typeset__scrollwrap .md-typeset__table table thead,
+.table-full-width-next + .md-typeset__scrollwrap .md-typeset__table table tbody {
+	width: 100%;
+}
+.md-typeset table:not([class]) {
+	font-size: inherit;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	border-color: var(--carbon-soft-hard);
+	display: table;
+}
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+	padding: 0.5rem;
+	border-color: var(--carbon-soft-hard);
+}
+
+/**
+ * Images
+ */
+img.img-border {
+	border: solid 1px rgba(0, 0, 0, 0.15);
+}

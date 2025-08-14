@@ -1,0 +1,12 @@
+{#
+    This file is no longer used but JINJA macros can be useful.
+    Leaving this for reference.
+    https://jinja.palletsprojects.com/en/stable/templates/#macros
+
+    Usage:
+    {% import "macros.html" as macros %}
+    {{ macros.inline_svg('some_graphic.svg') }}
+#}
+{% macro inline_svg(filename) %}
+    {% include filename | safe %}
+{% endmacro %}

@@ -1,0 +1,61 @@
+/*
+
+Command Page
+------------
+
+Styles related to the auto-generated command documentation page:
+https://openad.accelerate.science/docs/commands
+
+*/
+
+/* Reset */
+.md-typeset pre {
+	margin: 0;
+}
+
+/* Base */
+details[code] {
+	background: var(--carbon-text-softer);
+	color: var(--carbon-bg);
+	border-color: transparent;
+}
+details[code]:not([open]):hover {
+	background: var(--carbon-text);
+	border-color: transparent;
+}
+details[code] p {
+	white-space: pre-wrap;
+}
+details[code] li > .highlight {
+	margin: 0.5rem 0 1rem 0;
+}
+
+/* Hide the 'Bash' label */
+details[code] .filename {
+	display: none;
+}
+
+/* Summary */
+.md-typeset details[code] summary {
+	font-family: "IBM Plex Mono", monospace;
+	font-size: var(--font-size);
+	margin: -0.5rem -1.5rem 0 -1.5rem;
+	padding: 0.5rem 1.5rem;
+}
+.md-typeset details[code] summary::before {
+	background: var(--carbon-bg);
+	top: 0.6875rem;
+	left: 0.25rem;
+}
+
+/* Open state */
+details[code][open] {
+	color: var(--carbon-text);
+}
+details[code][open] summary {
+	background: var(--carbon-text);
+	color: var(--carbon-bg);
+	margin: -0.5rem -1.5rem 1.5rem -1.5rem;
+	padding: 0.5rem 1.5rem;
+	outline: solid 1px var(--carbon-text);
+}

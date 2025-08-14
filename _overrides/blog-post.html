@@ -1,0 +1,118 @@
+{#-
+  This file is a carbon override. Included changes:
+  - Custom metadata sidebar layout
+
+  Original:
+  https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/blog-post.html
+-#}
+
+
+{% extends "main.html" %}
+{% import "partials/nav-item.html" as item with context %}
+{% block container %}
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+
+        <div class="carbon-blog-meta">
+          <nav>
+
+            <!-- Back button -->
+            <div class="go-back">
+              <a href="{{ page.parent.url | url }}" class="icn-wrap">
+                {% include ".icons/carbon/icn-arrow-left.svg" %}
+                <span>{{ lang.t("blog.index") }}</span>
+              </a>
+            </div>
+
+            <!-- Date published -->
+            <div class="date">
+              <div class="icn-wrap">
+                {% include ".icons/carbon/icn-calendar.svg" %}
+                <time datetime="{{ page.config.date.created }}">
+                  {{- page.config.date.created | date -}}
+                </time>
+              </div>
+              <!-- Date updated -->
+              {% if page.config.date.updated %}
+                <span class="updated">
+                  (+ <time datetime="{{ page.config.date.updated }}">
+                    {{- page.config.date.updated | date -}}
+                  </time>)
+                </span>
+              {% endif %}
+            </div>
+            
+            <!-- Read time -->
+            {% if page.config.readtime %}
+              {% set time = page.config.readtime %}
+              <div class="read-time icn-wrap">
+                {% include ".icons/carbon/icn-clock.svg" %}
+                <span>
+                  {% if time == 1 %}
+                    {{ lang.t("readtime.one") }}
+                  {% else %}
+                    {{ lang.t("readtime.other") | replace("#", time) }}
+                  {% endif %}
+                </span>
+              </div>
+            {% endif %}
+
+            <!-- Authors -->
+            {% if page.authors %}
+              <div class="authors">
+              <span>
+                By {% for author in page.authors %}
+                  {% if url %}<a href="{{ url }}">{{ author.name }}{{i}}</a>
+                  {% else %}<span>{{ author.name }}{{i}}</span>{% endif %}
+                  <span class="comma">{% if not loop.last %}, {% endif %}</span>
+                {% endfor %}
+              </span>
+              <span>
+                {% if page.categories %}
+                  {{ lang.t("blog.categories.in") }}
+                  {% for category in page.categories %}
+                    <a href="{{ category.url | url }}">{{- category.title -}}</a><span class="comma">{% if not loop.last %}, {% endif %}</span>
+                  {% endfor -%}
+                {% endif %}
+              </span>
+              </div>
+            {% endif %}
+
+            <!-- Categories -->
+            {% if not page.authors and page.categories %}
+              <div class="categories">
+                Published in
+                {% for category in page.categories %}
+                  <a href="{{ category.url | url }}">{{- category.title -}}</a><span class="comma">{% if not loop.last %}, {% endif %}</span>
+                {% endfor -%}
+              </div>
+            {% endif %}
+
+          </nav>
+
+          <!-- Reference links -->
+          {% if page.config.links %}
+            <div class="references">
+              {{ lang.t("blog.references") }}:
+              {% for nav_item in page.config.links %}
+                {% set path = "__ref_" ~ loop.index %}
+                {{ item.render(nav_item, path, 1) }}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if "toc.integrate" in features %}
+            {% include "partials/toc.html" %}
+          {% endif %}
+        </div>
+        
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      {% block content %}
+        {% include "partials/content.html" %}
+      {% endblock %}
+    </article>
+  </div>
+{% endblock %}
